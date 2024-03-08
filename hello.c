@@ -10,4 +10,14 @@ int main(void)
     string numberVar = get_string("What's your number? ");
     printf("hello %s, with number %s\n", nameVar, numberVar);
 
+
+//    int numberVar = get_int("gimme number ");
+//    if (number<10)
+//    {
+//        printf
+//    }
+
+
+
+
 }
