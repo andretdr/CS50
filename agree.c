@@ -4,13 +4,13 @@
 int main(void)
 {
     char c = get_char ("Do you agree ?\n");
-    if (c == ('y' or 'Y')
+    if (c == 'y' || c == 'Y')
     {
         printf ("YES\n");
     }
     else
     {
-        if (c == 'n')
+        if (c == 'n' || c == 'N')
         {
            printf ("NO\n");
         }
