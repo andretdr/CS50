@@ -3,13 +3,23 @@
 
 int main(void)
 {
-    //for (int i=0, i<3, i++)
-    int counter = 0;
+/*    int counter = 0;
 
     while (counter < 3)
     {
         printf("meow \n");
         counter++;
     }
+
+*/
+
+    for (int i = 0; i < 3; i++)
+    {
+        printf("meow \n");
+    }
+
+
+
+
 
 }
