@@ -3,11 +3,18 @@
 
 int main(void)
 {
-    for (int i = 0; i < 3; i++)
-    {
-        printf("#");
+    int size = 6;
 
-    }
+
+    for (int i = 0; i < size; i++)
+    {
+
+        for (int j = 0; j < size; j++)
+        {
+        printf("#");
+        }
     printf("\n");
+    }
+
 
 }
