@@ -3,5 +3,10 @@
 
 int main(void)
 {
+    
+
     printf("hello world!\n");
+    answer = getstring("What's your name? ");
+    printf(answer);
+
 }
