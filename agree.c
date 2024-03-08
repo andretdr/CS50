@@ -4,15 +4,15 @@
 int main(void)
 {
     char c = get_char ("Do you agree ?\n");
-    if (c == 'y')
+    if (c == ('y' or 'Y')
     {
-        printf ("YES");
+        printf ("YES\n");
     }
     else
     {
         if (c == 'n')
         {
-           printf ("NO");
+           printf ("NO\n");
         }
     }
 
