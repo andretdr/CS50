@@ -11,13 +11,18 @@ int main(void)
         counter++;
     }
 
-*/
+
 
     for (int i = 0; i < 3; i++)
     {
         printf("meow \n");
     }
+*/
 
+    while (true) //forever loop
+    {
+        printf("meow \n");
+    }
 
 
 
