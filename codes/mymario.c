@@ -22,7 +22,7 @@ int main (void)
                 printf (" ");
             else
                 printf ("#");
-*/
+
 
      /*      if ((j-totalBricks-1) > bricks)
                 printf (" ");
