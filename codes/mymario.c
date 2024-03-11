@@ -24,7 +24,7 @@ int main (void)
                 printf ("#");
 */
 
-            if ((j-bricks-2) < bricks)
+            if ((j-bricks-1) > bricks)
                 printf (" ");
             else
                 printf ("#");
