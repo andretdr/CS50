@@ -16,8 +16,8 @@ int main (void)
 
         for (int j = 0; j < bricks; j++) // rows
         {
-            int n = i+1; // number of bricks on this row
-            if (j < bricks)
+            int blanks = bricks-i+1; // number of blanks on this row
+            if (j < blanks)
             printf (" ");
             else
             printf ("#");
