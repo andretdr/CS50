@@ -80,6 +80,7 @@ bool checkSum (long a, int t)
         {
             //get the digit */
             int digit = (a/truncator) - ((a/(truncator*10))*10);
+            printf ("%i\n",digit);
             /*
         }
         else
@@ -87,12 +88,6 @@ bool checkSum (long a, int t)
 
         }
 */
-
-
-return true;
-    }
-
-
 
 
     return true;
