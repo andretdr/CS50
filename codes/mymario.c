@@ -10,7 +10,7 @@ int main (void)
         }
     while (bricks < 1);
 
-    for (int i = 0; i < bricks; i++) // columns
+    for (int i = 0; i < 2*bricks+2; i++) // columns
     {
 
 
@@ -21,7 +21,7 @@ int main (void)
                 printf (" ");
             else
                 printf ("#");
-            
+
         }
         printf ("\n");
     }
