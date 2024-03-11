@@ -7,12 +7,10 @@ int main(void)
     int y = get_int ("y: ");
 
     printf("x+y = %i\n", (x+y));
+}
 
-
-
-
-
-
-
+int add(int x, int y)
+{
+    
 
 }
