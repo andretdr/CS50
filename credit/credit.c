@@ -9,7 +9,7 @@ int main(void)
     {
         long cc = get_long ("Enter CC number please: ");
     }
-    while (cc < 0);
+    while (cc < 1);
 
 
 
@@ -20,7 +20,7 @@ int main(void)
 
 int typeCheck (long a)
 {
-    
+
 
 
 }
