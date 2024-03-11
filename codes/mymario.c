@@ -12,9 +12,11 @@ int main (void)
 
     for (int i = 0; i < bricks; i++) // rows
     {
+        printf ("#");
+
         for (int j = 0; j < bricks; j++) // columns
         {
-            
+
         }
     }
 
