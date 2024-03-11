@@ -11,14 +11,14 @@ int main(void)
         meow();
         counter++;
     }
+}
 
-
-
+/*
     for (int i = 0; i < 3; i++)
     {
         printf("meow \n");
     }
-
+*/
 
 //    while (true) //forever loop
 
@@ -32,4 +32,4 @@ void meow(void) // does nt return a value, and doesnt take in a parameter void, 
 
 
 
-}
+
