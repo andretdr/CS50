@@ -4,11 +4,11 @@
 
 int main(void)
 {
-/*    int counter = 0;
+    int counter = 0;
 
     while (counter < 3)
     {
-        printf("meow \n");
+        meow();
         counter++;
     }
 
@@ -18,7 +18,7 @@ int main(void)
     {
         printf("meow \n");
     }
-*/
+
 
 //    while (true) //forever loop
 
