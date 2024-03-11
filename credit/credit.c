@@ -73,6 +73,7 @@ bool checkSum (long a, int t)
     long truncator = 1;
     int totalAdd = 0;
     int totalMult = 0;
+    int total = 0;
 
     while (a/truncator > 0) //quit when 0
     {
@@ -82,7 +83,7 @@ bool checkSum (long a, int t)
             int digit = (a/truncator) - ((a/(truncator*10))*10);
             printf ("odd number %i\n",digit);
             totalAdd = totalAdd + digit;
-            mult = true
+            mult = true;
         }
         else // if mult operation
         {
@@ -94,11 +95,12 @@ bool checkSum (long a, int t)
             // add up the digits
             int digitTens = (digit/10)*10; // the digit in the 10s place
             totalAdd = totalAdd + digitTens + (digit - (digitTens*10));
-            mult = false
+            mult = false;
         }
         truncator = truncator * 10; // increase by 10
     }
-
+    total = totalAdd + totalMult;
+    printf ("TOTAL %i\n", total);
 
     return true;
 }
