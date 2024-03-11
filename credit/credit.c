@@ -14,6 +14,8 @@ int main(void)
 
 printf("%li\n",cc/10);
 
+
+
 }
 
 
