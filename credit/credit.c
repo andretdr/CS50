@@ -73,21 +73,28 @@ bool checkSum (long a, int t)
     long truncator = 1;
     int totalAdd = 0;
     int totalMult = 0;
-/*
+
     while (a/truncator > 0) //quit when 0
     {
         if (!mult) // if add operation
         {
-            //get the digit */
+            //get the digit
             int digit = (a/truncator) - ((a/(truncator*10))*10);
             printf ("%i\n",digit);
-            /*
+            totalAdd = totalAdd + digit;
+            mult = true
         }
-        else
+        else // if mult operation
         {
+            //get the digit
+            int digit = (a/truncator) - ((a/(truncator*10))*10);
+            // mult by 2
+            digit = digit * 2;
+            
 
         }
-*/
+        truncator = truncator * 10; // increase by 10
+    }
 
 
     return true;
