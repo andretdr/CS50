@@ -95,7 +95,7 @@ bool checkSum (long a, int t)
             // add up the digits
             printf ("after mult 2 %i\n", digit);
             int digitTens = (digit/10)*10; // the digit in the 10s place
-            totalAdd = totalAdd + digitTens + (digit - (digitTens*10));
+            totalMult = totalMult + digitTens + (digit - (digitTens*10));
             mult = false;
         }
         truncator = truncator * 10; // increase by 10
