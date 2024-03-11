@@ -4,11 +4,12 @@
 int main(void)
 {
 //    const int size = 6;
-    int size = 0;
-    while (size<1)
+    int size;
+    do
     {
         size = get_int ("gimme size more then 0 :");
     }
+    while (size<1);
 
 
     for (int i = 0; i < size; i++)
