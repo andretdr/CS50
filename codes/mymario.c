@@ -17,6 +17,9 @@ int main (void)
         for (int j = 0; j < bricks; j++) // rows
         {
             int blanks = bricks-i-1; // number of blanks on this row
+            
+
+
             if (j < blanks)
                 printf (" ");
             else
