@@ -1,7 +1,9 @@
 #include <cs50.h>
 #include <stdio.h>
+#include <stdbool.h>
 
 int typeCheck (long a); // 0=null, 1=Amex, 2=Master, 3=Visa
+bool checkSum (long a);
 
 int main(void)
 {
@@ -27,11 +29,7 @@ int main(void)
             else
                 printf("INVALID\n");
 
-
-
 }
-
-
 
 
 int typeCheck (long a) // 0=null, 1=Amex, 2=Master, 3=Visa
@@ -57,3 +55,9 @@ int typeCheck (long a) // 0=null, 1=Amex, 2=Master, 3=Visa
     }
 }
 
+
+bool checkSum (long a)
+{
+    
+
+}
