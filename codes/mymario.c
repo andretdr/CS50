@@ -16,12 +16,12 @@ int main (void)
 
         for (int j = 0; j < 2*totalBricks+2; j++) // rows
         {
-            int blanks = totalBricks-i-1; // number of blanks on this row
+            int blanks = totalBricks - i-1; // number of blanks on this row
             int bricks = totalBricks - blanks;
-            if ((j < blanks) || ((j-totalBricks-1) > bricks) || (j == totalBricks) || (j == totalBricks +1))
-                printf (" ");
+            if ((j < blanks) || ((j - totalBricks - 1) > bricks) || (j == totalBricks) || (j == totalBricks + 1))
+                printf(" ");
             else
-                printf ("#");
+                printf("#");
 
         }
         printf ("\n");
