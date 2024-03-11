@@ -22,7 +22,7 @@ int main(void)
     if (type > 0 & type < 4) //if type check is true
         valid = checkSum (cc); // checkSum
 
-    if (valid)
+    if ((valid) & (type > 0 & type < 4))
     {
         if (type == 1)
             printf("AMEX\n");
@@ -30,10 +30,10 @@ int main(void)
             if (type == 2)
                 printf("MASTER\n");
             else
-                if (type == 3)
-                    printf("VISA\n");
-                else
-                    printf("INVALID\n");
+                printf("VISA\n");
+    }
+    else
+        printf("INVALID\n");
 
 }
 
