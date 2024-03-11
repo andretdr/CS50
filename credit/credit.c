@@ -77,7 +77,6 @@ bool checkSum (long a)
         {
             //get the digit
             int digit = (a/truncator) - ((a/(truncator*10))*10);
-            printf ("odd number %i\n",digit);
             totalAdd = totalAdd + digit;
             mult = true;
         }
