@@ -1,8 +1,8 @@
 #include <stdio.h>
 #include <cs50.h>
 
-int add(int x, int y);
-int subtract (int x, int y);
+int add(int a, int b);
+int subtract (int a, int b);
 
 int main(void)
 {
@@ -13,14 +13,14 @@ int main(void)
     printf("x-y = %i\n", subtract(x,y));
 }
 
-int add(int x, int y)
+int add(int a, int b)
 {
-    return (x+y);
+    return (a+b);
 }
 
-int subtract (int x, int y)
+int subtract (int a, int b)
 {
-    return (x-y);
+    return (a-b);
 }
 
 
