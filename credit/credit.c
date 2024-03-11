@@ -11,7 +11,7 @@ int main(void)
     }
     while (cc < 1);
 
-
+printf("%i\n",cc/10);
 
 }
 
