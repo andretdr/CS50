@@ -10,21 +10,21 @@ int main (void)
         }
     while (bricks < 1);
 
-    for (int i = 0; i < 2*bricks+2; i++) // columns
+    for (int i = 0; i < bricks; i++) // columns
     {
 
 
-        for (int j = 0; j < bricks; j++) // rows
+        for (int j = 0; j < 2*bricks+2; j++) // rows
         {
             int blanks = bricks-i-1; // number of blanks on this row
 
-            if (j < blanks)
+     /*       if (j < blanks)
                 printf (" ");
             else
                 printf ("#");
+*/
 
-
-            if (j < bricks)
+            if ((j-bricks-2) > blanks)
                 printf (" ");
             else
                 printf ("#");
