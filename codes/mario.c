@@ -4,7 +4,7 @@
 int main(void)
 {
 //    const int size = 6;
-    int size = get_int ("gimme size :");
+    const int size = get_int ("gimme size :");
 
     for (int i = 0; i < size; i++)
     {
