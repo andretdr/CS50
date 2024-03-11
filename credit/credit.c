@@ -63,6 +63,7 @@ int typeCheck (long a) // 0=null, 1=Amex, 2=Master, 3=Visa
 
 bool checkSum (long a, int t)
 {
-    
+    // check if 16 digits
+    if
 
 }
