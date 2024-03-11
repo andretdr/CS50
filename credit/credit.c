@@ -3,7 +3,7 @@
 #include <stdbool.h>
 
 int typeCheck (long a); // 0=null, 1=Amex, 2=Master, 3=Visa
-bool checkSum (long a, int t); // take in the number, and the type
+bool checkSum (long a); // take in the number
 
 int main(void)
 {
@@ -19,7 +19,7 @@ int main(void)
 
     type = typeCheck (cc);
 
-    if (type > 0 & type < 5)
+    if (type > 0 & type < 4)
         valid = checkSum (cc, type);
 
 
@@ -29,7 +29,7 @@ int main(void)
         if (type == 2)
             printf("MASTER\n");
         else
-            if (type == 3 || type == 4)
+            if (type == 3)
                 printf("VISA\n");
             else
                 printf("INVALID\n");
@@ -52,22 +52,17 @@ int typeCheck (long a) // 0=null, 1=Amex, 2=Master, 3=Visa 13 digit, 4=Visa 16 d
         {
             long visaCheck1 = a/1000000000000;
             long visaCheck2 = a/1000000000000000;
-            if ((visaCheck1) == 4)
+            if (((visaCheck1) == 4) || ((visaCheck2) == 4))
                 return 3;
             else
-                if ((visaCheck2) == 4)
-                    return 4;
-                else
-                    return 0;
+                return 0;
         }
     }
 }
 
 
-bool checkSum (long a, int t)
+bool checkSum (long a)
 {
-    // if t == 1, length is 15. t == 2, length is 16. t = 3, length is 13. t = 4, length is 16
-    //if
 
     bool mult = false; // doing the mult operation when true, add operation when false
     long truncator = 1;
