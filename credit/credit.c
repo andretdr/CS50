@@ -73,22 +73,23 @@ bool checkSum (long a, int t)
     long truncator = 1;
     int totalAdd = 0;
     int totalMult = 0;
-
+/*
     while (a/truncator > 0) //quit when 0
     {
         if (!mult) // if add operation
         {
-            //get the digit
+            //get the digit */
             int digit = a/truncator - ((a/(truncator*10))*10);
+            /*
         }
         else
         {
 
         }
+*/
 
 
-
-
+return true;
     }
 
 
