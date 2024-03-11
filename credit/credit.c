@@ -1,7 +1,7 @@
 #include <cs50.h>
 #include <stdio.h>
 
-typeCheck
+int typeCheck (long a); // 0=null, 1=Amex, 2=Master, 3=Visa
 
 int main(void)
 {
@@ -11,6 +11,16 @@ int main(void)
     }
     while (cc < 0);
 
+
+
+}
+
+
+
+
+int typeCheck (long a)
+{
+    
 
 
 }
