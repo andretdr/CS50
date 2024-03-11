@@ -2,12 +2,7 @@
 #include <stdio.h>
 #include <stdbool.h>
 
-void meow(void) // does nt return a value, and doesnt take in a parameter void, void
-    {
-        printf("meow \n");
-    }
-
-
+void meow (void);
 
 int main(void)
 {
@@ -20,6 +15,10 @@ int main(void)
     }
 }
 
+void meow(void) // does nt return a value, and doesnt take in a parameter void, void
+    {
+        printf("meow \n");
+    }
 
 
 
