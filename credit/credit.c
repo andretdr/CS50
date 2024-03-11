@@ -3,12 +3,14 @@
 #include <stdbool.h>
 
 int typeCheck (long a); // 0=null, 1=Amex, 2=Master, 3=Visa
-bool checkSum (long a);
+bool checkSum (long a, int t); // take in the number, and the type
 
 int main(void)
 {
     long cc;
     int type;
+    bool valid = false;
+
     do
     {
         cc = get_long ("Enter CC number please: ");
@@ -16,6 +18,9 @@ int main(void)
     while (cc < 1);
 
     type = typeCheck (cc);
+
+    if (type > 0 & type < 4)
+        valid = checkSum (cc, type);
 
 
     if (type == 1)
@@ -56,7 +61,7 @@ int typeCheck (long a) // 0=null, 1=Amex, 2=Master, 3=Visa
 }
 
 
-bool checkSum (long a)
+bool checkSum (long a, int t)
 {
     
 
