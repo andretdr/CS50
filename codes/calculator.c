@@ -3,7 +3,7 @@
 
 int add(int a, int b);
 int subtract (int a, int b);
-float divide (int a, int b);
+double divide (int a, int b);
 
 int main(void)
 {
@@ -25,8 +25,8 @@ int subtract (int a, int b)
     return (a-b);
 }
 
-float divide (int a, int b)
+double divide (int a, int b)
 {
-    return ((float)a/(float)b);
+    return ((double)a/(double)b);
 }
 
