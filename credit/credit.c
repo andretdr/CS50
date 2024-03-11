@@ -19,20 +19,21 @@ int main(void)
 
     type = typeCheck (cc);
 
-    if (type > 0 & type < 4)
-        valid = checkSum (cc);
+    if (type > 0 & type < 4) //if type check is true
+        valid = checkSum (cc); // checkSum
 
-
-    if (type == 1)
-        printf("AMEX\n");
-    else
-        if (type == 2)
-            printf("MASTER\n");
+    if (valid)
+    {
+        if (type == 1)
+            printf("AMEX\n");
         else
-            if (type == 3)
-                printf("VISA\n");
+            if (type == 2)
+                printf("MASTER\n");
             else
-                printf("INVALID\n");
+                if (type == 3)
+                    printf("VISA\n");
+                else
+                    printf("INVALID\n");
 
 }
 
@@ -95,7 +96,7 @@ bool checkSum (long a)
     }
     total = totalAdd + totalMult;
 
-    if (total - (total/10)*10) == 0
+    if ((total - (total/10)*10) == 0)
         return true;
     else
         return false;
