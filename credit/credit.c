@@ -20,7 +20,7 @@ int main(void)
     type = typeCheck (cc);
 
     if (type > 0 & type < 4)
-        valid = checkSum (cc, type);
+        valid = checkSum (cc);
 
 
     if (type == 1)
