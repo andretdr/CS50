@@ -18,9 +18,10 @@ int main (void)
         {
             int blanks = bricks-i-1; // number of blanks on this row
             if (j < blanks)
-            printf (" ");
+                printf (" ");
             else
-            printf ("#");
+                printf ("#");
+            
         }
         printf ("\n");
     }
