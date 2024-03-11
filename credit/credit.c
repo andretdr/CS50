@@ -68,5 +68,6 @@ bool checkSum (long a, int t)
 {
     // if t == 1, length is 15. t == 2, length is 16. t = 3, length is 13. t = 4, length is 16
     //if
-
+    printf("hi");
+    return true;
 }
