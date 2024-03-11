@@ -80,7 +80,7 @@ bool checkSum (long a, int t)
         {
             //get the digit
             int digit = (a/truncator) - ((a/(truncator*10))*10);
-            printf ("%i\n",digit);
+            printf ("odd number %i\n",digit);
             totalAdd = totalAdd + digit;
             mult = true
         }
@@ -88,10 +88,13 @@ bool checkSum (long a, int t)
         {
             //get the digit
             int digit = (a/truncator) - ((a/(truncator*10))*10);
+            printf ("even number %i\n", digit);
             // mult by 2
             digit = digit * 2;
-            
-
+            // add up the digits
+            int digitTens = (digit/10)*10; // the digit in the 10s place
+            totalAdd = totalAdd + digitTens + (digit - (digitTens*10));
+            mult = false
         }
         truncator = truncator * 10; // increase by 10
     }
