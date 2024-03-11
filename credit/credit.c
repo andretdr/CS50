@@ -19,7 +19,7 @@ int main(void)
 
     type = typeCheck (cc);
 
-    if (type > 0 & type < 4)
+    if (type > 0 & type < 5)
         valid = checkSum (cc, type);
 
 
@@ -29,7 +29,7 @@ int main(void)
         if (type == 2)
             printf("MASTER\n");
         else
-            if (type == 3)
+            if (type == 3 || type == 4)
                 printf("VISA\n");
             else
                 printf("INVALID\n");
@@ -37,7 +37,7 @@ int main(void)
 }
 
 
-int typeCheck (long a) // 0=null, 1=Amex, 2=Master, 3=Visa
+int typeCheck (long a) // 0=null, 1=Amex, 2=Master, 3=Visa 13 digit, 4=Visa 16 digit
 {
     long amexCheck = a/10000000000000;
     // amex check
@@ -52,10 +52,13 @@ int typeCheck (long a) // 0=null, 1=Amex, 2=Master, 3=Visa
         {
             long visaCheck1 = a/1000000000000;
             long visaCheck2 = a/1000000000000000;
-            if ((visaCheck1) == 4 || (visaCheck2) == 4)
+            if ((visaCheck1) == 4)
                 return 3;
             else
-                return 0;
+                if ((visaCheck2) == 4)
+                    return 4;
+                else
+                    return 0;
         }
     }
 }
@@ -63,7 +66,7 @@ int typeCheck (long a) // 0=null, 1=Amex, 2=Master, 3=Visa
 
 bool checkSum (long a, int t)
 {
-    // check if 16 digits
-    if
+    // if t == 1, length is 15. t == 2, length is 16. t = 3, length is 13. t = 4, length is 16
+    //if
 
 }
