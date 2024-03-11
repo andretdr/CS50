@@ -20,7 +20,11 @@ int main(void)
     }
 */
 
-    while (true) //forever loop
+//    while (true) //forever loop
+
+// declaring functions
+
+void meow(void) // does nt return a value, and doesnt take in a parameter void, void
     {
         printf("meow \n");
     }
