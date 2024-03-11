@@ -3,21 +3,17 @@
 #include <stdbool.h>
 //#include <atong.h>
 
-void meow (void);
+void meow (int n);
 
 int main(void)
 {
-    int counter = 0;
-
-    while (counter < 3)
-    {
-        meow();
-        counter++;
-    }
+    meow(6);
 }
 
-void meow(void) // does nt return a value, and doesnt take in a parameter void, void
+
+void meow(int n) // does nt return a value, and doesnt take in a parameter void, void
     {
+        for (int i=0;i<n;i++)
         printf("meow \n");
     }
 
