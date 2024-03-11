@@ -10,6 +10,12 @@ int main (void)
         }
     while (bricks < 1)
 
-    
+    for (int i = 0; i < bricks; i++) // rows
+    {
+        for (int j = 0; j < bricks; j++) // columns
+        {
+            
+        }
+    }
 
 }
