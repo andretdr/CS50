@@ -12,7 +12,12 @@ int main(void)
     }
     while (cc < 1);
 
-    typeCheck (cc);
+
+
+    if (typeCheck (cc) == 1)
+    {
+        printf("AMEX\n");
+    }
 
 
 
@@ -25,10 +30,19 @@ int typeCheck (long a) // 0=null, 1=Amex, 2=Master, 3=Visa
 {
     long amexCheck = a/10000000000000;
     // amex check
-    printf ("%li\n", amexCheck);
+    long visaCheck;
     if ((amexCheck) == 34 || (amexCheck) == 37)
         return 1;
     else
-        return 0;
+    {   // master check
+        long masterCheck = a/100000000000000;
+        if ((masterCheck) > 50 & (masterCheck) < 56)
+            return 2;
+        else
+        {
+            long visaCheck = a/
+            if
+        }
+    }
 }
 
