@@ -24,7 +24,7 @@ int main (void)
                 printf ("#");
 
 
-            if ()
+            if (j < bricks)
                 printf (" ");
             else
                 printf ("#");
