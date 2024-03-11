@@ -6,7 +6,7 @@ int main(void)
     int x = get_int ("x: ");
     int y = get_int ("y: ");
 
-    printf("x+y =" x+y)
+    printf("x+y = %i\n", (x+y));
 
 
 
