@@ -9,7 +9,6 @@ void meow(void) // does nt return a value, and doesnt take in a parameter void, 
 
 
 
-
 int main(void)
 {
     int counter = 0;
@@ -20,18 +19,6 @@ int main(void)
         counter++;
     }
 }
-
-/*
-    for (int i = 0; i < 3; i++)
-    {
-        printf("meow \n");
-    }
-*/
-
-//    while (true) //forever loop
-
-// declaring functions
-
 
 
 
