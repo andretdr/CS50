@@ -69,7 +69,27 @@ bool checkSum (long a, int t)
     // if t == 1, length is 15. t == 2, length is 16. t = 3, length is 13. t = 4, length is 16
     //if
 
-    
+    bool mult = false; // doing the mult operation when true, add operation when false
+    long truncator = 1;
+    int totalAdd = 0;
+    int totalMult = 0;
+
+    while (a/truncator > 0) //quit when 0
+    {
+        if (!mult) // if add operation
+        {
+            //get the digit
+            int digit = a/truncator - (a/(truncator*10))
+        }
+        else
+        {
+
+        }
+
+
+
+
+    }
 
 
 
