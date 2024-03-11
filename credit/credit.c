@@ -89,20 +89,19 @@ bool checkSum (long a, int t)
         {
             //get the digit
             int digit = (a/truncator) - ((a/(truncator*10))*10);
-            //printf ("even number %i\n", digit);
             // mult by 2
             digit = digit * 2;
-            printf ("even number after mult 2 %i\n", digit);
             // add up the digits
             int digitTens = (digit/10); // the digit in the 10s place
-            printf ("adding up digits %i\n", digitTens + (digit - (digitTens*10)));
             totalMult = totalMult + digitTens + (digit - (digitTens*10));
             mult = false;
         }
         truncator = truncator * 10; // increase by 10
     }
     total = totalAdd + totalMult;
-    printf ("TOTAL %i\n", total);
 
-    return true;
+    if (total - (total/10)*10) == 0
+        return true;
+    else
+        return false;
 }
