@@ -18,17 +18,11 @@ int main (void)
         {
             int blanks = totalBricks-i-1; // number of blanks on this row
             int bricks = totalBricks - blanks;
-            if ((j < blanks) || ((j-totalBricks-1) > bricks) || ())
+            if ((j < blanks) || ((j-totalBricks-1) > bricks) || (j == totalBricks) || (j == totalBricks +1))
                 printf (" ");
             else
                 printf ("#");
 
-
-     /*      if ((j-totalBricks-1) > bricks)
-                printf (" ");
-            else
-                printf ("#");
-    */
         }
         printf ("\n");
     }
