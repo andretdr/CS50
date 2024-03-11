@@ -4,7 +4,7 @@
 int main(void)
 {
 //    const int size = 6;
-    int size = get_int ("gimme size :");
+    int size = 0;
     while (size<1)
     {
         size = get_int ("gimme size more then 0 :");
