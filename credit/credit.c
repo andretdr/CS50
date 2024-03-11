@@ -1,6 +1,8 @@
 #include <cs50.h>
 #include <stdio.h>
 
+typeCheck
+
 int main(void)
 {
     do
@@ -9,6 +11,6 @@ int main(void)
     }
     while (cc < 0);
 
-    
+
 
 }
