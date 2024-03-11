@@ -3,7 +3,12 @@
 
 int main(void)
 {
+    do
+    {
+        long cc = get_long ("Enter CC number please: ");
 
+    }
+    while (cc < 0);
 
 
 
