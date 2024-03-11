@@ -93,6 +93,7 @@ bool checkSum (long a, int t)
             // mult by 2
             digit = digit * 2;
             // add up the digits
+            printf ("after mult 2 %i\n", digit);
             int digitTens = (digit/10)*10; // the digit in the 10s place
             totalAdd = totalAdd + digitTens + (digit - (digitTens*10));
             mult = false;
