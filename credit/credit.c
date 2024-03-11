@@ -79,7 +79,7 @@ bool checkSum (long a, int t)
         if (!mult) // if add operation
         {
             //get the digit */
-            int digit = a/truncator - ((a/(truncator*10))*10);
+            int digit = (a/truncator) - ((a/(truncator*10))*10);
             /*
         }
         else
