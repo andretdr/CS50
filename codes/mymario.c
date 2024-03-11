@@ -3,31 +3,32 @@
 
 int main (void)
 {
-    int bricks;
+    int totalBricks;
     do
         {
-            bricks = get_int ("give me a number higher then 0 please! ");
+            totalBricks = get_int ("give me a number higher then 0 please! ");
         }
-    while (bricks < 1);
+    while (totalBricks < 1);
 
-    for (int i = 0; i < bricks; i++) // columns
+    for (int i = 0; i < totalBricks; i++) // columns
     {
 
 
-        for (int j = 0; j < 2*bricks+2; j++) // rows
+        for (int j = 0; j < 2*totalBricks+2; j++) // rows
         {
-            int blanks = bricks-i-1; // number of blanks on this row
-
-     /*       if (j < blanks)
+            int blanks = totalBricks-i-1; // number of blanks on this row
+            int bricks = totalBricks - blanks;
+            if ((j < blanks) || (j-totalBricks-1) > bricks)
                 printf (" ");
             else
                 printf ("#");
 */
 
-            if ((j-bricks-1) > bricks)
+     /*      if ((j-totalBricks-1) > bricks)
                 printf (" ");
             else
                 printf ("#");
+    */
         }
         printf ("\n");
     }
