@@ -12,7 +12,7 @@ int main(void)
 
     printf("x+y = %i\n", add(x,y));
     printf("x-y = %i\n", subtract(x,y));
-    printf("x/y = %f\n", divide(x,y));
+    printf("x/y = %.5f\n", divide(x,y));
 }
 
 int add(int a, int b)
