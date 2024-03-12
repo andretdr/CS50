@@ -7,8 +7,8 @@ int main(void)
 //    string s = ("Hi!");
 //    string t = ("Bye!");
 
-    printf("%s\n",words[0]);
-    printf("%s\n",words[1]);
+    printf("%s\n",words[0][1]);
+    printf("%s\n",words[1][1]);
 
 
 
