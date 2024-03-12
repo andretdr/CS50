@@ -24,4 +24,5 @@ string lowercase(string s)
             s[i] = s[i] - 32;
         }
     }
+    return (s);
 }
