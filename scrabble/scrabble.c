@@ -17,6 +17,9 @@ string lowercase(string s)
 {
     for (int i = 0, n = strlen(s); i < n; i++)
     {
-        if ()
+        if (s[i] >= 'A') && (s[i] <= 'Z')
+        {
+            
+        }
     }
 }
