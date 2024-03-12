@@ -3,12 +3,12 @@
 
 int main(void)
 {
-    string words[] = {"HI!", "BYE!"}
+    string words[] = {"HI!", "BYE!"};
 //    string s = ("Hi!");
 //    string t = ("Bye!");
 
-    printf("%s\n",s);
-    printf("%s\n",t);
+    printf("%s\n",words[0]);
+    printf("%s\n",words[1]);
 
 
 
