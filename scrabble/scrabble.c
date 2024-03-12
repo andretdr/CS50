@@ -19,7 +19,7 @@ string lowercase(string s)
     {
         if (s[i] >= 'A') && (s[i] <= 'Z')
         {
-            
+            s[i] = s[i] - 32;
         }
     }
 }
