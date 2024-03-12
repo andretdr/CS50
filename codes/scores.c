@@ -3,6 +3,8 @@
 
 const int N = 3;
 
+float average(int length, int scores[]);
+
 int main(void)
 {
     int score[N] = {72,73,33};
@@ -15,5 +17,10 @@ int main(void)
     }
 
     printf("Average score %.2f\n",(total)/(float)N);
+}
+
+
+float average(int length, int scores[])
+{
 
 }
