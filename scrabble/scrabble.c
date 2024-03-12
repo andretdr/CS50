@@ -19,7 +19,7 @@ string lowercase(string s)
 {
     for (int i = 0, n = strlen(s); i < n; i++)
     {
-        if (s[i] >= 'A') && (s[i] <= 'Z')
+        if ((s[i] >= 'A') && (s[i] <= 'Z'))
         {
             s[i] = s[i] - 32;
         }
