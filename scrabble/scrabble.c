@@ -12,9 +12,10 @@ int main (void)
     string inputb = get_string("Player 2: ");
 
     string lca = codify(inputa);
+    int i = (int)lca[0];
     printf ("%i\n",lca[0]);
     printf ("%c\n",lca[0]);
-    printf ("%i\n",scoreboard[lca[0]]);
+    printf ("%i\n",scoreboard[i]);
 
 
 
@@ -26,8 +27,13 @@ string codify(string s) //lowercases and converts letters to correspond to a=1, 
     {
         if ((s[i] >= 'A') && (s[i] <= 'Z'))
         {
-            s[i] = s[i] + 32 - 96;
+            s[i] = s[i] + 32 - 97;
         }
+        else
+            if ((s[i] >= 'a') && (s[i] <= 'b'))
+            {
+                s[i] = s[i] - 97;
+            }
     }
     return (s);
 }
