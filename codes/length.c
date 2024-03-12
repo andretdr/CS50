@@ -7,7 +7,7 @@
 int main(void)
 {
     string name = get_string("Gimme name ");
-    printf("Length is %i\n", strlen(name));  //string_length(name));
+    printf("Length is %li\n", strlen(name));  //string_length(name));
 }
 
 
