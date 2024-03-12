@@ -14,6 +14,7 @@ int main (void)
     string lca = codify(inputa);
     printf ("%i\n",lca[0]);
     printf ("%c\n",lca[0]);
+    printf ("%i\n",scoreboard[lca[0]]);
 
 
 
