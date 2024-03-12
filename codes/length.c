@@ -1,15 +1,18 @@
 #include <stdio.h>
 #include <cs50.h>
+#include <string.h>
 
-int string_length(string s);
+//int string_length(string s);
 
 int main(void)
 {
     string name = get_string("Gimme name ");
-    printf("Length is %i\n", string_length(name));
-
+    printf("Length is %i\n", strlen(name));  //string_length(name));
 }
 
+
+
+/*
 int string_length(string s)
 {
     int n = 0;
@@ -18,3 +21,4 @@ int string_length(string s)
 
     return n;
 }
+*/
