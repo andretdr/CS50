@@ -5,7 +5,7 @@ const int N = 3;
 
 int main(void)
 {
-    int score[N] = 
+    int score[N] = {72,73,33};
     int total = 0;
 
     for (int i=0;i<N;i++)
