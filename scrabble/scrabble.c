@@ -3,19 +3,16 @@
 #include <string.h>
 
 string codify(string s);
+int addtotal(string s);
 
 int main (void)
 {
-    int scoreboard[] = {1,3,3,2,1,4,2,4,1,8,5,1,3,1,1,3,10,1,1,1,1,4,4,8,4,10};
-
     string inputa = get_string("Player 1: ");
     string inputb = get_string("Player 2: ");
 
     string lca = codify(inputa);
-    int i = (int)lca[0];
-    printf ("%i\n",lca[0]);
-    printf ("%c\n",lca[0]);
-    printf ("%i\n",scoreboard[i]);
+    string lcb = codify(inputb);
+
 
 
 
@@ -36,4 +33,18 @@ string codify(string s) //lowercases and converts letters to correspond to a=1, 
             }
     }
     return (s);
+}
+
+int addtotal(string s) // add all the score according to score board
+{
+    int scoreboard[] = {1,3,3,2,1,4,2,4,1,8,5,1,3,1,1,3,10,1,1,1,1,4,4,8,4,10};
+
+    int i = (int)s[0]; // cast the char into an int
+
+
+    //printf ("%i\n",lca[0]);
+    //printf ("%c\n",lca[0]);
+    //printf ("%i\n",scoreboard[i]);
+
+
 }
