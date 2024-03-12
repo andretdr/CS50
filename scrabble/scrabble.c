@@ -19,13 +19,13 @@ int main (void)
 
 }
 
-string lowercase(string s)
+string codify(string s) //lowercases and converts letters to correspond to a=1, b=2 etc
 {
     for (int i = 0, n = strlen(s); i < n; i++)
     {
         if ((s[i] >= 'A') && (s[i] <= 'Z'))
         {
-            s[i] = s[i] + 32;
+            s[i] = s[i] + 32 - 96;
         }
     }
     return (s);
