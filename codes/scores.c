@@ -8,12 +8,14 @@ int main(void)
     int score3 = 33;
 */
     int score[3];
+    int total = 0;
 
     for (int i=0;i<3;i++)
     {
         score[i]=get_int("gimme score :");
+        total = total + score[i];
     }
 
-    printf("Average score %.2f\n",(72+73+33)/3.0);
+    printf("Average score %.2f\n",(total)/3.0);
 
 }
