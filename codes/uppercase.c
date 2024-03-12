@@ -12,6 +12,9 @@ int main(void)
 
     for (int i = 0, l = strlen(name); i < l; i++)
     {
+        printf("%c", toupper(name[i]));
+
+/*
         if (name[i]>='a' && name[i]<='z')
         {
             printf("%c", toupper(name[i]));    //name[i] - 32);
@@ -19,7 +22,7 @@ int main(void)
         else
             printf("%c",name[i]);
 
-
+*/
 
     }
     printf("\n");
