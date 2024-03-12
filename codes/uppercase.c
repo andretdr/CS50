@@ -6,7 +6,14 @@ int main(void)
 {
     string name = get_string ("Input  :");
 
-    
+    for (int i = 0, l = strlen(name); i < l; i++)
+    {
+        
+
+
+
+    }
+
 
 
 
