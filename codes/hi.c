@@ -3,7 +3,9 @@
 
 int main(void)
 {
-    char c[]
+    char c[] = {'H','I','!'};
+
+    printf("%c%c%c\n",c[0],c[1],c[2]);
 
 
 
