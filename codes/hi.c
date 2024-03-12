@@ -3,8 +3,9 @@
 
 int main(void)
 {
-    string s = ("Hi!");
-    string t = ("Bye!");
+    string words[] = {"HI!", "BYE!"}
+//    string s = ("Hi!");
+//    string t = ("Bye!");
 
     printf("%s\n",s);
     printf("%s\n",t);
