@@ -2,7 +2,7 @@
 #include <cs50.h>
 #include <string.h>
 
-string lowercase(string s);
+string codify(string s);
 
 int main (void)
 {
@@ -11,7 +11,7 @@ int main (void)
     string inputa = get_string("Player 1: ");
     string inputb = get_string("Player 2: ");
 
-    string lca = lowercase(inputa);
+    string lca = codify(inputa);
     printf ("%i\n",lca[0]);
     printf ("%c\n",lca[0]);
 
