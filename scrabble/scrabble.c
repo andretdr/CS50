@@ -11,7 +11,9 @@ int main (void)
     string inputa = get_string("Player 1: ");
     string inputb = get_string("Player 2: ");
 
-    printf ("%s\n",lowercase(inputa));
+    //printf ("%s\n",lowercase(inputa));
+
+    
 
 }
 
