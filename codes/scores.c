@@ -5,12 +5,12 @@ const int N = 3;
 
 int main(void)
 {
-    int score[N];
+    int score[N] = 
     int total = 0;
 
     for (int i=0;i<N;i++)
     {
-        score[i]=get_int("gimme score :");
+ //       score[i]=get_int("gimme score :");
         total = total + score[i];
     }
 
