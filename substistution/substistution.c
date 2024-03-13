@@ -24,11 +24,20 @@ int main(int argc, string argv[])
 
 bool check(string s)
 {
-    int n = strlen(s);
-    if (n==26) // if 26 chars
-    {
+    bool retval = false;
+    n = strlen(s)
 
+    if (n == 26) // if 26 chars do other checks
+    {
+        for (int i = 0; i < n; i++)
+        {
+            s[i]
+        }
+    }
+    else
+    {
+        printf("Key length is not 26");
     }
 
-    return true;
+    return retval;
 }
