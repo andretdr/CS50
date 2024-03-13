@@ -1,10 +1,23 @@
 #include <cs50.h>
 #include <stdio.h>
 #include <string.h>
+#include <stdbool.h>
 
-int main(int argc, char argv[])
+bool check(string s);
+
+int main(int argc, string argv[])
 {
-//    if ((argc == 26)
-    printf ("length %i\n", argc);
+    if (argc == 2) // if it just accepted 1 additional string input
+    {
+        check(argv[1]);
+    }
 
+
+}
+
+bool check(string s)
+{
+    printf("%s\n",s);
+
+    return true;
 }
