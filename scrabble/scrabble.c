@@ -13,7 +13,7 @@ int main (void)
     int atotal = addtotal(codify(inputa));
     int btotal = addtotal(codify(inputb));
 
-    printf ("%i",atotal);
+    printf ("%i\n",atotal);
 }
 
 string codify(string s) //lowercases and converts letters to correspond to a=1, b=2 etc
@@ -38,11 +38,11 @@ string codify(string s) //lowercases and converts letters to correspond to a=1, 
 int addtotal(string s) // add all the score according to score board
 {
     int scoreboard[] = {1,3,3,2,1,4,2,4,1,8,5,1,3,1,1,3,10,1,1,1,1,4,4,8,4,10};
-    int total = 0
+    int total = 0;
 
     for (int i = 0, n = strlen(s); i < n; i++) //for length of string
     {
-        total += scoreboard[(int)s[j]]; // cast the char into an int
+        total += scoreboard[(int)s[i]]; // cast the char into an int
     }
 
     return total;
