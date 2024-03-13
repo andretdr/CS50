@@ -18,7 +18,6 @@ int main(int argc, string argv[])
     {
         if (checknum(argv[1])) // if it has 26 chars
         {
-            printf ("pass1");
             if (checkletters(argv[1])) // if has only letters
             {
                 if (!checkunique(argv[1])) // if NOT has unique letters only
@@ -43,6 +42,12 @@ int main(int argc, string argv[])
     {
         printf("Usage: ./substitution key\n");
         exitval = 1;
+    }
+
+    if (!exitval)
+    {
+        string plaintext = get_string("plaintext :  ");
+        cipher(plaintext, argv[1])
     }
 
     printf("%i\n",exitval);
