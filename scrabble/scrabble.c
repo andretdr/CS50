@@ -23,12 +23,12 @@ string codify(string s) //lowercases and converts letters to correspond to a=1, 
     {
         if ((s[i] >= 'A') && (s[i] <= 'Z'))
         {
-            s[i] = s[i] + 32 - 97;
+            s[i] = s[i] + 32; //- 97;
         }
         else
             if ((s[i] >= 'a') && (s[i] <= 'b'))
             {
-                s[i] = s[i] - 97;
+                s[i] = s[i]; //- 97;
             }
     //        else // catch the zero
     //            s[i] = 0;
