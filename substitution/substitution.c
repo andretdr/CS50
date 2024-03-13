@@ -43,7 +43,8 @@ int main(int argc, string argv[])
         printf("Usage: ./substitution key\n");
         exitval = 1;
     }
-    printf("%b\n",exitval);
+
+    printf("%i\n",exitval);
     return exitval;
 }
 
