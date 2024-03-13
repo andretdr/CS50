@@ -13,7 +13,15 @@ int main(int argc, string argv[])
 
     if (argc == 2) // if it just accepted 1 additional string input
     {
-        num = checknum(argv[1]);
+        if (checknum(argv[1])); // if it has 26 chars
+        {
+
+        }
+        else
+        {
+            printf("Key must have 26 unique letters\n");
+            exitval = 1;
+        }
     }
     else
     {
