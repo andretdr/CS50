@@ -5,7 +5,7 @@
 string lowercase(string s);
 int addtotal(string s);
 
-int main (void)
+int main(void)
 {
     string inputa = get_string("Player 1: ");
     string inputb = get_string("Player 2: ");
@@ -28,7 +28,7 @@ int main (void)
         }
 }
 
-string lowercase(string s) //lowercases and converts letters to correspond to a=1, b=2 etc
+string lowercase(string s) // lowercases and converts letters to correspond to a=1, b=2 etc
 {
     for (int i = 0, n = strlen(s); i < n; i++)
     {
@@ -36,7 +36,7 @@ string lowercase(string s) //lowercases and converts letters to correspond to a=
         {
             s[i] = s[i] + 32; // - 97;
         }
-        else // its not an uppercase alphabet
+        else                                  // its not an uppercase alphabet
             if ((s[i] < 'a') || (s[i] > 'z')) // if also not a lowercase alphabet
             {
                 s[i] = '{'; // this character will return 26 after the -97 operation, which will give the score of 0
