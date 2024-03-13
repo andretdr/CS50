@@ -10,12 +10,20 @@ int main (void)
     string inputa = get_string("Player 1: ");
     string inputb = get_string("Player 2: ");
 
-//    char c = 'a';
-//    c = c + 25;
-
-//    printf("%c\n",c);
     int atotal = addtotal(lowercase(inputa));
     int btotal = addtotal(lowercase(inputb));
+
+    int winner = 0;
+    if (atotal > btotal)
+    {
+        winner = 1;
+    }
+    else
+        if (atotal < btotal)
+        {
+            winner = 2;
+        }
+
     printf("%i\n",atotal);
     printf("%i\n",btotal);
 
@@ -32,11 +40,9 @@ string lowercase(string s) //lowercases and converts letters to correspond to a=
         else // its not an uppercase alphabet
             if ((s[i] < 'a') || (s[i] > 'z')) // if also not a lowercase alphabet
             {
-                s[i] = '{'; // - 97;
+                s[i] = '{'; // this character will return 26 after the -97 operation, which will give the score of 0
             }
-    //        else // catch the zero
-    //            s[i] = 0;
-    }
+        }
     return (s);
 }
 
