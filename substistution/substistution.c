@@ -82,15 +82,20 @@ bool checkletters(string s)
 bool checkunique(string s)
 {
     int check[] = {0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0}; // 26 zeros for each letter
+    bool noissue = true;
 
     for (int i = 0, n = strlen(s); i < n; i++)
     {
         check[(int) (s[i] - 97)] ++; // increasing the count on each occurance of each letter. a=0, b=1 ...
     }
+    while (noissue)
+    {
+        
+    }
 
-    
 
-    return true;
+
+    return noissue;
 }
 
 string lowercase(string s) // lowercases
