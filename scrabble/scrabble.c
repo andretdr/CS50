@@ -44,6 +44,7 @@ int addtotal(string s) // add all the score according to score board
     for (int i = 0, n = strlen(s); i < n; i++) //for length of string
     {
         total += scoreboard[(int)s[i]]; // cast the char into an int
+        printf ("total %i\n",total);
     }
 
     return total;
