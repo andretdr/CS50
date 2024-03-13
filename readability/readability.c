@@ -25,7 +25,8 @@ int main(void)
         else
             if ((c == ' ') && (lastword)) // if char is a space, but there was a letter before that. to account for 2 or more spaces
             {
-                
+                twords++;
+                lastword = false;
             }
 
 
