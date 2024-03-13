@@ -10,10 +10,10 @@ int main (void)
     string inputa = get_string("Player 1: ");
     string inputb = get_string("Player 2: ");
 
-//    int atotal = addtotal(codify(inputa));
-//    int btotal = addtotal(codify(inputb));
+    int atotal = addtotal(codify(inputa));
+    int btotal = addtotal(codify(inputb));
     string test = codify(inputa);
-
+    printf("%i\n",atotal);
     printf ("%i %i %i %i\n",test[0],test[1],test[2],test[3]);
 }
 
