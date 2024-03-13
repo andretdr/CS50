@@ -14,7 +14,7 @@ int main (void)
 //    int btotal = addtotal(codify(inputb));
     string test = codify(inputa);
 
-    printf ("%i%i%i%i\n",test[0],test[1],test[2],test[3]);
+    printf ("%i %i %i %i\n",test[0],test[1],test[2],test[3]);
 }
 
 string codify(string s) //lowercases and converts letters to correspond to a=1, b=2 etc
