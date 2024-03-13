@@ -26,12 +26,14 @@ int main(int argc, string argv[])
 bool check(string s)
 {
     bool retval = false;
+    bool loopbreak = false;
     string lows = lowercase(s);
     int n = strlen(s);
 
+
     if (n == 26) // if 26 chars do other checks
     {
-        while ()   //for (int i = 0; i < n; i++) // for the length of the string,
+        while (!loopbreak)   //for (int i = 0; i < n; i++) // for the length of the string,
         {
             char c = lows[i];
             if ((c >= 'a') && (c <= 'z')) // check each character is a letter
