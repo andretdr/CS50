@@ -20,16 +20,7 @@ int main(int argc, string argv[])
         {
             if (checkletters(argv[1])) // if has only letters
             {
-                if (checkunique(argv[1])) // if has unique letters only
-                {
-                 
-
-
-
-
-
-                }
-                else
+                if (!checkunique(argv[1])) // if NOT has unique letters only
                 {
                     printf("Key must have 26 unique letters\n");
                     exitval = 1;
