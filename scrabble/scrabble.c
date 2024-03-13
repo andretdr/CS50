@@ -11,10 +11,10 @@ int main (void)
     string inputb = get_string("Player 2: ");
 
     int atotal = addtotal(codify(inputa));
-    int btotal = addtotal(codify(inputb));
+//    int btotal = addtotal(codify(inputb));
     string test = codify(inputa);
-    printf("%i\n",atotal);
-    printf ("%i %i %i %i\n",test[0],test[1],test[2],test[3]);
+//    printf("%i\n",atotal);
+//    printf ("%i %i %i %i\n",test[0],test[1],test[2],test[3]);
 }
 
 string codify(string s) //lowercases and converts letters to correspond to a=1, b=2 etc
