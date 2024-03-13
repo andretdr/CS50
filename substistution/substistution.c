@@ -20,7 +20,7 @@ int main(int argc, string argv[])
         {
             if (checkletters(argv[1])) // if has only letters
             {
-                if (checkunique(argv[1]))
+                if (checkunique(argv[1])) // if has unique letters only
                 {
                     printf("good\n");
                 }
