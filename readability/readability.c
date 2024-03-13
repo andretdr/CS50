@@ -28,6 +28,8 @@ int main(void)
                 twords++;
                 lastword = false;
             }
+            else
+                if ()
 
 
     }
