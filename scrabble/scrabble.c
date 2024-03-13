@@ -7,17 +7,17 @@ int addtotal(string s);
 
 int main (void)
 {
-//    string inputa = get_string("Player 1: ");
-//    string inputb = get_string("Player 2: ");
+    string inputa = get_string("Player 1: ");
+    string inputb = get_string("Player 2: ");
 
-    char c = 'a';
-    c = c + 27;
+//    char c = 'a';
+//    c = c + 27;
 
-    printf("%c\n",c);
-//    int atotal = addtotal(lowercase(inputa));
-//    int btotal = addtotal(lowercase(inputb));
-//    printf("%i\n",atotal);
-//    printf("%i\n",btotal);
+//    printf("%c\n",c);
+    int atotal = addtotal(lowercase(inputa));
+    int btotal = addtotal(lowercase(inputb));
+    printf("%i\n",atotal);
+    printf("%i\n",btotal);
 //    printf ("%i %i %i %i\n",test[0],test[1],test[2],test[3]);
 }
 
