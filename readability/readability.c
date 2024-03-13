@@ -29,7 +29,7 @@ int main(void)
                 lastword = false;
             }
             else
-                if ()
+                if ((c == '.') || (c == '?') || (c == '!'))
 
 
     }
