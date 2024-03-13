@@ -11,8 +11,9 @@ int main (void)
 //    string inputb = get_string("Player 2: ");
 
     char c = 'a';
+    c = c + 27;
 
-    printf("%i\n",c);
+    printf("%c\n",c);
 //    int atotal = addtotal(lowercase(inputa));
 //    int btotal = addtotal(lowercase(inputb));
 //    printf("%i\n",atotal);
@@ -31,7 +32,7 @@ string lowercase(string s) //lowercases and converts letters to correspond to a=
         else // its not an uppercase alphabet
             if ((s[i] < 'a') || (s[i] > 'z')) // if also not a lowercase alphabet
             {
-                s[i] = s[i]; // - 97;
+                s[i] = '|'; // - 97;
             }
     //        else // catch the zero
     //            s[i] = 0;
@@ -41,7 +42,7 @@ string lowercase(string s) //lowercases and converts letters to correspond to a=
 
 int addtotal(string s) // add all the score according to score board
 {
-    int scoreboard[] = {1,3,3,2,1,4,2,4,1,8,5,1,3,1,1,3,10,1,1,1,1,4,4,8,4,10};
+    int scoreboard[] = {1,3,3,2,1,4,2,4,1,8,5,1,3,1,1,3,10,1,1,1,1,4,4,8,4,10,0}; // last score 0 for any other char
     int total = 0;
 
     for (int i = 0, n = strlen(s); i < n; i++) //for length of string
