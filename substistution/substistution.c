@@ -22,7 +22,7 @@ int main(int argc, string argv[])
             {
                 if (checkunique(argv[1])) // if has unique letters only
                 {
-                    
+                 
 
 
 
