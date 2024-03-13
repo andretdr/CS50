@@ -69,7 +69,20 @@ bool checknum(string s)
 
 string cipher(string text, string key)
 {
-    
+    for (int i = 0, n = strlen(text); i < n; i++) // for length of text
+    {
+        char c = text[i];
+        if ((c >= 'a') && (c <= 'z')) // if lowercase alphabet
+        {
+            printf()
+        }
+        else
+            if ((c >= 'A') && (c <= 'Z')) // if uppercase alphabet
+            {
+
+            }
+
+    }
 
 }
 
