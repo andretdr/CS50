@@ -33,7 +33,8 @@ bool check(string s)
 
     if (n == 26) // if 26 chars do other checks
     {
-        while (!loopbreak)   //for (int i = 0; i < n; i++) // for the length of the string,
+        int i = 0;
+        while ((!loopbreak) || (i < n))   // for the length of the string, or error found
         {
             char c = lows[i];
             if ((c >= 'a') && (c <= 'z')) // check each character is a letter
@@ -41,6 +42,12 @@ bool check(string s)
 
             }
             else
+            {
+                printf("");
+                loopbreak = true;
+            }
+
+            i++;
         }
     }
     else
