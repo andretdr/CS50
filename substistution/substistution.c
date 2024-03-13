@@ -25,7 +25,10 @@ int main(int argc, string argv[])
 bool check(string s)
 {
     int n = strlen(s);
-    if 
+    if (n==26) // if 26 chars
+    {
+
+    }
 
     return true;
 }
