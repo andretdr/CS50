@@ -50,17 +50,27 @@ int main(void)
 
     float index = 0.0588 * L - 0.296 * S - 15.8;
 
+    int grade = myround(index);
 
+    if (grade < 1)
+    {
+        printf("Before Grade 1\n");
+    }
+    else
+        if (grade > 16)
+        {
+            printf("Grade 16+\n");
+        }
+        else
+        {
+            printf("Grade %i\n",grade);
+        }
 
-
-
-
-
-    printf ("totalletters %i\n", tletters);
-    printf ("totalwords %i\n", twords);
-    printf ("totalsentences %i\n", tsentences);
-    printf ("index %.2f\n", index);
-    printf ("grade %i\n", myround(index));
+//    printf ("totalletters %i\n", tletters);
+//    printf ("totalwords %i\n", twords);
+//    printf ("totalsentences %i\n", tsentences);
+//    printf ("index %.2f\n", index);
+//    printf ("grade %i\n", myround(index));
 }
 
 int myround(float f)
