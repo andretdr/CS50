@@ -31,13 +31,14 @@ bool check(string s)
 
     if (n == 26) // if 26 chars do other checks
     {
-        for (int i = 0; i < n; i++)
+        while ()   //for (int i = 0; i < n; i++) // for the length of the string,
         {
             char c = lows[i];
-            if ((c >= 'a') && (c <= 'z'))
+            if ((c >= 'a') && (c <= 'z')) // check each character is a letter
             {
-                
+
             }
+            else
         }
     }
     else
