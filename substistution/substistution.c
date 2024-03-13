@@ -20,7 +20,15 @@ int main(int argc, string argv[])
         {
             if (checkletters(argv[1])) // if has only letters
             {
-                checkunique(argv[1]);
+                if (checkunique(argv[1]))
+                {
+                    printf("good\n");
+                }
+                else
+                {
+                    printf("Key must have 26 unique letters\n");
+                    exitval = 1;
+                }
             }
             else
             {
@@ -85,7 +93,7 @@ bool checkunique(string s)
     bool noissue = true;
     int n = strlen(s);
 
-    for (int i = 0; i < n; i++)
+    for (int i = 0; i < n; i++) // counting the number of each letter occurance
     {
         check[(int) (s[i] - 97)] ++; // increasing the count on each occurance of each letter. a=0, b=1 ...
     }
@@ -100,9 +108,6 @@ bool checkunique(string s)
 
         k++;
     }
-
-
-
     return noissue;
 }
 
