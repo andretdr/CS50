@@ -25,8 +25,8 @@ string lowercase(string s) //lowercases and converts letters to correspond to a=
         {
             s[i] = s[i] + 32; // - 97;
         }
-        else
-            if ((s[i] >= 'a') && (s[i] <= 'z'))
+        else // its not an uppercase alphabet
+            if ((s[i] < 'a') || (s[i] > 'z')) // if also not a lowercase alphabet
             {
                 s[i] = s[i]; // - 97;
             }
