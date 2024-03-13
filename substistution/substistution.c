@@ -39,11 +39,11 @@ bool check(string s)
             char c = lows[i];
             if ((c >= 'a') && (c <= 'z')) // check each character is a letter
             {
-
+                
             }
             else
             {
-                printf("");
+                printf("Key requires only letters.\n");
                 loopbreak = true;
             }
 
@@ -52,7 +52,7 @@ bool check(string s)
     }
     else
     {
-        printf("Key length is not 26");
+        printf("Key length is not 26.\n");
     }
 
     return retval;
