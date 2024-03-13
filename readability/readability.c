@@ -65,12 +65,6 @@ int main(void)
         {
             printf("Grade %i\n",grade);
         }
-
-//    printf ("totalletters %i\n", tletters);
-//    printf ("totalwords %i\n", twords);
-//    printf ("totalsentences %i\n", tsentences);
-//    printf ("index %.2f\n", index);
-//    printf ("grade %i\n", myround(index));
 }
 
 int myround(float f)
