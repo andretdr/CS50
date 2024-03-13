@@ -47,10 +47,9 @@ int main(int argc, string argv[])
     if (!exitval)
     {
         string plaintext = get_string("plaintext :  ");
-        printf ("ciphertext:  %s", cipher(plaintext, argv[1]));
+        printf ("ciphertext:  %s\n", cipher(plaintext, argv[1]));
     }
 
-    printf("%i\n",exitval);
     return exitval;
 }
 
@@ -83,8 +82,9 @@ string cipher(string text, string key)
                 char d = key[(int) (c - 65)];
                 text[i] = (d - 32);
             }
-    printf ("test %s",text);
+
     }
+
     return text;
 }
 
