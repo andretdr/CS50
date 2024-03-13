@@ -3,6 +3,8 @@
 #include <string.h>
 #include <stdbool.h>
 
+int myround(float f);
+
 int main(void)
 {
     int tletters = 0;
@@ -54,4 +56,15 @@ int main(void)
     printf ("totalwords %i\n", twords);
     printf ("totalsentences %i\n", tsentences);
     printf ("index %.2f\n", index);
+    printf ("grade %i\n", myround(index));
+}
+
+int myround(float f)
+{
+    int i = (int) f;
+    if ((f - i) >= 0.5)
+    {
+        i += 1;
+    }
+    return i;
 }
