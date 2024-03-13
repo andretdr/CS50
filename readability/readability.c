@@ -8,6 +8,11 @@ int main(void)
     int tletters = 0;
     int twords = 0;
     int tsentences = 0;
+
+    float L = 0;
+    float S = 0;
+
+
     bool lastword = false; // to account for extra spaces to ensure correct wordcount
     bool lastsent = false; // to account for extra punctuations to ensure correct sentence count
 
@@ -38,6 +43,9 @@ int main(void)
                     lastword = false;
                 }
     }
+
+    L = (tletters / twords) * 100;
+
 
     printf ("totalletters %i\n", tletters);
     printf ("totalwords %i\n", twords);
