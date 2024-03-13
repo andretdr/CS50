@@ -4,7 +4,9 @@
 
 int main(void)
 {
-    
+    int tletters = 0;
+    int twords = 0;
+    int tsentences = 0;
 
     string text = get_string ("Text: ");
 
