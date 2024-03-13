@@ -20,7 +20,8 @@ int main(void)
         if (((c >= 'a') && (c <= 'z')) || ((c >= 'A') && (c <= 'Z')))  // if its a letter
         {
             tletter++;
-            lastword = true;
+            lastword = true; // consider this word once we come upon a ' '
+            lastsent = true; // consider this sentence once we come upon a '.' '?' '!'
         }
         else
             if ((c == ' ') && (lastword)) // if char is a space, but there was a letter before that. to account for 2 or more spaces
@@ -29,7 +30,13 @@ int main(void)
                 lastword = false;
             }
             else
-                if ((c == '.') || (c == '?') || (c == '!'))
+                if (((c == '.') || (c == '?') || (c == '!')) && lastsent)
+                {
+                    twords++;
+                    tsentences++;
+                    lastsent = false;
+                    lastword = false;
+                }
 
 
     }
