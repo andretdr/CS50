@@ -98,12 +98,12 @@ bool checkletters(string s)
     while ((noissue) && (i < n))   // for the length of the string, or error found
     {
         char c = lows[i];
-        if ((c >= 'a') && (c <= 'z')) // check each character is a letter
+        if (!(c >= 'a') || !(c <= 'z')) // check each character is a letter
         {
-            printf ("%c",c);
-        }
-        else
-        {
+//            printf ("%c",c);
+//        }
+//        else
+//        {
             noissue = false;
         }
         i++;
