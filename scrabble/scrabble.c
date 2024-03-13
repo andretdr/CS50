@@ -13,20 +13,19 @@ int main (void)
     int atotal = addtotal(lowercase(inputa));
     int btotal = addtotal(lowercase(inputb));
 
-    int winner = 0;
     if (atotal > btotal)
     {
-        winner = 1;
+        printf("Player 1 wins!\n");
     }
     else
         if (atotal < btotal)
         {
-            winner = 2;
+            printf("Player 2 wins!\n");
         }
-
-    printf("%i\n",atotal);
-    printf("%i\n",btotal);
-
+        else
+        {
+            printf("Tie!\n");
+        }
 }
 
 string lowercase(string s) //lowercases and converts letters to correspond to a=1, b=2 etc
