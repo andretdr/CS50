@@ -28,13 +28,13 @@ int main(void)
         }
 }
 
-string lowercase(string s) // lowercases and converts letters to correspond to a=1, b=2 etc
+string lowercase(string s) // lowercases
 {
     for (int i = 0, n = strlen(s); i < n; i++)
     {
         if ((s[i] >= 'A') && (s[i] <= 'Z'))
         {
-            s[i] = s[i] + 32; // - 97;
+            s[i] = s[i] + 32;
         }
         else                                  // its not an uppercase alphabet
             if ((s[i] < 'a') || (s[i] > 'z')) // if also not a lowercase alphabet
