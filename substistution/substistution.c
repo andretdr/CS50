@@ -29,7 +29,7 @@ bool check(string s)
     bool loopbreak = false;
     string lows = lowercase(s);
     int n = strlen(s);
-
+    int lettercheck[] = {0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0};
 
     if (n == 26) // if 26 chars do other checks
     {
@@ -39,7 +39,7 @@ bool check(string s)
             char c = lows[i];
             if ((c >= 'a') && (c <= 'z')) // check each character is a letter
             {
-                
+                print ("%c",c)
             }
             else
             {
