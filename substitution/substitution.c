@@ -80,7 +80,8 @@ string cipher(string text, string key)
         else
             if ((c >= 'A') && (c <= 'Z')) // if uppercase alphabet
             {
-                text[i] = key[(int) (c - 65)];
+                char d = key[(int) (c - 65)];
+                text[i] = (d - 32);
             }
 
     }
