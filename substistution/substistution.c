@@ -16,7 +16,7 @@ int main(int argc, string argv[])
     }
     else
     {
-        printf("Usage: ./substitution key");
+        printf("Usage: ./substitution key\n");
         exitval = 1;
     }
 
@@ -39,16 +39,16 @@ bool check(string s)
             char c = lows[i];
             if ((c >= 'a') && (c <= 'z')) // check each character is a letter
             {
-                print ("%c",c)
+                printf ("%c",c);
             }
             else
             {
                 printf("Key requires only letters.\n");
                 loopbreak = true;
             }
-
             i++;
         }
+        printf ("\n");
     }
     else
     {
