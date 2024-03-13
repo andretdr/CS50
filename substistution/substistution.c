@@ -4,6 +4,7 @@
 #include <stdbool.h>
 
 bool check(string s);
+string lowercase(string s);
 
 int main(int argc, string argv[])
 {
@@ -25,13 +26,18 @@ int main(int argc, string argv[])
 bool check(string s)
 {
     bool retval = false;
-    n = strlen(s)
+    string lows = lowercase(s);
+    int n = strlen(s);
 
     if (n == 26) // if 26 chars do other checks
     {
         for (int i = 0; i < n; i++)
         {
-            s[i]
+            char c = lows[i];
+            if ((c >= 'a') && (c <= 'z'))
+            {
+                
+            }
         }
     }
     else
