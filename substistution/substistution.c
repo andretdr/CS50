@@ -81,14 +81,14 @@ bool checkletters(string s)
 
 bool checkunique(string s)
 {
-    int check[] = {0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0};
+    int check[] = {0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0}; // 26 zeros for each letter
 
     for (int i = 0, n = strlen(s); i < n; i++)
     {
-        int j = (int) (s[i] - 97);
-        printf("%i ",j);
-
+        check[(int) (s[i] - 97)] ++; // increasing the count on each occurance of each letter. a=0, b=1 ...
     }
+
+    
 
     return true;
 }
