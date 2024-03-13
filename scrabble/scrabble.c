@@ -10,12 +10,10 @@ int main (void)
     string inputa = get_string("Player 1: ");
     string inputb = get_string("Player 2: ");
 
-    string lca = codify(inputa);
-    string lcb = codify(inputb);
+    int atotal = addtotal(codify(inputa));
+    int btotal = addtotal(codify(inputb));
 
-
-
-
+    printf ("%i",atotal);
 }
 
 string codify(string s) //lowercases and converts letters to correspond to a=1, b=2 etc
@@ -31,6 +29,8 @@ string codify(string s) //lowercases and converts letters to correspond to a=1, 
             {
                 s[i] = s[i] - 97;
             }
+    //        else // catch the zero
+    //            s[i] = 0;
     }
     return (s);
 }
@@ -38,13 +38,15 @@ string codify(string s) //lowercases and converts letters to correspond to a=1, 
 int addtotal(string s) // add all the score according to score board
 {
     int scoreboard[] = {1,3,3,2,1,4,2,4,1,8,5,1,3,1,1,3,10,1,1,1,1,4,4,8,4,10};
+    int total = 0
 
-    int i = (int)s[0]; // cast the char into an int
+    for (int i = 0, lenstring = strlen(s); i < lenstring; i++) //for length of string
+    {
+        total += scoreboard[(int)s[j]]; // cast the char into an int
+    }
 
-
+    return total;
     //printf ("%i\n",lca[0]);
     //printf ("%c\n",lca[0]);
     //printf ("%i\n",scoreboard[i]);
-
-
 }
