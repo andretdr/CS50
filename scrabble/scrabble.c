@@ -40,7 +40,7 @@ int addtotal(string s) // add all the score according to score board
     int scoreboard[] = {1,3,3,2,1,4,2,4,1,8,5,1,3,1,1,3,10,1,1,1,1,4,4,8,4,10};
     int total = 0
 
-    for (int i = 0, lenstring = strlen(s); i < lenstring; i++) //for length of string
+    for (int i = 0, n = strlen(s); i < n; i++) //for length of string
     {
         total += scoreboard[(int)s[j]]; // cast the char into an int
     }
