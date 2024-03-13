@@ -45,10 +45,12 @@ int main(void)
     }
 
     L = (tletters / twords) * 100;
+    S = (tsentences / twords) * 100;
 
+    float index = 0.0588 * L - 0.296 * S - 15.8;
 
     printf ("totalletters %i\n", tletters);
     printf ("totalwords %i\n", twords);
     printf ("totalsentences %i\n", tsentences);
-
+    printf ("index %.2f\n", index);
 }
