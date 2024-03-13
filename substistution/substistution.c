@@ -34,7 +34,7 @@ bool check(string s)
     if (n == 26) // if 26 chars do other checks
     {
         int i = 0;
-        while ((!loopbreak) || (i < n))   // for the length of the string, or error found
+        while ((!loopbreak) && (i < n))   // for the length of the string, or error found
         {
             char c = lows[i];
             if ((c >= 'a') && (c <= 'z')) // check each character is a letter
