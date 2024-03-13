@@ -3,16 +3,17 @@
 #include <string.h>
 #include <stdbool.h>
 
-bool check(string s);
+bool checknum(string s);
 string lowercase(string s);
 
 int main(int argc, string argv[])
 {
     int exitval = 0;
+    bool num = false;
 
     if (argc == 2) // if it just accepted 1 additional string input
     {
-        check(argv[1]);
+        num = checknum(argv[1]);
     }
     else
     {
@@ -23,8 +24,28 @@ int main(int argc, string argv[])
     return exitval;
 }
 
-bool check(string s)
+bool checknum(string s)
 {
+    int n = strlen(s);
+    if (n == 26)
+    {
+        return true;
+    }
+    else
+    {
+        return false;
+    }
+}
+
+
+
+
+
+
+
+    }
+
+
     bool retval = false;
     bool loopbreak = false;
     string lows = lowercase(s);
