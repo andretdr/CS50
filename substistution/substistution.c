@@ -4,7 +4,9 @@
 #include <stdbool.h>
 
 bool checknum(string s);
+bool checkletters(string s);
 string lowercase(string s);
+
 
 int main(int argc, string argv[])
 {
@@ -15,7 +17,10 @@ int main(int argc, string argv[])
     {
         if (checknum(argv[1])); // if it has 26 chars
         {
+            if (checkletters(argv[1])) // if has only letters
+            {
 
+            }
         }
         else
         {
@@ -45,7 +50,28 @@ bool checknum(string s)
     }
 }
 
+bool checkletters(string s)
+{
+    int i = 0;
+    int n = strlen(s);
+    string lows = lowercase(s);
+    bool loopbreak = false;
 
+    while ((!loopbreak) && (i < n))   // for the length of the string, or error found
+    {
+        char c = lows[i];
+        if ((c >= 'a') && (c <= 'z')) // check each character is a letter
+        {
+            printf ("%c",c);
+        }
+        else
+        {
+            printf("Key requires only letters.\n");
+            loopbreak = true;
+        }
+        i++;
+    }
+}
 
 
 
@@ -60,8 +86,6 @@ bool checknum(string s)
     int n = strlen(s);
     int lettercheck[] = {0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0};
 
-    if (n == 26) // if 26 chars do other checks
-    {
         int i = 0;
         while ((!loopbreak) && (i < n))   // for the length of the string, or error found
         {
