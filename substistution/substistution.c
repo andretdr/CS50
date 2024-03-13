@@ -50,11 +50,6 @@ string lowercase(string s) // lowercases
         {
             s[i] = s[i] + 32;
         }
-        else                                  // its not an uppercase alphabet
-            if ((s[i] < 'a') || (s[i] > 'z')) // if also not a lowercase alphabet
-            {
-
-            }
-        }
+    }
     return (s);
 }
