@@ -83,14 +83,22 @@ bool checkunique(string s)
 {
     int check[] = {0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0}; // 26 zeros for each letter
     bool noissue = true;
+    int n = strlen(s);
 
-    for (int i = 0, n = strlen(s); i < n; i++)
+    for (int i = 0; i < n; i++)
     {
         check[(int) (s[i] - 97)] ++; // increasing the count on each occurance of each letter. a=0, b=1 ...
     }
-    while (noissue)
+
+    int k = 0;
+    while ((noissue) && (k < n)) //for the length of the string, check if all 1s
     {
-        
+        if (check[k]!=1)
+        {
+            noissue = false;
+        }
+
+        k++;
     }
 
 
