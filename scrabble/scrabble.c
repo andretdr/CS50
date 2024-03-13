@@ -11,14 +11,14 @@ int main (void)
     string inputb = get_string("Player 2: ");
 
 //    char c = 'a';
-//    c = c + 27;
+//    c = c + 25;
 
 //    printf("%c\n",c);
     int atotal = addtotal(lowercase(inputa));
     int btotal = addtotal(lowercase(inputb));
     printf("%i\n",atotal);
     printf("%i\n",btotal);
-//    printf ("%i %i %i %i\n",test[0],test[1],test[2],test[3]);
+
 }
 
 string lowercase(string s) //lowercases and converts letters to correspond to a=1, b=2 etc
@@ -32,7 +32,7 @@ string lowercase(string s) //lowercases and converts letters to correspond to a=
         else // its not an uppercase alphabet
             if ((s[i] < 'a') || (s[i] > 'z')) // if also not a lowercase alphabet
             {
-                s[i] = '|'; // - 97;
+                s[i] = '{'; // - 97;
             }
     //        else // catch the zero
     //            s[i] = 0;
