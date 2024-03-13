@@ -14,7 +14,6 @@ int main(void)
     float L = 0;
     float S = 0;
 
-
     bool lastword = false; // to account for extra spaces to ensure correct wordcount
     bool lastsent = false; // to account for extra punctuations to ensure correct sentence count
 
@@ -50,7 +49,12 @@ int main(void)
     S = (tsentences / (float) twords) * 100;
 
     float index = 0.0588 * L - 0.296 * S - 15.8;
-    
+
+
+
+
+
+
 
     printf ("totalletters %i\n", tletters);
     printf ("totalwords %i\n", twords);
