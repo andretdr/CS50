@@ -7,7 +7,7 @@ bool checknum(string s);
 bool checkletters(string s);
 bool checkunique(string s);
 string lowercase(string s);
-
+string cipher(string text, string key);
 
 int main(int argc, string argv[])
 {
@@ -66,6 +66,13 @@ bool checknum(string s)
         return false;
     }
 }
+
+string cipher(string text, string key)
+{
+    
+
+}
+
 
 bool checkletters(string s)
 {
