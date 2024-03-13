@@ -17,7 +17,7 @@ int main(int argc, string argv[])
 
 bool check(string s)
 {
-    printf("%s\n",s);
+    if
 
     return true;
 }
