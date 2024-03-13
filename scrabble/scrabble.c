@@ -11,12 +11,12 @@ int main (void)
 //    string inputb = get_string("Player 2: ");
 
     char c = 'a';
-    c = c - 97;
-    printf()
+
+    printf("%i\n",c);
 //    int atotal = addtotal(lowercase(inputa));
 //    int btotal = addtotal(lowercase(inputb));
-    printf("%i\n",atotal);
-    printf("%i\n",btotal);
+//    printf("%i\n",atotal);
+//    printf("%i\n",btotal);
 //    printf ("%i %i %i %i\n",test[0],test[1],test[2],test[3]);
 }
 
