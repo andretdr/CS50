@@ -5,6 +5,7 @@
 
 bool checknum(string s);
 bool checkletters(string s);
+bool checkunique(string s);
 string lowercase(string s);
 
 
@@ -19,7 +20,7 @@ int main(int argc, string argv[])
         {
             if (checkletters(argv[1])) // if has only letters
             {
-                printf("good\n");
+                checkunique(argv[1]);
             }
             else
             {
@@ -76,6 +77,20 @@ bool checkletters(string s)
         i++;
     }
     return noissue;
+}
+
+bool checkunique(string s)
+{
+    int check[] = {0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0};
+
+    for (int i = 0, n = strlen(s); i < n; i++)
+    {
+        int j = (int) (s[i] - 97);
+        printf("%i ",j);
+
+    }
+
+    return true;
 }
 
 string lowercase(string s) // lowercases
