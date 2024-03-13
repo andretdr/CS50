@@ -47,7 +47,7 @@ int main(int argc, string argv[])
     if (!exitval)
     {
         string plaintext = get_string("plaintext :  ");
-        cipher(plaintext, argv[1])
+        printf ("ciphertext:  %s", cipher(plaintext, argv[1]));
     }
 
     printf("%i\n",exitval);
@@ -69,21 +69,22 @@ bool checknum(string s)
 
 string cipher(string text, string key)
 {
+    string ctext;
     for (int i = 0, n = strlen(text); i < n; i++) // for length of text
     {
         char c = text[i];
         if ((c >= 'a') && (c <= 'z')) // if lowercase alphabet
         {
-            printf()
+            ctext[i] = key[(int) (c - 97)];
         }
         else
             if ((c >= 'A') && (c <= 'Z')) // if uppercase alphabet
             {
-
+                ctext[i] = key[(int) (c - 65)];
             }
 
     }
-
+    return ctext;
 }
 
 
