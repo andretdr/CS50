@@ -50,9 +50,9 @@ int addtotal(string s) // add all the score according to score board
     int scoreboard[] = {1,3,3,2,1,4,2,4,1,8,5,1,3,1,1,3,10,1,1,1,1,4,4,8,4,10,0}; // last score 0 for any other char
     int total = 0;
 
-    for (int i = 0, n = strlen(s); i < n; i++) //for length of string
+    for (int i = 0, n = strlen(s); i < n; i++) // for length of string
     {
-        total = total + scoreboard[(int)(s[i]-97)]; // cast the char into an int coressponding to 0=a,1=b etc
+        total += scoreboard[(int) (s[i] - 97)]; // cast the char into an int coressponding to 0=a,1=b etc
     }
 
     return total;
