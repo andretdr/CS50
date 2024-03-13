@@ -83,7 +83,7 @@ string cipher(string text, string key)
                 char d = key[(int) (c - 65)];
                 text[i] = (d - 32);
             }
-
+    printf ("test %s",text);
     }
     return text;
 }
