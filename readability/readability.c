@@ -1,7 +1,7 @@
 #include <cs50.h>
 #include <stdio.h>
 #include <string.h>
-#include <bool.h>
+#include <stdbool.h>
 
 int main(void)
 {
@@ -19,7 +19,7 @@ int main(void)
         char c = text[i];
         if (((c >= 'a') && (c <= 'z')) || ((c >= 'A') && (c <= 'Z')))  // if its a letter
         {
-            tletter++;
+            tletters++;
             lastword = true; // consider this word once we come upon a ' '
             lastsent = true; // consider this sentence once we come upon a '.' '?' '!'
         }
@@ -37,13 +37,10 @@ int main(void)
                     lastsent = false;
                     lastword = false;
                 }
-
-
     }
 
-
-    printf ("%s\n", text);
-
-
+    printf ("totalletters %i\n", tletters);
+    printf ("totalwords %i\n", twords);
+    printf ("totalsentences %i\n", tsentences);
 
 }
