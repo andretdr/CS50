@@ -15,11 +15,16 @@ int main(int argc, string argv[])
 
     if (argc == 2) // if it just accepted 1 additional string input
     {
-        if (checknum(argv[1])); // if it has 26 chars
+        if (checknum(argv[1])) // if it has 26 chars
         {
             if (checkletters(argv[1])) // if has only letters
             {
-
+                printf("good\n");
+            }
+            else
+            {
+                printf("Key must only contain letters\n");
+                exitval = 1;
             }
         }
         else
@@ -55,9 +60,9 @@ bool checkletters(string s)
     int i = 0;
     int n = strlen(s);
     string lows = lowercase(s);
-    bool loopbreak = false;
+    bool noissue = true;
 
-    while ((!loopbreak) && (i < n))   // for the length of the string, or error found
+    while ((noissue) && (i < n))   // for the length of the string, or error found
     {
         char c = lows[i];
         if ((c >= 'a') && (c <= 'z')) // check each character is a letter
@@ -66,49 +71,11 @@ bool checkletters(string s)
         }
         else
         {
-            printf("Key requires only letters.\n");
-            loopbreak = true;
+            noissue = false;
         }
         i++;
     }
-}
-
-
-
-
-
-    }
-
-
-    bool retval = false;
-    bool loopbreak = false;
-    string lows = lowercase(s);
-    int n = strlen(s);
-    int lettercheck[] = {0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0};
-
-        int i = 0;
-        while ((!loopbreak) && (i < n))   // for the length of the string, or error found
-        {
-            char c = lows[i];
-            if ((c >= 'a') && (c <= 'z')) // check each character is a letter
-            {
-                printf ("%c",c);
-            }
-            else
-            {
-                printf("Key requires only letters.\n");
-                loopbreak = true;
-            }
-            i++;
-        }
-        printf ("\n");
-    }
-    else
-    {
-        printf("Key length is not 26.\n");
-    }
-
-    return retval;
+    return noissue;
 }
 
 string lowercase(string s) // lowercases
