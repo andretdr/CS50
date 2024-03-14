@@ -111,6 +111,7 @@ bool vote(int rank, string name, int ranks[])
         {
             found = true;
             ranks[rank] = n; // assign the candidate's index to the current rank
+            printf(" %i ",n);
         }
         n++;
     }
