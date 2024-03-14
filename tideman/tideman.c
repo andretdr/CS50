@@ -135,6 +135,7 @@ void record_preferences(int ranks[])
 void add_pairs(void)
 {
     // look through preferences and add into pairs
+    // if preferences[i][j] != preferences[j][i] then add to pair (if not tied)
 
     for (int i = 0; (i + 1) < candidate_count; i++)
     {
