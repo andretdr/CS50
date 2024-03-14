@@ -1,10 +1,11 @@
-sort1 uses: TODO
+sort1 uses: BubbleSort
 
-How do you know?: TODO
+How do you know?: On sorted lists, the sort is quick, representing best case scenerio. On Reversed and random lists its slow. This is similar to Bubble sort with big O of n square
+and Omega of n.
 
-sort2 uses: TODO
+sort2 uses: MergeSort
 
-How do you know?: TODO
+How do you know?: Its fast regardless of the sortedness of the list. Similiar to mergesort with a teta of nlogn
 
 sort3 uses: TODO
 
