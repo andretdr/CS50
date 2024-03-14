@@ -70,7 +70,7 @@ int main(int argc, string argv[])
     // Query for votes, for number of voters,
     for (int i = 0; i < voter_count; i++)
     {
-        // ranks[i] is voter's ith preference
+        // ranks[i] is voter's ith preference. ranks[0] = charlie, ranks[1] = bob ....
         int ranks[candidate_count]; // initialise rank of length candidate count
 
         // Query for each rank, so rank 1, rank 2, rank 3 .. etc
