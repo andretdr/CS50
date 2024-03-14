@@ -78,7 +78,7 @@ int main(int argc, string argv[])
         {
             string name = get_string("Rank %i: ", j + 1);
 
-            if (!vote(j, name, ranks)) // vote will record rank
+            if (!vote(j, name, ranks)) // vote will record rank. j is the current rank number
             {
                 printf("Invalid vote.\n");
                 return 3;
