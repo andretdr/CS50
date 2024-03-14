@@ -5,8 +5,8 @@ and Omega of n.
 
 sort2 uses: MergeSort
 
-How do you know?: Its fast regardless of the sortedness of the list. Similiar to mergesort with a teta of nlogn
+How do you know?: Its fast regardless of the sortedness of the list. Similiar to mergesort with a theta of nlogn
 
-sort3 uses: TODO
+sort3 uses: SelectionSort
 
-How do you know?: TODO
+How do you know?: Its slow regardless of the sortedness of the list. Similiar to selectionsort with a theta of n square
