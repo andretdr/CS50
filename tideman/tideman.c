@@ -73,7 +73,7 @@ int main(int argc, string argv[])
         // ranks[i] is voter's ith preference
         int ranks[candidate_count]; // initialise rank of length candidate count
 
-        // Query for each rank
+        // Query for each rank, so rank 1, rank 2, rank 3 .. etc
         for (int j = 0; j < candidate_count; j++)
         {
             string name = get_string("Rank %i: ", j + 1);
