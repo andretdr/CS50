@@ -157,13 +157,10 @@ void add_pairs(void)
                 }
                 pairs[pair_count].winner = win;
                 pairs[pair_count].loser = lose;
-
+                pair_count++;
             }
         }
     }
-
-
-
     return;
 }
 
