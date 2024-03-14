@@ -52,7 +52,7 @@ int main(int argc, string argv[])
     }
     for (int i = 0; i < candidate_count; i++)
     {
-        candidates[i] = argv[i + 1];
+        candidates[i] = argv[i + 1]; // storing candidate's name
     }
 
     // Clear graph of locked in pairs
