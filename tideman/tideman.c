@@ -105,7 +105,7 @@ bool vote(int rank, string name, int ranks[])
     bool found = false;
     int n = 0;
 
-    while ((!found) && (n < candidatecount))
+    while ((!found) && (n < candidate_count))
     {
         if (strcmp(name, candidates[n]) == 0)
         {
