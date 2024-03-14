@@ -123,7 +123,7 @@ void record_preferences(int ranks[])
 {
     // recursive?
     // preference[ [rank[n] ] [ [rank[n+1]] ] ++ 1
-    // if n+1 < candidatecount;
+    // if n+1 <= candidatecount, then continue
     // update preference[i][j]
 
 
