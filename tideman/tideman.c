@@ -128,10 +128,8 @@ void record_preferences(int ranks[])
     {
         for (int j = (i + 1); j < candidate_count; j++)
         {
-            
-
-            preferences[i][j] ++; // increase the value of i pointing to j
-            printf("%s beat %s\n",candidates[i],candidates[j]);
+            preferences[ranks[i]][ranks[j]] ++; // increase the value of i pointing to j
+            printf("%s beat %s\n",candidates[ranks[i]],candidates[ranks[j]]);
         }
     }
     return;
