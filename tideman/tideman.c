@@ -21,7 +21,7 @@ typedef struct
 
 // Array of candidates
 string candidates[MAX];
-pair pairs[MAX * (MAX - 1) / 2];
+pair pairs[MAX * (MAX - 1) / 2]; // unique pairs
 
 int pair_count;
 int candidate_count;
