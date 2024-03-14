@@ -141,9 +141,9 @@ void add_pairs(void)
     {
         for (int j = (i + 1); j < candidate_count; j++)
         {
-            if (preferences[i][j] > 0) // if this pair is not tied
+            if (preferences[i][j] != preferences[j][i]) // if this pair is not tied
             {
-
+                
             }
         }
     }
