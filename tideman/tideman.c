@@ -101,7 +101,15 @@ int main(int argc, string argv[])
 // Update ranks given a new vote
 bool vote(int rank, string name, int ranks[])
 {
-    // given the name of the 
+    // given the name, we need to search the candidates[] for their index and add that into ranks[rank]
+    bool found = false;
+    int n = 0;
+
+    while ((!found) && (n < candidatecount))
+    {
+        
+
+    }
 
 
     // TODO
