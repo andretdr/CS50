@@ -122,13 +122,19 @@ bool vote(int rank, string name, int ranks[])
 void record_preferences(int ranks[])
 {
     // recursive?
-
-    int i = 0;
-
-    while ((i + 1) <= candidatecount)
+    int size = sizeof(ranks[]);
+    if (size > 1)
     {
-       preferences [ranks[i]] [[ranks[i+1]]] ++ 1;
+        int i = 0;
+
+        while (i <= size) // for each pair, where ranks[i] > ranks[i+1], i+2, i+3 etc
+        {
+            preferences [ranks[i]] [[ranks[i+1]]] ++ 1;
+            i++;
+        }
+        record_preferences(ranks[i+1]);
     }
+}
 
 
     // for (int n)
