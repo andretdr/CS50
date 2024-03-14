@@ -85,6 +85,7 @@ int main(int argc, string argv[])
             }
         }
 
+        // ranks should be completed for the 1 voter here
         record_preferences(ranks);
 
         printf("\n");
