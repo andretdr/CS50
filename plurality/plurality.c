@@ -70,39 +70,38 @@ bool vote(string name)
 
     while ((!found) && (i < candidate_count))
     {
-        if (strcmp(candidate[i],name) == 0)
+        if (strcmp(candidates[i].name, name) == 0)
         {
             found = true;
-            candidate[i].votes += 1;
+            candidates[i].votes += 1;
             return true;
         }
         i++;
     }
 
-    if (found = false)
-    {
-        return false;
-    }
+    return found;
+
 }
 
 // Print the winner (or winners) of the election
 void print_winner(void)
 {
-    candidate winner;
-    winner.votes = 0; // initialise
+    int highestvote = 0;
 
-    for (int i = 0; i < candidate_count; i++)
+    for (int i = 0; i < candidate_count; i++) // find the highest vote
     {
-        if (candidate[i].votes > winner.votes)
+        if (candidates[i].votes > highestvote)
         {
-            winner.name = candidate.name;
+            highestvote = candidates[i].votes;
         }
-
-
-
-
     }
 
-    // TODO
+    for (int i = 0; i < candidate_count; i++) // print their names
+    {
+        if (candidates[i].votes == highestvote)
+        {
+            printf("%s\n",candidates[i].name);
+        }
+    }
     return;
 }
