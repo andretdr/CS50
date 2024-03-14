@@ -89,10 +89,15 @@ bool vote(string name)
 void print_winner(void)
 {
     candidate winner;
+    winner.votes = 0; // initialise
 
     for (int i = 0; i < candidate_count; i++)
     {
-        
+        if (candidate[i].votes > winner.votes)
+        {
+            winner.name = candidate.name;
+        }
+
 
 
 
