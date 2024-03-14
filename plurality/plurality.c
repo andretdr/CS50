@@ -65,7 +65,18 @@ int main(int argc, string argv[])
 // Update vote totals given a new vote
 bool vote(string name)
 {
-    
+    bool found = false;
+    int i = 0;
+
+    while ((!found) && (i < candidate_count))
+    {
+        if (strcmp(candidate[i],name) == 0)
+        {
+            found = true;
+        }
+
+        i++;
+    }
 
     // TODO
     return false;
