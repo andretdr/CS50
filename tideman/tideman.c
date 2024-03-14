@@ -122,6 +122,7 @@ bool vote(int rank, string name, int ranks[])
 void record_preferences(int ranks[])
 {
     // recursive?
+    // for (int n)
     // preferences[ [ranks[n] ] [ [ranks[n+1]] ] ++ 1
     // if n+1 <= candidatecount, then continue
     // update preference[i][j]
