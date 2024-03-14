@@ -128,31 +128,6 @@ void record_preferences(int ranks[])
             preferences[i][j] ++; // increase the value of i pointing to j
         }
     }
-
-
-    // recursive?
-/*    int size = sizeof(ranks[]);
-    if (size > 1)
-    {
-        int i = 0;
-
-        while (i <= size) // for each pair, where ranks[i] > ranks[i+1], i+2, i+3 etc
-        {
-            preferences [ranks[i]] [[ranks[i+1]]] ++ 1;
-            i++;
-        }
-        record_preferences(ranks[i+1]);
-    } */
-
-
-
-    // for (int n)
-    // preferences[ [ranks[n] ] [ [ranks[n+1]] ] ++ 1
-    // if n+1 <= candidatecount, then continue
-    // update preference[i][j]
-
-
-    // TODO
     return;
 }
 
