@@ -86,7 +86,7 @@ int main(int argc, string argv[])
         }
 
         // ranks should be completed for the 1 voter here
-        record_preferences(ranks);
+ //       record_preferences(ranks);
 
         printf("\n");
     }
@@ -122,7 +122,7 @@ bool vote(int rank, string name, int ranks[])
 void record_preferences(int ranks[])
 {
     // recursive?
-    int size = sizeof(ranks[]);
+/*    int size = sizeof(ranks[]);
     if (size > 1)
     {
         int i = 0;
@@ -133,8 +133,8 @@ void record_preferences(int ranks[])
             i++;
         }
         record_preferences(ranks[i+1]);
-    }
-}
+    } */
+
 
 
     // for (int n)
@@ -144,7 +144,7 @@ void record_preferences(int ranks[])
 
 
     // TODO
-    return;
+    //return;
 }
 
 // Record pairs of candidates where one is preferred over the other
