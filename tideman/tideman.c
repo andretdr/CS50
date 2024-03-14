@@ -107,13 +107,15 @@ bool vote(int rank, string name, int ranks[])
 
     while ((!found) && (n < candidatecount))
     {
-        
-
+        if (strcmp(name, candidates[n]) == 0)
+        {
+            found = true;
+            ranks[rank] = n; // assign the candidate's index to the current rank
+        }
+        n++;
     }
 
-
-    // TODO
-    return false;
+    return found;
 }
 
 // Update preferences given one voter's ranks
