@@ -101,6 +101,9 @@ int main(int argc, string argv[])
 // Update ranks given a new vote
 bool vote(int rank, string name, int ranks[])
 {
+    // given the name of the 
+
+
     // TODO
     return false;
 }
