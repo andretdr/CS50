@@ -143,11 +143,21 @@ void add_pairs(void)
         {
             if (preferences[i][j] != preferences[j][i]) // if this pair is not tied
             {
+                int win;
+                int lose;
                 if (preferences[i][j] > preferences[j][i])
                 {
-                    pairs[pair_count].winner = i;
-                    pairs[pair_count].loser = j;
+                    win = i;
+                    lose = j;
                 }
+                else
+                {
+                    win = j;
+                    lose = i;
+                }
+                pairs[pair_count].winner = win;
+                pairs[pair_count].loser = lose;
+
             }
         }
     }
