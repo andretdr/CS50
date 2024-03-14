@@ -86,7 +86,7 @@ int main(int argc, string argv[])
         }
 
         // ranks should be completed for the 1 voter here
- //       record_preferences(ranks);
+        record_preferences(ranks);
 
         printf("\n");
     }
@@ -129,6 +129,7 @@ void record_preferences(int ranks[])
         for (int j = (i + 1); j < candidate_count; j++)
         {
             preferences[i][j] ++; // increase the value of i pointing to j
+            printf("%s beat %s\n",candidates[i],candidates[j]);
         }
     }
     return;
