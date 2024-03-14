@@ -143,7 +143,8 @@ void add_pairs(void)
         {
             if (preferences[i][j] != preferences[j][i]) // if this pair is not tied
             {
-                
+                if (preferences[i][j] > preferences[j][i])
+                {}
             }
         }
     }
