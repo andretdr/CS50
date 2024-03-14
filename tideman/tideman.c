@@ -121,6 +121,9 @@ bool vote(int rank, string name, int ranks[])
 // Update preferences given one voter's ranks
 void record_preferences(int ranks[])
 {
+    for (int i = 0; i + 1 <)
+
+
     // recursive?
 /*    int size = sizeof(ranks[]);
     if (size > 1)
