@@ -261,6 +261,10 @@ bool checkcycle(int startingindex, int i) //recursive
                  cycle = true;
              }
         }
+        j++;
+
+
+
             {
                     checkcycle(startingindex, j);
                 }
