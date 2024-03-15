@@ -276,7 +276,7 @@ int index = find_source(int i)
 void print_winner(void)
 {
     // pick first locked true sorted pair, goto winner, serch for loser. if found,do again. else its the winner
-    int index = find_source(winner);
+    int index = find_source(pairs[0].winner);
 
     // TODO
     return;
