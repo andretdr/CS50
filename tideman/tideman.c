@@ -1,6 +1,6 @@
 #include <cs50.h>
-#include <stdio.h>
 #include <stdbool.h>
+#include <stdio.h>
 #include <string.h>
 
 // Max number of candidates
@@ -126,7 +126,7 @@ void record_preferences(int ranks[])
     {
         for (int j = (i + 1); j < candidate_count; j++)
         {
-            preferences[ranks[i]][ranks[j]] ++; // increase the value of i pointing to j
+            preferences[ranks[i]][ranks[j]]++; // increase the value of i pointing to j
         }
     }
     return;
@@ -167,7 +167,7 @@ void add_pairs(void)
 
 // Sort pairs in decreasing order by strength of victory
 void sort_pairs(void)
-{   // sort from strongest link to least
+{ // sort from strongest link to least
     // bubble sort
     bool sorted = false;
     int i = 0;
@@ -186,7 +186,7 @@ void sort_pairs(void)
                 int bpair = preferences[pairs[j + 1].winner][pairs[j + 1].loser];
                 if ((apair) < (bpair))
                 {
-                    //swap them
+                    // swap them
                     pair tempa = pairs[j];
                     pair tempb = pairs[j + 1];
 
@@ -214,7 +214,6 @@ void lock_pairs(void)
 
         cycle = checkcycle(startingindex, nextindex);
 
-
         if (!cycle) // entry of pairs[i] does not create cycle
         {
             // add
@@ -222,28 +221,26 @@ void lock_pairs(void)
         }
     }
 
-
     return;
 }
 
-bool checkcycle(int startingindex, int i) //recursive
+bool checkcycle(int startingindex, int i) // recursive
 {
     bool cycle = false;
     int j = 0;
-
 
     while ((!cycle) && (j < candidate_count))
     {
         if (locked[i][j] == true) // check locked list if any locked[i][*] == true, else no cycle
         {
-             if (j == startingindex)
-             {
+            if (j == startingindex)
+            {
                 cycle = true;
-             }
-             else
-             {
+            }
+            else
+            {
                 cycle = checkcycle(startingindex, j);
-             }
+            }
         }
         j++;
     }
