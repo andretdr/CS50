@@ -32,6 +32,7 @@ void record_preferences(int ranks[]);
 void add_pairs(void);
 void sort_pairs(void);
 void lock_pairs(void);
+bool checkcycle(int startingindex, int i);
 void print_winner(void);
 
 int main(int argc, string argv[])
@@ -216,20 +217,16 @@ void sort_pairs(void)
 // Lock pairs into the candidate graph in order, without creating cycles
 void lock_pairs(void)
 {
+    bool cycle = false;
     // check if adding next entry creates cycle. if not, then lock it. use locked[i][j]
-    for (int i = 0, n = pairs_count; i < n; i++)
+    for (int i = 0, n = pair_count; i < n; i++)
     {
         // check if adding pairs[i] creates cycle
-
-        bool cycle = false;
         int startingindex = pairs[i].winner;
         int nextindex = pairs[i].loser;
 
         cycle = checkcycle(startingindex, nextindex);
-
-     }
-
-
+     
         if (!cycle) // entry of pairs[i] does not create cycle
         {
             // add
