@@ -185,7 +185,9 @@ void sort_pairs(void)
             for (int j = 0; j + 1 < n)
             {
                 // compare the strength of the j pair vs j + 1 pair
-                if (preferences[pairs[j].winner][pairs[j + 1])
+                pair apair = preferences[pairs[j].winner][pairs[j].loser];
+                pair bpair = preferences[pairs[j + 1].winner][pairs[j + 1].loser];
+                if (preferences[pairs[j].winner][pairs[j].loser]) > (preferences[pairs[j].winner][pairs[j].loser])
 
 
 
