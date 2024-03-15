@@ -249,10 +249,13 @@ void lock_pairs(void)
 
 bool checkcycle(int startingindex, int i) //recursive
 {
-    // check locked list if any locked[startingindex][*] == true, else no cycle
+    // check locked list if any locked[i][*] == true, else no cycle
         for (int j = 0, j < candidate_count; j++)
         {
-            checkcycle(startingindex, 
+            if (locked[i][j] == true)
+                {
+                    checkcycle(startingindex, j);
+                }
         }
 
 
