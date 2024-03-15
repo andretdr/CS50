@@ -262,11 +262,11 @@ bool checkcycle(int startingindex, int i) //recursive
         {
              if (j == startingindex)
              {
-                 cycle = true;
+                cycle = true;
              }
              else
              {
-                checkcycle(startingindex, j);
+                cycle = checkcycle(startingindex, j);
              }
         }
         j++;
