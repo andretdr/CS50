@@ -95,7 +95,7 @@ int main(int argc, string argv[])
 
     add_pairs();
 
-printf("pairs unique %i\n",pair_count);
+//printf("pairs unique %i\n",pair_count);
 
     sort_pairs();
     lock_pairs();
