@@ -177,7 +177,7 @@ void sort_pairs(void)
     int n = pair_count;
 
     if (pair_count > 1) // only if more then 1 pair. or else its already 'sorted'
-        while ((!sorted) && (n > 2))
+        while ((!sorted) && (n > 1))
         {
             for (int j = 0; j + 1 < n; j++)
             {
@@ -194,18 +194,9 @@ void sort_pairs(void)
                     preferences[pairs[j + 1].winner][pairs[j + 1].loser] = apair;
                     sorted = false;
                 }
-
-
-
-
             }
             n--;
         }
-
-
-
-
-
     return;
 }
 
