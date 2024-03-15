@@ -185,23 +185,31 @@ void sort_pairs(void)
                 sorted = true;
 
                 // compare the strength of the j pair vs j + 1 pair
-                
-
-
- //               int apair = preferences[pairs[j].winner][pairs[j].loser];
- //               int bpair = preferences[pairs[j + 1].winner][pairs[j + 1].loser];
+                int apair = preferences[pairs[j].winner][pairs[j].loser];
+                int bpair = preferences[pairs[j + 1].winner][pairs[j + 1].loser];
                 if ((apair) < (bpair))
                 {
                     //swap them
-                    pair temp = pairs[]
+                    pair tempa = pairs[j];
+                    pair tempb = pairs[j + 1];
 
-                    //preferences[pairs[j].winner][pairs[j].loser] = bpair;
-                    //preferences[pairs[j + 1].winner][pairs[j + 1].loser] = apair;
+                    pairs[j] = tempb;
+                    pairs[j + 1] = tempa;
+
                     sorted = false;
                 }
             }
             n--;
         }
+
+// test
+
+    for (int k = 0; k < pair_count; k++)
+    {
+        printf("%i -> %i \n", pairs[k].winner, pairs[k].loser);
+
+    }
+
     return;
 }
 
