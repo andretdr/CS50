@@ -269,7 +269,12 @@ bool checkcycle(int startingindex, int i) //recursive
 int index = find_source(int n)
 { // pick true sorted pair, goto winner, search for loser. if found, do again. else its the winner
     int i = 0;
-    while ()
+    int retval = -1;
+    while ((retval < 0) && (i < pairs_count))
+    {
+        
+        i++;
+    }
 
 }
 
