@@ -260,17 +260,16 @@ bool checkcycle(int startingindex, int i) //recursive
              {
                  cycle = true;
              }
+             else
+             {
+                checkcycle(startingindex, j);
+             }
         }
         j++;
 
-
-
-            {
-                    checkcycle(startingindex, j);
-                }
         }
 
-
+    return cycle;
 }
 
 // Print the winner of the election
