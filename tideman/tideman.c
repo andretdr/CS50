@@ -131,7 +131,7 @@ void record_preferences(int ranks[])
         for (int j = (i + 1); j < candidate_count; j++)
         {
             preferences[ranks[i]][ranks[j]] ++; // increase the value of i pointing to j
-            printf("%s beat %s\n",candidates[ranks[i]],candidates[ranks[j]]);
+                                                                                    //            printf("%s beat %s\n",candidates[ranks[i]],candidates[ranks[j]]);
         }
     }
     return;
@@ -205,6 +205,8 @@ void sort_pairs(void)
         }
 
 // test
+/*
+
 printf(" \n");
     for (int k = 0; k < pair_count; k++)
     {
@@ -214,6 +216,10 @@ printf(" \n");
 
     }
 printf(" \n");
+
+
+*/
+
     return;
 }
 
@@ -224,7 +230,7 @@ void lock_pairs(void)
     // check if adding next entry creates cycle. if not, then lock it. use locked[i][j]
     for (int i = 0, n = pair_count; i < n; i++)
     {
-        printf("pairs list = [%i][%i] \n", pairs[i].winner, pairs[i].loser);
+                                                                //          printf("pairs list = [%i][%i] \n", pairs[i].winner, pairs[i].loser);
         // check if adding pairs[i] creates cycle
         int startingindex = pairs[i].winner;
         int nextindex = pairs[i].loser;
@@ -235,7 +241,7 @@ void lock_pairs(void)
         {
             // add
             locked[pairs[i].winner][pairs[i].loser] = true;
-            printf("locked[%i][%i] = true\n", pairs[i].winner, pairs[i].loser);
+                                                                //            printf("locked[%i][%i] = true\n", pairs[i].winner, pairs[i].loser);
         }
     }
 
@@ -272,7 +278,7 @@ int find_source(int n)
     int i = 0;
     int retval = -1;
 
-    printf("n is %i\n",n);
+                                                                                                    //    printf("n is %i\n",n);
 
     while ((retval < 0) && (i < pair_count))
     {
@@ -295,7 +301,7 @@ void print_winner(void)
 {
     // pick first locked true sorted pair, goto winner, serch for loser. if found,do again. else its the winner
     int index = find_source(pairs[0].winner);
-    printf("%i\n", index);
+//    printf("%i\n", index);
     printf("%s\n", candidates[index]);
 
     return;
