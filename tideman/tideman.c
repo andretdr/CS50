@@ -204,13 +204,15 @@ void sort_pairs(void)
         }
 
 // test
+printf(" \n");
+    for (int k = 0; k < pair_count; k++)
+    {
 
-//    for (int k = 0; k < pair_count; k++)
-//    {
-//        printf("%i -> %i \n", pairs[k].winner, pairs[k].loser);
+        printf("%i -> %i \n", pairs[k].winner, pairs[k].loser);
 
-//    }
 
+    }
+printf(" \n");
     return;
 }
 
