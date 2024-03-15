@@ -177,9 +177,9 @@ void sort_pairs(void)
     int n = pair_count;
 
     if (pair_count > 1) // only if more then 1 pair. or else its already 'sorted'
-        while ((!sorted) && (n ))
+        while ((!sorted) && (n > 2))
         {
-            for (int j = 0; j + 1 < n)
+            for (int j = 0; j + 1 < n; j++)
             {
                 // assume sorted
                 sorted = true;
