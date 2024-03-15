@@ -271,6 +271,9 @@ int find_source(int n)
 { // pick true sorted pair, goto winner, search for loser. if found, do again. else its the winner
     int i = 0;
     int retval = -1;
+
+    printf("n is %i\n",n);
+
     while ((retval < 0) && (i < pair_count))
     {
         if ((locked[i][n]))
