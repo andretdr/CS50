@@ -33,6 +33,7 @@ void add_pairs(void);
 void sort_pairs(void);
 void lock_pairs(void);
 bool checkcycle(int startingindex, int i);
+int find_source(int n);
 void print_winner(void);
 
 int main(int argc, string argv[])
@@ -266,15 +267,15 @@ bool checkcycle(int startingindex, int i) //recursive
     return cycle;
 }
 
-int index = find_source(int n)
+int find_source(int n)
 { // pick true sorted pair, goto winner, search for loser. if found, do again. else its the winner
     int i = 0;
     int retval = -1;
-    while ((retval < 0) && (i < pairs_count))
+    while ((retval < 0) && (i < pair_count))
     {
         if ((locked[i][n]))
         {
-            retval = findsource(i);
+            retval = find_source(i);
         }
         i++;
     }
@@ -288,7 +289,7 @@ void print_winner(void)
 {
     // pick first locked true sorted pair, goto winner, serch for loser. if found,do again. else its the winner
     int index = find_source(pairs[0].winner);
-
+    printf("Winner :%i\n", index);
 
     // TODO
     return;
