@@ -221,16 +221,19 @@ void lock_pairs(void)
     {
         // check if adding pairs[i] creates cycle
         int startingindex = pairs[i].winner;
-        bool cont = true;
-        while (cont)
+        bool cycle = false;
+
+        
+        while (!cycle) && (j)
         {
             int nextindex = pairs[i].loser;
+
+
+
 
         }
 
 
-
-        bool cycle = checkcycle(i);
         if (!cycle) // entry of pairs[i] does not create cycle
         {
             // add
