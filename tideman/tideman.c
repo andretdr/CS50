@@ -249,15 +249,11 @@ void lock_pairs(void)
 
 bool checkcycle(int startingindex, int i) //recursive
 {
-    //
-
-    int startingindex = pairs[i].winner;
-    bool cont = true;
-    while (cont)
-    {
-        int nextindex = pairs[i].loser;
-
-    }
+    // check locked list if any locked[startingindex][*] == true, else no cycle
+        for (int j = 0, j < candidate_count; j++)
+        {
+            checkcycle(startingindex, 
+        }
 
 
 }
