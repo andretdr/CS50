@@ -173,7 +173,7 @@ void sort_pairs(void)
 {   // sort from strongest link to least
     // bubble sort
 
-    for 
+    for (int i = 0, n = pair_count; i < )
 
     return;
 }
