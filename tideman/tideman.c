@@ -223,14 +223,15 @@ void lock_pairs(void)
 
         bool cycle = false;
         int startingindex = pairs[i].winner;
+        int nextindex = pairs[i].loser;
         int j = 0;
-        while (!cycle) && (j < i)
+        while ((!cycle) && (j < i))
         {
-            //int nextindex = pairs[i].loser;
 
 
 
 
+            j ++;
         }
 
 
