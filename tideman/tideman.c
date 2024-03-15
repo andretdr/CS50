@@ -246,9 +246,9 @@ void lock_pairs(void)
     return;
 }
 
-bool checkcycle(int i, int j) //recursive
+bool checkcycle(int startingindex, int i) //recursive
 {
-    // 
+    //
 
     int startingindex = pairs[i].winner;
     bool cont = true;
