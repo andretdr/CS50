@@ -174,6 +174,7 @@ void sort_pairs(void)
     // bubble sort
     bool sorted = false;
     int i = 0;
+    int n = pair_count;
 
     if (pair_count > 1) // only if more then 1 pair. or else its already 'sorted'
         while (!sorted)
@@ -181,7 +182,7 @@ void sort_pairs(void)
 
 
 
-            for (int j = 0, n = pair_count; j + 1 < n)
+            for (int j = 0; j + 1 < n)
             {
 
 
@@ -189,6 +190,7 @@ void sort_pairs(void)
 
 
             }
+            n--;
         }
 
 
