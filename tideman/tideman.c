@@ -219,17 +219,29 @@ void lock_pairs(void)
     // check if adding next entry creates cycle. if not, then lock it. use locked[i][j]
     for (int i = 0, n = pairs_count; i < n; i++)
     {
-        
-        if () // entry does not create cycle
+        bool cycle = checkcycle(i);
+        if (!cycle) // entry does not create cycle
         {
             // add
-            locked[pairs[winner]][pairs[loser]] = true;
+            locked[pairs[i].winner][pairs[i].loser] = true;
         }
-
     }
 
 
     return;
+}
+
+bool checkcycle(int n)
+{
+    int startingindex = pairs[n].winner;
+    bool cont = true;
+    while (cont)
+    {
+        int nextindex = pairs[n].loser;
+
+    }
+
+
 }
 
 // Print the winner of the election
