@@ -172,15 +172,23 @@ void add_pairs(void)
 void sort_pairs(void)
 {   // sort from strongest link to least
     // bubble sort
+    bool sorted = false;
+    int i = 0;
 
     if (pair_count > 1) // only if more then 1 pair. or else its already 'sorted'
-        for (int i = 0, n = pair_count; i + 1 < n)
+        while (!sorted)
         {
-            
+
+
+
+            for (int j = 0, n = pair_count; j + 1 < n)
+            {
 
 
 
 
+
+            }
         }
 
 
