@@ -278,6 +278,8 @@ int index = find_source(int n)
             i++;
         }
     }
+    // if searched the list and no more source
+    retval = i;
 
 }
 
