@@ -254,6 +254,9 @@ bool checkcycle(int startingindex, int i) //recursive
         {
             if (locked[i][j] == true)
                 {
+                    if ()
+                }
+                {
                     checkcycle(startingindex, j);
                 }
         }
