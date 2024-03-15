@@ -253,10 +253,11 @@ bool checkcycle(int startingindex, int i) //recursive
 {
     bool cycle = false;
     int j = 0;
-    printf("checking startingindex %i against %i\n", startingindex, i);
+
 
     while ((!cycle) && (j < candidate_count))
     {
+        printf("checking startingindex %i against %i\n", startingindex, j);
         if (locked[i][j] == true) // check locked list if any locked[i][*] == true, else no cycle
         {
              if (j == startingindex)
