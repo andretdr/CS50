@@ -230,18 +230,23 @@ void lock_pairs(void)
     // check if adding next entry creates cycle. if not, then lock it. use locked[i][j]
     for (int i = 0, n = pair_count; i < n; i++)
     {
-                                                                          printf("pairs list = [%i][%i] \n", pairs[i].winner, pairs[i].loser);
+    //                                                                      printf("pairs list = [%i][%i] \n", pairs[i].winner, pairs[i].loser);
         // check if adding pairs[i] creates cycle
         int startingindex = pairs[i].winner;
         int nextindex = pairs[i].loser;
 
         cycle = checkcycle(startingindex, nextindex);
 
+
         if (!cycle) // entry of pairs[i] does not create cycle
         {
             // add
             locked[pairs[i].winner][pairs[i].loser] = true;
-                                                                            printf("locked[%i][%i] = true\n", pairs[i].winner, pairs[i].loser);
+  //                                                                         printf("locked[%i][%i] = true\n", pairs[i].winner, pairs[i].loser);
+        }
+        else
+        {
+       //     printf("detected a cycle \n");
         }
     }
 
@@ -257,12 +262,12 @@ bool checkcycle(int startingindex, int i) //recursive
 
     while ((!cycle) && (j < candidate_count))
     {
-        printf("checking startingindex %i against %i\n", startingindex, j);
+//        printf("checking startingindex %i against %i\n", startingindex, j);
         if (locked[i][j] == true) // check locked list if any locked[i][*] == true, else no cycle
         {
              if (j == startingindex)
              {
-                printf("cycle true");
+//                printf("cycle true");
                 cycle = true;
              }
              else
