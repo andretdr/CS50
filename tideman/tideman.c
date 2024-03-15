@@ -179,11 +179,11 @@ void sort_pairs(void)
     if (pair_count > 1) // only if more then 1 pair. or else its already 'sorted'
         while (!sorted)
         {
-
-
-
             for (int j = 0; j + 1 < n)
             {
+                // assume sorted
+                sorted = true;
+
                 // compare the strength of the j pair vs j + 1 pair
                 pair apair = preferences[pairs[j].winner][pairs[j].loser];
                 pair bpair = preferences[pairs[j + 1].winner][pairs[j + 1].loser];
