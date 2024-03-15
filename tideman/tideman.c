@@ -190,8 +190,10 @@ void sort_pairs(void)
                 if ((apair) < (bpair))
                 {
                     //swap them
-                    preferences[pairs[j].winner][pairs[j].loser] = bpair;
-                    preferences[pairs[j + 1].winner][pairs[j + 1].loser] = apair;
+                    pair temp = pairs[]
+
+                    //preferences[pairs[j].winner][pairs[j].loser] = bpair;
+                    //preferences[pairs[j + 1].winner][pairs[j + 1].loser] = apair;
                     sorted = false;
                 }
             }
