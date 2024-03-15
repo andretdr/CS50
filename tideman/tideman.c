@@ -220,7 +220,7 @@ void lock_pairs(void)
     for (int i = 0, n = pairs_count; i < n; i++)
     {
         bool cycle = checkcycle(i);
-        if (!cycle) // entry does not create cycle
+        if (!cycle) // entry of pairs[i] does not create cycle
         {
             // add
             locked[pairs[i].winner][pairs[i].loser] = true;
@@ -231,13 +231,13 @@ void lock_pairs(void)
     return;
 }
 
-bool checkcycle(int n)
+bool checkcycle(int i)
 {
-    int startingindex = pairs[n].winner;
+    int startingindex = pairs[i].winner;
     bool cont = true;
     while (cont)
     {
-        int nextindex = pairs[n].loser;
+        int nextindex = pairs[i].loser;
 
     }
 
