@@ -272,7 +272,8 @@ int index = find_source(int n)
     int retval = -1;
     while ((retval < 0) && (i < pairs_count))
     {
-        
+        if ((locked[i][n]))
+        retval = findsource();
         i++;
     }
 
