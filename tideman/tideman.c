@@ -251,6 +251,7 @@ bool checkcycle(int startingindex, int i) //recursive
 {
     bool cycle = false;
     int j = 0;
+    (printf("%i\n",i));
 
     while ((!cycle) && (j < candidate_count))
     {
