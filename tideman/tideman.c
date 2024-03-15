@@ -170,8 +170,11 @@ void add_pairs(void)
 
 // Sort pairs in decreasing order by strength of victory
 void sort_pairs(void)
-{
-    // TODO
+{   // sort from strongest link to least
+    // bubble sort
+
+    for 
+
     return;
 }
 
