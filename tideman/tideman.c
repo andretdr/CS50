@@ -259,6 +259,7 @@ bool checkcycle(int startingindex, int i) //recursive
              if (j == startingindex)
              {
                  cycle = true;
+                 printf("cycle\n");
              }
              else
              {
