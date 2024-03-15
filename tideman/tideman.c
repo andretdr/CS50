@@ -275,12 +275,12 @@ int index = find_source(int n)
         if ((locked[i][n]))
         {
             retval = findsource(i);
-            i++;
         }
+        i++;
     }
     // if searched the list and no more source
-    retval = i;
-
+    retval = n;
+    return retval;
 }
 
 // Print the winner of the election
@@ -288,6 +288,7 @@ void print_winner(void)
 {
     // pick first locked true sorted pair, goto winner, serch for loser. if found,do again. else its the winner
     int index = find_source(pairs[0].winner);
+
 
     // TODO
     return;
