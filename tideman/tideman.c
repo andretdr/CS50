@@ -219,6 +219,7 @@ void lock_pairs(void)
     // check if adding next entry creates cycle. if not, then lock it. use locked[i][j]
     for (int i = 0, n = pairs_count; i < n; i++)
     {
+        
         if () // entry does not create cycle
         {
             // add
