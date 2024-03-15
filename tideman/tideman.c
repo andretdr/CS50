@@ -274,10 +274,9 @@ int index = find_source(int n)
     {
         if ((locked[i][n]))
         {
-            if ()
+            retval = findsource(i);
+            i++;
         }
-        retval = findsource(i);
-        i++;
     }
 
 }
