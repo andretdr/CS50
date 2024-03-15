@@ -283,7 +283,10 @@ int find_source(int n)
         i++;
     }
     // if searched the list and no more source
-    retval = n;
+    if (retval == -1)
+    {
+        retval = n;
+    }
     return retval;
 }
 
