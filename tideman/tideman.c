@@ -87,16 +87,12 @@ int main(int argc, string argv[])
             }
         }
 
-        // ranks should be completed for the 1 voter here
         record_preferences(ranks);
 
         printf("\n");
     }
 
     add_pairs();
-
-//printf("pairs unique %i\n",pair_count);
-
     sort_pairs();
     lock_pairs();
     print_winner();
@@ -131,7 +127,6 @@ void record_preferences(int ranks[])
         for (int j = (i + 1); j < candidate_count; j++)
         {
             preferences[ranks[i]][ranks[j]] ++; // increase the value of i pointing to j
-                                                                                    //            printf("%s beat %s\n",candidates[ranks[i]],candidates[ranks[j]]);
         }
     }
     return;
@@ -203,23 +198,6 @@ void sort_pairs(void)
             }
             n--;
         }
-
-// test
-/*
-
-printf(" \n");
-    for (int k = 0; k < pair_count; k++)
-    {
-
-        printf("%i -> %i \n", pairs[k].winner, pairs[k].loser);
-
-
-    }
-printf(" \n");
-
-
-*/
-
     return;
 }
 
@@ -230,7 +208,6 @@ void lock_pairs(void)
     // check if adding next entry creates cycle. if not, then lock it. use locked[i][j]
     for (int i = 0, n = pair_count; i < n; i++)
     {
-    //                                                                      printf("pairs list = [%i][%i] \n", pairs[i].winner, pairs[i].loser);
         // check if adding pairs[i] creates cycle
         int startingindex = pairs[i].winner;
         int nextindex = pairs[i].loser;
@@ -242,11 +219,6 @@ void lock_pairs(void)
         {
             // add
             locked[pairs[i].winner][pairs[i].loser] = true;
-  //                                                                         printf("locked[%i][%i] = true\n", pairs[i].winner, pairs[i].loser);
-        }
-        else
-        {
-       //     printf("detected a cycle \n");
         }
     }
 
@@ -262,12 +234,10 @@ bool checkcycle(int startingindex, int i) //recursive
 
     while ((!cycle) && (j < candidate_count))
     {
-//        printf("checking startingindex %i against %i\n", startingindex, j);
         if (locked[i][j] == true) // check locked list if any locked[i][*] == true, else no cycle
         {
              if (j == startingindex)
              {
-//                printf("cycle true");
                 cycle = true;
              }
              else
@@ -285,8 +255,6 @@ int find_source(int n)
 { // pick true sorted pair, goto winner, search for loser. if found, do again. else its the winner
     int i = 0;
     int retval = -1;
-
-                                                                                                    //    printf("n is %i\n",n);
 
     while ((retval < 0) && (i < pair_count))
     {
@@ -309,7 +277,6 @@ void print_winner(void)
 {
     // pick first locked true sorted pair, goto winner, serch for loser. if found,do again. else its the winner
     int index = find_source(pairs[0].winner);
-//    printf("%i\n", index);
     printf("%s\n", candidates[index]);
 
     return;
