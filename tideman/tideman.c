@@ -266,8 +266,7 @@ bool checkcycle(int startingindex, int i) //recursive
              }
         }
         j++;
-
-        }
+    }
 
     return cycle;
 }
