@@ -237,12 +237,12 @@ void lock_pairs(void)
 
         cycle = checkcycle(startingindex, nextindex);
 
-        if (!cycle) // entry of pairs[i] does not create cycle
-        {
+        //if (!cycle) // entry of pairs[i] does not create cycle
+        //{
             // add
             locked[pairs[i].winner][pairs[i].loser] = true;
                                                                 //            printf("locked[%i][%i] = true\n", pairs[i].winner, pairs[i].loser);
-        }
+        //}
     }
 
 
