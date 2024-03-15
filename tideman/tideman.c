@@ -266,9 +266,18 @@ bool checkcycle(int startingindex, int i) //recursive
     return cycle;
 }
 
+int index = find_source(int i)
+{ // pick true sorted pair, goto winner, serch for loser. if found,do again. else its the winner
+
+
+}
+
 // Print the winner of the election
 void print_winner(void)
 {
+    // pick first locked true sorted pair, goto winner, serch for loser. if found,do again. else its the winner
+    int index = find_source(winner);
+
     // TODO
     return;
 }
