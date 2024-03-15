@@ -289,8 +289,7 @@ void print_winner(void)
 {
     // pick first locked true sorted pair, goto winner, serch for loser. if found,do again. else its the winner
     int index = find_source(pairs[0].winner);
-    printf("Winner :%i\n", index);
+    printf("%s\n", candidates[index]);
 
-    // TODO
     return;
 }
