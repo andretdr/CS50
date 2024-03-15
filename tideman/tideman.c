@@ -217,7 +217,7 @@ void sort_pairs(void)
 void lock_pairs(void)
 {
     // check if adding next entry creates cycle. if not, then lock it
-    
+
 
     return;
 }
