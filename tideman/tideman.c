@@ -223,7 +223,7 @@ void lock_pairs(void)
         int startingindex = pairs[i].winner;
         bool cycle = false;
 
-        
+        int j = 0;
         while (!cycle) && (j)
         {
             int nextindex = pairs[i].loser;
