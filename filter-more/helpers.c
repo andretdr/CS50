@@ -8,7 +8,7 @@ void grayscale(int height, int width, RGBTRIPLE image[height][width])
         {
             RGBTRIPLE temptrip = image[i][j];
             BYTE btemp;
-            float temp = (temptrip.rgbtBlue + temptrip.rgbtGreen + temptrip.rgbtBlue)/3; // need to round this please
+            float temp = (temptrip.rgbtBlue + temptrip.rgbtGreen + temptrip.rgbtRed)/3; // need to round this please
 
             // rounding
             if ((temp - (int)temp) >= 0.5)
@@ -56,7 +56,9 @@ void blur(int height, int width, RGBTRIPLE image[height][width])
  for (int i = 0, n = height; i < n; i++)
         for (int j = 0, k = width; j < k; j++)
         {
-            RGBTRIPLE temptrip = image[i][j];
+            RGBTRIPLE temptrip.rgbtBlue = 0;
+            RGBTRIPLE temptrip.rgbtGreen = 0;
+            RGBTRIPLE temptrip.rgbtRed = 0;
             BYTE btemp;
          //   float temp = (temptrip.rgbtBlue + temptrip.rgbtGreen + temptrip.rgbtBlue)/3; // need to round this please
 
