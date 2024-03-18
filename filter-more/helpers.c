@@ -63,6 +63,7 @@ void blur(int height, int width, RGBTRIPLE image[height][width])
          //   float temp = (temptrip.rgbtBlue + temptrip.rgbtGreen + temptrip.rgbtBlue)/3; // need to round this please
 
             // find average
+            int avecount = 0;
             for (int k = i - 1, n = i + 2; k < n; k++)
             {
                 if ((k > -1) && (k < height))
@@ -71,11 +72,11 @@ void blur(int height, int width, RGBTRIPLE image[height][width])
                     {
                         if ((j > -1) && (j < width))
                         {
-                            temptrip.rgbtBlue = image[k][l]
-
-
-
-                  //      }
+                            avecount++;
+                            temptrip.rgbtBlue += image[k][l].rgbtBlue;
+                            temptrip.rgbtGreen += image[k][l].rgbtGreen;
+                            temptrip.rgbtRed += image[k][l].rgbtRed;
+                        }
 
                     }
 
