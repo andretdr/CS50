@@ -7,6 +7,7 @@
 // Number of bytes in .wav header
 const int HEADER_SIZE = 44;
 typedef uint8_t BYTE;
+typedef int16_t BYTE;
 
 int main(int argc, char *argv[])
 {
@@ -48,7 +49,7 @@ int main(int argc, char *argv[])
 
     while (fread(&b, sizeof(b), 1, src) != 0) //fread each byte for you, reading it byte by byte to address of b, 1 byte at a time. while still have bytes to read
     {
-        
+
         fwrite(&b, sizeof(b), 1, dst);
     }
 
