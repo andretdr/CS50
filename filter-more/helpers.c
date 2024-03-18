@@ -77,12 +77,10 @@ void blur(int height, int width, RGBTRIPLE image[height][width])
                             temptrip.rgbtGreen += image[k][l].rgbtGreen;
                             temptrip.rgbtRed += image[k][l].rgbtRed;
                         }
-
                     }
-
                 }
-
             }
+            
 
             // rounding
             if ((temp - (int)temp) >= 0.5)
