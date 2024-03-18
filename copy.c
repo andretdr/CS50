@@ -19,7 +19,7 @@ int main (void)
         return 1;
     }
 
-    for (int i = 0, n = strlen(s); i <= n; i++) // remember to copy the last null char
+    for (int i = 0, n = strlen(s); i <= n; i++) // remember to copy the last null char // or strcopy
     {
         t[i] = s[i];
     }
