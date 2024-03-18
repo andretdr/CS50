@@ -33,6 +33,8 @@ int main(int argc, char *argv[])
 
     float factor = atof(argv[3]); // converts the string into a float number. the factor to multiply by
 
+    
+
     // TODO: Copy header from input file to output file
 
     // TODO: Read samples from input file and write updated data to output file
