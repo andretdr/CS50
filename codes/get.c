@@ -4,7 +4,7 @@
 
 int main(void)
 {
-    char *s;
+    char *s; // pointers need to be initialised by malloc
     printf("s: ");
     scanf("%s", s); // s is already an address, so still passing by reference
     printf("s: %s\n", s);
