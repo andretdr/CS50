@@ -8,7 +8,8 @@ int main (void)
 {
     string s =get_string("s: ");
 
-    string t = s; // now t has the same address
+    string t;
+    *t = *s; // now t has the same address
     t[0] = toupper(t[0]);
 
 
