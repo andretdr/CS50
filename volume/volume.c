@@ -37,9 +37,13 @@ int main(int argc, char *argv[])
 
     float factor = atof(argv[3]); // converts the string into a float number. the factor to multiply by
 
-    for ()
+    // Copy header from input file to output file//
+    for (int i = 0, n = HEADER_SIZE; i < n; i++) // for each byte up to 44
+    {
+        
+    }
 
-    // TODO: Copy header from input file to output file
+
 
     // TODO: Read samples from input file and write updated data to output file
 
