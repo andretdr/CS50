@@ -6,6 +6,10 @@
 int main(void)
 {
     FILE *file = fopen("phonebook.csv", "a"); //read, write, appending
+    if (file == NULL) // anytime pointer is returned, check for NULL
+    {
+        return 1;
+    }
 
     char *name = get_string("Name: ");
     char *number = get_string("Number: ");
