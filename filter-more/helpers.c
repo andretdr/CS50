@@ -63,14 +63,13 @@ void blur(int height, int width, RGBTRIPLE image[height][width])
             // find average
             for (int k = i - 1, n = i + 2; k < n; k++)
             {
-          //      if ((k > -1) && (k < height))
-              //  {
+                if ((k > -1) && (k < height))
+                {
                     for (int l = j - 1, m = j + 2; l < m; k++)
                     {
-            //            if ((j > -1) && (j < width))
-                //        {
-
-                        image[i][j].rgbtBlue =
+                        if ((j > -1) && (j < width))
+                        {
+                            temptrip.rgbtBlue = image[k][l]
 
 
 
