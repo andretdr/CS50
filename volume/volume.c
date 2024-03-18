@@ -39,18 +39,14 @@ int main(int argc, char *argv[])
 
     // Copy header from input file to output file//
 
-/*
+
     for (int i = 0, n = HEADER_SIZE; i < n; i++) // for each byte up to 44
     {
         fread(&b, sizeof(b), 1, src);
         fwrite(&b, sizeof(b), 1, dst);
     }
-*/
 
-    while (fread(&b, sizeof(b), 1, src) != 0) //fread each byte for you, reading it byte by byte to address of b, 1 byte at a time. while still have bytes to read
-    {
-        fwrite(&b, sizeof(b), 1, dst);
-    }
+
 
 
     // TODO: Read samples from input file and write updated data to output file
