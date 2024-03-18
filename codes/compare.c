@@ -1,24 +1,20 @@
-#include <cs50.h>
 #include <stdio.h>
+#include <cs50.h>
 
 int main(void)
 {
-    int x = get_int("gimme number :");
-    int y = get_int("gimme another :");
+    string s = get_string("s: "); // strings is char*, therefore is a pointer, therefore it stores an address, not the value itself
+    string t = get_string("t: ");
 
-    if (x < y)
+    if (s* == *t)
     {
-        printf ("X is less then Y\n");
+        printf("Same\n");
     }
     else
-        if (x > y)
-        {
-            printf ("X is more then Y\n");
-        }
-        else
-        {
-            printf ("They are equal\n");
-        }
+    {
+        printf("Different\n");
+    }
 
-
+    printf("%p\n",s); // show address
+    printf("%p\n",t); // show address
 }
