@@ -7,8 +7,8 @@ int main(void)
 {
     FILE *file = fopen("phonebook.csv", "a"); //read, write, appending
 
-    string *name = get_string("Name: ");
-    string *number = get_string("Number: ");
+    char *name = get_string("Name: ");
+    char *number = get_string("Number: ");
 
     fprintf(file, "%s,%s\n", name, number);
 
