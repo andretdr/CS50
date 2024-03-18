@@ -58,11 +58,10 @@ void blur(int height, int width, RGBTRIPLE image[height][width])
  {
         for (int j = 0; j < width; j++)
         {
-            RGBTRIPLE temptrip;
-            temptrip.rgbtBlue = 0;
-            temptrip.rgbtGreen = 0;
-            temptrip.rgbtRed = 0;
-            BYTE btemp;
+            float tempblue = 0;
+            float tempgreen = 0;
+            float tempred = 0;
+            //BYTE btemp;
          //   float temp = (temptrip.rgbtBlue + temptrip.rgbtGreen + temptrip.rgbtBlue)/3; // need to round this please
 
             // find average
@@ -76,19 +75,19 @@ void blur(int height, int width, RGBTRIPLE image[height][width])
                         if ((l > -1) && (l < width))
                         {
                             avecount++;
-                            temptrip.rgbtBlue += image[k][l].rgbtBlue;
-                            temptrip.rgbtGreen += image[k][l].rgbtGreen;
-                            temptrip.rgbtRed += image[k][l].rgbtRed;
-                            printf("originalimageBlue[%i][%i] is %i\n",k ,l , image[k][l].rgbtBlue);
+                            tempblue += image[k][l].rgbtBlue;
+                            tempgreen += image[k][l].rgbtGreen;
+                            tempred += image[k][l].rgbtRed;
+  //                          printf("originalimageBlue[%i][%i] is %i\n",k ,l , image[k][l].rgbtBlue);
                         }
                     }
                 }
             }
-            image[i][j].rgbtBlue = temptrip.rgbtBlue/avecount;
-            image[i][j].rgbtGreen = temptrip.rgbtGreen/avecount;
-            image[i][j].rgbtRed = temptrip.rgbtRed/avecount;
+            image[i][j].rgbtBlue = (int)tempblue/avecount;
+            image[i][j].rgbtGreen = (int)tempgreen/avecount;
+            image[i][j].rgbtRed = (int)tempred/avecount;
 
-            printf("Blue[%i][%i] is %i, averagecount of %i\n",i ,j , image[i][j].rgbtBlue, avecount);
+    //        printf("averageBlue[%i][%i] is %i, totalBlue is %i, averagecount of %i\n",i ,j , image[i][j].rgbtBlue, (int)tempblue, avecount);
         }
 /*
             // rounding
