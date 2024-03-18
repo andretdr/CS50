@@ -11,6 +11,7 @@ int main (void)
     string t = s; // now t has the same address
     t[0] = toupper(t[0]);
 
+
     printf ("%s\n", s);
     printf ("%s\n", t);
 
