@@ -1,0 +1,24 @@
+#include <stdio.h>
+//#include <>
+//#include <>
+
+int main(void)
+{
+    char *s;
+    printf("s: ");
+    scanf("%s", s); // s is already an address, so still passing by reference
+    printf("s: %s\n", s);
+
+}
+
+
+
+/*
+    int n;
+    printf("n: ");
+    scanf("%i", &n); // the address of n passing by reference, not pasing by value // taking input
+    printf("n: %i\n", n);
+*/
+
+
+}
