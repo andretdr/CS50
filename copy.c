@@ -2,7 +2,7 @@
 #include <stdio.h>
 #include <string.h>
 #include <ctype.h> // toupper tolower
-#include <stdlib.h>
+#include <stdlib.h> // malloc n free
 
 
 int main (void)
