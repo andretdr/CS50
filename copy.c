@@ -13,7 +13,7 @@ int main (void)
 
  //   *t = *s; // now t has the same address
 
-    printf ("%s\n", *s);
+    printf ("%s\n", s);
 //    printf ("%s\n", t);
 
     if (strlen(t) > 0)
