@@ -12,6 +12,6 @@ int main(void)
     }
     else
     {
-        printf("Same\n");
+        printf("Different\n");
     }
 }
