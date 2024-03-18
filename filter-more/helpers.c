@@ -87,7 +87,7 @@ void blur(int height, int width, RGBTRIPLE image[height][width])
             image[i][j].rgbtGreen = temptrip.rgbtGreen/avecount;
             image[i][j].rgbtRed = temptrip.rgbtRed/avecount;
 
-            printf("Blue[%i][%i] is %i\n",i ,j , image[i][j].rgbtBlue);
+            printf("Blue[%i][%i] is %i, averagecount of %i\n",i ,j , image[i][j].rgbtBlue, avecount);
         }
 /*
             // rounding
