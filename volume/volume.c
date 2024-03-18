@@ -50,7 +50,7 @@ int main(int argc, char *argv[])
     // TODO: Read samples from input file and write updated data to output file
     while (fread(&bb, sizeof(bb), 1, input) != 0) //fread each byte for you, reading it byte by byte to address of b, 1 byte at a time. while still have bytes to read
     {
-        
+        BYTE16 temp = bb * 2;
         fwrite(&bb, sizeof(bb), 1, output);
     }
 
