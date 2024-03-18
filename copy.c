@@ -11,7 +11,7 @@ int main (void)
 
     string t = malloc(strlen(s) + 1); // +1 for the null char
 
-    for (int i = 0, n = strlen(s); i <= n; i++) // remember to copy 
+    for (int i = 0, n = strlen(s); i <= n; i++) // remember to copy the last null char
     {
         t[i] = s[i];
     }
