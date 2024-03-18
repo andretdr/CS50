@@ -37,6 +37,8 @@ void reflect(int height, int width, RGBTRIPLE image[height][width])
         {
             RGBTRIPLE temptrip = image[i][j];
             BYTE btemp;
+
+            // while jswap image[i][j] w image[i][width-j] until
             float temp = (temptrip.rgbtBlue + temptrip.rgbtGreen + temptrip.rgbtBlue)/3; // need to round this please
 
             // rounding
