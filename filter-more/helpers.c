@@ -57,9 +57,10 @@ void blur(int height, int width, RGBTRIPLE image[height][width])
  {
         for (int j = 0; j < width; j++)
         {
-            RGBTRIPLE temptrip.rgbtBlue = 0;
-            RGBTRIPLE temptrip.rgbtGreen = 0;
-            RGBTRIPLE temptrip.rgbtRed = 0;
+            RGBTRIPLE temptrip;
+            temptrip.rgbtBlue = 0;
+            temptrip.rgbtGreen = 0;
+            temptrip.rgbtRed = 0;
             BYTE btemp;
          //   float temp = (temptrip.rgbtBlue + temptrip.rgbtGreen + temptrip.rgbtBlue)/3; // need to round this please
 
