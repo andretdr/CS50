@@ -46,18 +46,12 @@ int main(int argc, char *argv[])
         fwrite(&b, sizeof(b), 1, output);
     }
 
-
     // TODO: Read samples from input file and write updated data to output file
     while (fread(&bb, sizeof(bb), 1, input) != 0) //fread each byte for you, reading it byte by byte to address of b, 1 byte at a time. while still have bytes to read
     {
         BYTE16 temp = bb * factor;
         fwrite(&temp, sizeof(bb), 1, output);
     }
-
-
-
-
-
 
     // Close files
     fclose(input);
