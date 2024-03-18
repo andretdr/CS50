@@ -11,9 +11,12 @@ int main (void)
 
     string t = malloc(strlen(s) + 1); // +1 for the null char
 
- //   *t = *s; // now t has the same address
+    for (int i = 0, n = strlen(s); i <= n; i++) // remember to copy 
+    {
+        t[i] = s[i];
+    }
 
-    printf ("%s\n", s);
+//    printf ("%s\n", s);
 //    printf ("%s\n", t);
 
     if (strlen(t) > 0)
@@ -21,8 +24,8 @@ int main (void)
         t[0] = toupper(t[0]);
     }
 
-    // printf ("%s\n", s);
-    // printf ("%s\n", t);
+    printf ("%s\n", s);
+    printf ("%s\n", t);
 
 
 
