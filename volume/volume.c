@@ -40,7 +40,8 @@ int main(int argc, char *argv[])
     // Copy header from input file to output file//
     for (int i = 0, n = HEADER_SIZE; i < n; i++) // for each byte up to 44
     {
-        
+        fread(&b, sizeof(b), 1, src);
+        fwrite(&b, sizeof(b), 1, dst);
     }
 
 
