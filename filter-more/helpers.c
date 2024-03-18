@@ -79,6 +79,7 @@ void blur(int height, int width, RGBTRIPLE image[height][width])
                             temptrip.rgbtBlue += image[k][l].rgbtBlue;
                             temptrip.rgbtGreen += image[k][l].rgbtGreen;
                             temptrip.rgbtRed += image[k][l].rgbtRed;
+                            printf("originalimageBlue[%i][%i] is %i\n",k ,l , image[k][l].rgbtBlue);
                         }
                     }
                 }
