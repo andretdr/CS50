@@ -61,7 +61,14 @@ void blur(int height, int width, RGBTRIPLE image[height][width])
          //   float temp = (temptrip.rgbtBlue + temptrip.rgbtGreen + temptrip.rgbtBlue)/3; // need to round this please
 
             // find average
-            
+            while ()
+            {
+                while()
+                {
+
+                }
+            }
+
 
 
 
