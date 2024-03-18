@@ -7,7 +7,7 @@ void grayscale(int height, int width, RGBTRIPLE image[height][width])
         for (int j = 0, k = width; j < k; j++)
         {
             RGBTRIPLE *temptrip = image[i][j];
-            BYTES temp = (image[i][j].rgbtBlue + image[i][j].rgbtGreen + image[i][j].rgbtBlue)/3; // need to round this please
+            BYTES temp = (temptrip.rgbtBlue + temptrip.rgbtGreen + image[i][j].rgbtBlue)/3; // need to round this please
             rgbtBlue
             rgbtGreen
             rgbtRed
