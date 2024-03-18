@@ -54,6 +54,7 @@ void reflect(int height, int width, RGBTRIPLE image[height][width])
 void blur(int height, int width, RGBTRIPLE image[height][width])
 {
  for (int i = 0, n = height; i < n; i++)
+ {
         for (int j = 0, k = width; j < k; j++)
         {
             RGBTRIPLE temptrip.rgbtBlue = 0;
@@ -80,8 +81,11 @@ void blur(int height, int width, RGBTRIPLE image[height][width])
                     }
                 }
             }
-            
-
+            image[i][j].rgbtBlue = temptrip.rgbtBlue/avecount;
+            image[i][j].rgbtGreen = temptrip.rgbtGreen/avecount;
+            image[i][j].rgbtRed = temptrip.rgbtRed/avecount;
+        }
+/*
             // rounding
             if ((temp - (int)temp) >= 0.5)
             {
@@ -92,11 +96,12 @@ void blur(int height, int width, RGBTRIPLE image[height][width])
                 btemp = (int)temp;
             }
 
+
             image[i][j].rgbtBlue = btemp;
             image[i][j].rgbtGreen = btemp;
             image[i][j].rgbtRed = btemp;
-
-        }
+*/
+    }
     return;
 }
 
