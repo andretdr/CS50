@@ -11,15 +11,18 @@ int main (void)
 
     string t = malloc(strlen(s) + 1); // +1 for the null char
 
-    *t = *s; // now t has the same address
+ //   *t = *s; // now t has the same address
+
+    printf ("%s\n", *s);
+//    printf ("%s\n", t);
 
     if (strlen(t) > 0)
     {
         t[0] = toupper(t[0]);
     }
 
-    printf ("%s\n", s);
-    printf ("%s\n", t);
+    // printf ("%s\n", s);
+    // printf ("%s\n", t);
 
 
 
