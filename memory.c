@@ -1,5 +1,5 @@
 #include <stdio.h>
-#include <stdlib.h>
+#include <stdlib.h> // malloc is initializing, free is freeing up
 
 int main(void)
 {
