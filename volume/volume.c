@@ -37,7 +37,8 @@ int main(int argc, char *argv[])
         return 1;
     }
 
-    float factor = atof(argv[3]); // converts the string into a float number. the factor to multiply by
+    float factor = atof(argv[3]);
+    // converts the string into a float number. the factor to multiply by
 
     // Copy header from input file to output file//
     for (int i = 0, n = HEADER_SIZE; i < n; i++) // for each byte up to 44
@@ -47,7 +48,8 @@ int main(int argc, char *argv[])
     }
 
     // TODO: Read samples from input file and write updated data to output file
-    while (fread(&bb, sizeof(bb), 1, input) != 0) //fread each byte for you, reading it byte by byte to address of b, 1 byte at a time. while still have bytes to read
+    while (fread(&bb, sizeof(bb), 1, input) != 0)
+    // fread each byte for you, reading it byte by byte to address of b, 1 byte at a time. while still have bytes to read
     {
         BYTE16 temp = bb * factor;
         fwrite(&temp, sizeof(bb), 1, output);
