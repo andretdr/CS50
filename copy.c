@@ -7,9 +7,17 @@
 
 int main (void)
 {
-    string s =get_string("s: ");
+    char *s =get_string("s: ");
+    if (s == NULL) // not enough mem
+    {
+        return 1;
+    }
 
-    string t = malloc(strlen(s) + 1); // +1 for the null char
+    char *t = malloc(strlen(s) + 1); // +1 for the null char. char *t or string.
+    if (t == NULL) // not enough mem available
+    {
+        return 1;
+    }
 
     for (int i = 0, n = strlen(s); i <= n; i++) // remember to copy the last null char
     {
