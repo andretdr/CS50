@@ -69,7 +69,11 @@ void blur(int height, int width, RGBTRIPLE image[height][width])
                     {
             //            if ((j > -1) && (j < width))
                 //        {
-                        image[i][j].rgbtBlue = 
+
+                        image[i][j].rgbtBlue =
+
+
+
                   //      }
 
                     }
@@ -77,9 +81,6 @@ void blur(int height, int width, RGBTRIPLE image[height][width])
                 }
 
             }
-
-
-
 
             // rounding
             if ((temp - (int)temp) >= 0.5)
