@@ -4,7 +4,7 @@
 int main(int argc, char *argv[])
 {
     //typedef *char[512] block;
-
+    typedef int64_t BYTE64; //64 * 8 = 512
 
     if (argc != 2)
     {
@@ -20,8 +20,13 @@ int main(int argc, char *argv[])
         return 1;
     }
 
+    //read 512 blocks at a time
+    // if first 4 bytes match pattern,
+        // output to new file until the next 512 block
+        // until EOF
 
-
+    //read 512 blocks at a time
+    
 
 
 
