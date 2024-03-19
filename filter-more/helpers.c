@@ -129,7 +129,7 @@ void edges(int height, int width, RGBTRIPLE image[height][width])
 
             if (((i-1)>0) && ((j-1)>0))
             {
-/*            printf("image[%i][%i] blue: %i\n",i-1,j-1,image[i-1][j-1].rgbtBlue);
+            printf("image[%i][%i] blue: %i\n",i-1,j-1,image[i-1][j-1].rgbtBlue);
             printf("image[%i][%i] blue: %i\n",i-1,j,image[i-1][j].rgbtBlue);
             printf("image[%i][%i] blue: %i\n",i-1,j+1,image[i-1][j+1].rgbtBlue);
             printf("image[%i][%i] blue: %i\n",i,j-1,image[i][j-1].rgbtBlue);
@@ -138,13 +138,13 @@ void edges(int height, int width, RGBTRIPLE image[height][width])
             printf("image[%i][%i] blue: %i\n",i+1,j-1,image[i+1][j-1].rgbtBlue);
             printf("image[%i][%i] blue: %i\n",i+1,j,image[i+1][j].rgbtBlue);
             printf("image[%i][%i] blue: %i\n",i+1,j+1,image[i+1][j+1].rgbtBlue);
-  */          }
+            }
 
             RGBTRIPLE tempgxy = gxyfunction(height, width, i, j, imge);
 //unhideme        RGBTRIPLE tempgxy = gxyfunction(height, width, i, j, imge);
 
-    //        printf("final values %i %i %i\n", tempgxy.rgbtBlue, tempgxy.rgbtGreen, tempgxy.rgbtRed);
-    //        printf("\n");
+            printf("final values %i %i %i\n", tempgxy.rgbtBlue, tempgxy.rgbtGreen, tempgxy.rgbtRed);
+            printf("\n");
 //unhideme        tempimage[i][j] = tempgxy;
 
 //            RGBTRIPLE tempgy = gyfunction(height, width, i, j, image);
@@ -152,7 +152,7 @@ void edges(int height, int width, RGBTRIPLE image[height][width])
 //            image[i][j].rgbtBlue = round(tempblue/avecount);
 //            image[i][j].rgbtGreen = round(tempgreen/avecount);
 //            image[i][j].rgbtRed = round(tempred/avecount);
-    //        printf("averageBlue[%i][%i] is %i, totalBlue is %i, averagecount of %i\n",i ,j , image[i][j].rgbtBlue, (int)tempblue, avecount);
+
         }
     }
 
@@ -195,21 +195,21 @@ RGBTRIPLE gxyfunction(int height, int width, int i, int j, RGBTRIPLE image[heigh
                 if ((m > 0) && (m < width)) // if its not the edges
                 {
                     tempxBlue += gxmatrix[k][l] * (float)image[n][m].rgbtBlue;
-                //    printf("value = gxmatrix[%i][%i], image.rgbtBlue, %f %f %f\n", k, l, gxmatrix[k][l] * (float)image[n][m].rgbtBlue, gxmatrix[k][l], (float)image[n][m].rgbtBlue);
+                    printf("value = gxmatrix[%i][%i], image.rgbtBlue, %f %f %f\n", k, l, gxmatrix[k][l] * (float)image[n][m].rgbtBlue, gxmatrix[k][l], (float)image[n][m].rgbtBlue);
                     tempxGreen += gxmatrix[k][l] * (float)image[n][m].rgbtGreen;
                     tempxRed += gxmatrix[k][l] * (float)image[n][m].rgbtRed;
 
                     tempyBlue += gymatrix[k][l] * (float)image[n][m].rgbtBlue;
                     tempyGreen += gymatrix[k][l] * (float)image[n][m].rgbtGreen;
                     tempyRed += gymatrix[k][l] * (float)image[n][m].rgbtRed;
-  //                  printf("value = gymatrix[%i][%i], image.rgbtBlue, %f %f %f\n", k, l, gymatrix[k][l] * (float)image[n][m].rgbtBlue, gymatrix[k][l], (float)image[n][m].rgbtBlue);
+                    printf("value = gymatrix[%i][%i], image.rgbtBlue, %f %f %f\n", k, l, gymatrix[k][l] * (float)image[n][m].rgbtBlue, gymatrix[k][l], (float)image[n][m].rgbtBlue);
 
                 }
             }
         }
     }
-//    printf("bluex summation: %f\n", tempxBlue);
-//    printf("bluey summation: %f\n", tempyBlue);
+    printf("bluex summation: %f\n", tempxBlue);
+    printf("bluey summation: %f\n", tempyBlue);
 
 
     temp.rgbtBlue = cap(round(sqrt(tempxBlue*tempxBlue + tempyBlue*tempyBlue)));
