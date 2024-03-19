@@ -27,9 +27,9 @@ int main(int argc, char *argv[])
         // until EOF
 
     //read 512 blocks at a time
+    
 
 
-
-
+    free(buffer);
     return 0;
 }
