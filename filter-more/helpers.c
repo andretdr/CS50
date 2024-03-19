@@ -123,7 +123,7 @@ RGBTRIPLE gxfunction(int height, int width, int i, int j, RGBTRIPLE image[height
 
     for (int k = 0; k < 3; k++)
     {
-        if ((k > ) && (k < height)) // if its not the edges
+        if (((i + k - 1) > ) && (k < height)) // if its not the edges
         {
             for (int l = 0; l < 3; l++)
             {
