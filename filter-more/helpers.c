@@ -117,14 +117,20 @@ for (int i = 0; i < height; i++)
     return;
 }
 
-RGBTRIPLE gxfunction(int height, int width, int i, int j, RGBTRIPLE image[height][width])
+RGBTRIPLE gxyfunction(int height, int width, int i, int j, RGBTRIPLE image[height][width])
 {
     RGBTRIPLE temp;
-    temp.rgbtBlue = 0;
-    temp.rgbtGreen = 0;
-    temp.rgbtRed = 0;
+
+    int tempxBlue = 0;
+    int tempxGreen = 0;
+    int tempxRed = 0;
+    int tempyBlue = 0;
+    int tempyGreen = 0;
+    int tempyRed = 0;
 
     int gxmatrix[3][3] = {{-1, 0, 1}, {-2, 0 , 2}, {-1, 0, 1}};
+    int gymatrix[3][3] = {{-1, -2, -1}, {0, 0 , 0}, {1, 2, 1}};
+
 
     for (int k = 0; k < 3; k++)
     {
@@ -136,45 +142,21 @@ RGBTRIPLE gxfunction(int height, int width, int i, int j, RGBTRIPLE image[height
                 int m = (j + l - 1);
                 if ((m > 0) && (m < width)) // if its not the edges
                 {
-                    temp.rgbtBlue += gxmatrix[k][l] * image[n][m].rgbtBlue;
-                    temp.rgbtGreen += gxmatrix[k][l] * image[n][m].rgbtGreen;
-                    temp.rgbtRed += gxmatrix[k][l] * image[n][m].rgbtRed;
-  //                printf("originalimageBlue[%i][%i] is %i\n",k ,l , image[k][l].rgbtBlue);
-                }
-            }
-        }
-    }
-    return temp;
-}
+                    tempxBlue += gxmatrix[k][l] * image[n][m].rgbtBlue;
+                    tempxGreen += gxmatrix[k][l] * image[n][m].rgbtGreen;
+                    tempxRed += gxmatrix[k][l] * image[n][m].rgbtRed;
 
-RGBTRIPLE gyfunction(int height, int width, int i, int j, RGBTRIPLE image[height][width])
-{
-    RGBTRIPLE temp;
-    temp.rgbtBlue = 0;
-    temp.rgbtGreen = 0;
-    temp.rgbtRed = 0;
-
-    int gxmatrix[3][3] = {{-1, 0, 1}, {-2, 0 , 2}, {-1, 0, 1}};
-
-    for (int k = 0; k < 3; k++)
-    {
-        int n = (i + k - 1);
-        if ((n > 0) && (n < height)) // if its not the edges
-        {
-            for (int l = 0; l < 3; l++)
-            {
-                int m = (j + l - 1);
-                if ((m > 0) && (m < width)) // if its not the edges
-                {
-                    temp.rgbtBlue += gxmatrix[k][l] * image[n][m].rgbtBlue;
-                    temp.rgbtGreen += gxmatrix[k][l] * image[n][m].rgbtGreen;
-                    temp.rgbtRed += gxmatrix[k][l] * image[n][m].rgbtRed;
+                    tempyBlue += gymatrix[k][l] * image[n][m].rgbtBlue;
+                    tempyGreen += gymatrix[k][l] * image[n][m].rgbtGreen;
+                    tempyRed += gymatrix[k][l] * image[n][m].rgbtRed;
   //                printf("originalimageBlue[%i][%i] is %i\n",k ,l , image[k][l].rgbtBlue);
                 }
             }
         }
     }
 
+    RGBTRIPLE temp.rgbtBlue = tempxBlue
+
+
     return temp;
 }
-
