@@ -117,6 +117,8 @@ void edges(int height, int width, RGBTRIPLE image[height][width])
         }
     }
 
+    height = 3; //hideme
+    width = 3;  //hideme
 
 
     RGBTRIPLE tempimage[height][width];
@@ -140,7 +142,7 @@ void edges(int height, int width, RGBTRIPLE image[height][width])
             printf("image[%i][%i] blue: %i\n",i+1,j+1,image[i+1][j+1].rgbtBlue);
             }
 */
-            RGBTRIPLE tempgxy = gxyfunction(height, width, i, j, imge);
+            RGBTRIPLE tempgxy = gxyfunction(3, 3, i, j, imge);  // hideme
 //unhideme        RGBTRIPLE tempgxy = gxyfunction(height, width, i, j, imge);
 
             printf("final values %i %i %i\n", tempgxy.rgbtBlue, tempgxy.rgbtGreen, tempgxy.rgbtRed);
