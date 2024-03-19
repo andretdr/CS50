@@ -101,6 +101,9 @@ for (int i = 0; i < height; i++)
         {
             // find gx, fx
             RGBTRIPLE tempgx = gxfunction(height, width, i, j, image);
+            printf("gx values %i %i %i", tempgx.rgbtBlue, tempgx.rgbtGreen, tempgx.rgbtRed);
+
+
 //            RGBTRIPLE tempgy = gyfunction(height, width, i, j, image);
 
 //            image[i][j].rgbtBlue = round(tempblue/avecount);
@@ -140,8 +143,7 @@ RGBTRIPLE gxfunction(int height, int width, int i, int j, RGBTRIPLE image[height
         }
     }
 
-
-        return temp;
+    return temp;
 }
 
 
