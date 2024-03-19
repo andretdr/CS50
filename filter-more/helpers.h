@@ -15,3 +15,6 @@ void blur(int height, int width, RGBTRIPLE image[height][width]);
 // Function to help detect edges
 RGBTRIPLE gxyfunction(int height, int width, int i, int j, RGBTRIPLE image[height][width]);
 
+// returns a cap of 255
+int cap(int n);
+
