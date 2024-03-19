@@ -99,23 +99,28 @@ for (int i = 0; i < height; i++)
  {
         for (int j = 0; j < width; j++)
         {
-            float tempblue = 0;
-            float tempgreen = 0;
-            float tempred = 0;
-
             // find gx, fx
-            int gx = gxfunction(height, width, i, j, image);
-            int gy = gyfunction(height, width, i, j, image);
+            RGBTRIPLE tempgx = gxfunction(height, width, i, j, image);
+//            RGBTRIPLE tempgy = gyfunction(height, width, i, j, image);
 
-            image[i][j].rgbtBlue = round(tempblue/avecount);
-            image[i][j].rgbtGreen = round(tempgreen/avecount);
-            image[i][j].rgbtRed = round(tempred/avecount);
+//            image[i][j].rgbtBlue = round(tempblue/avecount);
+//            image[i][j].rgbtGreen = round(tempgreen/avecount);
+//            image[i][j].rgbtRed = round(tempred/avecount);
     //        printf("averageBlue[%i][%i] is %i, totalBlue is %i, averagecount of %i\n",i ,j , image[i][j].rgbtBlue, (int)tempblue, avecount);
         }
     }
+    return;
+}
 
-int gxfunction(int height, int width, int i, int j, RGBTRIPLE image[height][width])
+RGBTRIPLE gxfunction(int height, int width, int i, int j, RGBTRIPLE image[height][width])
 {
+    RGBTRIPLE temp;
+    temp.rgbtBlue = 0;
+    temp.rgbtGreen = 0;
+    temp.rgbtRed = 0;
+
+    int gxmatrix[3][3][3] = {-1, -2, -1}{0, 0, 0}{1, 2, 1};
+
     for (int k = i - 1, n = i + 2; k < n; k++)
     {
         if ((k > -1) && (k < height))
@@ -133,9 +138,10 @@ int gxfunction(int height, int width, int i, int j, RGBTRIPLE image[height][widt
             }
         }
     }
+
+
+        return temp;
 }
 
 
 
-    return;
-}

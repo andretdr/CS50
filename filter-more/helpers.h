@@ -12,3 +12,6 @@ void edges(int height, int width, RGBTRIPLE image[height][width]);
 // Blur image
 void blur(int height, int width, RGBTRIPLE image[height][width]);
 
+// Function to help detect edges
+RGBTRIPLE gxfunction(int height, int width, int i, int j, RGBTRIPLE image[height][width]);
+
