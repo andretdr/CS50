@@ -6,7 +6,7 @@ int main(int argc, char *argv[])
 {
     //typedef *char[512] block;
     //typedef int64_t BYTE64; //64 * 8 = 512
-    int *buffer = malloc(8 * int8_t); // buffer is 512 bytes
+    int *buffer = malloc(8 * sizeof(int64_t)); // buffer is 512 bytes
 
     if (argc != 2)
     {
@@ -16,7 +16,7 @@ int main(int argc, char *argv[])
 
     // Open file
     FILE *image = fopen(argv[1], "r");
-    if (input == NULL)
+    if (image == NULL)
     {
         printf("Could not open file.\n");
         return 1;
