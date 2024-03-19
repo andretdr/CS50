@@ -3,7 +3,7 @@
 
 int main(int argc, char *argv[])
 {
-    typedef
+    //typedef *char[512] block;
 
 
     if (argc != 2)
