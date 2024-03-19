@@ -27,7 +27,10 @@ int main(int argc, char *argv[])
         // until EOF
 
     //read 512 blocks at a time
-    while (fread(buffer, sizeof(buffer), 1, input) != 0)
+    while (fread(buffer, sizeof(*buffer), 1, image) != 0)
+    {
+        printf("",buffer[0]);
+    }
 
 
     free(buffer);
