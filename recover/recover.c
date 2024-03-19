@@ -5,6 +5,7 @@ int main(int argc, char *argv[])
 {
     //typedef *char[512] block;
     typedef int64_t BYTE64; //64 * 8 = 512
+    char *buffer = malloc();
 
     if (argc != 2)
     {
@@ -26,7 +27,7 @@ int main(int argc, char *argv[])
         // until EOF
 
     //read 512 blocks at a time
-    
+
 
 
 
