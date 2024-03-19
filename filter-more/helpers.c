@@ -189,12 +189,12 @@ RGBTRIPLE gxyfunction(int height, int width, int i, int j, RGBTRIPLE image[heigh
     for (int k = 0; k < 3; k++)
     {
         int n = (i + k - 1);
-        if ((n > 0) && (n < height)) // if its not the edges
+        if ((n >= 0) && (n < height)) // if its not the edges
         {
             for (int l = 0; l < 3; l++)
             {
                 int m = (j + l - 1);
-                if ((m > 0) && (m < width)) // if its not the edges
+                if ((m >= 0) && (m < width)) // if its not the edges
                 {
                     tempxBlue += gxmatrix[k][l] * (float)image[n][m].rgbtBlue;
                     printf("value = gxmatrix[%i][%i], image.rgbtBlue, %f %f %f\n", k, l, gxmatrix[k][l] * (float)image[n][m].rgbtBlue, gxmatrix[k][l], (float)image[n][m].rgbtBlue);
