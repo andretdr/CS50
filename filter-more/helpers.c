@@ -119,7 +119,7 @@ RGBTRIPLE gxfunction(int height, int width, int i, int j, RGBTRIPLE image[height
     temp.rgbtGreen = 0;
     temp.rgbtRed = 0;
 
-    int gxmatrix[3][3][3] = {-1, -2, -1}{0, 0, 0}{1, 2, 1};
+    int gxmatrix[3][3] = {};
 
     for (int k = i - 1, n = i + 2; k < n; k++)
     {
