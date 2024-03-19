@@ -1,5 +1,6 @@
 #include "helpers.h"
 #include <stdio.h>
+#include <math.h>
 
 // Convert image to grayscale
 void grayscale(int height, int width, RGBTRIPLE image[height][width])
@@ -83,10 +84,10 @@ void blur(int height, int width, RGBTRIPLE image[height][width])
                     }
                 }
             }
-            
-            image[i][j].rgbtBlue = (int)tempblue/avecount;
-            image[i][j].rgbtGreen = (int)tempgreen/avecount;
-            image[i][j].rgbtRed = (int)tempred/avecount;
+
+            image[i][j].rgbtBlue = round(tempblue/avecount);
+            image[i][j].rgbtGreen = round(tempgreen/avecount);
+            image[i][j].rgbtRed = round(tempred/avecount);
 
     //        printf("averageBlue[%i][%i] is %i, totalBlue is %i, averagecount of %i\n",i ,j , image[i][j].rgbtBlue, (int)tempblue, avecount);
         }
