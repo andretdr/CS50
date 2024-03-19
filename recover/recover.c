@@ -29,7 +29,7 @@ int main(int argc, char *argv[])
     //read 512 blocks at a time
     while (fread(buffer, sizeof(*buffer), 1, image) != 0)
     {
-        printf("",buffer[0]);
+        printf("%i",buffer[0]);
     }
 
 
