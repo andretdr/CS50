@@ -134,9 +134,9 @@ RGBTRIPLE gxfunction(int height, int width, int i, int j, RGBTRIPLE image[height
                 int m = (j + l - 1);
                 if ((m > 0) && (m < width)) // if its not the edges
                 {
-                    temp.rgbtBlue += gxmatrix[k][l].rgbtBlue * image[n][m].rgbtBlue;
-                    temp.rgbtGreen += gxmatrix[k][l].rgbtGreen * image[n][m].rgbtGreen;
-                    temp.rgbtRed += gxmatrix[k][l].rgbtRed * image[n][m].rgbtRed;
+                    temp.rgbtBlue += gxmatrix[k][l] * image[n][m].rgbtBlue;
+                    temp.rgbtGreen += gxmatrix[k][l] * image[n][m].rgbtGreen;
+                    temp.rgbtRed += gxmatrix[k][l] * image[n][m].rgbtRed;
   //                printf("originalimageBlue[%i][%i] is %i\n",k ,l , image[k][l].rgbtBlue);
                 }
             }
