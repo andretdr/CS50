@@ -98,6 +98,7 @@ void blur(int height, int width, RGBTRIPLE image[height][width])
 // Detect edges
 void edges(int height, int width, RGBTRIPLE image[height][width])
 {
+/*
     RGBTRIPLE imge[3][3];
     imge[0][0].rgbtBlue = 0;
     imge[0][1].rgbtBlue = 0;
@@ -119,7 +120,7 @@ void edges(int height, int width, RGBTRIPLE image[height][width])
 
     height = 3; //hideme
     width = 3;  //hideme
-
+*/
 
     RGBTRIPLE tempimage[height][width];
 
@@ -142,12 +143,12 @@ void edges(int height, int width, RGBTRIPLE image[height][width])
             printf("image[%i][%i] blue: %i\n",i+1,j+1,image[i+1][j+1].rgbtBlue);
             }
 */
-            RGBTRIPLE tempgxy = gxyfunction(3, 3, i, j, imge);  // hideme
-//unhideme        RGBTRIPLE tempgxy = gxyfunction(height, width, i, j, imge);
+//            RGBTRIPLE tempgxy = gxyfunction(3, 3, i, j, imge);  // hideme
+            RGBTRIPLE tempgxy = gxyfunction(height, width, i, j, image);
 
-            printf("final values %i %i %i\n", tempgxy.rgbtBlue, tempgxy.rgbtGreen, tempgxy.rgbtRed);
-            printf("\n");
-//unhideme        tempimage[i][j] = tempgxy;
+//            printf("final values %i %i %i\n", tempgxy.rgbtBlue, tempgxy.rgbtGreen, tempgxy.rgbtRed);
+//            printf("\n");
+            tempimage[i][j] = tempgxy;
 
 //            RGBTRIPLE tempgy = gyfunction(height, width, i, j, image);
 
@@ -158,8 +159,6 @@ void edges(int height, int width, RGBTRIPLE image[height][width])
         }
     }
 
-/*
-//unhideme
     for (int i = 0; i < height; i++)
     {
         for (int j = 0; j < width; j++)
@@ -167,7 +166,7 @@ void edges(int height, int width, RGBTRIPLE image[height][width])
         image[i][j] = tempimage[i][j];
         }
     }
-*/
+
     return;
 }
 
@@ -197,7 +196,7 @@ RGBTRIPLE gxyfunction(int height, int width, int i, int j, RGBTRIPLE image[heigh
                 if ((m >= 0) && (m < width)) // if its not the edges
                 {
                     tempxBlue += gxmatrix[k][l] * (float)image[n][m].rgbtBlue;
-                    printf("value = gxmatrix[%i][%i], image.rgbtBlue, %f %f %f\n", k, l, gxmatrix[k][l] * (float)image[n][m].rgbtBlue, gxmatrix[k][l], (float)image[n][m].rgbtBlue);
+//                    printf("value = gxmatrix[%i][%i], image.rgbtBlue, %f %f %f\n", k, l, gxmatrix[k][l] * (float)image[n][m].rgbtBlue, gxmatrix[k][l], (float)image[n][m].rgbtBlue);
                     tempxGreen += gxmatrix[k][l] * (float)image[n][m].rgbtGreen;
                     tempxRed += gxmatrix[k][l] * (float)image[n][m].rgbtRed;
 
@@ -210,8 +209,8 @@ RGBTRIPLE gxyfunction(int height, int width, int i, int j, RGBTRIPLE image[heigh
             }
         }
     }
-    printf("bluex summation: %f\n", tempxBlue);
-    printf("bluey summation: %f\n", tempyBlue);
+//    printf("bluex summation: %f\n", tempxBlue);
+//    printf("bluey summation: %f\n", tempyBlue);
 
 
     temp.rgbtBlue = cap(round(sqrt(tempxBlue*tempxBlue + tempyBlue*tempyBlue)));
