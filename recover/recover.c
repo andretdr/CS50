@@ -27,7 +27,7 @@ int main(int argc, char *argv[])
         // until EOF
 
     //read 512 blocks at a time
-    
+    while (fread(buffer, sizeof(buffer), 1, input) != 0)
 
 
     free(buffer);
