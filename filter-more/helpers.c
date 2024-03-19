@@ -129,10 +129,10 @@ RGBTRIPLE gxfunction(int height, int width, int i, int j, RGBTRIPLE image[height
             {
                 if ((l > -1) && (l < width))
                 {
-                    avecount++;
-                    tempblue += image[k][l].rgbtBlue;
-                    tempgreen += image[k][l].rgbtGreen;
-                    tempred += image[k][l].rgbtRed;
+  //                  avecount++;
+    //                tempblue += image[k][l].rgbtBlue;
+      //              tempgreen += image[k][l].rgbtGreen;
+        //            tempred += image[k][l].rgbtRed;
   //                          printf("originalimageBlue[%i][%i] is %i\n",k ,l , image[k][l].rgbtBlue);
                 }
             }
