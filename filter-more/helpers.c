@@ -121,11 +121,11 @@ RGBTRIPLE gxfunction(int height, int width, int i, int j, RGBTRIPLE image[height
 
     int gxmatrix[3][3] = {-1, 0, 1, -2, 0 ,2, -1, 0, 1};
 
-    for (int k = i - 1, n = i + 2; k < n; k++)
+    for (int k = 0; k < 3; k++)
     {
-        if ((k > -1) && (k < height)) // if its not the edges
+        if ((k > ) && (k < height)) // if its not the edges
         {
-            for (int l = j - 1, m = j + 2; l < m; l++)
+            for (int l = 0; l < 3; l++)
             {
                 if ((l > -1) && (l < width)) // if its not the edges
                 {
