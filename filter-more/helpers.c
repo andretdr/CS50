@@ -95,5 +95,27 @@ void blur(int height, int width, RGBTRIPLE image[height][width])
 // Detect edges
 void edges(int height, int width, RGBTRIPLE image[height][width])
 {
+for (int i = 0; i < height; i++)
+ {
+        for (int j = 0; j < width; j++)
+        {
+            float tempblue = 0;
+            float tempgreen = 0;
+            float tempred = 0;
+
+            // find average
+            int gx = gxfunction();
+            int gy = gyfunction()
+
+            image[i][j].rgbtBlue = round(tempblue/avecount);
+            image[i][j].rgbtGreen = round(tempgreen/avecount);
+            image[i][j].rgbtRed = round(tempred/avecount);
+    //        printf("averageBlue[%i][%i] is %i, totalBlue is %i, averagecount of %i\n",i ,j , image[i][j].rgbtBlue, (int)tempblue, avecount);
+        }
+    }
+
+
+
+
     return;
 }
