@@ -116,8 +116,23 @@ for (int i = 0; i < height; i++)
 
 int gxfunction(int height, int width, int i, int j, RGBTRIPLE image[height][width])
 {
-    
-
+    for (int k = i - 1, n = i + 2; k < n; k++)
+    {
+        if ((k > -1) && (k < height))
+        {
+            for (int l = j - 1, m = j + 2; l < m; l++)
+            {
+                if ((l > -1) && (l < width))
+                {
+                    avecount++;
+                    tempblue += image[k][l].rgbtBlue;
+                    tempgreen += image[k][l].rgbtGreen;
+                    tempred += image[k][l].rgbtRed;
+  //                          printf("originalimageBlue[%i][%i] is %i\n",k ,l , image[k][l].rgbtBlue);
+                }
+            }
+        }
+    }
 }
 
 
