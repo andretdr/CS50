@@ -155,7 +155,9 @@ RGBTRIPLE gxyfunction(int height, int width, int i, int j, RGBTRIPLE image[heigh
         }
     }
 
-    RGBTRIPLE temp.rgbtBlue = tempxBlue
+    temp.rgbtBlue = round(sqrt(tempxBlue*tempxBlue + tempyBlue*tempyBlue));
+    temp.rgbtGreen = round(sqrt(tempxGreen*tempxGreen + tempyGreen*tempyGreen));
+    temp.rgbtRed = round(sqrt(tempxRed*tempxRed + tempyRed*tempyRed));
 
 
     return temp;
