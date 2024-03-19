@@ -127,7 +127,7 @@ void edges(int height, int width, RGBTRIPLE image[height][width])
         {
             // find gx, fx
 
-            if (((i-1)>0) && ((j-1)>0))
+  /*          if (((i-1)>0) && ((j-1)>0))
             {
             printf("image[%i][%i] blue: %i\n",i-1,j-1,image[i-1][j-1].rgbtBlue);
             printf("image[%i][%i] blue: %i\n",i-1,j,image[i-1][j].rgbtBlue);
@@ -139,7 +139,7 @@ void edges(int height, int width, RGBTRIPLE image[height][width])
             printf("image[%i][%i] blue: %i\n",i+1,j,image[i+1][j].rgbtBlue);
             printf("image[%i][%i] blue: %i\n",i+1,j+1,image[i+1][j+1].rgbtBlue);
             }
-
+*/
             RGBTRIPLE tempgxy = gxyfunction(height, width, i, j, imge);
 //unhideme        RGBTRIPLE tempgxy = gxyfunction(height, width, i, j, imge);
 
