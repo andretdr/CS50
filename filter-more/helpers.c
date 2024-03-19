@@ -103,9 +103,9 @@ for (int i = 0; i < height; i++)
             float tempgreen = 0;
             float tempred = 0;
 
-            // find average
-            int gx = gxfunction();
-            int gy = gyfunction()
+            // find gx, fx
+            int gx = gxfunction(height, width, i, j, image);
+            int gy = gyfunction(height, width, i, j, image);
 
             image[i][j].rgbtBlue = round(tempblue/avecount);
             image[i][j].rgbtGreen = round(tempgreen/avecount);
@@ -114,6 +114,11 @@ for (int i = 0; i < height; i++)
         }
     }
 
+int gxfunction(int height, int width, int i, int j, RGBTRIPLE image[height][width])
+{
+    
+
+}
 
 
 
