@@ -101,6 +101,8 @@ for (int i = 0; i < height; i++)
         {
             // find gx, fx
             RGBTRIPLE tempgx = gxfunction(height, width, i, j, image);
+            RGBTRIPLE tempgy = gyfunction(height, width, i, j, image);
+
             printf("gx values %i %i %i", tempgx.rgbtBlue, tempgx.rgbtGreen, tempgx.rgbtRed);
 
 
@@ -142,9 +144,37 @@ RGBTRIPLE gxfunction(int height, int width, int i, int j, RGBTRIPLE image[height
             }
         }
     }
-
     return temp;
 }
 
+RGBTRIPLE gyfunction(int height, int width, int i, int j, RGBTRIPLE image[height][width])
+{
+    RGBTRIPLE temp;
+    temp.rgbtBlue = 0;
+    temp.rgbtGreen = 0;
+    temp.rgbtRed = 0;
 
+    int gxmatrix[3][3] = {{-1, 0, 1}, {-2, 0 , 2}, {-1, 0, 1}};
+
+    for (int k = 0; k < 3; k++)
+    {
+        int n = (i + k - 1);
+        if ((n > 0) && (n < height)) // if its not the edges
+        {
+            for (int l = 0; l < 3; l++)
+            {
+                int m = (j + l - 1);
+                if ((m > 0) && (m < width)) // if its not the edges
+                {
+                    temp.rgbtBlue += gxmatrix[k][l] * image[n][m].rgbtBlue;
+                    temp.rgbtGreen += gxmatrix[k][l] * image[n][m].rgbtGreen;
+                    temp.rgbtRed += gxmatrix[k][l] * image[n][m].rgbtRed;
+  //                printf("originalimageBlue[%i][%i] is %i\n",k ,l , image[k][l].rgbtBlue);
+                }
+            }
+        }
+    }
+
+    return temp;
+}
 
