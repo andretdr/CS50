@@ -123,11 +123,11 @@ RGBTRIPLE gxfunction(int height, int width, int i, int j, RGBTRIPLE image[height
 
     for (int k = i - 1, n = i + 2; k < n; k++)
     {
-        if ((k > -1) && (k < height))
+        if ((k > -1) && (k < height)) // if its not the edges
         {
             for (int l = j - 1, m = j + 2; l < m; l++)
             {
-                if ((l > -1) && (l < width))
+                if ((l > -1) && (l < width)) // if its not the edges
                 {
   //                  avecount++;
     //                tempblue += image[k][l].rgbtBlue;
