@@ -62,8 +62,6 @@ void blur(int height, int width, RGBTRIPLE image[height][width])
             float tempblue = 0;
             float tempgreen = 0;
             float tempred = 0;
-            //BYTE btemp;
-         //   float temp = (temptrip.rgbtBlue + temptrip.rgbtGreen + temptrip.rgbtBlue)/3; // need to round this please
 
             // find average
             int avecount = 0;
@@ -88,25 +86,8 @@ void blur(int height, int width, RGBTRIPLE image[height][width])
             image[i][j].rgbtBlue = round(tempblue/avecount);
             image[i][j].rgbtGreen = round(tempgreen/avecount);
             image[i][j].rgbtRed = round(tempred/avecount);
-
     //        printf("averageBlue[%i][%i] is %i, totalBlue is %i, averagecount of %i\n",i ,j , image[i][j].rgbtBlue, (int)tempblue, avecount);
         }
-/*
-            // rounding
-            if ((temp - (int)temp) >= 0.5)
-            {
-                btemp = (int)temp + 1;
-            }
-            else
-            {
-                btemp = (int)temp;
-            }
-
-
-            image[i][j].rgbtBlue = btemp;
-            image[i][j].rgbtGreen = btemp;
-            image[i][j].rgbtRed = btemp;
-*/
     }
     return;
 }
