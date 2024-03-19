@@ -204,7 +204,7 @@ RGBTRIPLE gxyfunction(int height, int width, int i, int j, RGBTRIPLE image[heigh
                     tempyBlue += gymatrix[k][l] * (float)image[n][m].rgbtBlue;
                     tempyGreen += gymatrix[k][l] * (float)image[n][m].rgbtGreen;
                     tempyRed += gymatrix[k][l] * (float)image[n][m].rgbtRed;
-                    printf("value = gymatrix[%i][%i], image.rgbtBlue, %f %f %f\n", k, l, gymatrix[k][l] * (float)image[n][m].rgbtBlue, gymatrix[k][l], (float)image[n][m].rgbtBlue);
+//                    printf("value = gymatrix[%i][%i], image.rgbtBlue, %f %f %f\n", k, l, gymatrix[k][l] * (float)image[n][m].rgbtBlue, gymatrix[k][l], (float)image[n][m].rgbtBlue);
 
                 }
             }
