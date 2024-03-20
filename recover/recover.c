@@ -9,7 +9,7 @@ void append(char name[], int n);
 int main(int argc, char *argv[])
 {
     typedef uint8_t BYTE;
-    BYTE buffer[512];
+    BYTE buffer[512] = {0};
     BYTE b = 0;
 
     if (argc != 2)
