@@ -118,7 +118,7 @@ void append(char name[], int n)
 {
     char temp[n];
     int length = 0;
-    while (name[length] != "\0")
+    while (name[length] != '\0')
     {
         length++;
     }
@@ -128,6 +128,10 @@ void append(char name[], int n)
     }
     for (int i = 0; i < length ; i++)
     {
-        temp[i + n - length] = name[i]
+        temp[i + n - length] = name[i];
+    }
+    for (int i = 0; i < length ; i++)
+    {
+        name[i] = temp[i];
     }
 }
