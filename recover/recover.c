@@ -120,8 +120,9 @@ void append(char name[], int n)
     {
         length++;
     }
-    for (int i = 0; i < (n - length); i++)
+    for (int i = 0; i < length ; i++)
     {
-        
+
+        temp[i + n - length] = name[i]
     }
 }
