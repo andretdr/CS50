@@ -120,5 +120,5 @@ void append(char name[], int n)
     {
         length++;
     }
-
+    (if )
 }
