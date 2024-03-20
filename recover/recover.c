@@ -44,6 +44,7 @@ int n = 0;
                         n++;
                         printf("255 216 255 %i, n: %i \n", *header, n);
                         }
+                    
         }
 
         //fread(body, 508, 1, image);
