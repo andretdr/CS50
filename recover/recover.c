@@ -51,7 +51,9 @@ int main(int argc, char *argv[])
                     fclose(photo);
                 }
                 sprintf(filename, "%i.jpg", n); // convert n to string, REMBER TO padd the zeros
+                printf("%s\n",filename);
                 append(filename, namelength); // convert n to string, REMBER TO padd the zeros
+                printf("%s\n",filename);
                 //printf(filename);
 
                 //printf("%s \n",filename);
