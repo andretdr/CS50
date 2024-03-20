@@ -37,13 +37,18 @@ int n = 0;
     {
         if (*header == 255)
         {
-//            printf("%i ", *header);
-//            if ((fread(header, 1, 1, image) != 0) && (*header == 216))
-//                if ((fread(header, 1, 1, image) != 0) && (*header == 255))
-  //                  if ((fread(header, 1, 1, image) != 0) && (*header >= 65504) && (*header <= 65519))
+            b[0] = *header;
+            if ((fread(header, 1, 1, image) != 0) && (*header == 216))
+                {
+                b[1] = *header;
+                if ((fread(header, 1, 1, image) != 0) && (*header == 255))
+                {
+                    b[2] = *header;
+                    if ((fread(header, 1, 1, image) != 0) && (*header >= 224) && (*header <= 239))
                         {
-                        n++;
-                        printf("255 216 255 %i, n: %i \n", *header, n);
+                        b[3] = *header;
+                        // save to new file
+                        FILE 
                         }
 
         }
