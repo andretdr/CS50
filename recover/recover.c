@@ -36,8 +36,9 @@ int main(int argc, char *argv[])
 
     int blockcount = 0;
     int n = 0;
-    //FILE *photo = fopen(filename, "w");
     char *filename = malloc(8);
+    FILE *photo = fopen(filename, "w");
+
 
     // header check
     while (fread(&b, 1, 1, image) != 0)
@@ -54,7 +55,7 @@ int main(int argc, char *argv[])
                 }
                 n++;
                 sprintf(filename, "0%i.jpg", n); // convert n to string, REMBER TO padd the zeros
-                FILE *photo = fopen(filename, "w");
+                photo = fopen(filename, "w");
 
             }
 
