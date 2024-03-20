@@ -39,12 +39,12 @@ int n = 0;
 //            printf("%i ", *header);
 //            if ((fread(header, 1, 1, image) != 0) && (*header == 216))
 //                if ((fread(header, 1, 1, image) != 0) && (*header == 255))
-                    if ((fread(header, 1, 1, image) != 0) && (*header >= 65504) && (*header <= 65519))
+                    if ((fread(header, 1, 2, image) != 0) && (*header >= 65504) && (*header <= 65519))
                         {
                         n++;
                         printf("255 216 255 %i, n: %i \n", *header, n);
                         }
-                    
+
         }
 
         //fread(body, 508, 1, image);
