@@ -49,10 +49,15 @@ int n = 0;
                         b[3] = *header;
                         // save to new file
                         // convert n to string
-                        char str[3];
-                        sprintf(str, %);
+                        char str[8];
+                        sprintf(str, "0%i".jpg, n); // REMBER TO padd the zeros
 
-                        FILE *photo = fopen("0%i.jpg", n,); // REMBER TO padd the zeros
+                        FILE *photo = fopen(str, "w");
+                        if (n > 0) // if not the 1st jpg, then close the prev file
+                        {
+                            fclose(file);
+
+                        }
                         }
 
         }
