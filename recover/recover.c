@@ -6,7 +6,7 @@ int main(int argc, char *argv[])
 {
     //typedef *char[512] block;
 //    typedef uint8_t BYTE;
-//    BYTE b;
+    BYTE b[4] = {0, 0, 0, 0};
     int *header = malloc(1); // buffer is 1 bytes
     int *body = malloc(508); // body is 508 bytes
 
