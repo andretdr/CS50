@@ -36,7 +36,7 @@ int main(int argc, char *argv[])
 
     int blockcount = 0;
     int n = 0;
-    FILE *photo;
+    //FILE *photo = fopen(filename, "w");
     char *filename = malloc(8);
 
     // header check
@@ -54,7 +54,7 @@ int main(int argc, char *argv[])
                 }
                 n++;
                 sprintf(filename, "0%i.jpg", n); // convert n to string, REMBER TO padd the zeros
-                *photo = fopen(filename, "w");
+                FILE *photo = fopen(filename, "w");
 
             }
 
