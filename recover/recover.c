@@ -26,7 +26,8 @@ int main(int argc, char *argv[])
 
     int blockcount = 0;
     int n = 0;
-    char filename[8];
+    int namelength = 8;
+    char filename[namelength];
     FILE *photo = fopen("001.jpg", "w");
 
     // header check
@@ -45,7 +46,7 @@ int main(int argc, char *argv[])
                 n++;
 
                 sprintf(filename, "0%i.jpg", n); // convert n to string, REMBER TO padd the zeros
-                append(filename); // convert n to string, REMBER TO padd the zeros
+                append(filename, namelength); // convert n to string, REMBER TO padd the zeros
                 //printf(filename);
 
                 printf("%s \n",filename);
@@ -111,8 +112,13 @@ int main(int argc, char *argv[])
     return 0;
 }
 
-void append(char *name)
+void append(char name[], int n)
 {
-    
+    char temp[n];
+    int length = 0;
+    while (name[length] != "\0")
+    {
+        length++;
+    }
 
 }
