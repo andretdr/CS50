@@ -26,8 +26,8 @@ int main(int argc, char *argv[])
 
     int blockcount = 0;
     int n = 0;
-    char filename[8];
-    //FILE *photo = fopen(filename, "w");
+    char filename[8] = "000.jpg";
+    FILE *photo = fopen(filename, "w");
 
     // header check
     while (fread(&b, 1, 1, image) != 0)
@@ -40,19 +40,19 @@ int main(int argc, char *argv[])
             {
                 if (n > 0)
                 {
-//                    fclose(photo);
+                    fclose(photo);
                 }
                 n++;
 
                 sprintf(filename, "0%i.jpg", n); // convert n to string, REMBER TO padd the zeros
                 printf("%s \n",filename);
-//                photo = fopen(filename, "w");
+                photo = fopen(filename, "w");
 
             }
 
             for (int i = 0; i < 512; i ++)
             {
-//                fwrite(&buffer[i], 1, 1, photo);
+                fwrite(&buffer[i], 1, 1, photo);
             }
 
             blockcount = 0;
