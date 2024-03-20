@@ -28,7 +28,7 @@ int main(int argc, char *argv[])
 
     int blockcount = 0;
     int n = 0;
-    const int namelength = 7;
+    const int namelength = 8;
     char filename[namelength] = {"000.jpg"};
     FILE *photo = fopen(filename, "w");
     if (photo == NULL)
