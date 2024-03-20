@@ -4,6 +4,8 @@
 #include <stdbool.h>
 //#include <string.h>
 
+void append(char name[], int n);
+
 int main(int argc, char *argv[])
 {
     typedef uint8_t BYTE;
@@ -120,9 +122,12 @@ void append(char name[], int n)
     {
         length++;
     }
+    for (int i = 0; i < n - length; i++)
+    {
+        temp[i] = '0';
+    }
     for (int i = 0; i < length ; i++)
     {
-
         temp[i + n - length] = name[i]
     }
 }
