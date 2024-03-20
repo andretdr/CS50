@@ -37,7 +37,7 @@ int main(int argc, char *argv[])
     int blockcount = 0;
     int n = 0;
     FILE *photo;
-    string filename;
+    char *filename = ;
 
     // header check
     while (fread(&b, 1, 1, image) != 0)
