@@ -35,7 +35,7 @@ int main(int argc, char *argv[])
 
     bool opennew = false;
     int blockcount = 0;
-    int n = 0;
+    int n = 1;
     FILE *photo;
 
     // header check
@@ -50,7 +50,8 @@ int main(int argc, char *argv[])
                 n++;
                 opennew = true;
                 fclose(photo);
-                FILE *photo = fopen(str, "w");
+                sprintf(filename, "0%i".jpg, n); // convert n to string, REMBER TO padd the zeros
+                *photo = fopen(filename, "w");
 
             }
 
@@ -67,7 +68,7 @@ int main(int argc, char *argv[])
 
             }
                 // save to new file
-                sprintf(filename, "0%i".jpg, n); // convert n to string, REMBER TO padd the zeros
+
 
                 FILE *photo = fopen(str, "w");
 
