@@ -34,7 +34,7 @@ int main(int argc, char *argv[])
 for (int i = 0; i < 1000; i++)
 {
 fread(buffer, sizeof(*buffer), 1, image);
-        printf("%i \n",buffer[0]);
+        printf("%i \n",*buffer);
 }
 
 
