@@ -64,53 +64,6 @@ int main(int argc, char *argv[])
             blockcount = 0;
         }
     }
-
-
-
-
-
-  /*      char filename[8];
-
-        if (*header == 255)
-        {
-            b[0] = *header;
-            if ((fread(header, 1, 1, image) != 0) && (*header == 216))
-            {
-                b[1] = *header;
-                if ((fread(header, 1, 1, image) != 0) && (*header == 255))
-                {
-                    b[2] = *header;
-                    if ((fread(header, 1, 1, image) != 0) && (*header >= 224) && (*header <= 239))
-                    {
-                        b[3] = *header;
-                        n++;
-                        opennew = true; //open and write newfile
-                    }
-                }
-            }
-        }
-        if (openew)
-        {
-            if (n > 1) // if not the 1st jpg, then close the prev file
-            {
-                fclose(filename);
-            }
-                // save to new file
-                sprintf(filename, "0%i".jpg, n); // convert n to string, REMBER TO padd the zeros
-
-                FILE *photo = fopen(str, "w");
-
-        }
-
-
-
-
-*/
-
-
-
-//    free(header);
-//    free(body);
     return 0;
 }
 
@@ -133,7 +86,5 @@ void append(char name[], int n)
     for (int i = 0; i < n ; i++)
     {
         name[i] = temp[i];
-        printf("%c",name[i]);
     }
-    printf("\n");
 }
