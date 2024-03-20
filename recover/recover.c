@@ -35,13 +35,24 @@ int main(int argc, char *argv[])
 
     bool opennew = false;
     int blockcount = 0;
+    int n = 0;
 
     // header check
     while (fread(&b, 1, 1, image) != 0)
     {
         buffer[blockcount] = b;
         blockcount ++;
-        if (blockcount == 511)
+        if (blockcount == 512)
+        {
+            if ((buffer[0] == 255) && (buffer[1] == 216) && (buffer[2] == 255) && (buffer[3] >= 224) && (buffer[3] <= 239))
+            {
+                n++;
+                printf("%i\n",n);
+
+            }
+            blockcount = 0;
+            buffer[] = 0;
+        }
     }
 
 
@@ -85,10 +96,10 @@ int main(int argc, char *argv[])
 
 
 */
-    }
+    
 
 
-    free(header);
-    free(body);
+//    free(header);
+//    free(body);
     return 0;
 }
