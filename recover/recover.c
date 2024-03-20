@@ -49,6 +49,28 @@ int main(int argc, char *argv[])
                 n++;
                 opennew = true;
             }
+
+            
+            fwrite(buffer[i], 1, 1, filename);
+
+
+                    if (openew)
+        {
+            if (n > 1) // if not the 1st jpg, then close the prev file
+            {
+                fclose(filename);
+            }
+                // save to new file
+                sprintf(filename, "0%i".jpg, n); // convert n to string, REMBER TO padd the zeros
+
+                FILE *photo = fopen(str, "w");
+
+        }
+
+
+
+
+
             blockcount = 0;
         }
     }
