@@ -61,8 +61,8 @@ int main(int argc, char *argv[])
 
             for (int i = 0; i < 512; i ++)
             {
-                
-                fwrite(buffer[i], 1, 1, photo);
+
+                fwrite(&buffer[i], 1, 1, photo);
             }
 
             blockcount = 0;
