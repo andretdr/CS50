@@ -28,9 +28,14 @@ int main(int argc, char *argv[])
 
     int blockcount = 0;
     int n = 0;
-    int namelength = 7;
-    char filename[namelength];
-    FILE *photo = fopen("000.jpg", "w");
+    const int namelength = 7;
+    char filename[namelength] = {'0','0','0','.','j','p','g'};
+    FILE *photo = fopen(filename, "w");
+    if (photo == NULL)
+    {
+        printf("Could not open file.\n");
+        return 1;
+    }
 
     // header check
     while (fread(&b, 1, 1, image) != 0)
@@ -45,14 +50,17 @@ int main(int argc, char *argv[])
                 {
                     fclose(photo);
                 }
-
-
                 sprintf(filename, "%i.jpg", n); // convert n to string, REMBER TO padd the zeros
                 append(filename, namelength); // convert n to string, REMBER TO padd the zeros
                 //printf(filename);
 
                 //printf("%s \n",filename);
                 photo = fopen(filename, "w");
+                if (photo == NULL)
+                {
+                    printf("Could not open file.\n");
+                    return 1;
+                }
                 n++;
             }
 
@@ -64,7 +72,7 @@ int main(int argc, char *argv[])
             blockcount = 0;
         }
     }
-    
+
     fclose(photo);
     fclose(image);
     return 0;
