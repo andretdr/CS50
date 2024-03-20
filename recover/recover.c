@@ -45,6 +45,9 @@ int main(int argc, char *argv[])
                 n++;
 
                 sprintf(filename, "0%i.jpg", n); // convert n to string, REMBER TO padd the zeros
+                append(filename); // convert n to string, REMBER TO padd the zeros
+                //printf(filename);
+
                 printf("%s \n",filename);
                 photo = fopen(filename, "w");
 
@@ -106,4 +109,10 @@ int main(int argc, char *argv[])
 //    free(header);
 //    free(body);
     return 0;
+}
+
+void append(char *name)
+{
+    
+
 }
