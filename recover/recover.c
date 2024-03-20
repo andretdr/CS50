@@ -64,6 +64,9 @@ int main(int argc, char *argv[])
             blockcount = 0;
         }
     }
+    
+    fclose(photo);
+    fclose(image);
     return 0;
 }
 
