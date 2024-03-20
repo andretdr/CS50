@@ -2,7 +2,7 @@
 #include <stdlib.h>
 #include <stdint.h>
 #include <stdbool.h>
-#include <string.h>
+//#include <string.h>
 
 int main(int argc, char *argv[])
 {
@@ -26,7 +26,7 @@ int main(int argc, char *argv[])
 
     int blockcount = 0;
     int n = 0;
-    //char filename[] = "out.jpg";
+    char filename[8];
     //FILE *photo = fopen(filename, "w");
 
     // header check
@@ -43,8 +43,9 @@ int main(int argc, char *argv[])
 //                    fclose(photo);
                 }
                 n++;
-                printf("%i \n",n);
-//                sprintf(filename, "0%i.jpg", n); // convert n to string, REMBER TO padd the zeros
+
+                sprintf(filename, "0%i.jpg", n); // convert n to string, REMBER TO padd the zeros
+                printf("%s \n",filename);
 //                photo = fopen(filename, "w");
 
             }
