@@ -48,7 +48,9 @@ int n = 0;
                         {
                         b[3] = *header;
                         // save to new file
-                        
+                        // convert n to string
+                        char str[3];
+                        sprintf(str, %);
 
                         FILE *photo = fopen("0%i.jpg", n,); // REMBER TO padd the zeros
                         }
