@@ -7,7 +7,7 @@ int main(int argc, char *argv[])
     //typedef *char[512] block;
 //    typedef uint8_t BYTE;
 //    BYTE b;
-    int *buffer = malloc(1); // buffer is 512 bytes
+    int *buffer = malloc(1); // buffer is 1 byte
 
     if (argc != 2)
     {
