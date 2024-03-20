@@ -30,12 +30,12 @@ int main(int argc, char *argv[])
         // until EOF
 
     //read 512 blocks at a time
-    while (fread(header, 1, 4, image) != 0)
+    while (fread(header, 1, 1, image) != 0)
     {
   //      fread(header, 1, 1, image);
   //      if ((header>) && (buffer<))
         {
-            printf("%i %i %i %i \n", header[0],header[1],header[2],header[3]);
+            printf("%i %i %i %i \n", header[0]);
 
         }
         //fread(body, 508, 1, image);
