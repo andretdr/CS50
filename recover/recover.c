@@ -51,7 +51,7 @@ int main(int argc, char *argv[])
                 append(filename, namelength); // convert n to string, REMBER TO padd the zeros
                 //printf(filename);
 
-                printf("%s \n",filename);
+                //printf("%s \n",filename);
                 photo = fopen(filename, "w");
 
             }
@@ -126,12 +126,14 @@ void append(char name[], int n)
     {
         temp[i] = '0';
     }
-    for (int i = 0; i < length ; i++)
+    for (int i = 0; i < n ; i++)
     {
         temp[i + n - length] = name[i];
     }
-    for (int i = 0; i < length ; i++)
+    for (int i = 0; i < n ; i++)
     {
         name[i] = temp[i];
+        printf("%c",name[i]);
     }
+    printf("\n");
 }
