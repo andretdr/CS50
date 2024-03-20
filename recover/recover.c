@@ -30,7 +30,7 @@ int main(int argc, char *argv[])
     int n = 0;
     int namelength = 7;
     char filename[namelength];
-    FILE *photo = fopen("001.jpg", "w");
+    FILE *photo = fopen("000.jpg", "w");
 
     // header check
     while (fread(&b, 1, 1, image) != 0)
@@ -45,7 +45,7 @@ int main(int argc, char *argv[])
                 {
                     fclose(photo);
                 }
-                n++;
+
 
                 sprintf(filename, "%i.jpg", n); // convert n to string, REMBER TO padd the zeros
                 append(filename, namelength); // convert n to string, REMBER TO padd the zeros
@@ -53,7 +53,7 @@ int main(int argc, char *argv[])
 
                 //printf("%s \n",filename);
                 photo = fopen(filename, "w");
-
+                n++;
             }
 
             for (int i = 0; i < 512; i ++)
