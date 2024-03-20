@@ -71,10 +71,6 @@ int main(int argc, char *argv[])
 
             blockcount = 0;
         }
-        if (n == 50)
-        {
-            return 0;
-        }
     }
     printf("exit");
     fclose(photo);
