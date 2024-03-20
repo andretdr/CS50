@@ -5,7 +5,7 @@
 int main(int argc, char *argv[])
 {
     //typedef *char[512] block;
-    typedef int8_t BYTE;
+    typedef uint8_t BYTE;
     BYTE b;
     int *buffer = malloc(sizeof(BYTE)); // buffer is 512 bytes
 
@@ -32,7 +32,7 @@ int main(int argc, char *argv[])
 //    while (fread(buffer, sizeof(*buffer), 1, image) != 0)
 //
 
-for (int i = 0; i < 1000; i++)
+for (int i = 0; i < 10000; i++)
 {
 fread(&b, sizeof(b), 1, image);
         printf("%i \n", b);
