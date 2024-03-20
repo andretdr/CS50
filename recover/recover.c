@@ -36,7 +36,7 @@ int main(int argc, char *argv[])
     // header check
     while (fread(header, 1, 1, image) != 0)
     {
-        char str[8];
+        char filename[8];
 
         if (*header == 255)
         {
@@ -50,6 +50,7 @@ int main(int argc, char *argv[])
                     if ((fread(header, 1, 1, image) != 0) && (*header >= 224) && (*header <= 239))
                     {
                         b[3] = *header;
+                        n++;
                         opennew = true; //open and write newfile
                     }
                 }
@@ -57,17 +58,13 @@ int main(int argc, char *argv[])
         }
         if (openew)
         {
-            // save to new file
-            // convert n to string
-
-            sprintf(str, "0%i".jpg, n); // REMBER TO padd the zeros
-
-                        FILE *photo = fopen(str, "w");
-                        if (n > 0) // if not the 1st jpg, then close the prev file
-                        {
-                            fclose(file);
-
-                        }
+            if (n > 1) // if not the 1st jpg, then close the prev file
+            {
+                fclose(filename);
+            }
+                // save to new file
+                sprintf(filename, "0%i".jpg, n); // convert n to string, REMBER TO padd the zeros
+                FILE *photo = fopen(str, "w");
 
         }
 
