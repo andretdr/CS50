@@ -6,9 +6,12 @@
 int main(int argc, char *argv[])
 {
 
-    BYTE b[4] = {0, 0, 0, 0};
-    int *header = malloc(1); // buffer is 1 bytes
-    int *body = malloc(508); // body is 508 bytes
+    typedef uint8_t BYTE;
+    BYTE buffer[512] = 0;
+    BYTE b = 0;
+
+//    int *header = malloc(1); // buffer is 1 bytes
+//    int *body = malloc(508); // body is 508 bytes
 
 
     if (argc != 2)
@@ -31,12 +34,23 @@ int main(int argc, char *argv[])
         // until EOF
 
     bool opennew = false;
-    int n = 0;
+    int blockcount = 0;
 
     // header check
-    while (fread(header, 1, 1, image) != 0)
+    while ((fread(&b, 1, 1, image) != 0) && (blockcount <512))
     {
-        char filename[8];
+        buffer[blockcount] = b;
+        if ((buffer[0] == 255) && (buffer[1] == 216) && (buffer[2] == 255) && (buffer[3] >= 224) && (buffer[3] <= 239))
+        {
+            
+        }
+    }
+
+
+
+
+
+  /*      char filename[8];
 
         if (*header == 255)
         {
@@ -64,6 +78,7 @@ int main(int argc, char *argv[])
             }
                 // save to new file
                 sprintf(filename, "0%i".jpg, n); // convert n to string, REMBER TO padd the zeros
+
                 FILE *photo = fopen(str, "w");
 
         }
@@ -71,7 +86,7 @@ int main(int argc, char *argv[])
 
 
 
-
+*/
     }
 
 
