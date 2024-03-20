@@ -51,12 +51,10 @@ int main(int argc, char *argv[])
                     fclose(photo);
                 }
                 sprintf(filename, "%i.jpg", n); // convert n to string, REMBER TO padd the zeros
-                printf("%s\n",filename);
+                //printf("%s\n",filename);
                 append(filename, namelength); // convert n to string, REMBER TO padd the zeros
-                printf("%s\n",filename);
-                //printf(filename);
+                //printf("%s\n",filename);
 
-                //printf("%s \n",filename);
                 photo = fopen(filename, "w");
                 if (photo == NULL)
                 {
@@ -88,13 +86,13 @@ void append(char name[], int n)
     {
         length++;
     }
-    for (int i = 0; i < n - length; i++)
+    for (int i = 0; i < n - length -1; i++)
     {
         temp[i] = '0';
     }
     for (int i = 0; i < n ; i++)
     {
-        temp[i + n - length] = name[i];
+        temp[i + n - length -1] = name[i];
     }
     for (int i = 0; i < n ; i++)
     {
