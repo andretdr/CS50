@@ -48,8 +48,8 @@ int main(int argc, char *argv[])
             {
                 n++;
                 opennew = true;
-                fclose(filename);
-
+                fclose(photo);
+                
 
             }
 
