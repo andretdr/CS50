@@ -32,7 +32,7 @@ int main(int argc, char *argv[])
     //read 512 blocks at a time
     while (fread(header, 2, 1, image) != 0)
     {
-        if (header == 65528)
+        if (header == 65496)
         {
             printf("%i ", header);
             if ((fread(header, 2, 1, image) != 0) && (header >= 65208) && (header <= )
