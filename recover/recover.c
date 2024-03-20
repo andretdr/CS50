@@ -72,7 +72,7 @@ int main(int argc, char *argv[])
             blockcount = 0;
         }
     }
-    print("exit");
+    printf("exit");
     fclose(photo);
     fclose(image);
     return 0;
