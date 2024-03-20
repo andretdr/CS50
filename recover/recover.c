@@ -26,7 +26,7 @@ int main(int argc, char *argv[])
 
     int blockcount = 0;
     int n = 0;
-    char filename[8] = "000.jpg";
+    char filename[8];
     FILE *photo = fopen(filename, "w");
 
     // header check
