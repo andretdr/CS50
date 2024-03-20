@@ -6,14 +6,9 @@
 
 int main(int argc, char *argv[])
 {
-
     typedef uint8_t BYTE;
     BYTE buffer[512];
     BYTE b = 0;
-
-//    int *header = malloc(1); // buffer is 1 bytes
-//    int *body = malloc(508); // body is 508 bytes
-
 
     if (argc != 2)
     {
@@ -29,16 +24,10 @@ int main(int argc, char *argv[])
         return 1;
     }
 
-    //read 512 blocks at a time
-    // if first 4 bytes match pattern,
-        // output to new file until the next 512 block
-        // until EOF
-
     int blockcount = 0;
     int n = 0;
     char *filename = malloc(8);
     FILE *photo = fopen(filename, "w");
-
 
     // header check
     while (fread(&b, 1, 1, image) != 0)
@@ -51,18 +40,18 @@ int main(int argc, char *argv[])
             {
                 if (n > 0)
                 {
-                    fclose(photo);
+//                    fclose(photo);
                 }
                 n++;
-                sprintf(filename, "0%i.jpg", n); // convert n to string, REMBER TO padd the zeros
-                photo = fopen(filename, "w");
+                printf("%i \n",n);
+//                sprintf(filename, "0%i.jpg", n); // convert n to string, REMBER TO padd the zeros
+//                photo = fopen(filename, "w");
 
             }
 
             for (int i = 0; i < 512; i ++)
             {
-
-                fwrite(&buffer[i], 1, 1, photo);
+//                fwrite(&buffer[i], 1, 1, photo);
             }
 
             blockcount = 0;
