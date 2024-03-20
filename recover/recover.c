@@ -7,7 +7,7 @@ int main(int argc, char *argv[])
     //typedef *char[512] block;
 //    typedef uint8_t BYTE;
 //    BYTE b;
-    int *header = malloc(1); // buffer is 4 bytes
+    int *header = malloc(2); // buffer is 2 bytes
     int *body = malloc(508); // body is 508 bytes
 
     if (argc != 2)
@@ -30,14 +30,14 @@ int main(int argc, char *argv[])
         // until EOF
 
     //read 512 blocks at a time
-    while (fread(header, 1, 1, image) != 0)
+    while (fread(header, 2, 1, image) != 0)
     {
-  //      fread(header, 1, 1, image);
-  //      if ((header>) && (buffer<))
+        if (header == 65528)
         {
-            printf("%i %i %i %i \n", header[0]);
-
+            printf("%i ", header);
+            if ((fread(header, 2, 1, image) != 0) && (header >= 65208) && (header <= )
         }
+
         //fread(body, 508, 1, image);
     }
 
