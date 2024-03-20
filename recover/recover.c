@@ -33,9 +33,8 @@ int main(int argc, char *argv[])
         // output to new file until the next 512 block
         // until EOF
 
-    bool opennew = false;
     int blockcount = 0;
-    int n = 1;
+    int n = 0;
     FILE *photo;
 
     // header check
@@ -47,9 +46,11 @@ int main(int argc, char *argv[])
         {
             if ((buffer[0] == 255) && (buffer[1] == 216) && (buffer[2] == 255) && (buffer[3] >= 224) && (buffer[3] <= 239))
             {
+                if (n > 0)
+                {
+                    fclose(photo);
+                }
                 n++;
-                opennew = true;
-                fclose(photo);
                 sprintf(filename, "0%i".jpg, n); // convert n to string, REMBER TO padd the zeros
                 *photo = fopen(filename, "w");
 
@@ -57,26 +58,8 @@ int main(int argc, char *argv[])
 
             for (int i = 0; i < 512; i ++)
             {
-                fwrite(buffer[i], 1, 1, filename);
+                fwrite(buffer[i], 1, 1, photo);
             }
-
-
-                    if (openew)
-        {
-            if (n > 1) // if not the 1st jpg, then close the prev file
-            {
-
-            }
-                // save to new file
-
-
-                FILE *photo = fopen(str, "w");
-
-        }
-
-
-
-
 
             blockcount = 0;
         }
