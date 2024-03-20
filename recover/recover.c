@@ -27,7 +27,7 @@ int main(int argc, char *argv[])
     int blockcount = 0;
     int n = 0;
     char filename[8];
-    FILE *photo = malloc(100);//fopen(filename, "w");
+    FILE *photo = fopen("001.jpg", "w");
 
     // header check
     while (fread(&b, 1, 1, image) != 0)
