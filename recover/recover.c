@@ -48,7 +48,7 @@ int n = 0;
                         {
                         b[3] = *header;
                         // save to new file
-                        FILE 
+                        FILE *
                         }
 
         }
