@@ -48,17 +48,22 @@ int main(int argc, char *argv[])
             {
                 n++;
                 opennew = true;
+                fclose(filename);
+
+
             }
 
-            
-            fwrite(buffer[i], 1, 1, filename);
+            for (int i = 0; i < 512; i ++)
+            {
+                fwrite(buffer[i], 1, 1, filename);
+            }
 
 
                     if (openew)
         {
             if (n > 1) // if not the 1st jpg, then close the prev file
             {
-                fclose(filename);
+
             }
                 // save to new file
                 sprintf(filename, "0%i".jpg, n); // convert n to string, REMBER TO padd the zeros
