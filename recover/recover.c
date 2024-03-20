@@ -1,14 +1,15 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <stdint.h>
+#include <stdbool.h>
 
 int main(int argc, char *argv[])
 {
-    //typedef *char[512] block;
-//    typedef uint8_t BYTE;
+
     BYTE b[4] = {0, 0, 0, 0};
     int *header = malloc(1); // buffer is 1 bytes
     int *body = malloc(508); // body is 508 bytes
+
 
     if (argc != 2)
     {
@@ -29,8 +30,8 @@ int main(int argc, char *argv[])
         // output to new file until the next 512 block
         // until EOF
 
-    //read 512 blocks at a time
-int n = 0;
+    bool opennew = false;
+    int n = 0;
 
     // header check
     while (fread(header, 1, 1, image) != 0)
@@ -39,30 +40,21 @@ int n = 0;
         {
             b[0] = *header;
             if ((fread(header, 1, 1, image) != 0) && (*header == 216))
-                {
+            {
                 b[1] = *header;
                 if ((fread(header, 1, 1, image) != 0) && (*header == 255))
                 {
                     b[2] = *header;
                     if ((fread(header, 1, 1, image) != 0) && (*header >= 224) && (*header <= 239))
-                        {
+                    {
                         b[3] = *header;
-                        // save to new file
-                        // convert n to string
-                        char str[8];
-                        sprintf(str, "0%i".jpg, n); // REMBER TO padd the zeros
-
-                        FILE *photo = fopen(str, "w");
-                        if (n > 0) // if not the 1st jpg, then close the prev file
-                        {
-                            fclose(file);
-
-                        }
-                        }
-
+                        opennew = true; //open and write newfile
+                    }
+                }
+            }
         }
 
-        //fread(body, 508, 1, image);
+
     }
 
 
