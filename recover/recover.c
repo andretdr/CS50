@@ -32,14 +32,14 @@ int main(int argc, char *argv[])
     //read 512 blocks at a time
 int n = 0;
 
-    while (fread(header, 1, 1, image) != 0)
+    while (fread(header, 1, 2, image) != 0)
     {
-        if (*header == 255)
+        if (*header == 65496)
         {
 //            printf("%i ", *header);
-            if ((fread(header, 1, 1, image) != 0) && (*header == 216))
-                if ((fread(header, 1, 1, image) != 0) && (*header == 255))
-                    if ((fread(header, 1, 1, image) != 0) && (*header >= 224) && (*header <= 239))
+//            if ((fread(header, 1, 1, image) != 0) && (*header == 216))
+//                if ((fread(header, 1, 1, image) != 0) && (*header == 255))
+                    if ((fread(header, 1, 1, image) != 0) && (*header >= 65504) && (*header <= 65519))
                         {
                         n++;
                         printf("255 216 255 %i, n: %i \n", *header, n);
