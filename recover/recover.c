@@ -26,7 +26,7 @@ int main(int argc, char *argv[])
 
     int blockcount = 0;
     int n = 0;
-//    char *filename = malloc(8);
+    char filename[] = "out.jpg";
 //    FILE *photo = fopen(filename, "w");
 
     // header check
