@@ -27,7 +27,7 @@ int main(int argc, char *argv[])
     int blockcount = 0;
     int n = 0;
     char filename[] = "out.jpg";
-//    FILE *photo = fopen(filename, "w");
+    FILE *photo = fopen(filename, "w");
 
     // header check
     while (fread(&b, 1, 1, image) != 0)
