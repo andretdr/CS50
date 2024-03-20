@@ -41,7 +41,7 @@ int main(int argc, char *argv[])
         {
             if ((buffer[0] == 255) && (buffer[1] == 216) && (buffer[2] == 255) && (buffer[3] >= 224) && (buffer[3] <= 239))
             {
-                if (n > 0)
+                if (n >= 0)
                 {
                     fclose(photo);
                 }
