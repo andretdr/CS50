@@ -35,7 +35,10 @@ int main(int argc, char *argv[])
         if (header == 65496)
         {
             printf("%i ", header);
-            if ((fread(header, 2, 1, image) != 0) && (header >= 65208) && (header <= )
+            if ((fread(header, 2, 1, image) != 0) && (header >= 65504) && (header <= 65519))
+            {
+                printf("%i \n", header);
+            }
         }
 
         //fread(body, 508, 1, image);
