@@ -36,6 +36,7 @@ int main(int argc, char *argv[])
     bool opennew = false;
     int blockcount = 0;
     int n = 0;
+    FILE *photo;
 
     // header check
     while (fread(&b, 1, 1, image) != 0)
@@ -49,7 +50,7 @@ int main(int argc, char *argv[])
                 n++;
                 opennew = true;
                 fclose(photo);
-                
+                FILE *photo = fopen(str, "w");
 
             }
 
