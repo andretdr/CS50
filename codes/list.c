@@ -2,7 +2,11 @@
 
 int main(void)
 {
-    int list[3];
+    int *list = malloc(3 * sizeof(int)); // int is 4 bytes. BYTE is 1
+    if (list == NULL)
+    {
+        return 1;
+    }
 
     list[0]
 
