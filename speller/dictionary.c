@@ -42,7 +42,7 @@ bool load(const char *dictionary) // dictionary is the file name
 // Returns number of words in dictionary if loaded, else 0 if not yet loaded
 unsigned int size(void)
 {
-    // TODO
+    // TODO size n of dictionary
     return 0;
 }
 
