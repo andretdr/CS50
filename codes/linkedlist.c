@@ -10,8 +10,10 @@ typedef struct node
 int main(void)
 {
     node *list = NULL; // the first pointer
+
+    //add a new node
     node *n = malloc(sizeof(node));
     n->number = 1; // (*n).number = 1; same
     n->next = NULL;
-    
+
 }
