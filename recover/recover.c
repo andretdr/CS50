@@ -76,7 +76,7 @@ int main(int argc, char *argv[])
         }
     }
     //printf("exit");
-    free (bufferint);
+    free(bufferint);
     fclose(photo);
     fclose(image);
     return 0;
