@@ -39,13 +39,14 @@ int main(int argc, char *argv[])
     }
 
     // header check
-    while (fread(&b, 1, 1, image) != 0)
+    //while (fread(&b, 1, 1, image) != 0)
+    while (fread(bufferint, 1, 1, image) != 0)
     {
-        buffer[blockcount] = b;
-        blockcount ++;
-        if (blockcount == 512)
-        {
-            if ((buffer[0] == 255) && (buffer[1] == 216) && (buffer[2] == 255) && (buffer[3] >= 224) && (buffer[3] <= 239))
+        //buffer[blockcount] = b;
+        //blockcount ++;
+        //if (blockcount == 512)
+        //{
+            if ((bufferint[0] == 255) && (bufferint[1] == 216) && (bufferint[2] == 255) && (bufferint[3] >= 224) && (bufferint[3] <= 239))
             {
                 if (n >= 0)
                 {
@@ -64,13 +65,14 @@ int main(int argc, char *argv[])
                 }
                 n++;
             }
+            fwrite(&bufferint, 1, 1, photo);
 
-            for (int i = 0; i < 512; i ++)
-            {
-                fwrite(&buffer[i], 1, 1, photo);
-            }
+          //  for (int i = 0; i < 512; i ++)
+          //  {
+          //      fwrite(&buffer[i], 1, 1, photo);
+          //  }
 
-            blockcount = 0;
+          //  blockcount = 0;
         }
     }
     //printf("exit");
