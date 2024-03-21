@@ -33,6 +33,7 @@ unsigned int hash(const char *word)
     unsigned int result = 0;
     while (word[i] != '\0') // not terminated
     {
+        if 
         return toupper(word[i]) - 'A';
     }
 }
