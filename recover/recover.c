@@ -73,8 +73,8 @@ int main(int argc, char *argv[])
           //  }
 
           //  blockcount = 0;
-        }
     }
+
     //printf("exit");
 
     free(bufferint);
