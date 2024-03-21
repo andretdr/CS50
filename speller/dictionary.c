@@ -36,6 +36,8 @@ unsigned int hash(const char *word)
         if (isalpha(word[i]))
         {
             result *= (toupper(word[i]) - 'A');
+        }
+        i++;
     }
 }
 
