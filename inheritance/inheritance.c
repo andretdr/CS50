@@ -81,7 +81,7 @@ void free_family(person *p)
 
     //person *ptr = p->parents[];
     // TODO: Handle base case
-    if (person->parents == NULL)
+    if (p->parents[0] == NULL)
     {
         free(p);
     }
