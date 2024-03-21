@@ -4,6 +4,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
+#include <math.h>
 
 // Each person has two parents and two alleles
 typedef struct person
@@ -52,7 +53,7 @@ person *create_family(int generations)
         n->parents[0] = parent0;
         n->parents[1] = parent1;
         // TODO: Randomly assign current person's alleles based on the alleles of their parents
-        int r = rand(1);
+        int r = round(rand()/RAND_MAX);
         n->alleles[0] =
         n->alleles[1] =
     }
