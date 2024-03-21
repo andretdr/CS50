@@ -2,15 +2,12 @@
 #include <stdlib.h>
 #include <stdint.h>
 #include <stdbool.h>
-//#include <string.h>
 
 void append(char name[], int n);
 
 int main(int argc, char *argv[])
 {
     typedef uint8_t BYTE;
-    BYTE buffer[512] = {0};
-    BYTE b = 0;
     BYTE *bufferint = malloc(512);
 
     if (argc != 2)
@@ -39,13 +36,8 @@ int main(int argc, char *argv[])
     }
 
     // header check
-    //while (fread(&b, 1, 1, image) != 0)
     while (fread(bufferint, 1, 512, image) != 0)
     {
-        //buffer[blockcount] = b;
-        //blockcount ++;
-        //if (blockcount == 512)
-        //{
             if ((bufferint[0] == 255) && (bufferint[1] == 216) && (bufferint[2] == 255) && (bufferint[3] >= 224) && (bufferint[3] <= 239))
             {
                 if (n >= 0)
@@ -53,9 +45,7 @@ int main(int argc, char *argv[])
                     fclose(photo);
                 }
                 sprintf(filename, "%i.jpg", n); // convert n to string, REMBER TO padd the zeros
-                //printf("%s\n",filename);
                 append(filename, namelength); // convert n to string, REMBER TO padd the zeros
-                //printf("%s\n",filename);
 
                 photo = fopen(filename, "w");
                 if (photo == NULL)
@@ -66,16 +56,6 @@ int main(int argc, char *argv[])
                 n++;
             }
             fwrite(bufferint, 1, 512, photo);
-
-          //  for (int i = 0; i < 512; i ++)
-          //  {
-          //      fwrite(&buffer[i], 1, 1, photo);
-          //  }
-
-          //  blockcount = 0;
-    }
-
-    //printf("exit");
 
     free(bufferint);
     fclose(photo);
