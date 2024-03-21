@@ -33,7 +33,7 @@ int main(int argc, char *argv[])
     double time_load = 0.0, time_check = 0.0, time_size = 0.0, time_unload = 0.0;
 
     // Determine dictionary to use
-    char *dictionary = (argc == 3) ? argv[1] : DICTIONARY;
+    char *dictionary = (argc == 3) ? argv[1] : DICTIONARY; // if (argc == 3) then argv, else DICTIONARY
 
     // Load dictionary
     getrusage(RUSAGE_SELF, &before);
