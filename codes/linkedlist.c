@@ -22,13 +22,14 @@ int main(int argc, char *argv[])
             return 1;
         }
         n->number = value;
-
+        n->next = list; // NEW node pointing to 1st node
+        list = n; // list points to new node
     }
 
-    //add a new node
+    // print
+    
 
-    n->number = 1; // (*n).number = 1; same
-    n->next = NULL;
+
 
     free(node);
 
