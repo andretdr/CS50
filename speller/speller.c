@@ -69,7 +69,7 @@ int main(int argc, char *argv[])
 
     // Spell-check each word in text
     char c;
-    while (fread(&c, sizeof(char), 1, file))
+    while (fread(&c, sizeof(char), 1, file)) // reading through the text one char at a time
     {
         // Allow only alphabetical characters and apostrophes
         if (isalpha(c) || (c == '\'' && index > 0))
