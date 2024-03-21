@@ -1,7 +1,7 @@
+#include <stdbool.h>
+#include <stdint.h>
 #include <stdio.h>
 #include <stdlib.h>
-#include <stdint.h>
-#include <stdbool.h>
 
 void append(char name[], int n);
 
@@ -38,24 +38,24 @@ int main(int argc, char *argv[])
     // header check
     while (fread(bufferint, 1, 512, image) != 0)
     {
-            if ((bufferint[0] == 255) && (bufferint[1] == 216) && (bufferint[2] == 255) && (bufferint[3] >= 224) && (bufferint[3] <= 239))
+        if ((bufferint[0] == 255) && (bufferint[1] == 216) && (bufferint[2] == 255) && (bufferint[3] >= 224) && (bufferint[3] <= 239))
+        {
+            if (n >= 0)
             {
-                if (n >= 0)
-                {
-                    fclose(photo);
-                }
-                sprintf(filename, "%i.jpg", n); // convert n to string, REMBER TO padd the zeros
-                append(filename, namelength); // convert n to string, REMBER TO padd the zeros
-
-                photo = fopen(filename, "w");
-                if (photo == NULL)
-                {
-                    printf("Could not open file.\n");
-                    return 1;
-                }
-                n++;
+                fclose(photo);
             }
-            fwrite(bufferint, 1, 512, photo);
+            sprintf(filename, "%i.jpg", n); // convert n to string, REMBER TO padd the zeros
+            append(filename, namelength);   // convert n to string, REMBER TO padd the zeros
+
+            photo = fopen(filename, "w");
+            if (photo == NULL)
+            {
+                printf("Could not open file.\n");
+                return 1;
+            }
+            n++;
+        }
+        fwrite(bufferint, 1, 512, photo);
     }
 
     free(bufferint);
@@ -72,15 +72,15 @@ void append(char name[], int n)
     {
         length++;
     }
-    for (int i = 0; i < n - length -1; i++)
+    for (int i = 0; i < n - length - 1; i++)
     {
         temp[i] = '0';
     }
-    for (int i = 0; i < n ; i++)
+    for (int i = 0; i < n; i++)
     {
-        temp[i + n - length -1] = name[i];
+        temp[i + n - length - 1] = name[i];
     }
-    for (int i = 0; i < n ; i++)
+    for (int i = 0; i < n; i++)
     {
         name[i] = temp[i];
     }
