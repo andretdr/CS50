@@ -40,7 +40,7 @@ int main(int argc, char *argv[])
 
     // header check
     //while (fread(&b, 1, 1, image) != 0)
-    while (fread(bufferint, 1, 1, image) != 0)
+    while (fread(bufferint, 1, 512, image) != 0)
     {
         printf("did it");
         //buffer[blockcount] = b;
