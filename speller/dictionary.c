@@ -44,6 +44,7 @@ unsigned int hash(const char *word)
         }
         i++;
     }
+    return result;
 }
 
 // Loads dictionary into memory, returning true if successful, else false
