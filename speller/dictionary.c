@@ -40,7 +40,7 @@ unsigned int hash(const char *word)
             {
                 factor *= 26;
             }
-            result *= (toupper(word[i]) - 'A');
+            result += factor * (toupper(word[i]) - 'A');
         }
         i++;
     }
