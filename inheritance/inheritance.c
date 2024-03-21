@@ -1,10 +1,9 @@
 // Simulate genetic inheritance of blood type
-
+#include <math.h>
 #include <stdbool.h>
 #include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
-#include <math.h>
 
 // Each person has two parents and two alleles
 typedef struct person
@@ -78,9 +77,6 @@ person *create_family(int generations)
 // Free `p` and all ancestors of `p`.
 void free_family(person *p)
 {
-
-    //person *ptr = p->parents[];
-    // TODO: Handle base case
     if (p->parents[0] == NULL) // if one parent is NULL, the other should be too
     {
         free(p);
@@ -88,17 +84,12 @@ void free_family(person *p)
     else
     {
         // TODO: Free parents recursively
-        //for (int i = 1; i < 2; i--)
-        {
             free_family(p->parents[0]);
             free_family(p->parents[1]);
             p->parents[0] = NULL;
             p->parents[1] = NULL;
             free(p);
-        }
     }
-    // TODO: Free child
-    
 }
 
 // Print each family member and their alleles.
