@@ -1,5 +1,5 @@
 
-
+//linkedlist sorted
 
 if (list == NULL)
 {
