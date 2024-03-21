@@ -33,7 +33,7 @@ int main(int argc, char *argv[])
     double time_load = 0.0, time_check = 0.0, time_size = 0.0, time_unload = 0.0;
 
     // Determine dictionary to use
-    char *dictionary = (argc == 3) ? argv[1] : DICTIONARY; // if (argc == 3) then argv, else DICTIONARY
+    char *dictionary = (argc == 3) ? argv[1] : DICTIONARY; // if (argc == 3) then argv, else DICTIONARY. dictionary is a long string
 
     // Load dictionary
     getrusage(RUSAGE_SELF, &before);
@@ -51,7 +51,7 @@ int main(int argc, char *argv[])
     time_load = calculate(&before, &after);
 
     // Try to open text
-    char *text = (argc == 3) ? argv[2] : argv[1];
+    char *text = (argc == 3) ? argv[2] : argv[1]; // text is a long string
     FILE *file = fopen(text, "r");
     if (file == NULL)
     {
