@@ -48,7 +48,6 @@ int main(int argc, char *argv[])
         //{
             if ((bufferint[0] == 255) && (bufferint[1] == 216) && (bufferint[2] == 255) && (bufferint[3] >= 224) && (bufferint[3] <= 239))
             {
-                printf("new file");
                 if (n >= 0)
                 {
                     fclose(photo);
@@ -66,7 +65,7 @@ int main(int argc, char *argv[])
                 }
                 n++;
             }
-            fwrite(&bufferint, 1, 512, photo);
+            fwrite(bufferint, 1, 512, photo);
 
           //  for (int i = 0; i < 512; i ++)
           //  {
