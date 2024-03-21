@@ -7,3 +7,9 @@ typedef struct node
     struct node *next;
 } node;
 
+int main(void)
+{
+    node *list = NULL; // the first pointer
+    node *n = malloc(sizeof(node));
+
+}
