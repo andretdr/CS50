@@ -7,6 +7,14 @@ typedef struct node
     struct node *next;
 } node;
 
+/* BINARY NODE TREE
+typedef struct node
+{
+    int number;
+    struct node *next;
+} node;
+*/
+
 int main(int argc, char *argv[])
 {
     node *list = NULL; // the first pointer
