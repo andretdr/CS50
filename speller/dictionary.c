@@ -21,7 +21,7 @@ node *table[N];
 // Returns true if word is in dictionary, else false
 bool check(const char *word)
 {
-    // TODO
+    // TODO check the word against the hash table dictionary
     return false;
 }
 
@@ -35,7 +35,7 @@ unsigned int hash(const char *word)
 // Loads dictionary into memory, returning true if successful, else false
 bool load(const char *dictionary) // dictionary is the file name
 {
-    // create the hashtable and load the dictionary into it
+    // TODO create the hashtable and load the dictionary into it
     return false;
 }
 
