@@ -93,10 +93,10 @@ void free_family(person *p)
             free_family(ptr[0]);
             ptr[0] = NULL;
             ptr[1] = NULL;
+            free(p);
         }
-    // TODO: Free child
-
     }
+    // TODO: Free child
 }
 
 // Print each family member and their alleles.
