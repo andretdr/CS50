@@ -66,7 +66,7 @@ int main(int argc, char *argv[])
                 }
                 n++;
             }
-            fwrite(&bufferint, 1, 1, photo);
+            fwrite(&bufferint, 1, 512, photo);
 
           //  for (int i = 0; i < 512; i ++)
           //  {
