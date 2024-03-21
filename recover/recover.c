@@ -42,16 +42,13 @@ int main(int argc, char *argv[])
     //while (fread(&b, 1, 1, image) != 0)
     while (fread(bufferint, 1, 512, image) != 0)
     {
-        printf("did it");
         //buffer[blockcount] = b;
         //blockcount ++;
         //if (blockcount == 512)
         //{
-            printf("%i, %i, %i, %i\n",bufferint[0],bufferint[1],bufferint[2],bufferint[3]);
-
-
             if ((bufferint[0] == 255) && (bufferint[1] == 216) && (bufferint[2] == 255) && (bufferint[3] >= 224) && (bufferint[3] <= 239))
             {
+                printf("new file");
                 if (n >= 0)
                 {
                     fclose(photo);
