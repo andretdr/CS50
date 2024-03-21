@@ -8,7 +8,7 @@
 // Each person has two parents and two alleles
 typedef struct person
 {
-    struct person *parents[2];
+    struct person *parents[2]; // array of pointers or array of addresses.
     char alleles[2];
 } person;
 
@@ -52,6 +52,8 @@ person *create_family(int generations)
         n->parents[0] = parent0;
         n->parents[1] = parent1;
         // TODO: Randomly assign current person's alleles based on the alleles of their parents
+        n->alleles[0] = 
+        n->alleles[1] =
     }
 
     // If there are no generations left to create
