@@ -11,6 +11,7 @@ int main(int argc, char *argv[])
     typedef uint8_t BYTE;
     BYTE buffer[512] = {0};
     BYTE b = 0;
+    int *bufferint = malloc(512);
 
     if (argc != 2)
     {
@@ -73,6 +74,7 @@ int main(int argc, char *argv[])
         }
     }
     //printf("exit");
+    free (bufferint);
     fclose(photo);
     fclose(image);
     return 0;
