@@ -6,7 +6,7 @@
 
 #include <ctype.h> // to upper
 
-int hash(const char *word) // hash function
+unsigned int hash(const char *word) // DONT change the *ptr value, const argument. unsigned. force the int. Hash function
 {
     return toupper(word[0]) - 'A';
 }
