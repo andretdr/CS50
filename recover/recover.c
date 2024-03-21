@@ -11,7 +11,7 @@ int main(int argc, char *argv[])
     typedef uint8_t BYTE;
     BYTE buffer[512] = {0};
     BYTE b = 0;
-    int *bufferint = malloc(512);
+    BYTE *bufferint = malloc(512);
 
     if (argc != 2)
     {
