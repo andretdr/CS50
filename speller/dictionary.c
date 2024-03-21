@@ -30,11 +30,12 @@ unsigned int hash(const char *word)
 {
     // TODO: Improve this hash function
     int i = 0;
-    unsigned int result = 0;
+    unsigned int result = 1;
     while (word[i] != '\0') // not terminated
     {
-        if 
-        return toupper(word[i]) - 'A';
+        if (isalpha(word[i]))
+        {
+            result = toupper(word[i]) - 'A';
     }
 }
 
