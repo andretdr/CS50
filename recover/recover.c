@@ -56,6 +56,7 @@ int main(int argc, char *argv[])
                 n++;
             }
             fwrite(bufferint, 1, 512, photo);
+    }
 
     free(bufferint);
     fclose(photo);
