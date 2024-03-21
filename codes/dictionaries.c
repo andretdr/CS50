@@ -4,6 +4,13 @@
 // hashtable
 //
 
+#include <ctype.h> // to upper
+
+int hash(const char *word) // hash function
+{
+    return toupper(word[0]) - 'A';
+}
+
 typedef struct node
 {
     char *names;
