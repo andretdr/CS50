@@ -7,7 +7,7 @@ typedef struct node
     struct node *next;
 } node;
 
-int main(void)
+int main(int argc, char *argv[])
 {
     node *list = NULL; // the first pointer
 
