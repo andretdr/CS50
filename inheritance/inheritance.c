@@ -87,9 +87,10 @@ void free_family(person *p)
     else
     {
         // TODO: Free parents recursively
-        for (int i = 1; i < 2; i--)
+        //for (int i = 1; i < 2; i--)
         {
-            free_family(ptr[i]);
+            free_family(ptr[1]);
+            free_family(ptr[0]);
         }
     // TODO: Free child
 
