@@ -95,8 +95,6 @@ bool load(const char *dictionary) // dictionary is the file name. my dictionary 
                 index = 0;
             }
             
-
-
     }
 
     add(n)
