@@ -153,19 +153,17 @@ bool add(node **current, node **toadd)
         return true;
     }
     else
-        return false;
-/*
-        if (strcmp(toadd->word,current->word) <= 0) // if toadd node is smaller then current node, then add it here
+        if (strcmp(*(toadd)->word,*(current)->word) <= 0) // if toadd node is smaller then current node, then add it here
         {
-            toadd->next = current;
-            current = toadd;
+            *(toadd)->next = *current;
+            *current = *toadd;
             return true;
         }
         else
             {
-                return add(current->next, toadd);
+                return add(*(current)->next, *toadd);
             }
-*/
+
 }
 
 // Returns number of words in dictionary if loaded, else 0 if not yet loaded
