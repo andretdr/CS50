@@ -77,7 +77,7 @@ bool load(const char *dictionary) // dictionary is the file name
     {
         if ((isalph(c)) || ((c == '\'') && index > 0))
         {
-            word[index] = c;
+            word[index] = toupper(c); // upper case all my dictionary
             index++
         }
         else
