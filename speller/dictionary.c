@@ -97,8 +97,8 @@ bool load(const char *dictionary) // dictionary is the file name. my dictionary 
                 bool exit = add(table[hash(word)], n);
 
                 // test
-                test[count] = hash(word);
-                count ++;
+                printf("hash function %i",hash(word));
+                //count ++;
 
 
                 index = 0;
