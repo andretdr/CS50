@@ -27,7 +27,7 @@ node *table[N] = {NULL};
 bool check(const char *word)
 {
     // TODO check the word against the hash table dictionary, or if its not in the dict, its false
-    
+
     return checkr(table[hash(word)], word);
 
 }
@@ -117,7 +117,7 @@ bool checkr(const node *current, const char *word)
 {   // recursively check sorted linked list
     // BASE CASE
 
-    //printf("got here with %s\n",word);
+    printf("current->word: %s\n",current->word);
     if (current == NULL)
     {
         return false;
