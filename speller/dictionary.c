@@ -95,6 +95,8 @@ bool load(const char *dictionary) // dictionary is the file name. my dictionary 
                     n->word[i] = word[i];
                 }
                 add(&table[hash(n->word)], &n);
+
+ /*
                 printf("direct check %s\n", (*table[83150]).word);
                 if (((*table[83150]).next) != NULL)
                 {
@@ -102,7 +104,7 @@ bool load(const char *dictionary) // dictionary is the file name. my dictionary 
                     if (((*(*table[83150]).next).next) != NULL)
                         printf("direct check %s\n", (*(*(*table[83150]).next).next).word);
                 }
-
+*/
                 index = 0;
             }
     }
@@ -112,6 +114,8 @@ bool load(const char *dictionary) // dictionary is the file name. my dictionary 
 bool checkr(const node *current, const char *word)
 {   // recursively check sorted linked list
     // BASE CASE
+
+    printf("got here with %s\n",word);
     if (current == NULL)
     {
         return false;
@@ -136,12 +140,12 @@ bool checkr(const node *current, const char *word)
 bool add(node **current, node **toadd) // you have to pass the ADDRESS EVERYTIME you want to pass by reference. Even when using pointers. hence.
 {   // recursively add to sorted linked list
     // BASE CASE
-    printf("word to add %s\n",(**toadd).word);
+    //printf("word to add %s\n",(**toadd).word);
     if (*current == NULL)
     {
         *current = *toadd;
         //printf("inside,%s\n",*current->word);
-        printf("added word was NULL\n");
+        //printf("added word was NULL\n");
         return true;
 
     }
@@ -150,7 +154,7 @@ bool add(node **current, node **toadd) // you have to pass the ADDRESS EVERYTIME
         {
             (**toadd).next = *current;
             *current = *toadd;
-            printf("added word\n");
+            //printf("added word\n");
             return true;
         }
         else
