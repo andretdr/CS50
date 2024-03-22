@@ -11,8 +11,6 @@ typedef struct node
     struct node *next;
 } node;
 
-char c = '\0';
-
 //typedef struct indexnode // this stores a list of all used indexes
 //{
 //    int index;
@@ -70,7 +68,21 @@ bool load(const char *dictionary) // dictionary is the file name
         printf("Cannot open dictionary");
         return 1;
     }
-    fread(&c, 1, 1, file);
+
+    char c;
+    char word[LENGTH + 1]; // +1 for the terminator
+    int index = 0;
+
+    while (fread(&c, sizeof(char), 1, file));
+    {
+        if ((isalph(c)) || ((c == '\'') && index > 0))
+        {
+            word[index] = c;
+            index++
+        }
+        else
+
+    }
 
     add(n)
 
