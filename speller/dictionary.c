@@ -117,13 +117,12 @@ bool add(node *current, node *toadd)
         {
             toadd->next = current;
             current = toadd;
+            return true;
         }
         else
             {
-                add(current->next, toadd);
+                return add(current->next, toadd);
             }
-
-    //strcmp();
 }
 
 // Returns number of words in dictionary if loaded, else 0 if not yet loaded
