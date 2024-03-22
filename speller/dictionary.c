@@ -13,20 +13,12 @@ typedef struct node
     struct node *next;
 } node;
 
-//typedef struct indexnode // this stores a list of all used indexes
-//{
-//    int index;
-//    struct indexnode *next;
+void add(node *current, node *toadd, const char *word);
 
-//} indexnode;
-
-// TODO: Choose number of buckets in hash table
 const unsigned int N = 456976; //26 ^ 4
 
 // Hash table
 node *table[N] = {NULL};
-
-void add(node *ptr, const char *word);
 
 // Returns true if word is in dictionary, else false
 bool check(const char *word)
@@ -63,7 +55,6 @@ bool load(const char *dictionary) // dictionary is the file name. my dictionary 
     // TODO create the hashtable and load the dictionary into it
 
     //create a node container.
-    node *n = malloc(sizeof(node));
 
     FILE *file = fopen(dictionary, "r");
     if (file == NULL)
@@ -87,12 +78,22 @@ bool load(const char *dictionary) // dictionary is the file name. my dictionary 
             if (c == '\n')
             {
                 word[index] = '\0';
-                index = 0;
+
                 // add to hash table
                 int key = hash(word);
 
+                // initialise node
+                node *n = malloc(sizeof(node));
+                //for (int i = 0; i < index)
+                n->word = word;
+                n->next = NULL;
+                for (int i = 0; i < index; i++)
+                    printf("%c",n->word[i]);
 
-
+                //add(table[key], n, )
+                printf("\n");
+                free(n);
+                index = 0;
             }
     }
 
@@ -104,7 +105,7 @@ bool load(const char *dictionary) // dictionary is the file name. my dictionary 
     return true;
 }
 
-void add(node *next, const char *word)
+void add(node *current, node *toadd, const char *word)
 {   // recursively add to sorted linked list
 
 }
