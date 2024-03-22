@@ -94,19 +94,16 @@ bool load(const char *dictionary) // dictionary is the file name. my dictionary 
             if (c == '\n')
             {
                 word[index] = '\0';
-
-                for (int i = 0; i < index; i++)
-                {
-                    printf("%c",word[i]);
-                }
-                printf("\n");
                 index = 0;
+                // add to hash table
+                int key = hash(word[]);
+
+
             }
     }
 
     // add to hash table
-    int key
-        add(n, word);
+    //add(n, word);
 
 
 
