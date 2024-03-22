@@ -18,6 +18,8 @@ const unsigned int N = 456976; //26 ^ 4
 // Hash table
 node *table[N];
 
+
+
 // Returns true if word is in dictionary, else false
 bool check(const char *word)
 {
@@ -51,7 +53,7 @@ unsigned int hash(const char *word)
 bool load(const char *dictionary) // dictionary is the file name
 {
     // TODO create the hashtable and load the dictionary into it
-    
+
 
 
 
