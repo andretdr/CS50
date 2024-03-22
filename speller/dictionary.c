@@ -29,7 +29,7 @@ bool check(const char *word)
 {
     // TODO check the word against the hash table dictionary, or if its not in the dict, its false
 
-    return checkr(table[hash(word)], word);
+    return checkr(table[hash(tolower(word))], (tolower(word));
 
 }
 
