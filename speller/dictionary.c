@@ -115,7 +115,7 @@ bool add(node *current, node *toadd)
     else
         if (strcmp(toadd->word,current->word) <= 0) // if toadd node is smaller then current node, then add it here
         {
-            toadd->next = current->next;
+            toadd->next = current;
             current->toadd;
         }
 
