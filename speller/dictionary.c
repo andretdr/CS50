@@ -93,11 +93,14 @@ bool load(const char *dictionary) // dictionary is the file name. my dictionary 
                 for (int i = 0; i < index; i++)
                 {
                     n->word[i] = word[i];
+                    printf("%c",word[i]);
                 }
                 bool exit = add(table[hash(word)], n);
 
                 // test
-                printf("hash function %i",hash(word));
+
+
+                printf("hash function %i\n",hash(word));
                 //count ++;
 
 
@@ -109,7 +112,7 @@ bool load(const char *dictionary) // dictionary is the file name. my dictionary 
 //    {
         node *m = malloc(sizeof(node));
         m = table[test[0]];
-        printf("%s",m->word);
+        //printf("%s",m->word);
         free(m);
 
 //    }
