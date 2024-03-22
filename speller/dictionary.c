@@ -55,7 +55,7 @@ unsigned int hash(const char *word)
 }
 
 // Loads dictionary into memory, returning true if successful, else false
-bool load(const char *dictionary) // dictionary is the file name
+bool load(const char *dictionary) // dictionary is the file name. my dictionary is uppercased
 {
     // TODO create the hashtable and load the dictionary into it
 
@@ -81,6 +81,7 @@ bool load(const char *dictionary) // dictionary is the file name
             index++
         }
         else
+            if (())
 
     }
 
