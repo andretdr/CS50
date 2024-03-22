@@ -5,6 +5,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include "dictionary.h"
+#include <string.h>
 
 // Represents a node in a hash table
 typedef struct node
@@ -13,7 +14,7 @@ typedef struct node
     struct node *next;
 } node;
 
-void add(node *current, node *toadd);
+bool add(node *current, node *toadd);
 
 const unsigned int N = 456976; //26 ^ 4
 
@@ -103,9 +104,21 @@ bool load(const char *dictionary) // dictionary is the file name. my dictionary 
     return true;
 }
 
-void add(node *current, node *toadd)
+bool add(node *current, node *toadd)
 {   // recursively add to sorted linked list
-    
+    // BASE CASE
+    if (current == NULL)
+    {
+        current = todd;
+        return true;
+    }
+    else
+        if (current->next->)
+        {
+
+        }
+
+    //strcmp();
 }
 
 // Returns number of words in dictionary if loaded, else 0 if not yet loaded
