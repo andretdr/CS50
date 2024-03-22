@@ -96,10 +96,9 @@ bool load(const char *dictionary) // dictionary is the file name. my dictionary 
                 }
 
                 //table[12846] = n;
-                //printf("%s",table[12846]->word);
-
-                bool exit = add(table[hash(word)], n);
-
+                
+                add(table[12846], n);
+                printf("%s",table[12846]->word);
                 // test
 
 
