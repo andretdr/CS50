@@ -34,7 +34,7 @@ bool check(const char *word)
     {
         if (isalpha(word[i]))
             temp[i] = tolower(word[i]);
-        printf("%c",word[i]);
+        //printf("%c",word[i]);
         i++;
     }
     return checkr(table[hash(word)], temp);
