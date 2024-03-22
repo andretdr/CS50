@@ -105,7 +105,7 @@ bool load(const char *dictionary) // dictionary is the file name. my dictionary 
     }
 
     // add to hash table
-
+    
         add(n, word);
 
 
