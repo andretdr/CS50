@@ -15,7 +15,7 @@ typedef struct node
 } node;
 
 bool add(node **current, node **toadd);
-bool checkr(const node *current, const char *word);
+bool checkr(const node *current, char *word);
 
 int sized = 0;
 
@@ -122,7 +122,7 @@ bool load(const char *dictionary) // dictionary is the file name. my dictionary 
     return true;
 }
 
-bool checkr(const node *current, const char *word)
+bool checkr(const node *current, char *word)
 {   // recursively check sorted linked list
     // BASE CASE
 
