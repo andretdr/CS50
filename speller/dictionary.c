@@ -28,7 +28,7 @@ node *table[N] = {NULL};
 bool check(const char *word)
 {
     // TODO check the word against the hash table dictionary, or if its not in the dict, its false
-    char *temp = word;
+    char *temp[LENGTH + 1];
     int i = 0;
     while (word[i] != '\0')
     {
