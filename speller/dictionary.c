@@ -65,6 +65,11 @@ bool load(const char *dictionary) // dictionary is the file name
     node *n = malloc(sizeof(node));
 
     FILE *file = fopen(dictionary, 'r');
+    if (file == NULL)
+    {
+        printf("Cannot open dictionary");
+        return 1;
+    }
     fread(&c, 1, 1, file);
 
     add(n)
