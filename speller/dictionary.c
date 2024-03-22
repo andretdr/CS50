@@ -170,6 +170,11 @@ bool add(node **current, node **toadd) // you have to pass the ADDRESS EVERYTIME
 unsigned int size(void)
 {
     // TODO size n of dictionary
+    for (int i = 0; i < N; i++)
+    {
+        
+    }
+
     return 0;
 }
 
