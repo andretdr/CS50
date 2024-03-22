@@ -17,7 +17,7 @@ typedef struct node
 bool add(node **current, node **toadd);
 bool checkr(const node *current, const char *word);
 
-int size = 0;
+int sized = 0;
 
 const unsigned int N = 456976; //26 ^ 4
 
@@ -147,7 +147,7 @@ bool add(node **current, node **toadd) // you have to pass the ADDRESS EVERYTIME
     if (*current == NULL)
     {
         *current = *toadd;
-        size++;
+        sized++;
         //printf("inside,%s\n",*current->word);
         //printf("added word was NULL\n");
         return true;
@@ -159,7 +159,7 @@ bool add(node **current, node **toadd) // you have to pass the ADDRESS EVERYTIME
             (**toadd).next = *current;
             *current = *toadd;
             //printf("added word\n");
-            size++;
+            sized++;
             return true;
         }
         else
@@ -172,13 +172,7 @@ bool add(node **current, node **toadd) // you have to pass the ADDRESS EVERYTIME
 // Returns number of words in dictionary if loaded, else 0 if not yet loaded
 unsigned int size(void)
 {
-    // TODO size n of dictionary
-    for (int i = 0; i < N; i++)
-    {
-
-    }
-
-    return 0;
+    return sized;
 }
 
 // Unloads dictionary from memory, returning true if successful, else false
