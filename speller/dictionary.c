@@ -12,6 +12,13 @@ typedef struct node
     struct node *next;
 } node;
 
+typedef struct indexnode // this stores a list of all indexed
+{
+    int index;
+    struct indexnode *next;
+
+} indexnode;
+
 // TODO: Choose number of buckets in hash table
 const unsigned int N = 456976; //26 ^ 4
 
