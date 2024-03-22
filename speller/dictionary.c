@@ -59,7 +59,7 @@ unsigned int hash(const char *word)
 bool load(const char *dictionary) // dictionary is the file name
 {
     // TODO create the hashtable and load the dictionary into it
-
+    FILE* file
 
 
 
