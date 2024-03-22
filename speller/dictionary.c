@@ -14,7 +14,7 @@ typedef struct node
     struct node *next;
 } node;
 
-bool add(node *current, node *toadd);
+bool add(node **current, node **toadd);
 bool checkr(const node *current, const char *word);
 
 
@@ -97,8 +97,8 @@ bool load(const char *dictionary) // dictionary is the file name. my dictionary 
 
                 //table[12846] = n;
 
-                add(table[12846], n);
-                printf("%s",table[12846]->word);
+                add(&table[12846], &n);
+                printf("did it? %s",table[12846]->word);
                 // test
 
 
@@ -150,13 +150,15 @@ bool checkr(const node *current, const char *word)
 bool add(node **current, node **toadd)
 {   // recursively add to sorted linked list
     // BASE CASE
-    if (current == NULL)
+    if (*current == NULL)
     {
-        current = toadd;
-        printf("inside,%s\n",current->word);
+        *current = *toadd;
+        //printf("inside,%s\n",*current->word);
         return true;
     }
     else
+        return false;
+/*
         if (strcmp(toadd->word,current->word) <= 0) // if toadd node is smaller then current node, then add it here
         {
             toadd->next = current;
@@ -167,7 +169,7 @@ bool add(node **current, node **toadd)
             {
                 return add(current->next, toadd);
             }
-
+*/
 }
 
 // Returns number of words in dictionary if loaded, else 0 if not yet loaded
