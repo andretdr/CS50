@@ -88,9 +88,11 @@ bool load(const char *dictionary) // dictionary is the file name. my dictionary 
             }
 */
         }
-        else // it will definitely be (c == '\n')
+        else
+            
         {
-
+            word[index] = '\0';
+            index = 0;
         }
 
     }
