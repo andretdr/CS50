@@ -12,7 +12,7 @@ typedef struct node
     struct node *next;
 } node;
 
-typedef struct indexnode // this stores a list of all indexed
+typedef struct indexnode // this stores a list of all used indexes
 {
     int index;
     struct indexnode *next;
