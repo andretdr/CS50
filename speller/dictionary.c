@@ -17,6 +17,7 @@ typedef struct node
 bool add(node **current, node **toadd);
 bool checkr(const node *current, const char *word);
 
+int size = 0;
 
 const unsigned int N = 456976; //26 ^ 4
 
@@ -172,7 +173,7 @@ unsigned int size(void)
     // TODO size n of dictionary
     for (int i = 0; i < N; i++)
     {
-        
+
     }
 
     return 0;
