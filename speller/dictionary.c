@@ -26,7 +26,6 @@ const unsigned int N = 456976; //26 ^ 4
 // Hash table
 node *table[N];
 
-
 // Returns true if word is in dictionary, else false
 bool check(const char *word)
 {
@@ -105,11 +104,16 @@ bool load(const char *dictionary) // dictionary is the file name. my dictionary 
             }
     }
 
-    //add(n);
+    add(n);
 
 
 
     return true;
+}
+
+void add(char *word)
+{
+    
 }
 
 // Returns number of words in dictionary if loaded, else 0 if not yet loaded
