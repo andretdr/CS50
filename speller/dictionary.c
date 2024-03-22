@@ -94,6 +94,8 @@ bool load(const char *dictionary) // dictionary is the file name. my dictionary 
                 word[index] = '\0';
                 index = 0;
             }
+            
+
 
     }
 
