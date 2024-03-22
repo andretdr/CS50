@@ -70,6 +70,9 @@ bool load(const char *dictionary) // dictionary is the file name. my dictionary 
     char word[LENGTH + 1]; // +1 for the terminator
     int index = 0;
 
+    int test[5] = {0};
+    int count = 0;
+
     while (fread(&c, sizeof(char), 1, file))
     {
         if ((isalpha(c)) || ((c == '\'') && index > 0))
@@ -93,9 +96,25 @@ bool load(const char *dictionary) // dictionary is the file name. my dictionary 
                 }
                 bool exit = add(table[hash(word)], n);
 
+                // test
+                test[count] = hash(word);
+                count ++;
+
+
                 index = 0;
             }
     }
+
+//    for (int q = 0; q < 5; q++)
+//    {
+        node *m = malloc(sizeof(node));
+        m = table[test[0]];
+        printf("%s",m->word);
+        free(m);
+
+//    }
+
+
     return true;
 }
 
