@@ -80,7 +80,6 @@ bool load(const char *dictionary) // dictionary is the file name. my dictionary 
                 word[index] = '\0';
 
                 // add to hash table
-                int key = hash(word);
 
                 // initialise node
                 node *n = malloc(sizeof(node));
@@ -89,7 +88,7 @@ bool load(const char *dictionary) // dictionary is the file name. my dictionary 
                 {
                     n->word[i] = word[i];
                 }
-                add(table[hash(word)], n)
+                add(table[hash(word)], n);
 
                 free(n);
                 index = 0;
@@ -106,7 +105,7 @@ bool load(const char *dictionary) // dictionary is the file name. my dictionary 
 
 void add(node *current, node *toadd)
 {   // recursively add to sorted linked list
-
+    
 }
 
 // Returns number of words in dictionary if loaded, else 0 if not yet loaded
