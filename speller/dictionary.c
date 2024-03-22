@@ -96,7 +96,7 @@ bool load(const char *dictionary) // dictionary is the file name. my dictionary 
                 }
 
                 //table[12846] = n;
-                
+
                 add(table[12846], n);
                 printf("%s",table[12846]->word);
                 // test
@@ -153,6 +153,7 @@ bool add(node *current, node *toadd)
     if (current == NULL)
     {
         current = toadd;
+        printf("inside,%s\n",current->word);
         return true;
     }
     else
@@ -166,6 +167,7 @@ bool add(node *current, node *toadd)
             {
                 return add(current->next, toadd);
             }
+
 }
 
 // Returns number of words in dictionary if loaded, else 0 if not yet loaded
