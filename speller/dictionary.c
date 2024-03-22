@@ -28,8 +28,16 @@ node *table[N] = {NULL};
 bool check(const char *word)
 {
     // TODO check the word against the hash table dictionary, or if its not in the dict, its false
-
-    return checkr(table[hash(tolower(word))], (tolower(word));
+    char *temp = word;
+    int i = 0;
+    while (word[i] != '\0')
+    {
+        if (isalpha(word[i]))
+            temp[i] = tolower(word[i]);
+        printf("%c",word[i]);
+        i++;
+    }
+    return checkr(table[hash(tolower(temp))], (tolower(temp));
 
 }
 
