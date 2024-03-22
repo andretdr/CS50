@@ -109,7 +109,7 @@ bool add(node *current, node *toadd)
     // BASE CASE
     if (current == NULL)
     {
-        current = todd;
+        current = toadd;
         return true;
     }
     else
@@ -118,6 +118,10 @@ bool add(node *current, node *toadd)
             toadd->next = current;
             current->toadd;
         }
+        else
+            {
+                add(current->next, toadd);
+            }
 
     //strcmp();
 }
