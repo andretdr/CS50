@@ -79,20 +79,22 @@ bool load(const char *dictionary) // dictionary is the file name. my dictionary 
         {
             word[index] = toupper(c); // upper case all my dictionary
             index++;
-
+/*
             if (index > LENGTH)
             {
                 // Consume remainder of alphabetical string
                 while (fread(&c, sizeof(char), 1, file) && isalpha(c));
                     index = 0; // Prepare for new word
             }
+*/
         }
         else
+/*
             if ((isdigit(c)));
             {
 
             }
-
+*/
 
 
     }
