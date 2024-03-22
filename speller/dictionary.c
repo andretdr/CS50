@@ -13,7 +13,7 @@ typedef struct node
     struct node *next;
 } node;
 
-void add(node *current, node *toadd, const char *word);
+void add(node *current, node *toadd);
 
 const unsigned int N = 456976; //26 ^ 4
 
@@ -84,14 +84,13 @@ bool load(const char *dictionary) // dictionary is the file name. my dictionary 
 
                 // initialise node
                 node *n = malloc(sizeof(node));
-                //for (int i = 0; i < index)
-                n->word = word;
                 n->next = NULL;
                 for (int i = 0; i < index; i++)
-                    printf("%c",n->word[i]);
+                {
+                    n->word[i] = word[i];
+                }
+                add(table[hash(word)], n)
 
-                //add(table[key], n, )
-                printf("\n");
                 free(n);
                 index = 0;
             }
@@ -105,7 +104,7 @@ bool load(const char *dictionary) // dictionary is the file name. my dictionary 
     return true;
 }
 
-void add(node *current, node *toadd, const char *word)
+void add(node *current, node *toadd)
 {   // recursively add to sorted linked list
 
 }
