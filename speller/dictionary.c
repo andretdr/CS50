@@ -162,7 +162,7 @@ bool add(node **current, node **toadd)
         }
         else
             {
-                return add(&(current->next), &toadd);
+   //             return add(&(current->next), toadd);
             }
 
 }
