@@ -104,16 +104,18 @@ bool load(const char *dictionary) // dictionary is the file name. my dictionary 
             }
     }
 
-    add(n);
+    // add to hash table
+
+        add(n, word);
 
 
 
     return true;
 }
 
-void add(char *word)
-{
-    
+void add(node *next, char *word);
+{   // recursively add to sorted linked list
+
 }
 
 // Returns number of words in dictionary if loaded, else 0 if not yet loaded
