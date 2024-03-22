@@ -41,7 +41,7 @@ unsigned int hash(const char *word)
     // TODO: Improve this hash function
     int i = 0;
     unsigned int result = 0; // or else if 0 everything is 0
-    while ((word[i] != '\0') || (i < 4)) // not terminated. 26^0*word[0]+26^1*word[1]+26^2*word[2]+26^3*word[3]  // I disregard aphosrothes
+    while ((word[i] != '\0') && (i < 4)) // not terminated. 26^0*word[0]+26^1*word[1]+26^2*word[2]+26^3*word[3]  // I disregard aphosrothes
     {
         if (isalpha(word[i]))
         {
@@ -50,7 +50,6 @@ unsigned int hash(const char *word)
             {
                 factor *= 26;
             }
-            printf("factor %i\n", factor);
             result += factor * (toupper(word[i]) - 'A');
         }
         i++;
