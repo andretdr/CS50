@@ -26,6 +26,8 @@ const unsigned int N = 456976; //26 ^ 4
 // Hash table
 node *table[N];
 
+void add(node *ptr, const char *word);
+
 // Returns true if word is in dictionary, else false
 bool check(const char *word)
 {
@@ -96,7 +98,8 @@ bool load(const char *dictionary) // dictionary is the file name. my dictionary 
                 word[index] = '\0';
                 index = 0;
                 // add to hash table
-                int key = hash(word[]);
+                int key = hash(word);
+                printf("%i\n",key);
 
 
             }
@@ -110,7 +113,7 @@ bool load(const char *dictionary) // dictionary is the file name. my dictionary 
     return true;
 }
 
-void add(node *next, char *word);
+void add(node *next, const char *word)
 {   // recursively add to sorted linked list
 
 }
