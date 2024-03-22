@@ -81,7 +81,7 @@ bool load(const char *dictionary) // dictionary is the file name. my dictionary 
         {
             word[index] = c; // dictionary is already lowercase
             index++;
-            printf("direct %c\n",c);
+//            printf("direct %c\n",c);
 /*
             if (index > LENGTH)
             {
@@ -95,11 +95,13 @@ bool load(const char *dictionary) // dictionary is the file name. my dictionary 
             if (c == '\n')
             {
                 word[index] = '\0';
-                index = 0;
 
                 for (int i = 0; i < index; i++)
+                {
                     printf("%c",word[i]);
+                }
                 printf("\n");
+                index = 0;
             }
     }
 
