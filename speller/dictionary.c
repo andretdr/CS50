@@ -24,7 +24,7 @@ typedef struct node
 const unsigned int N = 456976; //26 ^ 4
 
 // Hash table
-node *table[N];
+node *table[N] = {NULL};
 
 void add(node *ptr, const char *word);
 
@@ -90,7 +90,7 @@ bool load(const char *dictionary) // dictionary is the file name. my dictionary 
                 index = 0;
                 // add to hash table
                 int key = hash(word);
-                
+
 
 
             }
