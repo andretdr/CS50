@@ -67,7 +67,7 @@ bool load(const char *dictionary) // dictionary is the file name. my dictionary 
     FILE *file = fopen(dictionary, "r");
     if (file == NULL)
     {
-        printf("Cannot open dictionary");
+        printf("Could not open dictionary\n");
         return 1;
     }
 
@@ -106,7 +106,7 @@ bool load(const char *dictionary) // dictionary is the file name. my dictionary 
 
 
 
-    return false;
+    return true;
 }
 
 // Returns number of words in dictionary if loaded, else 0 if not yet loaded
