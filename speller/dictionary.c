@@ -94,28 +94,11 @@ bool load(const char *dictionary) // dictionary is the file name. my dictionary 
                 {
                     n->word[i] = word[i];
                 }
-
-                //table[12846] = n;
-
                 add(&table[hash(n->word)], &n);
-                printf("did it? %s",table[hash(n->word)]->word);
-                // test
-
-
-                //printf("hash function %i\n",hash(word));
-                //count ++;
-
 
                 index = 0;
             }
     }
-
-//    for (int q = 0; q < 5; q++)
-//    {
-
-//    }
-
-
     return true;
 }
 
@@ -143,7 +126,7 @@ bool checkr(const node *current, const char *word)
     }
 }
 
-bool add(node **current, node **toadd)
+bool add(node **current, node **toadd) // you have to pass the ADDRESS EVERYTIME you want to pass by reference. Even when using pointers. hence.
 {   // recursively add to sorted linked list
     // BASE CASE
     if (*current == NULL)
