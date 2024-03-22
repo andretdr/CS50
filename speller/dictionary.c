@@ -50,6 +50,7 @@ unsigned int hash(const char *word)
             {
                 factor *= 26;
             }
+            printf("factor %i\n", factor);
             result += factor * (toupper(word[i]) - 'A');
         }
         i++;
