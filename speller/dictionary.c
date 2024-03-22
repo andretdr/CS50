@@ -117,7 +117,7 @@ bool checkr(const node *current, const char *word)
 {   // recursively check sorted linked list
     // BASE CASE
 
-    printf("current->word: %s\n",current->word);
+    //printf("current->word: %s\n",current->word);
     if (current == NULL)
     {
         return false;
@@ -130,7 +130,7 @@ bool checkr(const node *current, const char *word)
             return true;
         }
         else
-            if(compare < 0)
+            if(compare > 0)
             {
                 return checkr(current->next, word);
             }
