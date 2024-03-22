@@ -147,7 +147,7 @@ bool checkr(const node *current, const char *word)
     }
 }
 
-bool add(node *current, node *toadd)
+bool add(node **current, node **toadd)
 {   // recursively add to sorted linked list
     // BASE CASE
     if (current == NULL)
