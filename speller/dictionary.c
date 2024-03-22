@@ -96,8 +96,12 @@ bool load(const char *dictionary) // dictionary is the file name. my dictionary 
                 }
                 add(&table[hash(n->word)], &n);
                 printf("direct check %s\n", (*table[83150]).word);
-                printf("direct check %s\n", (*(*table[83150]).next).word);
-                printf("direct check %s\n", (*(*(*table[83150]).next).next).word);
+                if (((*table[83150]).next) != NULL)
+                {
+                    printf("direct check %s\n", (*(*table[83150]).next).word);
+                    if (((*(*table[83150]).next).next) != NULL)
+                        printf("direct check %s\n", (*(*(*table[83150]).next).next).word);
+                }
 
                 index = 0;
             }
