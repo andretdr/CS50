@@ -2,7 +2,6 @@
 
 #include <ctype.h>
 #include <stdbool.h>
-
 #include "dictionary.h"
 
 // Represents a node in a hash table
@@ -11,6 +10,8 @@ typedef struct node
     char word[LENGTH + 1];
     struct node *next;
 } node;
+
+char c = '\0';
 
 //typedef struct indexnode // this stores a list of all used indexes
 //{
@@ -59,8 +60,14 @@ unsigned int hash(const char *word)
 bool load(const char *dictionary) // dictionary is the file name
 {
     // TODO create the hashtable and load the dictionary into it
-    FILE* file = fopen(dictionary, 'r');
-    node n 
+
+    //create a node container.
+    node *n = malloc(sizeof(node));
+
+    FILE *file = fopen(dictionary, 'r');
+    fread(&c, 1, 1, file);
+
+    add(n)
 
 
 
