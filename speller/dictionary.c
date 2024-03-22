@@ -38,7 +38,7 @@ bool check(const char *word)
 // Hashes word to a number
 unsigned int hash(const char *word)
 {
-    // TODO: Improve this hash function
+    // TODO: Improve this hash function I can reduce the 26 factor to something smaller that fits the dictionary, then reduce N
     int i = 0;
     unsigned int result = 0; // or else if 0 everything is 0
     while ((word[i] != '\0') && (i < 4)) // not terminated. 26^0*word[0]+26^1*word[1]+26^2*word[2]+26^3*word[3]  // I disregard aphosrothes
@@ -82,15 +82,6 @@ bool load(const char *dictionary) // dictionary is the file name. my dictionary 
         {
             word[index] = c; // dictionary is already lowercase
             index++;
-//            printf("direct %c\n",c);
-/*
-            if (index > LENGTH)
-            {
-                // Consume remainder of alphabetical string
-                while (fread(&c, sizeof(char), 1, file) && isalpha(c));
-                    index = 0; // Prepare for new word
-            }
-*/
         }
         else
             if (c == '\n')
@@ -99,7 +90,7 @@ bool load(const char *dictionary) // dictionary is the file name. my dictionary 
                 index = 0;
                 // add to hash table
                 int key = hash(word);
-                printf("%i\n",key);
+                
 
 
             }
