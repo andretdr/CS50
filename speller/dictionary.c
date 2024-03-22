@@ -93,11 +93,14 @@ bool load(const char *dictionary) // dictionary is the file name. my dictionary 
             {
                 word[index] = '\0';
                 index = 0;
+
+                for (int i = 0; i < index; i++)
+                    printf("%c",word[i]);
+                printf("\n");
             }
-            
     }
 
-    add(n)
+    //add(n);
 
 
 
