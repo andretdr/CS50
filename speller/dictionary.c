@@ -95,6 +95,13 @@ bool load(const char *dictionary) // dictionary is the file name. my dictionary 
                     n->word[i] = word[i];
                     printf("%c",word[i]);
                 }
+
+        node *m = malloc(sizeof(node));
+        m = table[12846];
+        printf("%d\n",m);
+        free(m);
+
+
                 bool exit = add(table[hash(word)], n);
 
                 // test
