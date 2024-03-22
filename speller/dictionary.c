@@ -152,7 +152,7 @@ bool add(node *current, node *toadd)
     // BASE CASE
     if (current == NULL)
     {
-        *current = *toadd;
+        current = toadd;
         printf("inside,%s\n",current->word);
         return true;
     }
