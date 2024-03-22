@@ -111,8 +111,8 @@ bool load(const char *dictionary) // dictionary is the file name. my dictionary 
 //    for (int q = 0; q < 5; q++)
 //    {
         node *m = malloc(sizeof(node));
-        m = table[test[0]];
-        //printf("%s",m->word);
+        m = table[12846];
+        printf("%s\n",m->word);
         free(m);
 
 //    }
