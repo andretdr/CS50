@@ -113,7 +113,7 @@ bool add(node *current, node *toadd)
         return true;
     }
     else
-        if (current->next->)
+        if (strcmp(toadd->word,current->word) 
         {
 
         }
