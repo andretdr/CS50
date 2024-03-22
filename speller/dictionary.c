@@ -55,7 +55,7 @@ unsigned int hash(const char *word)
 }
 
 // Loads dictionary into memory, returning true if successful, else false
-bool load(const char *dictionary) // dictionary is the file name. my dictionary is uppercased
+bool load(const char *dictionary) // dictionary is the file name. my dictionary is lowercased
 {
     // TODO create the hashtable and load the dictionary into it
 
@@ -75,9 +75,10 @@ bool load(const char *dictionary) // dictionary is the file name. my dictionary 
 
     while (fread(&c, sizeof(char), 1, file));
     {
-        if ((isalph(c)) || ((c == '\'') && index > 0))
+        if ((isalpha(c)) || ((c == '\'') && index > 0))
         {
-            word[index] = toupper(c); // upper case all my dictionary
+            if (isalpha(c))
+                word[index] = tolower(c); // lower case all my dictionary
             index++;
 /*
             if (index > LENGTH)
@@ -89,13 +90,7 @@ bool load(const char *dictionary) // dictionary is the file name. my dictionary 
 */
         }
         else
-/*
-            if ((isdigit(c)));
-            {
-
-            }
-*/
-
+            if ((c == ' '))
 
     }
 
