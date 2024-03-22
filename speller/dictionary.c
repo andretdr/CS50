@@ -77,8 +77,7 @@ bool load(const char *dictionary) // dictionary is the file name. my dictionary 
     {
         if ((isalpha(c)) || ((c == '\'') && index > 0))
         {
-            if (isalpha(c))
-                word[index] = tolower(c); // lower case all my dictionary
+            word[index]; // dictionary is already lowercase
             index++;
 /*
             if (index > LENGTH)
@@ -90,7 +89,10 @@ bool load(const char *dictionary) // dictionary is the file name. my dictionary 
 */
         }
         else
-            if ((c == ' '))
+            if ((c == '\n'))
+            {
+                
+            }
 
     }
 
