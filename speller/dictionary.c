@@ -2,6 +2,7 @@
 
 #include <ctype.h>
 #include <stdbool.h>
+#include <stdio.h>
 #include <stdlib.h>
 #include "dictionary.h"
 
@@ -63,7 +64,7 @@ bool load(const char *dictionary) // dictionary is the file name. my dictionary 
     //create a node container.
     node *n = malloc(sizeof(node));
 
-    FILE *file = fopen(dictionary, 'r');
+    FILE *file = fopen(dictionary, "r");
     if (file == NULL)
     {
         printf("Cannot open dictionary");
@@ -74,11 +75,11 @@ bool load(const char *dictionary) // dictionary is the file name. my dictionary 
     char word[LENGTH + 1]; // +1 for the terminator
     int index = 0;
 
-    while (fread(&c, sizeof(char), 1, file));
+    while (fread(&c, sizeof(char), 1, file))
     {
         if ((isalpha(c)) || ((c == '\'') && index > 0))
         {
-            word[index]; // dictionary is already lowercase
+            word[index] = c; // dictionary is already lowercase
             index++;
 /*
             if (index > LENGTH)
