@@ -56,7 +56,7 @@ unsigned int hash(const char *word)
             {
                 factor *= 26;
             }
-            result += factor * (toupper(word[i]) - 'A');
+            result += factor * (tolower(word[i]) - 'a');
         }
         i++;
     }
