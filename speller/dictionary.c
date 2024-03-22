@@ -12,19 +12,18 @@ typedef struct node
     struct node *next;
 } node;
 
-typedef struct indexnode // this stores a list of all used indexes
-{
-    int index;
-    struct indexnode *next;
+//typedef struct indexnode // this stores a list of all used indexes
+//{
+//    int index;
+//    struct indexnode *next;
 
-} indexnode;
+//} indexnode;
 
 // TODO: Choose number of buckets in hash table
 const unsigned int N = 456976; //26 ^ 4
 
 // Hash table
 node *table[N];
-
 
 
 // Returns true if word is in dictionary, else false
