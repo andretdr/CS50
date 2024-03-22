@@ -102,18 +102,25 @@ bool load(const char *dictionary) // dictionary is the file name. my dictionary 
 bool checkr(const node *current, const char *word)
 {   // recursively check sorted linked list
     // BASE CASE
-    int compare = strcmp(word, current->word);
-    if (compare == 0)
+    if (current == NULL)
     {
-        return true;
+        return false;
     }
     else
-        if(compare < 0)
+    {
+        int compare = strcmp(word, current->word);
+        if (compare == 0)
         {
-            return checkr(current->next, word);
+            return true;
         }
         else
-            return false; // if Null or compare > 0
+            if(compare < 0)
+            {
+                return checkr(current->next, word);
+            }
+            else
+                return false; // if Null or compare > 0
+    }
 }
 
 bool add(node *current, node *toadd)
