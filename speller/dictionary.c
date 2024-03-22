@@ -90,16 +90,10 @@ bool load(const char *dictionary) // dictionary is the file name. my dictionary 
                     n->word[i] = word[i];
                 }
                 bool exit = add(table[hash(word)], n);
-                
+
                 index = 0;
             }
     }
-
-    // add to hash table
-    //add(n, word);
-
-
-
     return true;
 }
 
