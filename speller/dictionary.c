@@ -134,7 +134,7 @@ bool add(node **current, node **toadd) // you have to pass the ADDRESS EVERYTIME
     {
         *current = *toadd;
         //printf("inside,%s\n",*current->word);
-        printf("added word %s",(**toadd).word);
+        printf("added word\n");
         return true;
 
     }
@@ -143,6 +143,7 @@ bool add(node **current, node **toadd) // you have to pass the ADDRESS EVERYTIME
         {
             (**toadd).next = *current;
             *current = *toadd;
+            printf("added word\n");
             return true;
         }
         else
