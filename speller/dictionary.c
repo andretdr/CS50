@@ -15,6 +15,8 @@ typedef struct node
 } node;
 
 bool add(node *current, node *toadd);
+bool checkr(node *current, char *word);
+
 
 const unsigned int N = 456976; //26 ^ 4
 
@@ -25,12 +27,7 @@ node *table[N] = {NULL};
 bool check(const char *word)
 {
     // TODO check the word against the hash table dictionary, or if its not in the dict, its false
-    
-
-
-
-
-    return false;
+    return checkr(table[hash(word)], word);
 }
 
 // Hashes word to a number
@@ -100,6 +97,18 @@ bool load(const char *dictionary) // dictionary is the file name. my dictionary 
             }
     }
     return true;
+}
+
+bool checkr(node *current, char *word)
+{   // recursively check sorted linked list
+    // BASE CASE
+    if (strcmp(current->word, word) == 0)
+    {
+        return true;
+    }
+    else
+        if()
+
 }
 
 bool add(node *current, node *toadd)
