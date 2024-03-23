@@ -1,6 +1,7 @@
 catera
 caterb
 caterc
+caterd
 cat
 elephant
 dog
