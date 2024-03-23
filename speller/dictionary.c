@@ -37,7 +37,7 @@ bool check(const char *word)
             temp[i] = tolower(word[i]);
         i++;
     }
-    printf("word to check: %s %s\n", temp, word);
+    printf("word to check: %s \n", word);
     return checkr(table[hash(word)], temp);
 
 }
