@@ -206,6 +206,13 @@ void unloadr(node *current) // recursively unloads
 {
     //BaseCASE
     if (current->next == NULL)
+    {
+        free(current);
+    }
+    else
+    {
+        unloadr(current->next);
+    }
 
 
 }
