@@ -205,7 +205,7 @@ bool unload(void)
 void unloadr(node **current) // recursively unloads
 {
     //BaseCASE
-    if ((*current).next == NULL)
-        
+    if ((**current).next == NULL)
+
 
 }
