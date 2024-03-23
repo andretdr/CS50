@@ -156,7 +156,7 @@ bool add(node **current, node **toadd) // you have to pass the ADDRESS EVERYTIME
     {
         *current = *toadd;
         sized++;
-        printf("inside,%s\n",*current->word);
+        printf("inside,%s\n",(**current).word);
         printf("added word was stored overidding NULL\n");
         return true;
 
