@@ -16,6 +16,7 @@ typedef struct node
 
 bool add(node **current, node **toadd);
 bool checkr(const node *current, char *word);
+void unloadr(node *current);
 
 int sized = 0;
 
@@ -199,7 +200,8 @@ bool unload(void)
             unloadr(&(*table[i]));
     }
 
-    return false;
+
+    return true;
 }
 
 void unloadr(node *current) // recursively unloads
@@ -212,7 +214,6 @@ void unloadr(node *current) // recursively unloads
     else
     {
         unloadr(current->next);
+        free(current);
     }
-
-
 }
