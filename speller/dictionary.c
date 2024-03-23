@@ -196,16 +196,16 @@ bool unload(void)
     for (int i = 0; i < N; i++)
     {
         if (table[i] != NULL)
-            unloadr(&table[i]);
+            unloadr(&(*table[i]));
     }
 
     return false;
 }
 
-void unloadr(node **current) // recursively unloads
+void unloadr(node *current) // recursively unloads
 {
     //BaseCASE
-    if ((**current).next == NULL)
+    if (current->next == NULL)
 
 
 }
