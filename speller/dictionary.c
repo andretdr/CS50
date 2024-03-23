@@ -34,7 +34,10 @@ bool check(const char *word)
     while (word[i] != '\0')
     {
         if (isalpha(word[i]))
+        {
             temp[i] = tolower(word[i]);
+            printf("lower :%c\n", tolower(word[i]));
+        }
         i++;
     }
     printf("word to check: %s \n", word);
