@@ -171,7 +171,7 @@ bool addr(node *current, node *toadd) // you have to pass the ADDRESS EVERYTIME 
     //printf("word to add %s\n",(**toadd).word);
     if (*current == NULL)
     {
-        *current = *toadd;
+        current = toadd;
         sized++;
   //      printf("inside,%s\n",(**current).word);
   //      printf("added word was stored overidding NULL\n");
