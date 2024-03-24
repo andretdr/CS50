@@ -116,7 +116,7 @@ bool load(const char *dictionary) // dictionary is the file name. my dictionary 
                     collisions++;
                 }
 
-                addr(&table[hash(n->word)], &n);
+                addr(&(*table[hash(n->word)])), &n);
 //                addr(&table[hash(n->word)], &n);
 /*
                 if (table[109879]!= NULL)
