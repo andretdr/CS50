@@ -60,7 +60,7 @@ unsigned int hash(const char *word)
             int factor = 1;
             for (int j = 0; j < i; j++)
             {
-                factor *= 26;
+                factor *= 8;
             }
             result += factor * (tolower(word[i]) - 'a');
         }
