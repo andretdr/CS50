@@ -179,6 +179,9 @@ bool addr(node *current, node *toadd) // you have to pass the ADDRESS EVERYTIME 
 
     }
     else
+        return false;
+
+        /*
         if (strcmp((**toadd).word,(**current).word) <= 0) // if toadd node is smaller then current node, then add it here
         {
             (**toadd).next = *current;
@@ -191,9 +194,9 @@ bool addr(node *current, node *toadd) // you have to pass the ADDRESS EVERYTIME 
             {
                 return addr(&((**current).next), toadd);
             }
-
+*/
 }
-/*
+
 
 bool addr(node **current, node **toadd) // you have to pass the ADDRESS EVERYTIME you want to pass by reference. Even when using pointers. hence.
 {   // recursively add to sorted linked list
