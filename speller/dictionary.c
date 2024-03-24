@@ -53,7 +53,7 @@ unsigned int hash(const char *word)
     // TODO: Improve this hash function I can reduce the 26 factor to something smaller that fits the dictionary, then reduce N
     int i = 0;
     unsigned int result = 0; // or else if 0 everything is 0
-    while ((word[i] != '\0') && (i < 5)) // not terminated. 26^0*word[0]+26^1*word[1]+26^2*word[2]+26^3*word[3]  // I disregard aphosrothes
+    while ((word[i] != '\0') && (i < 6)) // not terminated. 26^0*word[0]+26^1*word[1]+26^2*word[2]+26^3*word[3]  // I disregard aphosrothes
     {
         if (isalpha(word[i]))
         {
