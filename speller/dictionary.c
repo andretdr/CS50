@@ -168,13 +168,13 @@ bool checkr(const node *current, char *word)
 bool addr(node *current, node *toadd) // you have to pass the ADDRESS EVERYTIME you want to pass by reference. Even when using pointers. hence.
 {   // recursively add to sorted linked list
     // BASE CASE
-    //printf("word to add %s\n",(**toadd).word);
+    printf("word to add %s\n",(**toadd).word);
     if (current == NULL)
     {
         current = toadd;
         sized++;
-  //      printf("inside,%s\n",(**current).word);
-  //      printf("added word was stored overidding NULL\n");
+        printf("inside,%s\n",(*current).word);
+        printf("added word was stored overidding NULL\n");
         return true;
 
     }
