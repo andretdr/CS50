@@ -14,7 +14,7 @@ typedef struct node
     struct node *next;
 } node;
 
-bool addr(node **current, node **toadd);
+bool addr(node *current, node *toadd);
 bool checkr(const node *current, char *word);
 void unloadr(node *current);
 
@@ -169,7 +169,7 @@ bool addr(node *current, node *toadd) // you have to pass the ADDRESS EVERYTIME 
 {   // recursively add to sorted linked list
     // BASE CASE
     //printf("word to add %s\n",(**toadd).word);
-    if (*current == NULL)
+    if (current == NULL)
     {
         *current = *toadd;
         sized++;
