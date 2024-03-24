@@ -111,7 +111,12 @@ bool load(const char *dictionary) // dictionary is the file name. my dictionary 
                 {
                     n->word[i] = word[i];
                 }
-                add(&table[hash(n->word)], &n);
+                if (table[hash(n->word)] != NULL) // collision is true
+                {
+                    collisions++;
+                }
+
+                addr(&table[hash(n->word)], &n);
 /*
                 if (table[109879]!= NULL)
                 {
@@ -127,6 +132,7 @@ bool load(const char *dictionary) // dictionary is the file name. my dictionary 
                 index = 0;
             }
     }
+    printf("Collisions :%i",collisions);
     return true;
 }
 
@@ -180,7 +186,7 @@ bool addr(node **current, node **toadd) // you have to pass the ADDRESS EVERYTIM
         }
         else
             {
-                return add(&((**current).next), toadd);
+                return addr(&((**current).next), toadd);
             }
 
 }
