@@ -197,7 +197,7 @@ bool addr(node *current, node *toadd) // you have to pass the ADDRESS EVERYTIME 
 */
 }
 
-
+/*
 bool addr(node **current, node **toadd) // you have to pass the ADDRESS EVERYTIME you want to pass by reference. Even when using pointers. hence.
 {   // recursively add to sorted linked list
     // BASE CASE
