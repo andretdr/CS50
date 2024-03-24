@@ -14,11 +14,12 @@ typedef struct node
     struct node *next;
 } node;
 
-bool add(node **current, node **toadd);
+bool addr(node **current, node **toadd);
 bool checkr(const node *current, char *word);
 void unloadr(node *current);
 
 int sized = 0;
+int collisions = 0;
 
 const unsigned int N = 456976; //26 ^ 4
 
@@ -155,7 +156,7 @@ bool checkr(const node *current, char *word)
     }
 }
 
-bool add(node **current, node **toadd) // you have to pass the ADDRESS EVERYTIME you want to pass by reference. Even when using pointers. hence.
+bool addr(node **current, node **toadd) // you have to pass the ADDRESS EVERYTIME you want to pass by reference. Even when using pointers. hence.
 {   // recursively add to sorted linked list
     // BASE CASE
     //printf("word to add %s\n",(**toadd).word);
