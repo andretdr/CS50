@@ -267,7 +267,7 @@ bool unload(void)
     for (int i = 0; i < N; i++)
     {
         if (table[i] != NULL)
-            unloadr(&(*table[i]));
+            unloadr(table[i]);
     }
     return true;
 }
@@ -281,7 +281,7 @@ void unloadr(node *current) // recursively unloads
     }
     else
     {
-        unloadr(&(*((*current).next)));
+        unloadr(current->next);
         free(current);
     }
 }
