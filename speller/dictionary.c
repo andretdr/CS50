@@ -290,13 +290,14 @@ void unloadr(node *current) // recursively unloads
     //BaseCASE
     if (current->next == NULL)
     {
-        printf("unloading %s\n",(**current).word);
+        printf("unloading %s\n",(current).word);
         //free(current);
     }
     else
     {
         unloadr(current->next);
+
 //        printf("unloading %s\n",current->word);
-        free(current);
+        free(current->next);
     }
 }
