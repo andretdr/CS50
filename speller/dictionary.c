@@ -161,7 +161,7 @@ bool load(const char *dictionary) // dictionary is the file name. my dictionary 
                     }
                 }*///
 
-
+                //free(n);
                 index = 0;
             }
     }
