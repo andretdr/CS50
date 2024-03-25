@@ -296,8 +296,9 @@ void unloadr(node *current) // recursively unloads
     else
     {
         unloadr(current->next);
-        
+
         free(current->next);
+        
         printf("unloading %s\n",current->word);
     }
 }
