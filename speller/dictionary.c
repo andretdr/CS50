@@ -279,7 +279,7 @@ bool unload(void)
     {
         if (table[i] != NULL)
             unloadr(table[i]);
-        free(table[i]);
+//        free(table[i]);
     }
 
     return true;
