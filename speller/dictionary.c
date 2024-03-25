@@ -143,7 +143,7 @@ bool load(const char *dictionary) // dictionary is the file name. my dictionary 
 
 
 //                addr((&(table[hash(n->word)])), &n);
-//                printf("hash for %s is %i \n",n->word,hash(n->word));
+                printf("hash for %s is %i \n",n->word,hash(n->word));
 //                addr(&table[hash(n->word)], &n);
 
 /*
@@ -282,6 +282,10 @@ bool unload(void)
         free(table[i]);
     }
 
+    if (table[3475] != NULL)
+        printf("found this: %s\n", (*table[3475]).word);
+    if (table[36688] != NULL)
+        printf("found this: %s\n", (*table[36688]).word);
     return true;
 }
 
@@ -298,7 +302,7 @@ void unloadr(node *current) // recursively unloads
         unloadr(current->next);
 
         free(current->next);
-        
+
         printf("unloading %s\n",current->word);
     }
 }
