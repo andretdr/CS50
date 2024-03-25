@@ -157,6 +157,7 @@ bool load(const char *dictionary) // dictionary is the file name. my dictionary 
             }
     }
 
+    fclose(file);
     printf("Collisions :%i",collisions);
     return true;
 }
