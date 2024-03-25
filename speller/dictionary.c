@@ -280,6 +280,7 @@ bool unload(void)
         if (table[i] != NULL)
             unloadr(table[i]);
         free(table[i]);
+        table[i] = NULL;
     }
 
     if (table[3475] != NULL)
@@ -302,6 +303,7 @@ void unloadr(node *current) // recursively unloads
         unloadr(current->next);
 
         free(current->next);
+        current->next = NULL;
 
         printf("unloading %s\n",current->word);
     }
