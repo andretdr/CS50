@@ -278,7 +278,7 @@ bool unload(void)
     for (int i = 0; i < N; i++)
     {
         if (table[i] != NULL)
-            unloadr(table[i]);
+            unloadr(&(*table[i]));
 //        free(table[i]);
     }
 
