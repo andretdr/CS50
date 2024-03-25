@@ -135,7 +135,7 @@ bool load(const char *dictionary) // dictionary is the file name. my dictionary 
 
 
 //                addr((&(table[hash(n->word)])), &n);
-                printf("hash for %s is %i \n",n->word,hash(n->word));
+//                printf("hash for %s is %i \n",n->word,hash(n->word));
 //                addr(&table[hash(n->word)], &n);
 
 /*
