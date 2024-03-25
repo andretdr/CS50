@@ -14,7 +14,7 @@ typedef struct node
     struct node *next;
 } node;
 
-bool addr(node *current, node *toadd);
+node *addr(node **current, node **toadd);
 bool checkr(const node *current, char *word);
 void unloadr(node *current);
 
@@ -50,22 +50,34 @@ bool check(const char *word)
 // Hashes word to a number
 unsigned int hash(const char *word)
 {
-    // TODO: Improve this hash function I can reduce the 26 factor to something smaller that fits the dictionary, then reduce N
+    // TODO: take the 1st n 3rd letter n 5th letter, then + combined letters + 26*length
     int i = 0;
     unsigned int result = 0; // or else if 0 everything is 0
-    while ((word[i] != '\0') && (i < 8)) // not terminated. 26^0*word[0]+26^1*word[1]+26^2*word[2]+26^3*word[3]  // I disregard aphosrothes
+    while ((word[i] != '\0') && (i < 3)) // not terminated. 26^0*word[0]+26^1*word[1]+26^2*word[2]+26^3*word[3]  // I disregard aphosrothes
     {
-        if (isalpha(word[i]))
+        if ((isalpha(word[i])) && (i != 1))
         {
             int factor = 1;
             for (int j = 0; j < i; j++)
             {
-                factor *= 3;
+                factor *= 26;
             }
             result += factor * (tolower(word[i]) - 'a');
         }
         i++;
     }
+    int n = 0;
+    int totalletters = 0;
+    while ((word[n] != '\0')) // calculate length, add all letters up
+    {
+        if ((isalpha(word[n])))
+        {
+            n++;
+            totalletters += (tolower(word[n]) - 'a');
+        }
+    }
+    result += totalletters + n*26;
+
     return result;
 }
 
@@ -115,27 +127,69 @@ bool load(const char *dictionary) // dictionary is the file name. my dictionary 
                 {
                     collisions++;
                 }
+                table[hash(n->word)] = addr((&(table[hash(n->word)])), &n);
 
-                addr((&(*table[hash(n->word)])), &(*n));
+
+//                addr((&(table[hash(n->word)])), &n);
+                printf("hash for %s is %i \n",n->word,hash(n->word));
 //                addr(&table[hash(n->word)], &n);
+
 /*
-                if (table[109879]!= NULL)
+                if (table[12846]!= NULL)
+                    printf("direct check %s\n", (*table[12846]).word);
+
+                if (table[346790]!= NULL)
                 {
-                    printf("direct check %s\n", (*table[109879]).word);
-                    if (((*table[109879]).next) != NULL)
+                    printf("direct check %s\n", (*table[346790]).word);
+                    if (((*table[346790]).next) != NULL)
                     {
-                        printf("direct check %s\n", (*(*table[109879]).next).word);
-                        if (((*(*table[109879]).next).next) != NULL)
-                            printf("direct check %s\n", (*(*(*table[109879]).next).next).word);
+                        printf("direct check %s\n", (*(*table[346790]).next).word);
+                        if (((*(*table[346790]).next).next) != NULL)
+                            printf("direct check %s\n", (*(*(*table[346790]).next).next).word);
                     }
-                }
-*/
+                }*///
+
+
                 index = 0;
             }
     }
+
     printf("Collisions :%i",collisions);
     return true;
 }
+
+
+node *addr(node **current, node **toadd) // you have to pass the ADDRESS EVERYTIME you want to pass by reference. Even when using pointers. hence.
+{   // recursively add to sorted linked list
+    // BASE CASE
+//    printf("word to add %s\n",(**toadd).word);
+    if (*current == NULL)
+    {
+        //*current = toadd;
+        sized++;
+//        printf("inside,%s\n",(**current).word);
+//        printf("added word was stored overidding NULL\n");
+        return *toadd;
+
+    }
+    else
+        if (strcmp((**toadd).word,(**current).word) <= 0) // if toadd node is smaller then current node, then add it here
+        {
+            (**toadd).next = *current;
+//            *current = *toadd;
+ //           printf("added word inbetween\n");
+            sized++;
+            return *toadd;
+        }
+        else
+            {
+                return addr(&((**current).next), toadd);
+            }
+
+}
+
+
+
 
 bool checkr(const node *current, char *word)
 {   // recursively check sorted linked list
@@ -165,37 +219,6 @@ bool checkr(const node *current, char *word)
 
 
 
-bool addr(node *current, node *toadd) // you have to pass the ADDRESS EVERYTIME you want to pass by reference. Even when using pointers. hence.
-{   // recursively add to sorted linked list
-    // BASE CASE
-    printf("word to add %s\n",(*toadd).word);
-    if (current == NULL)
-    {
-        current = toadd;
-        sized++;
-        printf("inside,%s\n",(*current).word);
-        printf("added word was stored overidding NULL\n");
-        return true;
-
-    }
-    else
-        return false;
-
-        /*
-        if (strcmp((**toadd).word,(**current).word) <= 0) // if toadd node is smaller then current node, then add it here
-        {
-            (**toadd).next = *current;
-            *current = *toadd;
- //           printf("added word inbetween\n");
-            sized++;
-            return true;
-        }
-        else
-            {
-                return addr(&((**current).next), toadd);
-            }
-*/
-}
 
 /*
 bool addr(node **current, node **toadd) // you have to pass the ADDRESS EVERYTIME you want to pass by reference. Even when using pointers. hence.
