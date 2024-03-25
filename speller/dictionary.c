@@ -21,7 +21,7 @@ void unloadr(node *current);
 int sized = 0;
 int collisions = 0;
 
-const unsigned int N = 456976; //26 ^ 4
+const unsigned int N = 856976; //26 ^ 4
 
 // Hash table
 node *table[N] = {NULL};
@@ -79,7 +79,7 @@ unsigned int hash(const char *word)
         }
         n++;
     }
-    result += totalletters*26*26 + n*26;
+    result += totalletters*26*26 + n*26*26*10;
 //    printf ("hash %i %i %i\n",result, totalletters, n*26);
 
     return result;
