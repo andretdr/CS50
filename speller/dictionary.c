@@ -74,13 +74,13 @@ unsigned int hash(const char *word)
         {
 
             totalletters += (tolower(word[n]) - 'a');
-            printf("totalletters :%i\n",totalletters);
+//            printf("totalletters :%i\n",totalletters);
 
         }
         n++;
     }
-    result += totalletters + n*26;
-    printf ("hash %i %i %i\n",result, totalletters, n*26);
+    result += totalletters*26*26 + n*26;
+//    printf ("hash %i %i %i\n",result, totalletters, n*26);
 
     return result;
 }
