@@ -75,7 +75,7 @@ unsigned int hash(const char *word)
         {
             n++;
             totalletters += (tolower(word[n]) - 'a');
-            printf("totalletters :%i\n",totalletters);
+            printf("totalletters :%i, %i\n",totalletters, (tolower(word[n]) - 'a'));
         }
     }
     result += totalletters + n*26;
