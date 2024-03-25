@@ -281,7 +281,7 @@ void unloadr(node *current) // recursively unloads
     }
     else
     {
-        unloadr((*current).next);
+        unloadr(&(*((*current).next)));
         free(current);
     }
 }
