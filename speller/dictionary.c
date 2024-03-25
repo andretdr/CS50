@@ -121,7 +121,7 @@ bool load(const char *dictionary) // dictionary is the file name. my dictionary 
                 // initialise node
                 node *n = malloc(sizeof(node));
                 n->next = NULL;
-                n->word = {NULL};
+                n->word = {};
                 for (int i = 0; i < index; i++)
                 {
                     n->word[i] = word[i];
