@@ -70,6 +70,7 @@ unsigned int hash(const char *word)
     int totalletters = 0;
     while ((word[n] != '\0')) // calculate length, add all letters up
     {
+        printf("wordn %c \n",word[n]);
         if ((isalpha(word[n])))
         {
             n++;
