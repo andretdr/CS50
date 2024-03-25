@@ -53,17 +53,15 @@ unsigned int hash(const char *word)
     // TODO: take the 1st n 3rd letter n 5th letter, then + combined letters + 26*length
     int i = 0;
     unsigned int result = 0; // or else if 0 everything is 0
+    int factor = 1;
     while ((word[i] != '\0') && (i < 5)) // not terminated. 26^0*word[0]+26^1*word[1]+26^2*word[2]+26^3*word[3]  // I disregard aphosrothes
     {
+
         if ((isalpha(word[i])) && (i != 1))
         {
-            int factor = 1;
-            for (int j = 0; j < i; j++)
-            {
-                factor *= 26;
-            }
             result += factor * (tolower(word[i]) - 'a');
-        }
+            factor *= 26;
+         }
         i++;
     }
     int n = 0;
