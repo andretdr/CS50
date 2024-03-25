@@ -269,8 +269,6 @@ bool unload(void)
         if (table[i] != NULL)
             unloadr(&(*table[i]));
     }
-
-
     return true;
 }
 
