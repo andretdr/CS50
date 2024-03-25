@@ -117,7 +117,7 @@ bool load(const char *dictionary) // dictionary is the file name. my dictionary 
                 word[index] = '\0';
 
                 // add to hash table
-//                printf("word to add %s, hash number %i\n",word , hash(word));
+
                 // initialise node
                 node *n = malloc(sizeof(node));
                 n->next = NULL;
