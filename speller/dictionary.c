@@ -268,7 +268,9 @@ bool unload(void)
     {
         if (table[i] != NULL)
             unloadr(table[i]);
+        free(table[i]);
     }
+
     return true;
 }
 
@@ -277,12 +279,13 @@ void unloadr(node *current) // recursively unloads
     //BaseCASE
     if (current->next == NULL)
     {
-        
+        printf("unloading %s\n",current->word);
         free(current);
     }
     else
     {
         unloadr(current->next);
+        printf("unloading %s\n",current->word);
         free(current);
     }
 }
