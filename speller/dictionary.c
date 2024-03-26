@@ -201,6 +201,7 @@ bool addr(char *word)
     if (currentptr == NULL) // insert here
     {
        insert = true;
+       printf("im here\n");
     }
     else
     {
@@ -236,7 +237,7 @@ bool addr(char *word)
         return true;
     }
     else
-        return false;
+        return true;
 
 }
 
