@@ -196,7 +196,14 @@ bool addr(char *word)
         for (int j = i; j < LENGTH + 1; j++) // zerofy the rest
             n->word[j] = '\0';
 
-        currentptr->next = n;
+        if (startptr == NULL) // if 1st entry
+        {
+            table[hash(word)] = n;
+        }
+        else
+        {
+            currentptr->next = n;
+        }
 
         return true;
 
