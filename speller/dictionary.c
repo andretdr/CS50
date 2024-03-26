@@ -189,10 +189,11 @@ bool addr(char *word)
             node *n = malloc(sizeof(node));
             n->next = NULL;
 
-            for (int i = 0; i < LENGTH + 1; i++)
-                n->word[i] = '\0';
             for (int i = 0; i < index; i++)
                 n->word[i] = word[i];
+            for (int i = 0; i < LENGTH + 1; i++)
+                n->word[i] = '\0';
+
 
             return true;
         }
