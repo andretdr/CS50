@@ -182,7 +182,6 @@ bool addr(char *word)
 
     if (startptr == NULL) // if start of recursion hashtable
     {
-
         if (table[hash(word)] == NULL) // if 1st entry
         {
             // insert here
@@ -202,8 +201,13 @@ bool addr(char *word)
 
             return true;
         }
+        else // not 1st entry
+        {
+            currentptr = startptr = table[hash(word)];
 
-        currentptr = startptr = table[hash(word)];
+        }
+
+
 
 
 
