@@ -88,7 +88,7 @@ unsigned int hash(const char *word)
 bool load(const char *dictionary) // dictionary is the file name. my dictionary is lowercased
 {
     node *prevptr = malloc(sizeof(node));
-    node *currentptr = NULL;
+    node *currentptr = malloc(sizeof(node));
 
     // TODO create the hashtable and load the dictionary into it
 
@@ -180,6 +180,7 @@ bool load(const char *dictionary) // dictionary is the file name. my dictionary 
 
     fclose(file);
     free(prevptr);
+    free(currentptr);
 
 //        if (table[435164] != NULL)
 //        printr(table[435164]);
