@@ -190,9 +190,11 @@ bool load(const char *dictionary) // dictionary is the file name. my dictionary 
 
 bool addr(char *word)
 {
+    bool insert = false;
+
     // BASECASE
     if (currentptr == NULL) // insert here
-    {
+    {/*
         node *n = malloc(sizeof(node));
         n->next = NULL;
 
@@ -208,24 +210,51 @@ bool addr(char *word)
         prevptr->next = n;
 
         return true;
+        */
+       insert = true;
     }
     else
     {
         if (strcmp(word, currentptr->word) <= 0)// check if toadd word <= to current word
         { // add
-            
+            /*
             n->next = currentptr;
             prevptr->next = n;
 
             return true;
+            */
+           insert = true;
         }
         else
         {
             prevptr = currentptr;
             currentptr = currentptr->next;
-            addr(word);
+            return addr(word);
         }
     }
+
+    if (insert)
+    {
+        node *n = malloc(sizeof(node));
+        n->next = NULL;
+
+        int i = 0;
+        while (word[i] != '\0') // copy the word
+        {
+            n->word[i] = word[i];
+            i++;
+        }
+        for (int j = i; j < LENGTH + 1; j++) // zerofy the rest
+            n->word[j] = '\0';
+
+        n->next = currentptr;
+        prevptr->next = n;
+
+        return true;
+    }
+    else
+        return false;
+
 }
 
 bool checkr(const node *current, char *word)
