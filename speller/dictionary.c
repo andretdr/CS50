@@ -40,10 +40,9 @@ bool check(const char *word)
     while (word[i] != '\0')
     {
         if (isalpha(word[i]))
-        {
             temp[i] = tolower(word[i]);
-         //   printf("lower :%c\n", tolower(word[i]));
-        }
+        else
+            temp[i] = word[i]; // if its aphorstophy
         i++;
     }
   //  printf("word to check: %s %s \n", temp, word);
@@ -170,7 +169,7 @@ bool addr(char *word)
         for (int j = i; j < LENGTH + 1; j++) // zerofy the rest
             n->word[j] = '\0';
 
-        printf("word :%s\n",n->word);
+ //       printf("word :%s\n",n->word);
 
         n->next = currentptr;
 
