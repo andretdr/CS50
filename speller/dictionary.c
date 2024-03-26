@@ -213,6 +213,7 @@ bool addr(char *word)
     {
         if (strcmp(word, currentptr->word) <= 0)// check if toadd word <= to current word
         { // add
+            
             n->next = currentptr;
             prevptr->next = n;
 
