@@ -179,28 +179,6 @@ bool load(const char *dictionary) // dictionary is the file name. my dictionary 
 
 bool addr(char *word)
 {
-// BASE CASE
-    if (currentptr == NULL)
-    {
-        // insert here
-        node *n = malloc(sizeof(node));
-        n->next = NULL;
-
-        int i = 0;
-        while (word[i] != '\0') // copy the word
-        {
-            n->word[i] = word[i];
-            i++;
-        }
-        for (int j = i; j < LENGTH + 1; j++) // zerofy the rest
-            n->word[j] = '\0';
-
-        currentptr = n;
-        
-        return true;
-
-    }
-
     if (startptr == NULL) // if start of recursion hashtable
     {
         if (table[hash(word)] == NULL) // if 1st entry
@@ -229,6 +207,7 @@ bool addr(char *word)
         }
     }
     else
+    {
         if ()// check if toadd word <= to current word
         { // add
 
@@ -239,6 +218,30 @@ bool addr(char *word)
             currentptr = currentptr->next;
             addr(word);
         }
+    }
+// BASE CASE
+    if (currentptr == NULL)
+    {
+        // insert here
+        node *n = malloc(sizeof(node));
+        n->next = NULL;
+
+        int i = 0;
+        while (word[i] != '\0') // copy the word
+        {
+            n->word[i] = word[i];
+            i++;
+        }
+        for (int j = i; j < LENGTH + 1; j++) // zerofy the rest
+            n->word[j] = '\0';
+
+        currentptr = n;
+
+        return true;
+
+    }
+
+
 
                 if () // add word here, then
                 // initialise node
