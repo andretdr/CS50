@@ -11,8 +11,12 @@ typedef struct node
     struct node *next;
 } node;
 
+
 int main void()
 {
+
+
+
     node *table[5] = {NULL};
     node *n = malloc(sizeof(node));
     n->word[0] = 'h';
