@@ -197,13 +197,14 @@ bool addr(char *word)
             for (int j = i; j < LENGTH + 1; j++) // zerofy the rest
                 n->word[j] = '\0';
 
-            table[hash(word)] = n;
+            table[hash(word)] = n; // 1st entry assigned
 
             return true;
         }
-        else // not 1st entry
+        else // not 1st entry but start of recursion
         {
             currentptr = startptr = table[hash(word)];
+            
 
         }
 
