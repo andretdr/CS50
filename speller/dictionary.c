@@ -122,7 +122,7 @@ bool load(const char *dictionary) // dictionary is the file name. my dictionary 
                 word[index] = '\0';
                 node *initialise = table[hash(n->word)];
                 currentptr = initialise;
-                prevptr = NULL;
+                prevptr->next = initialise;
                 addr(word);
                 index = 0;
 
@@ -199,10 +199,7 @@ bool addr(char *word)
         for (int j = i; j < LENGTH + 1; j++) // zerofy the rest
             n->word[j] = '\0';
 
-        if (prevptr == NULL) // 1st entry
-            table[hash(word)] = n;
-        else
-            prevptr->next = n;
+        prevptr->next = n;
 
         return true;
     }
@@ -211,11 +208,7 @@ bool addr(char *word)
         if (strcmp(word, current->word) <= 0)// check if toadd word <= to current word
         { // add
             n->next = current;
-
-            if (prevptr == NULL) // 1st item
-                table[hash(word)] = n;
-            else
-                prevptr->next = n;
+            prevptr->next = n;
 
             return true;
         }
