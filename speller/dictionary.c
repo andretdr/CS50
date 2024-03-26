@@ -204,15 +204,20 @@ bool addr(char *word)
         else // not 1st entry but start of recursion
         {
             currentptr = startptr = table[hash(word)];
-            
+            addr(word);
+        }
+    }
+    else
+        if ()// check if toadd word <= to current word
+        { // add
+
 
         }
+        else
+        {
+            currentptr
 
-
-
-
-
-    }
+        }
 
                 if () // add word here, then
                 // initialise node
