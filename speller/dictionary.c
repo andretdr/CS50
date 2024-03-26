@@ -14,7 +14,7 @@ typedef struct node
     struct node *next;
 } node;
 
-node *prevptr = NULL;
+node *prevptr = malloc(sizeof(node));
 node *currentptr = NULL;
 
 bool addr(char *word);
