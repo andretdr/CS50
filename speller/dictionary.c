@@ -199,12 +199,11 @@ bool addr(char *word)
         table[hash(word)] = n;
         return true;
     }
-    else // BASECASE
-        if (currentptr->next == NULL)
-        {
-            currentptr = startptr = table[hash(word)];
-            addr(word);
-        }
+    // BASECASE
+    if (currentptr->next == NULL) // insert here
+    {
+        currentptr->next = n;
+        return true;
     }
     else
     {
