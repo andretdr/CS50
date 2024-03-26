@@ -132,8 +132,6 @@ bool load(const char *dictionary) // dictionary is the file name. my dictionary 
 
 bool addr(char *word)
 {
-//    printf("added");
-//    return true;
     bool insert = false;
 
     // BASECASE
@@ -168,8 +166,6 @@ bool addr(char *word)
         }
         for (int j = i; j < LENGTH + 1; j++) // zerofy the rest
             n->word[j] = '\0';
-
- //       printf("word :%s\n",n->word);
 
         n->next = currentptr;
 
@@ -212,37 +208,6 @@ bool checkr(const node *current, char *word)
     }
 }
 
-/*
-bool addr(node **current, node **toadd) // you have to pass the ADDRESS EVERYTIME you want to pass by reference. Even when using pointers. hence.
-{   // recursively add to sorted linked list
-    // BASE CASE
-    //printf("word to add %s\n",(**toadd).word);
-    if (*current == NULL)
-    {
-        *current = *toadd;
-        sized++;
-  //      printf("inside,%s\n",(**current).word);
-  //      printf("added word was stored overidding NULL\n");
-        return true;
-
-    }
-    else
-        if (strcmp((**toadd).word,(**current).word) <= 0) // if toadd node is smaller then current node, then add it here
-        {
-            (**toadd).next = *current;
-            *current = *toadd;
- //           printf("added word inbetween\n");
-            sized++;
-            return true;
-        }
-        else
-            {
-                return addr(&((**current).next), toadd);
-            }
-}
-*/
-
-
 // Returns number of words in dictionary if loaded, else 0 if not yet loaded
 unsigned int size(void)
 {
@@ -261,9 +226,6 @@ bool unload(void)
         table[i] = NULL;
     }
 
-    if (table[435164] != NULL)
-        printr(table[435164]);
-
     return true;
 }
 
@@ -277,7 +239,6 @@ void printr(node *current)
         printf("%s \n",current->word);
     }
 }
-
 
 void unloadr(node *current) // recursively unloads
 {
