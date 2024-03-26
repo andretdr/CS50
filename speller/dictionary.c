@@ -216,8 +216,8 @@ bool addr(char *word)
         }
         else
         {
+            prevptr = prevptr->next;
             currentptr = currentptr->next;
-            prevptr->next = currentptr;
             addr(word);
         }
     }
