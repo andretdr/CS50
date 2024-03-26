@@ -102,9 +102,6 @@ bool load(const char *dictionary) // dictionary is the file name. my dictionary 
     char word[LENGTH + 1]; // +1 for the terminator
     int index = 0;
 
-//    int test[5] = {0};
-//    int count = 0;
-
     while (fread(&c, sizeof(char), 1, file))
     {
         if ((isalpha(c)) || ((c == '\'') && index > 0))
@@ -116,9 +113,12 @@ bool load(const char *dictionary) // dictionary is the file name. my dictionary 
             if ((c == '\n') && (index != 0))
             {
                 word[index] = '\0';
+                addr(word);
+
 
                 // add to hash table
 
+/*
                 // initialise node
                 node *n = malloc(sizeof(node));
                 n->next = NULL;
@@ -135,7 +135,8 @@ bool load(const char *dictionary) // dictionary is the file name. my dictionary 
                 {
                     collisions++;
                 }
-                addr((&(table[hash(n->word)])), &n);
+*/
+
 
 
 //                addr((&(table[hash(n->word)])), &n);
@@ -173,6 +174,26 @@ bool load(const char *dictionary) // dictionary is the file name. my dictionary 
 
 bool addr(char *word)
 {
+
+                if () // add word here, then
+                // initialise node
+                node *n = malloc(sizeof(node));
+                n->next = NULL;
+
+                for (int i = 0; i < LENGTH + 1; i++)
+                {
+                    n->word[i] = '\0';
+                }
+                for (int i = 0; i < index; i++)
+                {
+                    n->word[i] = word[i];
+                }
+                if (table[hash(n->word)] != NULL) // collision is true
+                {
+                    collisions++;
+                }
+
+
 
 }
 
