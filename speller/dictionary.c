@@ -120,9 +120,15 @@ bool load(const char *dictionary) // dictionary is the file name. my dictionary 
             if ((c == '\n') && (index != 0))
             {
                 word[index] = '\0';
-                node *initialise = table[hash(n->word)];
+                node *initialise = table[hash(word)];
                 currentptr = initialise;
                 prevptr->next = initialise;
+
+                if (table[hash(word)] != NULL) // collision is true
+                {
+                    collisions++;
+                }
+
                 addr(word);
                 index = 0;
 
@@ -205,9 +211,9 @@ bool addr(char *word)
     }
     else
     {
-        if (strcmp(word, current->word) <= 0)// check if toadd word <= to current word
+        if (strcmp(word, currentptr->word) <= 0)// check if toadd word <= to current word
         { // add
-            n->next = current;
+            n->next = currentptr;
             prevptr->next = n;
 
             return true;
@@ -219,14 +225,6 @@ bool addr(char *word)
             addr(word);
         }
     }
-
-    if (table[hash(n->word)] != NULL) // collision is true
-    {
-        collisions++;
-    }
-
-
-
 }
 
 bool checkr(const node *current, char *word)
