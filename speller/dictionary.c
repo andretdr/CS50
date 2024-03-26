@@ -14,7 +14,7 @@ typedef struct node
     struct node *next;
 } node;
 
-node *prevptr = malloc(sizeof(node));
+node *prevptr = NULL;
 node *currentptr = NULL;
 
 bool addr(char *word);
@@ -90,6 +90,8 @@ unsigned int hash(const char *word)
 // Loads dictionary into memory, returning true if successful, else false
 bool load(const char *dictionary) // dictionary is the file name. my dictionary is lowercased
 {
+    prevptr = malloc(sizeof(node));
+
     // TODO create the hashtable and load the dictionary into it
 
     //create a node container.
@@ -121,6 +123,7 @@ bool load(const char *dictionary) // dictionary is the file name. my dictionary 
                 node *initialise = table[hash(word)];
 
                 currentptr = initialise;
+
                 prevptr->next = initialise;
 
 //                if (table[hash(word)] != NULL) // collision is true
@@ -179,7 +182,7 @@ bool load(const char *dictionary) // dictionary is the file name. my dictionary 
     }
 
     fclose(file);
-
+    free(prevptr);
 
 //        if (table[435164] != NULL)
 //        printr(table[435164]);
@@ -190,10 +193,10 @@ bool load(const char *dictionary) // dictionary is the file name. my dictionary 
 
 bool addr(char *word)
 {
-    printf("added");
-    return true;
+//    printf("added");
+//    return true;
 
-/*
+
     bool insert = false;
 
     // BASECASE
@@ -236,7 +239,7 @@ bool addr(char *word)
     }
     else
         return false;
-*/
+
 }
 
 bool checkr(const node *current, char *word)
@@ -316,7 +319,6 @@ bool unload(void)
     if (table[435164] != NULL)
         printr(table[435164]);
 
-    free(prevptr);
     return true;
 }
 
