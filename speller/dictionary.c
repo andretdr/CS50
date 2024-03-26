@@ -1,10 +1,10 @@
 // Implements a dictionary's functionality
 
+#include "dictionary.h"
 #include <ctype.h>
 #include <stdbool.h>
 #include <stdio.h>
 #include <stdlib.h>
-#include "dictionary.h"
 #include <string.h>
 
 // Represents a node in a hash table
@@ -25,7 +25,7 @@ void printr(node *current);
 int sized = 0;
 int collisions = 0;
 
-const unsigned int N = 856976; //26 ^ 4
+const unsigned int N = 856976; // 26 ^ 4
 
 // Hash table
 node *table[N] = {NULL};
@@ -45,9 +45,8 @@ bool check(const char *word)
             temp[i] = word[i]; // if its aphorstophy
         i++;
     }
-  //  printf("word to check: %s %s \n", temp, word);
+    //  printf("word to check: %s %s \n", temp, word);
     return checkr(table[hash(word)], temp);
-
 }
 
 // Hashes word to a number
@@ -64,7 +63,7 @@ unsigned int hash(const char *word)
         {
             result += factor * (tolower(word[i]) - 'a');
             factor *= 26;
-         }
+        }
         i++;
     }
     int n = 0;
@@ -77,8 +76,8 @@ unsigned int hash(const char *word)
         }
         n++;
     }
-    result += totalletters*26 + n*26*26;
-//    printf ("hash %i %i %i\n",result, totalletters, n*26);
+    result += totalletters * 26 + n * 26 * 26;
+    //    printf ("hash %i %i %i\n",result, totalletters, n*26);
 
     return result;
 }
@@ -86,7 +85,7 @@ unsigned int hash(const char *word)
 // Loads dictionary into memory, returning true if successful, else false
 bool load(const char *dictionary) // dictionary is the file name. my dictionary is lowercased
 {
-    //create a node container.
+    // create a node container.
     FILE *file = fopen(dictionary, "r");
     if (file == NULL)
     {
@@ -126,7 +125,7 @@ bool load(const char *dictionary) // dictionary is the file name. my dictionary 
     }
 
     fclose(file);
-//    printf("Collisions :%i",collisions);
+    //    printf("Collisions :%i",collisions);
     return true;
 }
 
@@ -137,13 +136,13 @@ bool addr(char *word)
     // BASECASE
     if (currentptr == NULL) // insert here
     {
-       insert = true;
+        insert = true;
     }
     else
     {
-        if (strcmp(word, currentptr->word) <= 0)// check if toadd word <= to current word
-        { // add
-           insert = true;
+        if (strcmp(word, currentptr->word) <= 0) // check if toadd word <= to current word
+        {                                        // add
+            insert = true;
         }
         else
         {
@@ -180,11 +179,10 @@ bool addr(char *word)
     }
     else
         return true;
-
 }
 
 bool checkr(const node *current, char *word)
-{   // recursively check sorted linked list
+{ // recursively check sorted linked list
     // BASE CASE
 
     if (current == NULL)
@@ -199,7 +197,7 @@ bool checkr(const node *current, char *word)
             return true;
         }
         else
-            if(compare > 0)
+            if (compare > 0)
             {
                 return checkr(current->next, word);
             }
@@ -232,18 +230,18 @@ bool unload(void)
 void printr(node *current)
 {
     if (current->next == NULL)
-        printf("%s \n",current->word);
+        printf("%s \n", current->word);
     else
     {
         printr(current->next);
-        printf("%s \n",current->word);
+        printf("%s \n", current->word);
     }
 }
 
 void unloadr(node *current) // recursively unloads
 {
     node *p = current->next;
-    //BaseCASE
+    // BaseCASE
     if (p != NULL)
     {
         unloadr(p);
