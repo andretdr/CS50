@@ -123,10 +123,10 @@ bool load(const char *dictionary) // dictionary is the file name. my dictionary 
                 currentptr = initialise;
                 prevptr = NULL;
 
-//                if (table[hash(word)] != NULL) // collision is true
-//                {
-//                    collisions++;
-//                }
+                if (table[hash(word)] != NULL) // collision is true
+                {
+                    collisions++;
+                }
 
                 addr(word);
                 index = 0;
