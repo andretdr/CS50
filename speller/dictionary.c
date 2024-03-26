@@ -179,7 +179,7 @@ bool load(const char *dictionary) // dictionary is the file name. my dictionary 
 
 bool addr(char *word)
 {
-
+    
     if (startptr == NULL) // if start of recursion hashtable
     {
         if (table[hash(word)] == NULL) // if 1st entry
