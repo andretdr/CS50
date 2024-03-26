@@ -180,8 +180,8 @@ bool load(const char *dictionary) // dictionary is the file name. my dictionary 
 
 bool addr(char *word)
 {
-    // BASE CASE
-    if (currentptr == NULL)
+    // only for first entry
+    if (startptr == NULL)
     {
         // insert here
         node *n = malloc(sizeof(node));
@@ -196,20 +196,11 @@ bool addr(char *word)
         for (int j = i; j < LENGTH + 1; j++) // zerofy the rest
             n->word[j] = '\0';
 
-        if (startptr == NULL) // if 1st entry
-        {
-            table[hash(word)] = n;
-        }
-        else
-        {
-            currentptr->next = n;
-        }
-
+        table[hash(word)] = n;
         return true;
-
     }
-
-        else // not 1st entry but start of recursion
+    else // BASECASE
+        if (currentptr->next == NULL)
         {
             currentptr = startptr = table[hash(word)];
             addr(word);
