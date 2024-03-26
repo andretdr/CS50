@@ -283,19 +283,10 @@ void unloadr(node *current) // recursively unloads
 {
     node *p = current->next;
     //BaseCASE
-    if (p == NULL)
-    {
- //       printf("unloading %s\n",current->word);
-        //free(current);
-    }
-    else
+    if (p != NULL)
     {
         unloadr(p);
-
-//        free(current->word);
         free(p);
         p = NULL;
-
-//        printf("unloading %s\n",current->word);
     }
 }
