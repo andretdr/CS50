@@ -121,6 +121,7 @@ bool load(const char *dictionary) // dictionary is the file name. my dictionary 
                     collisions++;
 
                 addr(word);
+                printf("and here %s\n",table[hash(word)]->word);
                 index = 0;
 
                 // add to hash table
@@ -224,7 +225,7 @@ bool addr(char *word)
         if (prevptr == NULL)
         {
             table[hash(word)] = n;
-            printf("gothere \n");
+            printf("gothere %s\n",table[hash(word)]->word);
         }
         else
             prevptr->next = n;
