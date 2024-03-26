@@ -181,7 +181,7 @@ bool load(const char *dictionary) // dictionary is the file name. my dictionary 
 bool addr(char *word)
 {
     // BASE CASE
-    if (currentptr->next == NULL)
+    if (currentptr == NULL)
     {
         // insert here
         node *n = malloc(sizeof(node));
