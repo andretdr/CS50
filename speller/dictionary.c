@@ -212,7 +212,11 @@ bool addr(char *word)
         { // add
             n->next = current;
 
-            prevptr->next = n;
+            if (prevptr == NULL) // 1st item
+                table[hash(word)] = n;
+            else
+                prevptr->next = n;
+
             return true;
         }
         else
