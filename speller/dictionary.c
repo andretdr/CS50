@@ -198,7 +198,6 @@ bool addr(char *word)
     if (currentptr == NULL) // insert here
     {
        insert = true;
-       printf("im here\n");
     }
     else
     {
@@ -227,8 +226,6 @@ bool addr(char *word)
         }
         for (int j = i; j < LENGTH + 1; j++) // zerofy the rest
             n->word[j] = '\0';
-
-        printf("%s\n",n->word);
 
         n->next = currentptr;
 
