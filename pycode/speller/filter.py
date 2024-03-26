@@ -8,3 +8,6 @@ after.save("out.bmp")
 before = Image.open("bridge.bmp")
 after = before.filter(ImageFilter.FIND_EDGES)
 after.save("out.bmp")
+
+# add support of python, in terminal
+$ pip install face_recognition
