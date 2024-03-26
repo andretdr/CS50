@@ -180,47 +180,7 @@ bool load(const char *dictionary) // dictionary is the file name. my dictionary 
 
 bool addr(char *word)
 {
-    if (startptr == NULL) // if start of recursion hashtable
-    {
-        if (table[hash(word)] == NULL) // if 1st entry
-        {
-            // insert here
-            node *n = malloc(sizeof(node));
-            n->next = NULL;
-
-            int i = 0;
-            while (word[i] != '\0') // copy the word
-            {
-                n->word[i] = word[i];
-                i++;
-            }
-            for (int j = i; j < LENGTH + 1; j++) // zerofy the rest
-                n->word[j] = '\0';
-
-            table[hash(word)] = n; // 1st entry assigned
-
-            return true;
-        }
-        else // not 1st entry but start of recursion
-        {
-            currentptr = startptr = table[hash(word)];
-            addr(word);
-        }
-    }
-    else
-    {
-        if ()// check if toadd word <= to current word
-        { // add
-
-
-        }
-        else
-        {
-            currentptr = currentptr->next;
-            addr(word);
-        }
-    }
-// BASE CASE
+    // BASE CASE
     if (currentptr == NULL)
     {
         // insert here
@@ -240,6 +200,26 @@ bool addr(char *word)
 
         return true;
 
+    }
+
+        else // not 1st entry but start of recursion
+        {
+            currentptr = startptr = table[hash(word)];
+            addr(word);
+        }
+    }
+    else
+    {
+        if ()// check if toadd word <= to current word
+        { // add
+
+
+        }
+        else
+        {
+            currentptr = currentptr->next;
+            addr(word);
+        }
     }
 
 
