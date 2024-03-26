@@ -123,60 +123,10 @@ bool load(const char *dictionary) // dictionary is the file name. my dictionary 
                 addr(word);
                 sized++;
                 index = 0;
-
-                // add to hash table
-
-/*
-                // initialise node
-                node *n = malloc(sizeof(node));
-                n->next = NULL;
-
-                for (int i = 0; i < LENGTH + 1; i++)
-                {
-                    n->word[i] = '\0';
-                }
-                for (int i = 0; i < index; i++)
-                {
-                    n->word[i] = word[i];
-                }
-                if (table[hash(n->word)] != NULL) // collision is true
-                {
-                    collisions++;
-                }
-*/
-
-
-
-//                addr((&(table[hash(n->word)])), &n);
-//                printf("hash for %s is %i \n",n->word,hash(n->word));
-//                addr(&table[hash(n->word)], &n);
-
-/*
-                if (table[12846]!= NULL)
-                    printf("direct check %s\n", (*table[12846]).word);
-
-                if (table[346790]!= NULL)
-                {
-                    printf("direct check %s\n", (*table[346790]).word);
-                    if (((*table[346790]).next) != NULL)
-                    {
-                        printf("direct check %s\n", (*(*table[346790]).next).word);
-                        if (((*(*table[346790]).next).next) != NULL)
-                            printf("direct check %s\n", (*(*(*table[346790]).next).next).word);
-                    }
-                }*///
-
-                //free(n);
-
             }
     }
 
     fclose(file);
-//    free(prevptr);
-
-//        if (table[435164] != NULL)
-//        printr(table[435164]);
-
 //    printf("Collisions :%i",collisions);
     return true;
 }
