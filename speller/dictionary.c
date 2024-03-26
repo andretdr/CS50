@@ -12,9 +12,9 @@ typedef struct node
 {
     char word[LENGTH + 1];
     struct node *next;
-} node;
+} node, *currentptr = NULL, *nextptr = NULL;
 
-bool addr(node **current, node **toadd);
+bool addr(char *word);
 bool checkr(const node *current, char *word);
 void unloadr(node *current);
 void printr(node *current);
@@ -171,11 +171,15 @@ bool load(const char *dictionary) // dictionary is the file name. my dictionary 
     return true;
 }
 
+bool addr(char *word)
+{
+
+}
+
 bool checkr(const node *current, char *word)
 {   // recursively check sorted linked list
     // BASE CASE
 
-    //printf("current->word: %s\n",current->word);
     if (current == NULL)
     {
         return false;
@@ -197,10 +201,7 @@ bool checkr(const node *current, char *word)
     }
 }
 
-
-
-
-
+/*
 bool addr(node **current, node **toadd) // you have to pass the ADDRESS EVERYTIME you want to pass by reference. Even when using pointers. hence.
 {   // recursively add to sorted linked list
     // BASE CASE
@@ -227,9 +228,8 @@ bool addr(node **current, node **toadd) // you have to pass the ADDRESS EVERYTIM
             {
                 return addr(&((**current).next), toadd);
             }
-
 }
-
+*/
 
 
 // Returns number of words in dictionary if loaded, else 0 if not yet loaded
