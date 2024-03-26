@@ -222,7 +222,10 @@ bool addr(char *word)
         n->next = currentptr;
 
         if (prevptr == NULL)
+        {
             table[hash(word)] = n;
+            printf("gothere \n");
+        }
         else
             prevptr->next = n;
 
