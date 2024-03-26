@@ -211,7 +211,7 @@ bool addr(char *word)
         if (strcmp(word, current->word) <= 0)// check if toadd word <= to current word
         { // add
             n->next = current;
-            
+
             prevptr->next = n;
             return true;
         }
@@ -225,19 +225,6 @@ bool addr(char *word)
 
 
 
-                if () // add word here, then
-                // initialise node
-                node *n = malloc(sizeof(node));
-                n->next = NULL;
-
-                for (int i = 0; i < LENGTH + 1; i++)
-                {
-                    n->word[i] = '\0';
-                }
-                for (int i = 0; i < index; i++)
-                {
-                    n->word[i] = word[i];
-                }
                 if (table[hash(n->word)] != NULL) // collision is true
                 {
                     collisions++;
