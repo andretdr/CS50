@@ -122,12 +122,10 @@ bool load(const char *dictionary) // dictionary is the file name. my dictionary 
                 currentptr = initialise;
                 prevptr->next = initialise;
 
-                if (table[hash(word)] != NULL) // collision is true
-                {
-                    collisions++;
-                }
-
-
+//                if (table[hash(word)] != NULL) // collision is true
+//                {
+//                    collisions++;
+//                }
 
                 addr(word);
                 index = 0;
@@ -190,39 +188,21 @@ bool load(const char *dictionary) // dictionary is the file name. my dictionary 
 
 bool addr(char *word)
 {
+    printf("added");
+    return true;
+
+/*
     bool insert = false;
 
     // BASECASE
     if (currentptr == NULL) // insert here
-    {/*
-        node *n = malloc(sizeof(node));
-        n->next = NULL;
-
-        int i = 0;
-        while (word[i] != '\0') // copy the word
-        {
-            n->word[i] = word[i];
-            i++;
-        }
-        for (int j = i; j < LENGTH + 1; j++) // zerofy the rest
-            n->word[j] = '\0';
-
-        prevptr->next = n;
-
-        return true;
-        */
+    {
        insert = true;
     }
     else
     {
         if (strcmp(word, currentptr->word) <= 0)// check if toadd word <= to current word
         { // add
-            /*
-            n->next = currentptr;
-            prevptr->next = n;
-
-            return true;
-            */
            insert = true;
         }
         else
@@ -254,7 +234,7 @@ bool addr(char *word)
     }
     else
         return false;
-
+*/
 }
 
 bool checkr(const node *current, char *word)
