@@ -116,8 +116,9 @@ bool load(const char *dictionary) // dictionary is the file name. my dictionary 
             if ((c == '\n') && (index != 0))
             {
                 word[index] = '\0';
-                currentptr = NULL;
-                startptr = NULL;
+                node *initialise = table[hash(n->word)];
+                currentptr = initialise;
+                startptr = initialise;
                 addr(word);
                 index = 0;
 
