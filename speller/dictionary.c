@@ -190,14 +190,15 @@ bool addr(char *word)
             n->next = NULL;
 
             int i = 0;
-            while (word[i] != '\0')
+            while (word[i] != '\0') // copy the word
             {
                 n->word[i] = word[i];
                 i++;
             }
-            for (int j = i; j < LENGTH + 1; j++)
-                n->word[i] = '\0';
+            for (int j = i; j < LENGTH + 1; j++) // zerofy the rest
+                n->word[j] = '\0';
 
+            startptr = 
 
             return true;
         }
