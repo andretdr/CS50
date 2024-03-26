@@ -90,8 +90,6 @@ unsigned int hash(const char *word)
 // Loads dictionary into memory, returning true if successful, else false
 bool load(const char *dictionary) // dictionary is the file name. my dictionary is lowercased
 {
-    prevptr = malloc(sizeof(node));
-
     // TODO create the hashtable and load the dictionary into it
 
     //create a node container.
@@ -123,8 +121,7 @@ bool load(const char *dictionary) // dictionary is the file name. my dictionary 
                 node *initialise = table[hash(word)];
 
                 currentptr = initialise;
-
-                prevptr->next = initialise;
+                prevptr = NULL;
 
 //                if (table[hash(word)] != NULL) // collision is true
 //                {
@@ -235,8 +232,10 @@ bool addr(char *word)
 
         n->next = currentptr;
 
-        prevptr->next = table[hash(word)];
-        prevptr->next = n;
+        if (prevptr == NULL)
+            table[hash(word)] = n;
+        else
+            prevptr->next = n;
 
         return true;
     }
