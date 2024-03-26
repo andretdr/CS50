@@ -114,7 +114,7 @@ bool load(const char *dictionary) // dictionary is the file name. my dictionary 
             {
                 word[index] = '\0';
                 addr(word);
-
+                index = 0;
 
                 // add to hash table
 
@@ -159,7 +159,7 @@ bool load(const char *dictionary) // dictionary is the file name. my dictionary 
                 }*///
 
                 //free(n);
-                index = 0;
+
             }
     }
 
