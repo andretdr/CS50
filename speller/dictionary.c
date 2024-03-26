@@ -14,7 +14,7 @@ typedef struct node
     struct node *next;
 } node;
 
-node *nextptr = NULL;
+node *startptr = NULL;
 node *currentptr = NULL;
 
 bool addr(char *word);
@@ -117,7 +117,7 @@ bool load(const char *dictionary) // dictionary is the file name. my dictionary 
             {
                 word[index] = '\0';
                 currentptr = NULL;
-                nextptr = NULL;
+                startptr = NULL;
                 addr(word);
                 index = 0;
 
@@ -180,9 +180,10 @@ bool load(const char *dictionary) // dictionary is the file name. my dictionary 
 bool addr(char *word)
 {
 
-    if (currentptr == NULL) // if start of recursion hashtable
+    if (startptr == NULL) // if start of recursion hashtable
     {
-        currentptr = table[hash(word)];
+        currentptr = startptr = table[hash(word)];
+        
 
 
     }
