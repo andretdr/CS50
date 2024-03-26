@@ -182,8 +182,23 @@ bool addr(char *word)
 
     if (startptr == NULL) // if start of recursion hashtable
     {
+
+        if (table[hash(word)] == NULL) // if 1st entry
+        {
+            // insert here
+            node *n = malloc(sizeof(node));
+            n->next = NULL;
+
+            for (int i = 0; i < LENGTH + 1; i++)
+                n->word[i] = '\0';
+            for (int i = 0; i < index; i++)
+                n->word[i] = word[i];
+
+            return true;
+        }
+
         currentptr = startptr = table[hash(word)];
-        
+
 
 
     }
