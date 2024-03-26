@@ -171,12 +171,12 @@ bool load(const char *dictionary) // dictionary is the file name. my dictionary 
     }
 
     fclose(file);
-    free(prevptr);
+//    free(prevptr);
 
 //        if (table[435164] != NULL)
 //        printr(table[435164]);
 
-    printf("Collisions :%i",collisions);
+//    printf("Collisions :%i",collisions);
     return true;
 }
 
