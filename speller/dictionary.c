@@ -14,9 +14,10 @@ typedef struct node
     struct node *next;
 } node;
 
-node *addr(node **current, node **toadd);
+bool addr(node **current, node **toadd);
 bool checkr(const node *current, char *word);
 void unloadr(node *current);
+void printr(node *current);
 
 int sized = 0;
 int collisions = 0;
@@ -101,8 +102,8 @@ bool load(const char *dictionary) // dictionary is the file name. my dictionary 
     char word[LENGTH + 1]; // +1 for the terminator
     int index = 0;
 
-    int test[5] = {0};
-    int count = 0;
+//    int test[5] = {0};
+//    int count = 0;
 
     while (fread(&c, sizeof(char), 1, file))
     {
@@ -126,11 +127,6 @@ bool load(const char *dictionary) // dictionary is the file name. my dictionary 
                 {
                     n->word[i] = '\0';
                 }
-
-                for (int i = 0; i < index; i++)
-                {
-                    n->word[i] = word[i];
-                }
                 for (int i = 0; i < index; i++)
                 {
                     n->word[i] = word[i];
@@ -139,7 +135,7 @@ bool load(const char *dictionary) // dictionary is the file name. my dictionary 
                 {
                     collisions++;
                 }
-                table[hash(n->word)] = addr((&(table[hash(n->word)])), &n);
+                addr((&(table[hash(n->word)])), &n);
 
 
 //                addr((&(table[hash(n->word)])), &n);
@@ -167,42 +163,13 @@ bool load(const char *dictionary) // dictionary is the file name. my dictionary 
     }
 
     fclose(file);
+
+//        if (table[435164] != NULL)
+//        printr(table[435164]);
+
     printf("Collisions :%i",collisions);
     return true;
 }
-
-
-node *addr(node **current, node **toadd) // you have to pass the ADDRESS EVERYTIME you want to pass by reference. Even when using pointers. hence.
-{   // recursively add to sorted linked list
-    // BASE CASE
-//    printf("word to add %s\n",(**toadd).word);
-    if (*current == NULL)
-    {
-        //*current = toadd;
-        sized++;
-//        printf("inside,%s\n",(**current).word);
-//        printf("added word was stored overidding NULL\n");
-        return *toadd;
-
-    }
-    else
-        if (strcmp((**toadd).word,(**current).word) <= 0) // if toadd node is smaller then current node, then add it here
-        {
-            (**toadd).next = *current;
-//            *current = *toadd;
- //           printf("added word inbetween\n");
-            sized++;
-            return *toadd;
-        }
-        else
-            {
-                return addr(&((**current).next), toadd);
-            }
-
-}
-
-
-
 
 bool checkr(const node *current, char *word)
 {   // recursively check sorted linked list
@@ -233,7 +200,7 @@ bool checkr(const node *current, char *word)
 
 
 
-/*
+
 bool addr(node **current, node **toadd) // you have to pass the ADDRESS EVERYTIME you want to pass by reference. Even when using pointers. hence.
 {   // recursively add to sorted linked list
     // BASE CASE
@@ -262,7 +229,7 @@ bool addr(node **current, node **toadd) // you have to pass the ADDRESS EVERYTIM
             }
 
 }
-*/
+
 
 
 // Returns number of words in dictionary if loaded, else 0 if not yet loaded
@@ -283,29 +250,40 @@ bool unload(void)
         table[i] = NULL;
     }
 
-    if (table[3475] != NULL)
-        printf("found this: %s\n", (*table[3475]).word);
-    if (table[36688] != NULL)
-        printf("found this: %s\n", (*table[36688]).word);
+    if (table[435164] != NULL)
+        printr(table[435164]);
     return true;
 }
 
+void printr(node *current)
+{
+    if (current->next == NULL)
+        printf("%s \n",current->word);
+    else
+    {
+        printr(current->next);
+        printf("%s \n",current->word);
+    }
+}
+
+
 void unloadr(node *current) // recursively unloads
 {
+    node *p = current->next;
     //BaseCASE
-    if (current->next == NULL)
+    if (p == NULL)
     {
  //       printf("unloading %s\n",current->word);
         //free(current);
     }
     else
     {
-        unloadr(current->next);
+        unloadr(p);
 
-        free(current->word);
-        free(current->next);
-        current->next = NULL;
+//        free(current->word);
+        free(p);
+        p = NULL;
 
-        printf("unloading %s\n",current->word);
+//        printf("unloading %s\n",current->word);
     }
 }
