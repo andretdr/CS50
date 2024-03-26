@@ -220,6 +220,8 @@ bool addr(char *word)
         for (int j = i; j < LENGTH + 1; j++) // zerofy the rest
             n->word[j] = '\0';
 
+        printf("word :%s\n",n->word);
+
         n->next = currentptr;
 
         if (prevptr == NULL)
