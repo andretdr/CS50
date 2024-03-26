@@ -234,6 +234,8 @@ bool addr(char *word)
         printf("%s\n",n->word);
 
         n->next = currentptr;
+
+        prevptr->next = table[hash(word)];
         prevptr->next = n;
 
         return true;
