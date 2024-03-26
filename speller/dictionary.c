@@ -14,7 +14,7 @@ typedef struct node
     struct node *next;
 } node;
 
-node *startptr = NULL;
+node *prevptr = NULL;
 node *currentptr = NULL;
 
 bool addr(char *word);
@@ -122,7 +122,7 @@ bool load(const char *dictionary) // dictionary is the file name. my dictionary 
                 word[index] = '\0';
                 node *initialise = table[hash(n->word)];
                 currentptr = initialise;
-                startptr = initialise;
+                prevptr = initialise;
                 addr(word);
                 index = 0;
 
@@ -185,7 +185,7 @@ bool load(const char *dictionary) // dictionary is the file name. my dictionary 
 bool addr(char *word)
 {
     // only for first entry
-    if (startptr == NULL)
+    if (prevptr == NULL)
     {
         // insert here
         node *n = malloc(sizeof(node));
@@ -204,9 +204,9 @@ bool addr(char *word)
         return true;
     }
     // BASECASE
-    if (currentptr->next == NULL) // insert here
+    if (currentptr == NULL) // insert here
     {
-        currentptr->next = n;
+        prevptr->next = n;
         return true;
     }
     else
