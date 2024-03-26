@@ -196,7 +196,7 @@ bool addr(char *word)
         for (int j = i; j < LENGTH + 1; j++) // zerofy the rest
             n->word[j] = '\0';
 
-        currentptr = n;
+        currentptr->next = n;
 
         return true;
 
