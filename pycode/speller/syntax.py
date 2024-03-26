@@ -7,7 +7,7 @@ from cs50 import get_string # just the one function
 answer = get_string("What's your name? ") # dont have to declare type of variable
 print("hello, " + answer) # joining strings together
 or
-print("hello,",answer)
+print("hello,",answer) # gives free space inbetween
 or
 print(f"hello, {answer}")
 
