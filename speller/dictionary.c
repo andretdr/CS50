@@ -211,6 +211,7 @@ bool addr(char *word)
         if (strcmp(word, current->word) <= 0)// check if toadd word <= to current word
         { // add
             n->next = current;
+            
             prevptr->next = n;
             return true;
         }
