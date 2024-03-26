@@ -87,8 +87,6 @@ unsigned int hash(const char *word)
 // Loads dictionary into memory, returning true if successful, else false
 bool load(const char *dictionary) // dictionary is the file name. my dictionary is lowercased
 {
-    // TODO create the hashtable and load the dictionary into it
-
     //create a node container.
     FILE *file = fopen(dictionary, "r");
     if (file == NULL)
@@ -98,7 +96,6 @@ bool load(const char *dictionary) // dictionary is the file name. my dictionary 
     }
 
     // initialize table
-
     char c;
     char word[LENGTH + 1]; // +1 for the terminator
     int index = 0;
@@ -121,9 +118,7 @@ bool load(const char *dictionary) // dictionary is the file name. my dictionary 
                 prevptr = NULL;
 
                 if (table[hash(word)] != NULL) // collision is true
-                {
                     collisions++;
-                }
 
                 addr(word);
                 index = 0;
