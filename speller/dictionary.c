@@ -129,6 +129,8 @@ bool load(const char *dictionary) // dictionary is the file name. my dictionary 
                     collisions++;
                 }
 
+                
+
                 addr(word);
                 index = 0;
 
