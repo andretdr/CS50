@@ -21,6 +21,8 @@ int main (void)
     node *n = malloc(sizeof(node));
     n->word[0] = 'h';
     n->word[1] = '\0';
+    table[0] = n;
+    printf("%s\n",(*table[0]).word);
     table[0]->next = n;
     printf("%s\n",(*(*table[0]).next).word);
 
