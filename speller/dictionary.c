@@ -102,6 +102,9 @@ bool load(const char *dictionary) // dictionary is the file name. my dictionary 
         return 1;
     }
 
+    // initialize table
+    table[];
+
     char c;
     char word[LENGTH + 1]; // +1 for the terminator
     int index = 0;
