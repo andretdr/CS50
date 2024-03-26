@@ -14,9 +14,6 @@ typedef struct node
     struct node *next;
 } node;
 
-node *prevptr = malloc(sizeof(node));
-node *currentptr = NULL;
-
 bool addr(char *word);
 bool checkr(const node *current, char *word);
 void unloadr(node *current);
@@ -90,10 +87,12 @@ unsigned int hash(const char *word)
 // Loads dictionary into memory, returning true if successful, else false
 bool load(const char *dictionary) // dictionary is the file name. my dictionary is lowercased
 {
+    node *prevptr = malloc(sizeof(node));
+    node *currentptr = NULL;
+
     // TODO create the hashtable and load the dictionary into it
 
     //create a node container.
-
     FILE *file = fopen(dictionary, "r");
     if (file == NULL)
     {
@@ -118,7 +117,9 @@ bool load(const char *dictionary) // dictionary is the file name. my dictionary 
             if ((c == '\n') && (index != 0))
             {
                 word[index] = '\0';
+
                 node *initialise = table[hash(word)];
+
                 currentptr = initialise;
                 prevptr->next = initialise;
 
@@ -178,6 +179,7 @@ bool load(const char *dictionary) // dictionary is the file name. my dictionary 
     }
 
     fclose(file);
+    free(prevptr);
 
 //        if (table[435164] != NULL)
 //        printr(table[435164]);
