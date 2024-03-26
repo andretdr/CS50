@@ -122,7 +122,7 @@ bool load(const char *dictionary) // dictionary is the file name. my dictionary 
                 word[index] = '\0';
                 node *initialise = table[hash(n->word)];
                 currentptr = initialise;
-                prevptr = initialise;
+                prevptr = NULL;
                 addr(word);
                 index = 0;
 
@@ -216,7 +216,7 @@ bool addr(char *word)
         }
         else
         {
-            prevptr = prevptr->next;
+            prevptr = currentptr;
             currentptr = currentptr->next;
             addr(word);
         }
