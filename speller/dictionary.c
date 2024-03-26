@@ -12,7 +12,10 @@ typedef struct node
 {
     char word[LENGTH + 1];
     struct node *next;
-} node, *currentptr = NULL, *nextptr = NULL;
+} node;
+
+node *nextptr = NULL;
+node *currentptr = NULL;
 
 bool addr(char *word);
 bool checkr(const node *current, char *word);
@@ -113,6 +116,8 @@ bool load(const char *dictionary) // dictionary is the file name. my dictionary 
             if ((c == '\n') && (index != 0))
             {
                 word[index] = '\0';
+                currentptr = NULL;
+                nextptr = NULL;
                 addr(word);
                 index = 0;
 
@@ -174,6 +179,13 @@ bool load(const char *dictionary) // dictionary is the file name. my dictionary 
 
 bool addr(char *word)
 {
+
+    if (currentptr == NULL) // if start of recursion hashtable
+    {
+        currentptr = table[hash(word)];
+
+
+    }
 
                 if () // add word here, then
                 // initialise node
