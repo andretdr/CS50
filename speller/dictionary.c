@@ -208,14 +208,16 @@ bool addr(char *word)
     }
     else
     {
-        if ()// check if toadd word <= to current word
+        if (strcmp(word, current->word) <= 0)// check if toadd word <= to current word
         { // add
-
-
+            n->next = current;
+            prevptr->next = n;
+            return true;
         }
         else
         {
             currentptr = currentptr->next;
+            prevptr->next = currentptr;
             addr(word);
         }
     }
