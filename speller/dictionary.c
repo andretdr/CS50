@@ -28,7 +28,6 @@ int collisions = 0;
 const unsigned int N = 856976; //26 ^ 4
 
 // Hash table
-//node *table[N];
 node *table[N] = {NULL};
 
 // Returns true if word is in dictionary, else false
@@ -103,7 +102,7 @@ bool load(const char *dictionary) // dictionary is the file name. my dictionary 
     }
 
     // initialize table
-    
+
     char c;
     char word[LENGTH + 1]; // +1 for the terminator
     int index = 0;
