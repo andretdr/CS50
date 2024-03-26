@@ -103,8 +103,7 @@ bool load(const char *dictionary) // dictionary is the file name. my dictionary 
     }
 
     // initialize table
-    //table[];
-
+    
     char c;
     char word[LENGTH + 1]; // +1 for the terminator
     int index = 0;
@@ -129,7 +128,7 @@ bool load(const char *dictionary) // dictionary is the file name. my dictionary 
                     collisions++;
                 }
 
-                
+
 
                 addr(word);
                 index = 0;
