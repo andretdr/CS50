@@ -220,12 +220,10 @@ bool addr(char *word)
         }
     }
 
-
-
-                if (table[hash(n->word)] != NULL) // collision is true
-                {
-                    collisions++;
-                }
+    if (table[hash(n->word)] != NULL) // collision is true
+    {
+        collisions++;
+    }
 
 
 
