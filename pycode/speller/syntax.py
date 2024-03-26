@@ -12,5 +12,10 @@ or
 print(f"hello, {answer}")
 
 # variables
+counter = 0
+counter = counter + 1
+counter += 1
+counter++ # NO HAVE
 
+bool, float, int, str only
 
