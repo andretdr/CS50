@@ -31,17 +31,13 @@ def main():
             sumb = True
 
     total = str(sum + mult)
-    print(f"{total}")
 
 
-
-
-
-    if (re.search("^34", number) or (re.search("^37", number)) and length == 15):
+    if (re.search("^34", number) or (re.search("^37", number)) and length == 15 and total[1] == "0"):
         print(f"AMEX")
-    elif (re.search("^[5][1-5]", number) and length == 16):
-        print(f"MC")
-    elif (re.search("^4", number) and (length == 13 or (length == 16))):
+    elif (re.search("^[5][1-5]", number) and length == 16 and total[1] == "0"):
+        print(f"MASTERCARD")
+    elif (re.search("^4", number) and (length == 13 or (length == 16)) and total[1] == "0"):
         print(f"VISA")
     else:
         print("INVALID")
