@@ -47,9 +47,20 @@ if s == t: # colon is curly bracets, and indent
 else:
     print("different")
 
+# agree excercise
+
+s = input("agree? ")
+
+if s == "Y" or s == "y":
+    print("Agreed")
+elif s == "N" or s == "n":
+    print("Not agreed")
 
 
-
+if s in ["y", "yes"]: # checking against a list
+    print("Agreed")
+elif s in ["n", "no"]:
+    print("Not agreed")
 
 
 
