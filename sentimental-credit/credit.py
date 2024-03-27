@@ -19,7 +19,7 @@ def main():
     sum = 0
 
     for i in range(length):
-        
+        number[length-1-i]
 
 
 
