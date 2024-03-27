@@ -10,7 +10,8 @@ def main():
     text = input("Text: ")
 
     space = re.findall("[.{1,} ]", text)
-    print(f"{len(space)}")
+    for i in space:
+        print(f"{i}")
 
 
 main()
