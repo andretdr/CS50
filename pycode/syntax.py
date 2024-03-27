@@ -121,7 +121,7 @@ print(f"{z:.50f}") # float, 50 dec points
 int can keep growing forever
 
 
-#
+# exception
 
 def get_int(prompt):
     return int(input(prompt))
