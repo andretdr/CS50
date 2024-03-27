@@ -16,8 +16,10 @@ def main():
     length = len(number)
 
     mult = 0
-    
-    for
+    sum = 0
+
+    for i in range(length):
+        
 
 
 
