@@ -1,3 +1,6 @@
+# docs.python.org
+
+
 # librarys
 import cs50 # whole library
 
@@ -19,7 +22,7 @@ counter++ # NO HAVE
 
 bool, float, int, str, range, list, tuple, dict or hashtables, set ...
 
-#calculator example
+    #calculator example
 
 x = int(input("x: ")) # input uses strings, not int
 y = int(input("y: ")) # int() will convert string to int
@@ -47,7 +50,9 @@ if s == t: # colon is curly bracets, and indent
 else:
     print("different")
 
-# agree excercise
+# OOP has methods. method is a function that comes with a data type like string, has a tolower method built in
+
+    # agree excercise
 
 s = input("agree? ")
 
@@ -56,11 +61,25 @@ if s == "Y" or s == "y":
 elif s == "N" or s == "n":
     print("Not agreed")
 
+    # next
+
+s = input("agree? ").lower() # calling the method in the same line. same as s = s.lower()
 
 if s in ["y", "yes"]: # checking against a list
     print("Agreed")
 elif s in ["n", "no"]:
     print("Not agreed")
+
+# loop
+
+i - 0
+while i < 3:
+    print("meow")
+    i += 1
+
+for i in [0, 1, 2]:
+    print("meow")
+
 
 
 
