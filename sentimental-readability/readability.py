@@ -10,7 +10,7 @@ def main():
     text = input("Text: ")
 
     sentences = re.findall('[.!?]', text) # (r'\.', text)
-    words = re.findall('[ .!?]', text)
+    words = re.findall('[ ]', text)
     letters = re.findall('[a-zA-Z]', text)
 #    for i in space:
 #        print(f"{i}")
