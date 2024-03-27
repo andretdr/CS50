@@ -2,9 +2,9 @@ def getheight(prompt):
     while True:
         try:
             height = int(input(prompt))
-            if height > 0
+            if height > 0:
                 return height
-            elif
+            else:
                 pass
         except ValueError:
             print("Not an Integer")
