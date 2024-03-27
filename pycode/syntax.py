@@ -17,7 +17,7 @@ counter = counter + 1
 counter += 1
 counter++ # NO HAVE
 
-bool, float, int, str only
+bool, float, int, str, range, list, tuple, dict or hashtables, set ...
 
 #calculator example
 
