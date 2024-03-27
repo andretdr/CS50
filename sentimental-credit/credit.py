@@ -24,10 +24,12 @@ def main():
             sum += int(number[length-1-i])
             sumb = False
         else:
-            mult += int(number[length-1-i]) * 2
+            product = int(number[length-1-i]) * 2
+            
+            mult +=
             sumb = True
 
-    
+
 
 
 
