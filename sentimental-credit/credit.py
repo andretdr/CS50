@@ -1,3 +1,5 @@
+import re
+
 def get_cc(prompt):
     while True:
         try:
