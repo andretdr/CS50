@@ -278,5 +278,22 @@ print(f"hello, {sys.argv[1]}")
 sys.exit(0) # can specify
 
 
+# third party
+pip install cowsay # instal library alled cowsay
+
+import cowsay
+
+name = input("gimme: ")
+cowsay.cow(f"hello {name}")
+
+
+pip install qrcode # instal library qrcode
+
+import qrcode
+
+img = qrcode.make("https://youtu.be/xvFZjo5PgG0")
+img.save("qr.png", "PNG")
+
+
 
 
