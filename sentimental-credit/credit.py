@@ -14,7 +14,7 @@ def main():
     number = get_cc("Number: ")
 
     length = len(number)
-    
+    while i > 0
 
 
     if (re.search("^34", number) or (re.search("^37", number)) and length == 15):
