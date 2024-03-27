@@ -86,9 +86,10 @@ for i in range(3): # or   for i in [0, 1, 2]:  or  for _ in range(3): same thing
     # uppercase excercise
 
 before = input("Before: ")
-print("After: ")
-for c in before:
+print("After:    ", end="") # print will auto end="\n". so have to , end=""
+for c in before: # c iterates over all characters in before
     print(c.upper())
+print() # print will \n
 
 
 
