@@ -208,4 +208,32 @@ for n in names:
 else:   # else clause for for loop. if you went through the whole thing without breaking
     print("Not found")
 
+    # or
 
+names = ["Carter", "David", "John"]
+
+name = input("Name: ")
+
+if name in names:
+    print("Found")
+else:   # else clause for for loop. if you went through the whole thing without breaking
+    print("Not found")
+
+
+# dictionary , collection of value pairs, hashtable. name: david, number: 92893092
+
+people = [ # like a typedef struct
+    {"name": "Carter", "number": "+81518926"}
+    {"name": "David", "number": "+457218926"}
+    {"name": "John", "number": "+823418926"}
+]
+
+name = input("Name: ")
+
+for person in people: # var person,
+    if person["name"] == name: # person.name
+        number = person["number"]
+        print(f"Found {number}")
+        break
+else:
+    print("Not found")
