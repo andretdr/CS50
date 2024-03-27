@@ -142,7 +142,23 @@ main()
 
 # Mario Loops
 
+from cs50 import get_int
+
+while True: # infinity loop to keep trying until you get what you want
+    n = get_int("Height: ")
+    if n > 0:
+        break
+
 for i in range(3):
     print("#")
 
 
+    # next
+
+for i in range(4):
+    print("?", end="")
+print()
+
+    # or
+
+print("?" * 4)
