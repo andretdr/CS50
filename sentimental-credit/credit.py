@@ -30,8 +30,8 @@ def main():
                 mult += int(digits)
             sumb = True
 
-    total = sum + mult
-    if (total)
+    total = str(sum + mult)
+    print(f"{total}")
 
 
 
