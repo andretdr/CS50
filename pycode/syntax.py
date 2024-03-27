@@ -205,6 +205,7 @@ for n in names:
     if name == n:
         print("Found")
         break
-print("Not found")
+else:   # else clause for for loop. if you went through the whole thing without breaking
+    print("Not found")
 
 
