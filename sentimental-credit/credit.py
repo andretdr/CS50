@@ -1,14 +1,16 @@
-def get_int(prompt):
-    while True
+def get_cc(prompt):
+    while True:
         try:
             value = int(input(prompt))
-            
-        exception ValueError:
+            if value > 0:
+                return value
+        except ValueError:
             print("INVALID")
 
 
 def main():
-
+    number = get_cc("Number: ")
+    printf("{number}")
 
 
 
