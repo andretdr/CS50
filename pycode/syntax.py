@@ -113,9 +113,17 @@ x = int(input("x: "))
 y = int(input("y: "))
 
 z = x / y # doesnt auto truncate. auto create float
-print(z)
+print(f"{z:.50f}") # float, 50 dec points
+
+# floating point precision still an issue
+
+# int overflow?
+int can keep growing forever
 
 
-# floating point imprecision
+#
+
+def get_int(prompt):
+    return int(input(prompt))
 
 
