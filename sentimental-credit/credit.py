@@ -12,9 +12,12 @@ def get_cc(prompt):
 
 def main():
     number = get_cc("Number: ")
-    if
-    print(f"{number}")
 
+
+    if (re.searc("^34", number) or (re.searc("^37", number)) and len(number) == 15):
+        print(f"AMEX")
+    else:
+        print("INVALID")
 
 
 main()
