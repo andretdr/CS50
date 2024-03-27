@@ -190,5 +190,21 @@ from cs50 import get_int
 scores = [] # you can initialise in python without malloc
 for i in range(3):
     score = get_int("Score: ")
-    
+    scores.append(score) # scores = scores + [score]      to concatonate. add 2 lists together
+
+average = sum(scores) / len(scores)
+print(f"Average: {average}")
+
+    # next
+
+names = ["Carter", "David", "John"]
+
+name = input("Name: ")
+
+for n in names:
+    if name == n:
+        print("Found")
+        break
+print("Not found")
+
 
