@@ -25,4 +25,12 @@ x = int(input("x: ")) # input uses strings, not int
 y = int(input("y: ")) # int() will convert string to int
 print(x + y);
 
+or
+x = cs50.get_int("x: ") # if you want to use cs50's get_int specifically
 
+# conditionals
+
+if x < y:
+    print("x is less than y")
+
+    
