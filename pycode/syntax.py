@@ -21,5 +21,8 @@ bool, float, int, str only
 
 #calculator example
 
+x = input("x: ") # input uses strings, not int
+y = input("y: ")
+print(x + y);
 
 
