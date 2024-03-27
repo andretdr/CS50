@@ -9,7 +9,7 @@ def getheight(prompt):
 
 def main():
     height = getheight("Height: ")
-    
-    print(f"{height}")
+    for i in range(height):
+        print(" " * (height-i) + "*" * i + "  " + "*" * i + " " * (height-1))
 
 main()
