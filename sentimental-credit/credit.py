@@ -17,6 +17,7 @@ def main():
 
     mult = 0
     sum = 0
+    total = 0
     sumb = True
 
     for i in range(length):
@@ -25,9 +26,12 @@ def main():
             sumb = False
         else:
             sumdigits = int(number[length-1-i]) * 2
-            sumdigits = 
-            mult +=
+            for digits in str(sumdigits):
+                mult += int(digits)
             sumb = True
+
+    total = sum + mult
+    if (total)
 
 
 
