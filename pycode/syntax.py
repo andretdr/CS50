@@ -241,7 +241,7 @@ else:
 
     # or
 
-people = { # not a list, but just a dictionary
+people = { # not a list, but just a dictionary. you can direct index to access, dont need to iterate
     "Carter": "+81518926",
     "David": "+457218926",
     "John": "+823418926",
@@ -251,7 +251,9 @@ name = input("Name: ")
 
 if name in people:
     number = people[name]
-    print("Found {number})
+    print(f"Found {number}")
+else:
+    print("Not found")
 
 
 name = input("Name: ")
