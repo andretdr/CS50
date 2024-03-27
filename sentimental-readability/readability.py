@@ -9,7 +9,9 @@ import re
 def main():
     text = input("Text: ")
 
-    space = re.findall('[.!?]', text) # (r'\.', text)
+    sentences = re.findall('[.!?]', text) # (r'\.', text)
+    words = re.findall('[ .!?]', text)
+    letters = re.findall('[a-z, A-Z]', text)
     for i in space:
         print(f"{i}")
     print(f"{len(space)}")
