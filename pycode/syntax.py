@@ -128,7 +128,7 @@ def get_int(prompt):
         try: # try this or else will exception
             return int(input(prompt)) # break out the loop
         except ValueError: #catch your exception. ValueError is what you see as traceback
-            print("Not an integer")
+            print("Not an integer") # you can also say     pass   to do nothing
 
 
 def main():
@@ -139,3 +139,10 @@ def main():
 
 
 main()
+
+# Mario Loops
+
+for i in range(3):
+    print("#")
+
+
