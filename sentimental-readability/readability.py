@@ -9,7 +9,7 @@ import re
 def main():
     text = input("Text: ")
 
-    space = re.findall(r'.*', text)
+    space = re.findall(r'\.', text)
     for i in space:
         print(f"{i}")
     print(f"{len(space)}")
