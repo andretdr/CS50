@@ -13,6 +13,7 @@ def get_cc(prompt):
 def main():
     number = get_cc("Number: ")
 
+    
 
     if (re.search("^34", number) or (re.search("^37", number)) and len(number) == 15):
         print(f"AMEX")
