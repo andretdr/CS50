@@ -7,9 +7,11 @@ def getheight(prompt):
         except ValueError:
             print("Not an Integer")
 
+
 def main():
     height = getheight("Height: ")
     for i in range(height):
-        print(" " * (height-i) + "*" * i + "  " + "*" * i + " " * (height-1))
+        print(" " * (height-i+1) + "#" * (i+1) + "  " + "#" * (i+1))
+
 
 main()
