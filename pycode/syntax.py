@@ -1,7 +1,7 @@
 # librarys
 import cs50 # whole library
 
-from cs50 import get_string # just the one function
+from cs50 import get_string, get_int, get_float # just the one function
 
 # functions
 answer = input("What's your name? ") # dont have to declare type of variable
