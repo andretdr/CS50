@@ -153,7 +153,7 @@ for i in range(3):
     print("#")
 
 
-    # next
+# next
 
 for i in range(4):
     print("?", end="")
@@ -162,3 +162,20 @@ print()
     # or
 
 print("?" * 4)
+
+# next
+
+for i in range(3):
+    for j in range(3):
+            print("#", end="")
+    print()
+
+    # or
+
+for i in range(3):
+    print("#" * 3)
+
+# list, like a linked list
+
+docs.python.org/3/library/stdtypes.html#sequence-types-list-tuple-range
+
