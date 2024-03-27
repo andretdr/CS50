@@ -30,7 +30,26 @@ x = cs50.get_int("x: ") # if you want to use cs50's get_int specifically
 
 # conditionals
 
-if x < y:
+if x < y: # colon is curly bracets, and indent
     print("x is less than y")
+elif x > y:
+    print("y is less than x")
+else:
+    print("equal")
 
-    
+# str in C, char* are pointers comparing memory. But in py you can compare strings
+
+s = input("gimme s ")
+t = input("gimme t ")
+
+if s == t: # colon is curly bracets, and indent
+    print("equal")
+else:
+    print("different")
+
+
+
+
+
+
+
