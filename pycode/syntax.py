@@ -240,3 +240,26 @@ else:
     print("Not found")
 
     # or
+
+people = { # not a list, but just a dictionary
+    "Carter": "+81518926",
+    "David": "+457218926",
+    "John": "+823418926",
+}
+
+name = input("Name: ")
+
+if name in people:
+    number = people[name]
+    print("Found {number})
+
+
+name = input("Name: ")
+
+for person in people: # var person,
+    if person["name"] == name: # person.name
+#        number = person["number"]
+        print(f"Found {person['number']}") # single on the inside, and double quotes on the outside. dont confuse python
+        break
+else:
+    print("Not found")
