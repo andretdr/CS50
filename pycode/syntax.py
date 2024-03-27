@@ -21,8 +21,8 @@ bool, float, int, str only
 
 #calculator example
 
-x = input("x: ") # input uses strings, not int
-y = input("y: ")
+x = int(input("x: ")) # input uses strings, not int
+y = int(input("y: ")) # int() will convert string to int
 print(x + y);
 
 
