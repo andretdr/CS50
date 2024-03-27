@@ -176,6 +176,12 @@ for i in range(3):
     print("#" * 3)
 
 # list, like a linked list
+# docs.python.org/3/library/stdtypes.html#sequence-types-list-tuple-range
 
-docs.python.org/3/library/stdtypes.html#sequence-types-list-tuple-range
+scores = [72, 73, 33]
+
+average = sum(scores) / len(scores) # len of list
+print(f"Average: {average}")
+
+
 
