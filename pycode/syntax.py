@@ -106,3 +106,16 @@ def meow(n):
         print("meow")
 
 main()
+
+# truncation
+
+x = int(input("x: "))
+y = int(input("y: "))
+
+z = x / y # doesnt auto truncate. auto create float
+print(z)
+
+
+# floating point imprecision
+
+
