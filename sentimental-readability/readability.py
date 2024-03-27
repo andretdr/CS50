@@ -9,7 +9,8 @@ def
 def main():
     text = input("Text: ")
 
-    space = re.findall(.{1,})
+    space = re.findall([.{1,}], text)
+    
 
 
 main()
