@@ -72,13 +72,22 @@ elif s in ["n", "no"]:
 
 # loop
 
-i - 0
+i = 0
 while i < 3:
     print("meow")
     i += 1
 
-for i in [0, 1, 2]:
+for i in range(3): # or   for i in [0, 1, 2]:  or  for _ in range(3): same thing
+    print("meow") # python is using i
+
+while True:
     print("meow")
+
+    # uppercase excercise
+
+before = input("Before: ")
+print("After: ")
+for c in b
 
 
 
