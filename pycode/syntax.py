@@ -261,7 +261,17 @@ else:
 
 from sys import argv
 
-if len(argv) == 2:
+if len(argv) == 2: # doesnt take into account the python. just the cmd and the arg
     print(f"hello, {argv[1]}")
 else:
     print("hello, world:)
+
+    # or
+
+import sys
+
+if len(sys.argv) != 2:
+    print("Missing comand-line arg")
+    sys.exit()
+
+print
