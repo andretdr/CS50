@@ -254,3 +254,14 @@ if name in people:
     print(f"Found {number}")
 else:
     print("Not found")
+
+
+# docs.python.org/3/library/sys.html
+# cmd line arg
+
+from sys import argv
+
+if len(argv) == 2:
+    print(f"hello, {argv[1]}")
+else:
+    print("hello, world:)
