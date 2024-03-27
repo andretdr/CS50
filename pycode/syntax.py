@@ -91,6 +91,9 @@ for c in before: # c iterates over all characters in before
     print(c.upper())
 print() # print will \n
 
+    # or
+before = input("Before: ")
+print(f"After: {before.upper()}")
 
 
 
