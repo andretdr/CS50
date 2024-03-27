@@ -17,9 +17,16 @@ def main():
 
     mult = 0
     sum = 0
+    sumb = True
 
     for i in range(length):
-        number[length-1-i]
+        if sumb:
+            sum += int(number[length-1-i])
+            sumb = False
+        else:
+            mult += int(number[length-1-i]) * 2
+            sumb = True
+        
 
 
 
