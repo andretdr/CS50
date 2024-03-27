@@ -9,7 +9,7 @@ import re
 def main():
     text = input("Text: ")
 
-    space = re.findall("[.]", text)
+    space = re.findall("[.{1,} ]", text)
     print(f"{len(space)}")
 
 
