@@ -221,8 +221,9 @@ else:   # else clause for for loop. if you went through the whole thing without 
 
 
 # dictionary , collection of value pairs, hashtable. name: david, number: 92893092
+{"name": "Carter", "number": "+81518926"} # like a typedef struct
 
-people = [ # like a typedef struct
+people = [ # a LIST of dictionary, or value pairs
     {"name": "Carter", "number": "+81518926"}
     {"name": "David", "number": "+457218926"}
     {"name": "John", "number": "+823418926"}
