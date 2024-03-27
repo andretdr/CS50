@@ -183,5 +183,12 @@ scores = [72, 73, 33]
 average = sum(scores) / len(scores) # len of list
 print(f"Average: {average}")
 
+    # next
 
+from cs50 import get_int
+
+scores = [] # you can initialise in python without malloc
+for i in range(3):
+    score = get_int("Score: ")
+    
 
