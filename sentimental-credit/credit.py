@@ -24,8 +24,8 @@ def main():
             sum += int(number[length-1-i])
             sumb = False
         else:
-            product = int(number[length-1-i]) * 2
-            
+            sumdigits = int(number[length-1-i]) * 2
+            sumdigits = 
             mult +=
             sumb = True
 
