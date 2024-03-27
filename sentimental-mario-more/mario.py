@@ -9,6 +9,7 @@ def getheight(prompt):
 
 def main():
     height = getheight("Height: ")
+    
     print(f"{height}")
 
 main()
