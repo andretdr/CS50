@@ -10,7 +10,7 @@ def get_cc(prompt):
 
 def main():
     number = get_cc("Number: ")
-    print("{number}")
+    print(f"{number}")
 
 
 
