@@ -254,14 +254,3 @@ if name in people:
     print(f"Found {number}")
 else:
     print("Not found")
-
-
-name = input("Name: ")
-
-for person in people: # var person,
-    if person["name"] == name: # person.name
-#        number = person["number"]
-        print(f"Found {person['number']}") # single on the inside, and double quotes on the outside. dont confuse python
-        break
-else:
-    print("Not found")
