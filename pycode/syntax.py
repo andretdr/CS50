@@ -124,7 +124,11 @@ int can keep growing forever
 # exception
 
 def get_int(prompt):
-    return int(input(prompt))
+    while True: # loop forever
+        try: # try this or else will exception
+            return int(input(prompt)) # break out the loop
+        except ValueError: #catch your exception. ValueError is what you see as traceback
+            print("Not an integer")
 
 
 def main():
