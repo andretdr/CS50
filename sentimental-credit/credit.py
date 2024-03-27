@@ -17,7 +17,9 @@ def main():
 
     if (re.search("^34", number) or (re.search("^37", number)) and len(number) == 15):
         print(f"AMEX")
-    elif (re.search("^[51-55]", number) or (re.search("^37", number)) and len(number) == 15):
+    elif (re.search("^[5][1-5]", number) and len(number) == 16):
+        print(f"MC")
+    else:
         print("INVALID")
 
 
