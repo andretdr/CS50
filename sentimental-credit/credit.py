@@ -26,7 +26,8 @@ def main():
         else:
             mult += int(number[length-1-i]) * 2
             sumb = True
-        
+
+    
 
 
 
