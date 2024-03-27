@@ -241,7 +241,7 @@ else:
 
     # or
 
-people = { # not a list, but just a dictionary. you can direct index to access, dont need to iterate
+people = { # not a list, but just a dictionary. you can direct index to access, dont need to iterate like a hashtable
     "Carter": "+81518926",
     "David": "+457218926",
     "John": "+823418926",
@@ -250,7 +250,7 @@ people = { # not a list, but just a dictionary. you can direct index to access, 
 name = input("Name: ")
 
 if name in people:
-    number = people[name]
+    number = people[name] # using the name as a hash index to get the number
     print(f"Found {number}")
 else:
     print("Not found")
