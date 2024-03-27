@@ -12,6 +12,7 @@ def get_cc(prompt):
 
 def main():
     number = get_cc("Number: ")
+    if
     print(f"{number}")
 
 
