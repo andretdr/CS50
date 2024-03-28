@@ -16,9 +16,16 @@ def main():
         dnafile = sys.argv[2]
 
     database = set()
+    dnaseq = null
 
     with open(csvfile) as file:
-        database.update(file.read().splitline())
+        database.update(file.read().splitlines())
+
+    with open(dnafile) as file:
+        dnaseq = open(file.read())
+
+    for i in database:
+        print(f"{i}")
 
 
     # TODO: Read database file into a variable
