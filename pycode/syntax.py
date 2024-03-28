@@ -255,6 +255,27 @@ if name in people:
 else:
     print("Not found")
 
+# File
+    # Speller check
+
+words = set()
+
+def check(word):
+    return word.lower in words
+
+def load(dicionary):
+    with open(dictionary) as file:
+        words.update(file.read().splitlines())
+    return True
+
+def size():
+    return len(words)
+
+
+
+
+
+
 
 # docs.python.org/3/library/sys.html
 # cmd line arg
