@@ -29,7 +29,10 @@ def main():
     print(f"{dnaseq}")
 
     # Find longest match of each STR in DNA sequence
-    patterns = database.
+    if "Alice,2,8,3" in database:
+        print("true")
+    else:
+        print("false")
 
 
 
