@@ -22,15 +22,16 @@ def main():
 
     with open(csvfile, newline='') as file: # Read database file into a variable
         dreader = csv.reader(file) # reader points to inside the open file
-        header = dreader.next()
+        header = next(dreader)
 
         data = []
         for row in dreader:
             # row = [name, pattern1, pattern2, pattern3
             i = 0
-            while row[i]:
+            while row[i]!='':
                 data.append(row[i])
-            print(row[i])
+                i+=i
+            print(data)
 
         #database.update(file.read().splitlines())
 
