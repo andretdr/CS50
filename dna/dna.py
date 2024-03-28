@@ -19,15 +19,17 @@ def main():
 
     database = set()
 
-    with open(csvfile) as file: # Read database file into a variable
-        header = file.readline()
-        database.update(file.read().splitlines())
+    with open(csvfile, newline='') as file: # Read database file into a variable
+        database = csv.reader(file)
+        for i in database:
+            print(f"{i}")
+
+        #database.update(file.read().splitlines())
 
     with open(dnafile) as file: # Read DNA sequence file into a variable
         dnaseq = file.read()
 
-    for i in database:
-        print(f"{i}")
+
 
     print(f"{dnaseq}")
 
