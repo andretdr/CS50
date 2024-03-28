@@ -3,16 +3,16 @@ import sys
 # from sys import argv
 
 def cmdlineinput():
-if len(sys.argv) != 3:
-    print(f"Incorrect cmdline input")
-
-else:
-
-
+    if len(sys.argv) != 3:
+        print(f"Incorrect cmdline input")
+        return False
+    else:
+        return True
 
 def main():
 
-    cmdlineinput()
+    if cmdlineinput():
+        sys.argv
 
     # TODO: Check for command-line usage
 
