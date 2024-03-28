@@ -28,12 +28,11 @@ def main():
 
     print(f"{dnaseq}")
 
+    # Find longest match of each STR in DNA sequence
+    patterns = database.
 
 
 
-
-
-    # TODO: Find longest match of each STR in DNA sequence
 
     # TODO: Check database for matching profiles
 
