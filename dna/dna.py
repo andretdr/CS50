@@ -15,7 +15,11 @@ def main():
         csvfile = sys.argv[1]
         dnafile = sys.argv[2]
 
-    
+    database = set()
+
+    with open(csvfile) as file:
+        database.update()
+
 
     # TODO: Read database file into a variable
 
