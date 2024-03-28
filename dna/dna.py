@@ -29,7 +29,7 @@ def main():
         for row in dreader:
             # row = [name, pattern1, pattern2, pattern3
             i = 0
-            while i < # number of columns:
+            while i < len(header[0]): # number of columns:
                 data.append(row[i])
                 i=i+1
             print(data)
