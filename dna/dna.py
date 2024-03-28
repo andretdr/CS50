@@ -4,17 +4,16 @@ import sys
 
 def cmdlineinput():
     if len(sys.argv) != 3:
-        print(f"Incorrect cmdline input")
-        return False
+        print(f"Incorrect CMD line input. Requires 2 input files")
     else:
         return True
 
 def main():
 
-    if cmdlineinput():
-        sys.argv
-
-    # TODO: Check for command-line usage
+    input
+    if cmdlineinput(): # Check for command-line usage
+        csvfile = sys.argv[1]
+        dnafile = sys.argv[2]
 
     # TODO: Read database file into a variable
 
