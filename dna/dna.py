@@ -30,9 +30,9 @@ def main():
             # row = [name, pattern1, pattern2, pattern3
             i = 0
             while i < len(header[0]): # number of columns:
-                data.append(row[i])
+                print (row[i])
                 i=i+1
-            print(data)
+            #print(data)
 
         #database.update(file.read().splitlines())
 
