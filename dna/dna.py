@@ -25,12 +25,12 @@ def main():
         header = dreader.next()
 
         data = []
-        for row in dreader
-            # row = [name, pattern1, pattern2, pattern3]
-
-        for i in dreader:
-            print(i)
-            database.update(i)
+        for row in dreader:
+            # row = [name, pattern1, pattern2, pattern3
+            i = 0
+            while row[i]:
+                data.append(row[i])
+            print(row[i])
 
         #database.update(file.read().splitlines())
 
