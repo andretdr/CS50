@@ -224,9 +224,9 @@ else:   # else clause for for loop. if you went through the whole thing without 
 {"name": "Carter", "number": "+81518926"} # like a typedef struct
 
 people = [ # a LIST of dictionary, or value pairs
-    {"name": "Carter", "number": "+81518926"}
-    {"name": "David", "number": "+457218926"}
-    {"name": "John", "number": "+823418926"}
+    {"name": "Carter", "number": "+81518926", "address": "sdfsasd"}
+    {"name": "David", "number": "+457218926", "address": "asaasd"}
+    {"name": "John", "number": "+823418926", "address": "werfsasd"}
 ]
 
 name = input("Name: ")
