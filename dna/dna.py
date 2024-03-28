@@ -18,7 +18,7 @@ def main():
     database = set()
 
     with open(csvfile) as file:
-        database.update()
+        database.update(file.read().splitline())
 
 
     # TODO: Read database file into a variable
