@@ -21,19 +21,21 @@ def main():
 
     with open(csvfile, newline='') as file: # Read database file into a variable
         dreader = csv.reader(file)
-        for i in database:
-            database.update(dreader.)
+        for i in dreader:
+            
+            database.update(i)
 
         #database.update(file.read().splitlines())
 
     with open(dnafile) as file: # Read DNA sequence file into a variable
         dnaseq = file.read()
 
-
+    for i in database:
+        print(f"{i}")
 
     print(f"{dnaseq}")
 
-    print(f"{header}")
+
 
     # Find longest match of each STR in DNA sequence
     if "Alice,2,8,3" in database:
