@@ -18,11 +18,12 @@ def main():
         dnafile = sys.argv[2]
 
     database = set()
+    data = []
 
     with open(csvfile, newline='') as file: # Read database file into a variable
         dreader = csv.reader(file) # reader points to inside the open file
         header = dreader.next()
-
+        
 
         for i in dreader:
             print(i)
