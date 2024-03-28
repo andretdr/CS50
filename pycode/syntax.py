@@ -258,7 +258,7 @@ else:
 # File
     # Speller check
 
-words = set()
+words = set() # sets are like lists, but all unique
 
 def check(word):
     return word.lower in words
