@@ -15,6 +15,8 @@ def main():
         csvfile = sys.argv[1]
         dnafile = sys.argv[2]
 
+    
+
     # TODO: Read database file into a variable
 
     # TODO: Read DNA sequence file into a variable
