@@ -36,6 +36,7 @@ def main():
     # create matcher, a list similar to data
     matcher = []
     i = 1
+    matcher.append('name')
     while i < len(data[0]):
         strseq = data[0][i]
         print(f"{strseq}")
