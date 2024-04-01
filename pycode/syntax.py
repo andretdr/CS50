@@ -187,7 +187,7 @@ print(f"Average: {average}")
 
 from cs50 import get_int
 
-scores = [] # you can initialise in python without malloc
+scores = [] # you can initialise in python without malloc. these are mostly lists, not arrays. arrays have to be declared sincde they are not built into python
 for i in range(3):
     score = get_int("Score: ")
     scores.append(score) # scores = scores + [score]      to concatonate. add 2 lists together

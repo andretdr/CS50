@@ -7,6 +7,7 @@ import re
 def cmdlineinput():
     if len(sys.argv) != 3:
         print(f"Incorrect CMD line input. Requires 2 input files")
+        return False
     else:
         return True
 
@@ -16,41 +17,38 @@ def main():
     if cmdlineinput(): # Check for command-line usage
         csvfile = sys.argv[1]
         dnafile = sys.argv[2]
+    else:
+        return 1
 
-    database = set()
-
+    data = []
 
     with open(csvfile, newline='') as file: # Read database file into a variable
         dreader = csv.reader(file) # reader points to inside the open file
-        header = next(dreader)
-        print(header)
 
-        data = []
         for row in dreader:
-            # row = [name, pattern1, pattern2, pattern3
-            i = 0
-            while i < len(header[0]): # number of columns:
-                print (row[i])
-                i=i+1
-            #print(data)
+            data.append(row)
 
-        #database.update(file.read().splitlines())
+        print(f"{data[0]}")
 
     with open(dnafile) as file: # Read DNA sequence file into a variable
         dnaseq = file.read()
 
-    #for i in database:
-    #    print(f"{i}")
+    # create matcher, a list similar to data
+    matcher = []
+    i = 1
+    while i < len(data[0]):
+        strseq = data[0][i]
+        print(f"{strseq}")
+        i += 1
 
-    print(f"{dnaseq}")
 
-    print(f"{header}")
+
 
     # Find longest match of each STR in DNA sequence
-    if "Alice,2,8,3" in database:
-        print("true")
-    else:
-        print("false")
+#    if "Alice,2,8,3" in database:
+#        print("true")
+#    else:
+#        print("false")
 
 
 
