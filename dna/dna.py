@@ -42,21 +42,21 @@ def main():
 
         myregex = '('+data[0][i]+')'
         print(myregex)
-        setmatch = re.split(myregex, dnaseq) # if search STR is found at the head, currentcount++. else if found midway, current count = 1. STR == data[0][i]
+        setmatch = re.split((AGATC|'\n'), dnaseq) # if search STR is found at the head, currentcount++. else if found midway, current count = 1. STR == data[0][i]
         print(setmatch)
         # fill in matcher
 
-        for j in setmatch:
-            currentcount = 0
-            longestcount = 0
+#        for j in setmatch:
+#            currentcount = 0
+#            longestcount = 0
 
-            if j == data[0][i]:
-                currentcount += 1
-            elif (j != '') or (): # end of STR sequence, check if its the longest sequence, if so update
-                if currentcount > longestcount:
-                    longestcount = currentcount
-                currentcount = 0
-            else
+#            if j == data[0][i]:
+#                currentcount += 1
+#            elif (j != '') or (): # end of STR sequence, check if its the longest sequence, if so update
+#                if currentcount > longestcount:
+#                    longestcount = currentcount
+#                currentcount = 0
+#            else
 
 
 
