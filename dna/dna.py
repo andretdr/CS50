@@ -42,7 +42,7 @@ def main():
         currentcount = 0
         longestcount = 0
 
-        if () # if search STR is found at the head, currentcount++. else if found midway, current count = 1. STR == data[0][i]
+        if (re.split()) # if search STR is found at the head, currentcount++. else if found midway, current count = 1. STR == data[0][i]
 #        strseq = data[0][i]
 #        print(f"{strseq}")
         i += 1
