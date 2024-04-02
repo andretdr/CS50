@@ -45,8 +45,9 @@ def main():
         temprow = row
         temprow.pop(0)
 
-#        print(f"{temprow} temprow")
-#        print(f"{tempmatcher} tempmatcher")
+        print(f"{temprow} temprow")
+        print(f"{tempmatcher} tempmatcher")
+        print(row)
 
         if temprow == tempmatcher:
             found = row
