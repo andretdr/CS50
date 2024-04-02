@@ -37,19 +37,16 @@ def main():
     print(matcher)
 
     found = []
-
-    tempmatcher = matcher
-    tempmatcher.pop(0)
+    matcher.pop(0) # remove the name column, first element of the list
 
     for row in data:
-        temprow = row
-        temprow.pop(0)
+        tempmatcher = [row[0]] + matcher
 
-        print(f"{temprow} temprow")
-        print(f"{tempmatcher} tempmatcher")
-        print(row)
+#        print(f"{temprow} temprow")
+#        print(f"{tempmatcher} tempmatcher")
+        print(tempmatcher)
 
-        if temprow == tempmatcher:
+        if row == tempmatcher:
             found = row
 
     if len(found) > 0:
