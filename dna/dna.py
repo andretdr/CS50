@@ -38,30 +38,8 @@ def main():
     i = 1
     matcher.append('whoisthis')
     while i < len(data[0]): # for all the different STR in header
-
-
-        myregex = '('+data[0][i]+'|\n)'
-#        print(myregex)
-        setmatch = re.split(myregex, dnaseq) # if search STR is found at the head, currentcount++. else if found midway, current count = 1. STR == data[0][i]
-#        print(setmatch)
-        # fill in matcher
-
-
-
-        currentcount = 0
-        longestcount = 0
-
-        for j in setmatch:
-
-            if j == data[0][i]:
-                currentcount += 1
-            elif (j != '') or (j == '\n'): # end of STR sequence, check if its the longest sequence, if so update
-                if currentcount > longestcount:
-                    longestcount = currentcount
-                currentcount = 0
-
 #        print(f'longest sequence for {data[0][i]} is {longestcount}')
-        matcher.append(longestcount)
+        matcher.append(longest_match(dnaseq, data[0][i]))
         i += 1
     print(matcher)
 
@@ -71,40 +49,23 @@ def main():
 
 
 def longest_match(sequence, subsequence):
-    """Returns length of longest run of subsequence in sequence."""
 
-    # Initialize variables
-    longest_run = 0
-    subsequence_length = len(subsequence)
-    sequence_length = len(sequence)
+    myregex = '('+subsequence+'|\n)'
+#        print(myregex)
+    setmatch = re.split(myregex, sequence) # if search STR is found at the head, currentcount++. else if found midway, current count = 1. STR == data[0][i]
+#        print(setmatch)
+        # fill in matcher
+    currentcount = 0
+    longestcount = 0
 
-    # Check each character in sequence for most consecutive runs of subsequence
-    for i in range(sequence_length):
+    for j in setmatch:
+        if j == data[0][i]:
+            currentcount += 1
+        elif (j != '') or (j == '\n'): # end of STR sequence, check if its the longest sequence, if so update
+            if currentcount > longestcount:
+                longestcount = currentcount
+            currentcount = 0
 
-        # Initialize count of consecutive runs
-        count = 0
-
-        # Check for a subsequence match in a "substring" (a subset of characters) within sequence
-        # If a match, move substring to next potential match in sequence
-        # Continue moving substring and checking for matches until out of consecutive matches
-        while True:
-
-            # Adjust substring start and end
-            start = i + count * subsequence_length
-            end = start + subsequence_length
-
-            # If there is a match in the substring
-            if sequence[start:end] == subsequence:
-                count += 1
-
-            # If there is no match in the substring
-            else:
-                break
-
-        # Update most consecutive matches found
-        longest_run = max(longest_run, count)
-
-    # After checking for runs at each character in seqeuence, return longest run found
     return longest_run
 
 main()
