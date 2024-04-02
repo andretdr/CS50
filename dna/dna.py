@@ -47,7 +47,6 @@ def cmdlineinput():
         return True
 
 def longest_match(sequence, subsequence):
-
     myregex = '('+subsequence+'|\n)'
 #        print(myregex)
     setmatch = re.split(myregex, sequence) # if search STR is found at the head, currentcount++. else if found midway, current count = 1. STR == data[0][i]
