@@ -38,8 +38,10 @@ def main():
     i = 1
     matcher.append('name')
     while i < len(data[0]):
-        strseq = data[0][i]
-        print(f"{strseq}")
+
+        if () # if search STR is found at the head, data[0][i]
+#        strseq = data[0][i]
+#        print(f"{strseq}")
         i += 1
 
 
