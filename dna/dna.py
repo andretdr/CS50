@@ -43,7 +43,7 @@ def main():
 #        longestcount = 0
 
 #        myregex = data[0][i]
-        setmatch = re.findall('(AGATC){2}', dnaseq) # if search STR is found at the head, currentcount++. else if found midway, current count = 1. STR == data[0][i]
+        setmatch = re.split('(AGATC)', dnaseq) # if search STR is found at the head, currentcount++. else if found midway, current count = 1. STR == data[0][i]
         print(setmatch)
 #        strseq = data[0][i]
 #        print(f"{strseq}")
