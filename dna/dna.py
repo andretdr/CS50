@@ -34,8 +34,17 @@ def main():
 #        print(f'longest sequence for {data[0][i]} is {longestcount}')
         matcher.append(longest_match(dnaseq, data[0][i]))
         i += 1
-    print(matcher.pop(0))
+    print(matcher)
 
+    found = []
+    for row in data:
+        if row.pop(0) == matcher.pop(0):
+            found = row
+
+    if len(found) > 0:
+        print(found[0])
+    else:
+        print('No Match')
 
 
     return
