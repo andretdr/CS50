@@ -37,7 +37,9 @@ def main():
     print(matcher)
 
     # TODO: Check database for matching profiles
-    for 
+    for row in data
+        j = 1
+        
 
 
     return
