@@ -41,9 +41,9 @@ def main():
 
 
         myregex = '('+data[0][i]+'|\n)'
-        print(myregex)
+#        print(myregex)
         setmatch = re.split(myregex, dnaseq) # if search STR is found at the head, currentcount++. else if found midway, current count = 1. STR == data[0][i]
-        print(setmatch)
+#        print(setmatch)
         # fill in matcher
 
         currentcount = 0
