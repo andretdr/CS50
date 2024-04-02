@@ -58,7 +58,8 @@ def main():
                     longestcount = currentcount
                 currentcount = 0
 
-        matcher
+        print(f'longest sequence for {data[0][i]} is {longestcount}')
+        #matcher.append()
 
 
 
