@@ -4,10 +4,11 @@ import re
 
 # from sys import argv
 
+
 def main():
 
     input
-    if cmdlineinput(): # Check for command-line usage
+    if cmdlineinput():  # Check for command-line usage
         csvfile = sys.argv[1]
         dnafile = sys.argv[2]
     else:
@@ -15,36 +16,26 @@ def main():
 
     data = []
 
-    with open(csvfile, newline='') as file: # Read database file into a variable
-        dreader = csv.reader(file) # reader points to inside the open file
+    with open(csvfile, newline='') as file:  # Read database file into a variable
+        dreader = csv.reader(file)  # reader points to inside the open file
 
         for row in dreader:
             data.append(row)
 
-#        print(f"{data[0]}")
-
-    with open(dnafile) as file: # Read DNA sequence file into a variable
+    with open(dnafile) as file:  # Read DNA sequence file into a variable
         dnaseq = file.read()
 
     # create matcher, a list similar to data
     matcher = []
     i = 1
-#    matcher.append('whoisthis')
-    while i < len(data[0]): # for all the different STR in header
-#        print(f'longest sequence for {data[0][i]} is {longestcount}')
+    while i < len(data[0]):  # for all the different STR in header
         matcher.append(str(longest_match(dnaseq, data[0][i])))
         i += 1
-#    print(matcher)
 
     found = []
-#    matcher.pop(0) # remove the name column, first element of the list
 
     for row in data:
         tempmatcher = [row[0]] + matcher
-
-#        print(f"{temprow} temprow")
-#        print(f"{tempmatcher} tempmatcher")
-#        print(tempmatcher)
 
         if row == tempmatcher:
             found = row
@@ -54,8 +45,8 @@ def main():
     else:
         print('No Match')
 
-
     return
+
 
 def cmdlineinput():
     if len(sys.argv) != 3:
@@ -64,22 +55,25 @@ def cmdlineinput():
     else:
         return True
 
+
 def longest_match(sequence, subsequence):
 
     myregex = '('+subsequence+'|\n)'
-    setmatch = re.split(myregex, sequence) # if search STR is found at the head, currentcount++. else if found midway, current count = 1. STR == data[0][i]
-        # fill in matcher
+    # if search STR is found at the head, currentcount++. else if found midway, current count = 1. STR == data[0][i]
+    setmatch = re.split(myregex, sequence)
+    # fill in matcher
     currentcount = 0
     longestcount = 0
 
     for j in setmatch:
         if j == subsequence:
             currentcount += 1
-        elif (j != '') or (j == '\n'): # end of STR sequence, check if its the longest sequence, if so update
+        elif (j != '') or (j == '\n'):  # end of STR sequence, check if its the longest sequence, if so update
             if currentcount > longestcount:
                 longestcount = currentcount
             currentcount = 0
 
     return longestcount
+
 
 main()
