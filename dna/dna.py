@@ -39,14 +39,17 @@ def main():
     matcher.append('name')
     while i < len(data[0]): # for all the different STR in header
 
-#        currentcount = 0
-#        longestcount = 0
+        currentcount = 0
+        longestcount = 0
 
         myregex = '('+data[0][i]+')'
         print(myregex)
         setmatch = re.split(myregex, dnaseq) # if search STR is found at the head, currentcount++. else if found midway, current count = 1. STR == data[0][i]
         print(setmatch)
+        # fill in matcher
 
+        for j < len(setmatch):
+            
 
 #        strseq = data[0][i]
 #        print(f"{strseq}")
