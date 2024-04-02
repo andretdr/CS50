@@ -39,14 +39,15 @@ def main():
     matcher.append('name')
     while i < len(data[0]): # for all the different STR in header
 
-        currentcount = 0
-        longestcount = 0
+#        currentcount = 0
+#        longestcount = 0
 
 #        myregex = '^'+data[0][i]
-        while (re.search('AGATC', dnaseq)) # if search STR is found at the head, currentcount++. else if found midway, current count = 1. STR == data[0][i]
+        while (re.search('AGATC', dnaseq)): # if search STR is found at the head, currentcount++. else if found midway, current count = 1. STR == data[0][i]
+            print(i)
 #        strseq = data[0][i]
 #        print(f"{strseq}")
-        i += 1
+            i += 1
 
 
 
