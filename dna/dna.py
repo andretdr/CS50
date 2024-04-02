@@ -43,7 +43,7 @@ def main():
 #        longestcount = 0
 
 #        myregex = '^'+data[0][i]
-        while (re.search('AGATC', dnaseq)): # if search STR is found at the head, currentcount++. else if found midway, current count = 1. STR == data[0][i]
+        while (re.findall('AGATC', dnaseq)): # if search STR is found at the head, currentcount++. else if found midway, current count = 1. STR == data[0][i]
             print(i)
 #        strseq = data[0][i]
 #        print(f"{strseq}")
