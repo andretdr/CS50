@@ -37,12 +37,12 @@ def main():
     matcher = []
     i = 1
     matcher.append('name')
-    while i < len(data[0]):
+    while i < len(data[0]): # for all the different STR in header
 
         currentcount = 0
         longestcount = 0
 
-        if (re.split()) # if search STR is found at the head, currentcount++. else if found midway, current count = 1. STR == data[0][i]
+        while (re.finditer()) # if search STR is found at the head, currentcount++. else if found midway, current count = 1. STR == data[0][i]
 #        strseq = data[0][i]
 #        print(f"{strseq}")
         i += 1
