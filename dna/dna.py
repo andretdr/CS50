@@ -42,7 +42,8 @@ def main():
         currentcount = 0
         longestcount = 0
 
-        while (re.finditer()) # if search STR is found at the head, currentcount++. else if found midway, current count = 1. STR == data[0][i]
+#        myregex = '^'+data[0][i]
+        while (re.finditer(AGATC')) # if search STR is found at the head, currentcount++. else if found midway, current count = 1. STR == data[0][i]
 #        strseq = data[0][i]
 #        print(f"{strseq}")
         i += 1
