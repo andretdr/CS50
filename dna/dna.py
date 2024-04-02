@@ -39,8 +39,6 @@ def main():
     matcher.append('name')
     while i < len(data[0]): # for all the different STR in header
 
-        currentcount = 0
-        longestcount = 0
 
         myregex = '('+data[0][i]+')'
         print(myregex)
@@ -48,8 +46,16 @@ def main():
         print(setmatch)
         # fill in matcher
 
-        for j < len(setmatch):
-            
+        for j in setmatch:
+            currentcount = 0
+            longestcount = 0
+
+            if j == data[0][i]:
+                currentcount += 1
+            elif != '': # end of sequence
+
+
+
 
 #        strseq = data[0][i]
 #        print(f"{strseq}")
