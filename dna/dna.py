@@ -36,7 +36,7 @@ def main():
     # create matcher, a list similar to data
     matcher = []
     i = 1
-    matcher.append('name')
+    matcher.append('whoisthis')
     while i < len(data[0]): # for all the different STR in header
 
 
@@ -58,14 +58,10 @@ def main():
                     longestcount = currentcount
                 currentcount = 0
 
-        print(f'longest sequence for {data[0][i]} is {longestcount}')
-        #matcher.append()
-
-
-
-#        strseq = data[0][i]
-#        print(f"{strseq}")
+#        print(f'longest sequence for {data[0][i]} is {longestcount}')
+        matcher.append(longestcount)
         i += 1
+    print(matcher)
 
 
 
