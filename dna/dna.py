@@ -37,8 +37,18 @@ def main():
     print(matcher)
 
     found = []
+
+    tempmatcher = matcher
+    tempmatcher.pop(0)
+
     for row in data:
-        if row.pop(0) == matcher.pop(0):
+        temprow = row
+        temprow.pop(0)
+
+        print(temprow)
+        print(tempmatcher)
+
+        if temprow == tempmatcher:
             found = row
 
     if len(found) > 0:
