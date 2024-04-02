@@ -37,9 +37,15 @@ def main():
     print(matcher)
 
     # TODO: Check database for matching profiles
-    for row in data
-        j = 1
-        
+    found = []
+    for row in data:
+        if row.pop(0) == matcher.pop(0):
+            found = row
+
+    if len(found) > 0:
+        print(found[0])
+    else:
+        print('No Match')
 
 
     return
