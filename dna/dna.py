@@ -29,7 +29,7 @@ def main():
     # create matcher, a list similar to data
     matcher = []
     i = 1
-    matcher.append('whoisthis')
+#    matcher.append('whoisthis')
     while i < len(data[0]): # for all the different STR in header
 #        print(f'longest sequence for {data[0][i]} is {longestcount}')
         matcher.append(str(longest_match(dnaseq, data[0][i])))
@@ -37,7 +37,7 @@ def main():
     print(matcher)
 
     found = []
-    matcher.pop(0) # remove the name column, first element of the list
+#    matcher.pop(0) # remove the name column, first element of the list
 
     for row in data:
         tempmatcher = [row[0]] + matcher
