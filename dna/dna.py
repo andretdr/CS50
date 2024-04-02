@@ -32,7 +32,7 @@ def main():
     matcher.append('whoisthis')
     while i < len(data[0]): # for all the different STR in header
 #        print(f'longest sequence for {data[0][i]} is {longestcount}')
-        matcher.append(longest_match(dnaseq, data[0][i]))
+        matcher.append(str(longest_match(dnaseq, data[0][i])))
         i += 1
     print(matcher)
 
@@ -45,8 +45,8 @@ def main():
         temprow = row
         temprow.pop(0)
 
-        print(f"{temprow} temprow")
-        print(f"{tempmatcher} tempmatcher")
+#        print(f"{temprow} temprow")
+#        print(f"{tempmatcher} tempmatcher")
 
         if temprow == tempmatcher:
             found = row
