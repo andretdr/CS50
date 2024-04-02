@@ -50,7 +50,6 @@ def longest_match(sequence, subsequence):
     myregex = '('+subsequence+'|\n)'
 #        print(myregex)
     setmatch = re.split(myregex, sequence) # if search STR is found at the head, currentcount++. else if found midway, current count = 1. STR == data[0][i]
-#        print(setmatch)
         # fill in matcher
     currentcount = 0
     longestcount = 0
@@ -63,6 +62,6 @@ def longest_match(sequence, subsequence):
                 longestcount = currentcount
             currentcount = 0
 
-    return longest_run
+    return longestcount
 
 main()
