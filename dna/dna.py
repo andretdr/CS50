@@ -46,18 +46,19 @@ def main():
         print(setmatch)
         # fill in matcher
 
-#        for j in setmatch:
-#            currentcount = 0
-#            longestcount = 0
+        currentcount = 0
+        longestcount = 0
 
-#            if j == data[0][i]:
-#                currentcount += 1
-#            elif (j != '') or (): # end of STR sequence, check if its the longest sequence, if so update
-#                if currentcount > longestcount:
-#                    longestcount = currentcount
-#                currentcount = 0
-#            else
+        for j in setmatch:
 
+            if j == data[0][i]:
+                currentcount += 1
+            elif (j != '') or (j == '\n'): # end of STR sequence, check if its the longest sequence, if so update
+                if currentcount > longestcount:
+                    longestcount = currentcount
+                currentcount = 0
+
+        matcher
 
 
 
