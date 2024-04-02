@@ -52,7 +52,11 @@ def main():
 
             if j == data[0][i]:
                 currentcount += 1
-            elif != '': # end of sequence
+            elif != '': # end of STR sequence, check if its the longest sequence, if so update
+                if currentcount > longestcount:
+                    longestcount = currentcount
+                currentcount = 0
+            else
 
 
 
