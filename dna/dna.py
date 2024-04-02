@@ -40,9 +40,9 @@ def main():
     while i < len(data[0]): # for all the different STR in header
 
 
-        myregex = '('+data[0][i]+')'
+        myregex = '('+data[0][i]+'|\n)'
         print(myregex)
-        setmatch = re.split((AGATC|'\n'), dnaseq) # if search STR is found at the head, currentcount++. else if found midway, current count = 1. STR == data[0][i]
+        setmatch = re.split(myregex, dnaseq) # if search STR is found at the head, currentcount++. else if found midway, current count = 1. STR == data[0][i]
         print(setmatch)
         # fill in matcher
 
