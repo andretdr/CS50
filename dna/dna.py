@@ -63,18 +63,6 @@ def main():
         i += 1
     print(matcher)
 
-
-
-
-    # Find longest match of each STR in DNA sequence
-#    if "Alice,2,8,3" in database:
-#        print("true")
-#    else:
-#        print("false")
-
-
-
-
     # TODO: Check database for matching profiles
 
     return
