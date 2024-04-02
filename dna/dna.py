@@ -46,6 +46,8 @@ def main():
         print(myregex)
         setmatch = re.split(myregex, dnaseq) # if search STR is found at the head, currentcount++. else if found midway, current count = 1. STR == data[0][i]
         print(setmatch)
+
+
 #        strseq = data[0][i]
 #        print(f"{strseq}")
         i += 1
