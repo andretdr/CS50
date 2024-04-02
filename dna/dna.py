@@ -21,7 +21,7 @@ def main():
         for row in dreader:
             data.append(row)
 
-        print(f"{data[0]}")
+#        print(f"{data[0]}")
 
     with open(dnafile) as file: # Read DNA sequence file into a variable
         dnaseq = file.read()
@@ -34,7 +34,7 @@ def main():
 #        print(f'longest sequence for {data[0][i]} is {longestcount}')
         matcher.append(str(longest_match(dnaseq, data[0][i])))
         i += 1
-    print(matcher)
+#    print(matcher)
 
     found = []
 #    matcher.pop(0) # remove the name column, first element of the list
@@ -44,7 +44,7 @@ def main():
 
 #        print(f"{temprow} temprow")
 #        print(f"{tempmatcher} tempmatcher")
-        print(tempmatcher)
+#        print(tempmatcher)
 
         if row == tempmatcher:
             found = row
