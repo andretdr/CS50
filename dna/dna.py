@@ -4,13 +4,6 @@ import re
 
 # from sys import argv
 
-def cmdlineinput():
-    if len(sys.argv) != 3:
-        print(f"Incorrect CMD line input. Requires 2 input files")
-        return False
-    else:
-        return True
-
 def main():
 
     input
@@ -44,9 +37,14 @@ def main():
     print(matcher)
 
     # TODO: Check database for matching profiles
-
     return
 
+def cmdlineinput():
+    if len(sys.argv) != 3:
+        print(f"Incorrect CMD line input. Requires 2 input files")
+        return False
+    else:
+        return True
 
 def longest_match(sequence, subsequence):
 
@@ -59,7 +57,7 @@ def longest_match(sequence, subsequence):
     longestcount = 0
 
     for j in setmatch:
-        if j == data[0][i]:
+        if j == subsequence:
             currentcount += 1
         elif (j != '') or (j == '\n'): # end of STR sequence, check if its the longest sequence, if so update
             if currentcount > longestcount:
