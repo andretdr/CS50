@@ -304,7 +304,7 @@ with open("favorites.csv", "r") as file: # file closes automatically after quit
             counts[favorite] = 1
 
 for favorite in counts:
-    print(f"{}: {}")
+    print(f"{favorite}: {counts[favorite]}") # favorite is the row index, counts[favorite] is the value
 
 
 # docs.python.org/3/library/sys.html
