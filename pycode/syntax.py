@@ -298,8 +298,12 @@ with open("favorites.csv", "r") as file: # file closes automatically after quit
 
     for row in reader:
         favorite = row["language"] # find the row that is 'language'
+        if favorite in counts: # is there a key(favorites) with this name in the dictionary count?
+            counts[favorite] += 1
+        else:
+            counts[favorite] = 1
 
-
+for favorites in counts:
 
 
 # docs.python.org/3/library/sys.html
