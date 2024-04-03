@@ -309,7 +309,35 @@ for favorite in sorted(counts): # we can sort by key
 ## different way to sort the above
 sorted(counts) # sort by keys(index)
 sorted(counts, key=counts.get) # sort by the values instead
-sorted(counts, key=counts.get, reverse=True) # sort by the values, reverse
+sorted(counts, key=counts.get, reverse=True) # sort by the values, reverse. named parameters
+
+
+### OR using collections
+
+import csv
+
+from collections import Counter
+
+with open("favorites.csv", "r") as file: # file closes automatically after quit
+    # once outside of with block, file will close
+    reader = csv.DictReader(file) # reads in the header file, and then converts the rest of the rows to dict, not list
+    counts = Counter()
+
+    for row in reader:
+        favorite = row["language"] # find the row that is 'language', assign the value to favorite
+        if favorite in counts: # is there a key(favorites) with this name in the dictionary count?
+            counts[favorite] += 1
+        else:
+            counts[favorite] = 1
+
+for favorite in sorted(counts): # we can sort by key
+    print(f"{favorite}: {counts[favorite]}") # favorite is the row index, counts[favorite] is the value
+
+
+
+
+
+
 
 
 # docs.python.org/3/library/sys.html
