@@ -136,3 +136,7 @@ CREATE TABLE people (
 
 SELECT * FROM shows WHERE title = 'The Office' AND year = 2005;
 SELECT person_id FROM stars WHERE show_id = (SELECT id FROM shows WHERE title = 'The Office' AND year = 2005);
+SELECT name FROM people WHERE id IN
+    (SELECT person_id FROM stars WHERE show_id =
+     (SELECT id FROM shows WHERE title = 'The Office' AND year = 2005)); # how the stars in the Office
+
