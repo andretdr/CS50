@@ -60,3 +60,6 @@ SELECT COUNT(*) FROM shows;
 .schema shows # shows table
 .schema ratings # different table
 
+# data types
+# BLOB binary large object like files, INTEGER, NUMERIC, REAL, TEXT
+# NOT NULL, UNIQUE
