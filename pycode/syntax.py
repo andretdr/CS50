@@ -327,7 +327,7 @@ with open("favorites.csv", "r") as file: # file closes automatically after quit
         favorite = row["language"] # find the row that is 'language', assign the value to favorite
         counts[favorite] += 1 # no need to initialise
 
-for favorite, count in counts.most_common():
+for favorite, count in counts.most_common(): # most_common return a pair of key:value. for fav, count iterate using 2 variable
     print(f"{favorite}: {count}") # favorite is the row index, counts[favorite] is the value
 
 
