@@ -55,4 +55,7 @@ UPDATE favorites SET language = 'SQL', problem = 'Fiftyville'; # updates ALL row
 ## shows.db
 
 sqlite3 shows.db
+SELECT * FROM ratings LIMIT 10;
+SELECT COUNT(*) FROM shows;
+.schema shows
 
