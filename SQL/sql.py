@@ -113,7 +113,8 @@ SELECT title FROM shows WHERE id IN (SELECT show_id FROM genres WHERE genre = 'C
 # show titles where all are comedy
 SELECT genre FROM genres WHERE show_id = (SELECT id FROM shows WHERE title = 'Catweazle');
 
-# trying to join 1 to many relational tables, result set will have dupications
+# 1 to MANY relation trying to join 1 to many relational tables, result set will have dupications
 SELECT * FROM shows JOIN genres ON shows.id = genres.show_id WHERE id = 63881;
 SELECT title, genre FROM shows JOIN genres ON shows.id = genres.show_id WHERE id = 63881;
 
+## MANY to MANY relation
