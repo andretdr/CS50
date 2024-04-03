@@ -297,13 +297,14 @@ with open("favorites.csv", "r") as file: # file closes automatically after quit
     counts = {} # dictionary
 
     for row in reader:
-        favorite = row["language"] # find the row that is 'language'
+        favorite = row["language"] # find the row that is 'language', assign the value to favorite
         if favorite in counts: # is there a key(favorites) with this name in the dictionary count?
             counts[favorite] += 1
         else:
             counts[favorite] = 1
 
-for favorites in counts:
+for favorite in counts:
+    print(f"{}: {}")
 
 
 # docs.python.org/3/library/sys.html
