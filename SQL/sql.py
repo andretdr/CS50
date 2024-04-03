@@ -58,8 +58,6 @@ sqlite3 shows.db
 SELECT * FROM ratings LIMIT 10;
 SELECT COUNT(*) FROM shows;
 
-.schema ratings # different table
-
 # data types
 # BLOB binary large object like files, INTEGER, NUMERIC, REAL, TEXT
 # NOT NULL, UNIQUE
@@ -76,3 +74,11 @@ CREATE TABLE shows (
     PRIMARY KEY(id) # id is a pri key
 );
 
+.schema ratings # different table
+
+CREATE TABLE ratings (
+    show_id INTEGER NOT NULL,
+    rating REAL NOT NULL,
+    votes INTEGER NOT NULL,
+    FOREIGN KEY(show_id) REFERENCES shows(id) # show_id is foreign key
+);
