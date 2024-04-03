@@ -17,7 +17,12 @@ sqlite3 favorites.db # open the db file
 
 SELECT * FROM favorites;
 
+#syntax AVG COUNT DISTINCT LOWER MAX MIN UPPER
 SELECT language FROM favorites; # just the laguage row
 SELECT language FROM favorites limit 10;
 SELECT COUNT(*) FROM favorites; #number of rows
-#syntax AVG COUNT DISTINCT LOWER MAX MIN UPPER
+SELECT DISTINCT(language) FROM favorites; # show distinct languages
+SELECT COUNT(DISTINCT(language)) FROM favorites; # count them
+
+
+
