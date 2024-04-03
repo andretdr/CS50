@@ -82,3 +82,6 @@ CREATE TABLE ratings (
     votes INTEGER NOT NULL,
     FOREIGN KEY(show_id) REFERENCES shows(id) # show_id is foreign key
 );
+
+SELECT show_id FROM ratings WHERE rating >= 6.0 ORDER BY rating DESC LIMIT 10;
+
