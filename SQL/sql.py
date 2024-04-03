@@ -108,6 +108,10 @@ CREATE TABLE genres (
 );
 
 SELECT * FROM genres LIMIT 10; # show all rows from genre
+SELECT show_id FROM genres WHERE genre = 'Comedy' LIMIT 10;
+SELECT title FROM shows WHERE id IN (SELECT show_id FROM genres WHERE genre = 'Comedy' LIMIT 10);
+# show titles where all are comedy
+
 
 
 
