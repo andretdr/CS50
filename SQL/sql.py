@@ -138,5 +138,8 @@ SELECT * FROM shows WHERE title = 'The Office' AND year = 2005;
 SELECT person_id FROM stars WHERE show_id = (SELECT id FROM shows WHERE title = 'The Office' AND year = 2005);
 SELECT name FROM people WHERE id IN
     (SELECT person_id FROM stars WHERE show_id =
-     (SELECT id FROM shows WHERE title = 'The Office' AND year = 2005)); # how the stars in the Office
+     (SELECT id FROM shows WHERE title = 'The Office' AND year = 2005)); # show the stars in the Office
 
+SELECT title FROM shows WHERE id IN
+    (SELECT show_id FROM stars WHERE person_id =
+     (SELECT id FROM people WHERE name = 'Steve Carell')); # show the shows which steve carell star in
