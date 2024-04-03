@@ -37,5 +37,13 @@ SELECT language, COUNT(*) AS n FROM favorites GROUP BY language ORDER BY n DESC;
 SELECT language, COUNT(*) AS n FROM favorites GROUP BY language ORDER BY n DESC LIMIT 1;
 
 # syntax INSERT INTO table (column, ...) VALUES(value, ...);
-
 INSERT INTO favorites (language, problem) VALUES('SQL', 'Fiftyville');
+
+# NULL no data
+
+# syntax DELETE FROM table WHERE condition;
+DELETE FROM favorites; # delete entire table
+DELETE FROM favorites WHERE Timestamp IS NULL; # delete rows where timestamp is null
+
+# UPDATE table SET column = value WHERE condition;
+
