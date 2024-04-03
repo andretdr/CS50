@@ -301,7 +301,7 @@ with open("favorites.csv", "r") as file: # file closes automatically after quit
         if favorite in counts: # is there a key(favorites) with this name in the dictionary count?
             counts[favorite] += 1
         else:
-            counts[favorite] = 1
+            counts[favorite] = 1 # initialisation
 
 for favorite in sorted(counts): # we can sort by key
     print(f"{favorite}: {counts[favorite]}") # favorite is the row index, counts[favorite] is the value
@@ -325,7 +325,7 @@ with open("favorites.csv", "r") as file: # file closes automatically after quit
 
     for row in reader:
         favorite = row["language"] # find the row that is 'language', assign the value to favorite
-        counts[favorite] += 1
+        counts[favorite] += 1 # no need to initialise
 
 for favorite in sorted(counts): # we can sort by key
     print(f"{favorite}: {counts[favorite]}") # favorite is the row index, counts[favorite] is the value
