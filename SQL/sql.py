@@ -32,4 +32,8 @@ SELECT language, COUNT(*) FROM favorites GROUP BY language; # GROUP BY will grou
 SELECT language, COUNT(*) FROM favorites GROUP BY language ORDER BY COUNT(*) ASC; # order by the count(*) column
 SELECT language, COUNT(*) FROM favorites GROUP BY language ORDER BY COUNT(*) DESC;
 
+SELECT language, COUNT(*) AS n FROM favorites GROUP BY language ORDER BY n DESC; # creating synonym
+
+SELECT language, COUNT(*) AS n FROM favorites GROUP BY language ORDER BY n DESC LIMIT 1;
+
 
