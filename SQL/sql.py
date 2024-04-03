@@ -150,8 +150,18 @@ JOIN stars ON shows.id = stars.show_id
 JOIN people ON stars.person_id = people.id
 WHERE name = 'Steve Carell';
 
-# or
+# or WHERE
 SELECT title FROM shows, stars, people
 WHERE shows.id = stars.show_id
 AND people.id = stars.person_id
 AND name = 'Steve Carell';
+
+# next
+
+.schema writers
+CREATE TABLE writers (
+    show_id INTEGER NOT NULL,
+    person_id INTEGER NOT NULL,
+    FOREIGN KEY(show_id) REFERENCES shows(id),
+    FOREIGN KEY(person_id) REFERENCES people(id)
+);
