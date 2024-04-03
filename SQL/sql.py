@@ -169,7 +169,9 @@ CREATE TABLE writers (
 # timer
 .timer ON
 
-# INDEXES
+# INDEXES you create a B tree, makes it faster
 CREATE INDEX name ON table (column, ...);
 
 CREATE INDEX title_index ON shows (title); # creates index on title so searches on titles are fast
+
+
