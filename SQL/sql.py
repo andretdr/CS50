@@ -97,3 +97,4 @@ SELECT title FROM shows WHERE id IN
 SELECT * FROM shows JOIN ratings ON shows.id = ratings.show_id WHERE rating >= 6.0 LIMIT 10; # join them by this value shows.id and ratings.show_id
 
 SELECT title, rating FROM shows JOIN ratings ON shows.id = ratings.show_id WHERE rating >= 6.0 LIMIT 10;
+
