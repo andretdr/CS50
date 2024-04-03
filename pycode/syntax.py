@@ -309,6 +309,7 @@ for favorite in sorted(counts): # we can sort by key
 ## different way to sort the above
 sorted(counts) # sort by keys(index)
 sorted(counts, key=counts.get) # sort by the values instead
+sorted(counts, key=counts.get, reverse=True) # sort by the values, reverse
 
 
 # docs.python.org/3/library/sys.html
