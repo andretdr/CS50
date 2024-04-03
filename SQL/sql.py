@@ -11,3 +11,4 @@ sqlite3 favorites.db # in terminal to create and load yr csv file into a db file
 # ls will show you the new db file
 
 sqlite3 favorites.db # open the db file
+.schema # shows 
