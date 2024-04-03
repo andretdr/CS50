@@ -24,5 +24,5 @@ SELECT COUNT(*) FROM favorites; #number of rows
 SELECT DISTINCT(language) FROM favorites; # show distinct languages
 SELECT COUNT(DISTINCT(language)) FROM favorites; # count them
 
-
+# syntax WHERE, LIKE, ORDER BY, LIMIT, GROUP BY
 
