@@ -359,6 +359,7 @@ rows = db.execute("SELECT * FROM users WHERE username = ? AND password = ?", use
 # unsafe
 rows = db.execute(f"SELECT * FROM users WHERE username = '{username}' AND password = '{password}'", username, password)
 
+Robert'); DROP TABLE Students;-- # -- comments in SQL, everything else ignore
 
 
 
