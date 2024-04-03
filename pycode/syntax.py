@@ -353,7 +353,11 @@ db.execute("UPDATE posts SET likes = ? WHERE id = ?" likes + 1, id);
 db.execute("COMMIT")
 
 ## SQL injection attack
+# SAFE
+rows = db.execute("SELECT * FROM users WHERE username = ? AND password = ?", username, password)
 
+# unsafe
+rows = db.execute(f"SELECT * FROM users WHERE username = '{username}' AND password = '{password}'", username, password)
 
 
 
