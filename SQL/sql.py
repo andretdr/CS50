@@ -20,7 +20,7 @@ SELECT * FROM favorites; # show whole table
 #syntax AVG COUNT DISTINCT LOWER MAX MIN UPPER
 SELECT language FROM favorites; # show all the rows showing the laguage column
 SELECT language FROM favorites limit 10;
-SELECT COUNT(*) FROM favorites; #number of rows
+SELECT COUNT(*) FROM favorites; # shows the count of number of rows
 SELECT DISTINCT(language) FROM favorites; # show distinct languages
 SELECT COUNT(DISTINCT(language)) FROM favorites; # count them
 
