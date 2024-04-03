@@ -84,4 +84,9 @@ CREATE TABLE ratings (
 );
 
 SELECT show_id FROM ratings WHERE rating >= 6.0 ORDER BY rating DESC LIMIT 10;
+# shows the show ID of top 10 shows. but the show NAME is in another table, shows.
+# so do nested
+
+SELECT * FROM shows WHERE id IN
+(SELECT show_id FROM ratings WHERE rating >= 6.0 ORDER BY rating DESC LIMIT 10);
 
