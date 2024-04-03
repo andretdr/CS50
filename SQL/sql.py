@@ -38,4 +38,4 @@ SELECT language, COUNT(*) AS n FROM favorites GROUP BY language ORDER BY n DESC 
 
 # syntax INSERT INTO table (column, ...) VALUES(value, ...);
 
-
+INSERT INTO favorites (language, problem) VALUES('SQL', 'Fiftyville');
