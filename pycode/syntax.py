@@ -289,14 +289,18 @@ with open("favorites.csv", "r") as file: # file closes automatically after quit
     for row in reader:
         print(row[1])
 
-### OR
+### OR using DictReader
 
 with open("favorites.csv", "r") as file: # file closes automatically after quit
     # once outside of with block, file will close
     reader = csv.DictReader(file) # reads in the header file, and then converts the rest of the rows to dict, not list
+
+    scratch, c, python = 0, 0, 0
+
     for row in reader:
         favorite = row["language"] # find the row that is 'language'
-        print(favorite)
+        
+
 
 
 
