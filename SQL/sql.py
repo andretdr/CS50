@@ -88,8 +88,12 @@ SELECT show_id FROM ratings WHERE rating >= 6.0 ORDER BY rating DESC LIMIT 10;
 # so do nested
 
 SELECT * FROM shows WHERE id IN
-(SELECT show_id FROM ratings WHERE rating >= 6.0 ORDER BY rating DESC LIMIT 10);
+(SELECT show_id FROM ratings WHERE rating >= 6.0 ORDER BY rating DESC LIMIT 10); # showing all the info from shows table where their ratings are > 6
+
+SELECT title FROM shows WHERE id IN
+(SELECT show_id FROM ratings WHERE rating >= 6.0 ORDER BY rating DESC LIMIT 10); # showing all the titles from shows table where their ratings are > 6
 
 # JOIN
+SELECT * FROM shows JOIN ratings ON shows.id = ratings.show_id WHERE rating >= 6.0 LIMIT 10; # join them by this value shows.id and ratings.show_id
 
-
+SELECT title, rating FROM shows JOIN ratings ON shows.id = ratings.show_id WHERE rating >= 6.0 LIMIT 10;
