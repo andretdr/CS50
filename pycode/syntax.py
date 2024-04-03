@@ -344,6 +344,17 @@ row = rows[0]
 
 print(row["n"])
 
+## BEGIN TRANSACTION, UPDATE, COMMIT
+
+db.execute("BEGIN TRANSACTION")
+rows = db.execute("SELECT likes FROM posts WHERE id = ?", id);
+likes = rows[0]["likes"]
+db.execute("UPDATE posts SET likes = ? WHERE id = ?" likes + 1, id);
+db.execute("COMMIT")
+
+## SQL injection attack
+
+
 
 
 
