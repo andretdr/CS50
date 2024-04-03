@@ -46,5 +46,5 @@ DELETE FROM favorites; # delete entire table
 DELETE FROM favorites WHERE Timestamp IS NULL; # delete rows where timestamp is null
 
 # UPDATE table SET column = value WHERE condition;
-UPDATE favorites SET language = 'SQL', problem = 'Fiftyville'; 
+UPDATE favorites SET language = 'SQL', problem = 'Fiftyville'; # updates ALL rows and columns to SQL n fiftyville
 
