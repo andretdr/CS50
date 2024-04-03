@@ -328,7 +328,7 @@ with open("favorites.csv", "r") as file: # file closes automatically after quit
         counts[favorite] += 1 # no need to initialise
 
 for favorite, count in counts.most_common():
-    print(f"{favorite}: {counts[favorite]}") # favorite is the row index, counts[favorite] is the value
+    print(f"{favorite}: {count}") # favorite is the row index, counts[favorite] is the value
 
 
 
