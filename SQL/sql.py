@@ -98,3 +98,6 @@ SELECT * FROM shows JOIN ratings ON shows.id = ratings.show_id WHERE rating >= 6
 
 SELECT title, rating FROM shows JOIN ratings ON shows.id = ratings.show_id WHERE rating >= 6.0 LIMIT 10;
 
+## 1 to 1 relationship, 1 to many relationship
+
+
