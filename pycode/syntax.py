@@ -331,6 +331,18 @@ for favorite, count in counts.most_common(): # most_common return a pair of key:
     print(f"{favorite}: {count}") # favorite is the row index, counts[favorite] is the value
 
 
+### USING SQL
+
+from cs50 import SQL
+
+db = SQL("sqlite:///favorites.db") # make sure your db is there
+
+favorite = input("Favorite: ")
+
+rows = db.execute("SELECT COUNT(*) AS n FROM favorites WHERE problem = ?", favorite) # ? is like %s
+row = rows[0]
+
+print(row["n"])
 
 
 
