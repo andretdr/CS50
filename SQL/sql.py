@@ -25,5 +25,7 @@ SELECT DISTINCT(language) FROM favorites; # show distinct languages
 SELECT COUNT(DISTINCT(language)) FROM favorites; # count them
 
 # syntax WHERE, LIKE, ORDER BY, LIMIT, GROUP BY
-SELECT COUNT(*) FROM favorites WHERE language = 'C';
+SELECT COUNT(*) FROM favorites WHERE language = 'C'; # show which of the rows have C as the language
+SELECT COUNT(*) FROM favorites WHERE language = 'C' AND problem = 'Hellow, World'; # AND the problem is 'hellow, world' as well
 
+SELECT language
