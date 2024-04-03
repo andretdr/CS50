@@ -63,3 +63,5 @@ SELECT COUNT(*) FROM shows;
 # data types
 # BLOB binary large object like files, INTEGER, NUMERIC, REAL, TEXT
 # NOT NULL, UNIQUE
+# PRIMARY KEY, FOREIGN KEY
+# unique ID in the table it comes from is pri key, referencing the ID from another table is forieng key
