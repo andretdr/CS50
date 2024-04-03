@@ -15,7 +15,7 @@ sqlite3 favorites.db # open the db file
 
 #syntax SELECT columns FROM table; # upper case the keyword cmds, lowercase the placeholders
 
-SELECT * FROM favorites;
+SELECT * FROM favorites; # show whole table
 
 #syntax AVG COUNT DISTINCT LOWER MAX MIN UPPER
 SELECT language FROM favorites; # show all the rows showing the laguage column
