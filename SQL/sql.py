@@ -28,4 +28,8 @@ SELECT COUNT(DISTINCT(language)) FROM favorites; # count them
 SELECT COUNT(*) FROM favorites WHERE language = 'C'; # show which of the rows have C as the language
 SELECT COUNT(*) FROM favorites WHERE language = 'C' AND problem = 'Hellow, World'; # AND the problem is 'hellow, world' as well
 
-SELECT language, COUNT(*)
+SELECT language, COUNT(*) FROM favorites GROUP BY language; # GROUP BY will group the languages together. Showing the column of language groups n their count
+SELECT language, COUNT(*) FROM favorites GROUP BY language ORDER BY COUNT(*) ASC; # order by the count(*) column
+SELECT language, COUNT(*) FROM favorites GROUP BY language ORDER BY COUNT(*) DESC;
+
+
