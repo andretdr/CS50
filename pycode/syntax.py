@@ -294,12 +294,10 @@ with open("favorites.csv", "r") as file: # file closes automatically after quit
 with open("favorites.csv", "r") as file: # file closes automatically after quit
     # once outside of with block, file will close
     reader = csv.DictReader(file) # reads in the header file, and then converts the rest of the rows to dict, not list
-
-    scratch, c, python = 0, 0, 0
+    counts = {} # dictionary
 
     for row in reader:
         favorite = row["language"] # find the row that is 'language'
-        if favo
 
 
 
