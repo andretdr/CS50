@@ -165,3 +165,11 @@ CREATE TABLE writers (
     FOREIGN KEY(show_id) REFERENCES shows(id),
     FOREIGN KEY(person_id) REFERENCES people(id)
 );
+
+# timer
+.timer ON
+
+# INDEXES
+CREATE INDEX name ON table (column, ...);
+
+CREATE INDEX title_index ON shows (title);
