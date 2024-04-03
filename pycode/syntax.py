@@ -271,8 +271,24 @@ def load(dicionary):
 def size():
     return len(words)
 
+import csv
 
+### file handling
 
+file = open("favorites.csv", "r")
+#do something
+close(file)
+
+### OR more commonly
+
+with open("favorites.csv", "r") as file: # file closes automatically after quit
+    # once outside of with block, file will close
+    reader = csv.reader(file)
+    next(reader) # skip the header
+    for row in reader:
+        print(row[1])
+
+        
 
 
 
@@ -314,7 +330,6 @@ import qrcode
 
 img = qrcode.make("https://youtu.be/xvFZjo5PgG0")
 img.save("qr.png", "PNG")
-
 
 
 
