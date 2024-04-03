@@ -303,8 +303,12 @@ with open("favorites.csv", "r") as file: # file closes automatically after quit
         else:
             counts[favorite] = 1
 
-for favorite in counts:
+for favorite in sorted(counts): # we can sort by key
     print(f"{favorite}: {counts[favorite]}") # favorite is the row index, counts[favorite] is the value
+
+## different way to sort the above
+sorted(counts) # sort by keys(index)
+sorted(counts, key=counts.get) # sort by the values instead
 
 
 # docs.python.org/3/library/sys.html
