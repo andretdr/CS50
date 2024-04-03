@@ -174,4 +174,13 @@ CREATE INDEX name ON table (column, ...);
 
 CREATE INDEX title_index ON shows (title); # creates index on title so searches on titles are fast
 
+# searches on Pri keys are indexed and fast. all others take time
+SELECT title FROM shows, stars, people
+WHERE shows.id = stars.show_id # show_id is foreign key
+AND people.id = stars.person_id # person_id is foreign key
+AND name = 'Steve Carell';
+
+CREATE INDEX person_index ON stars (person_id);
+CREATE INDEX show_index ON stars (show_id);
+CREATE INDEX name_index ON people (name);
 
