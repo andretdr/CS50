@@ -18,7 +18,7 @@ sqlite3 favorites.db # open the db file
 SELECT * FROM favorites;
 
 #syntax AVG COUNT DISTINCT LOWER MAX MIN UPPER
-SELECT language FROM favorites; # just the laguage row
+SELECT language FROM favorites; # show all the rows showing the laguage column
 SELECT language FROM favorites limit 10;
 SELECT COUNT(*) FROM favorites; #number of rows
 SELECT DISTINCT(language) FROM favorites; # show distinct languages
@@ -28,4 +28,4 @@ SELECT COUNT(DISTINCT(language)) FROM favorites; # count them
 SELECT COUNT(*) FROM favorites WHERE language = 'C'; # show which of the rows have C as the language
 SELECT COUNT(*) FROM favorites WHERE language = 'C' AND problem = 'Hellow, World'; # AND the problem is 'hellow, world' as well
 
-SELECT language
+SELECT language, COUNT(*)
