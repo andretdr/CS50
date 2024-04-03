@@ -118,7 +118,7 @@ SELECT * FROM shows JOIN genres ON shows.id = genres.show_id WHERE id = 63881;
 SELECT title, genre FROM shows JOIN genres ON shows.id = genres.show_id WHERE id = 63881;
 
 ## MANY to MANY relation
-sqlite> .schema stars
+.schema stars
 CREATE TABLE stars (
     show_id INTEGER NOT NULL,
     person_id INTEGER NOT NULL,
@@ -126,7 +126,13 @@ CREATE TABLE stars (
     FOREIGN KEY(person_id) REFERENCES people(id)
 );
 
-
+.schema people
+CREATE TABLE people (
+    id INTEGER,
+    name TEXT NOT NULL,
+    birth NUMERIC,
+    PRIMARY KEY(id)
+);
 
 SELECT * FROM shows WHERE title = 'The Office' AND year = 2005;
 
