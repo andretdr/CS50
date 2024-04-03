@@ -307,9 +307,9 @@ for favorite in sorted(counts): # we can sort by key
     print(f"{favorite}: {counts[favorite]}") # favorite is the row index, counts[favorite] is the value
 
 ## different way to sort the above
-sorted(counts) # sort by keys(index)
-sorted(counts, key=counts.get) # sort by the values instead
-sorted(counts, key=counts.get, reverse=True) # sort by the values, reverse. named parameters
+for favorite in sorted(counts) # sort by keys(index)
+for favorite in sorted(counts, key=counts.get) # sort by the values instead
+for favorite in sorted(counts, key=counts.get, reverse=True) # sort by the values, reverse. named parameters
 
 
 ### OR using collections
@@ -321,13 +321,13 @@ from collections import Counter
 with open("favorites.csv", "r") as file: # file closes automatically after quit
     # once outside of with block, file will close
     reader = csv.DictReader(file) # reads in the header file, and then converts the rest of the rows to dict, not list
-    counts = Counter()
+    counts = Counter() # counter is an object/ class with some functionality
 
     for row in reader:
         favorite = row["language"] # find the row that is 'language', assign the value to favorite
         counts[favorite] += 1 # no need to initialise
 
-for favorite in sorted(counts): # we can sort by key
+for favorite, count in counts.most_common():
     print(f"{favorite}: {counts[favorite]}") # favorite is the row index, counts[favorite] is the value
 
 
