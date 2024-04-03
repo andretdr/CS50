@@ -147,6 +147,7 @@ SELECT title FROM shows WHERE id IN
 # or
 SELECT title FROM shows
 JOIN stars ON shows.id = stars.show_id
-JOIN people ON stars.person_id = people.id;
+JOIN people ON stars.person_id = people.id
+WHERE name = 'Steve Carell';
 
 
