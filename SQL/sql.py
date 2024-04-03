@@ -100,6 +100,13 @@ SELECT title, rating FROM shows JOIN ratings ON shows.id = ratings.show_id WHERE
 
 ## 1 to 1 relationship, 1 to many relationship
 
+sqlite> .schema genres
+CREATE TABLE genres (
+    show_id INTEGER NOT NULL,
+    genre TEXT NOT NULL,
+    FOREIGN KEY(show_id) REFERENCES shows(id)
+);
+
 SELECT * FROM genres LIMIT 10; # show all rows from genre
 
 
