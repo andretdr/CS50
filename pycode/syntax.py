@@ -273,7 +273,7 @@ def size():
 
 import csv
 
-### file handling
+### file handling. FLATFILES CSV txt
 
 file = open("favorites.csv", "r")
 #do something
