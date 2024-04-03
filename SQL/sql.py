@@ -47,3 +47,4 @@ DELETE FROM favorites WHERE Timestamp IS NULL; # delete rows where timestamp is 
 
 # UPDATE table SET column = value WHERE condition;
 
+
