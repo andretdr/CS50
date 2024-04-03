@@ -57,7 +57,7 @@ UPDATE favorites SET language = 'SQL', problem = 'Fiftyville'; # updates ALL row
 sqlite3 shows.db
 SELECT * FROM ratings LIMIT 10;
 SELECT COUNT(*) FROM shows;
-.schema shows # shows table
+
 .schema ratings # different table
 
 # data types
@@ -65,3 +65,14 @@ SELECT COUNT(*) FROM shows;
 # NOT NULL, UNIQUE
 # PRIMARY KEY, FOREIGN KEY
 # unique ID in the table it comes from is pri key, referencing the ID from another table is forieng key
+
+.schema shows # shows table
+
+CREATE TABLE shows (
+    id INTEGER,
+    title TEXT NOT NULL,
+    year NUMERIC,
+    episodes INTEGER,
+    PRIMARY KEY(id) # id is a pri key
+);
+
