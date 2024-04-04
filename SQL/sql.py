@@ -184,3 +184,7 @@ CREATE INDEX person_index ON stars (person_id);
 CREATE INDEX show_index ON stars (show_id);
 CREATE INDEX name_index ON people (name);
 
+# WILDCARD CHARS
+SELECT name FROM songs WHERE name LIKE '%feat%';
+
+https://www.w3schools.com/sql/sql_wildcards.asp
