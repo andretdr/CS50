@@ -28,7 +28,7 @@ SELECT people.name FROM people, bank_accounts WHERE people.id = bank_accounts.pe
 
 
 -- checking call logs
-SELECT * FROM phone_calls WHERE year = 2023 AND month = 7 AND day = 28 AND duration < 60;
+SELECT caller FROM phone_calls WHERE year = 2023 AND month = 7 AND day = 28 AND duration < 60;
 -- gives me callers and receivers numbers
 
 
