@@ -24,11 +24,9 @@ SELECT people.name FROM people, bank_accounts WHERE people.id = bank_accounts.pe
     (SELECT account_number FROM atm_transactions WHERE year = 2023 AND month = 7 and day = 28 AND atm_location = 'Leggett Street' AND transaction_type = 'withdraw');
 -- returns the people who were at the ATM
 
--- checking intersection of the 2 sets
-
-
 -- checking call logs
 SELECT caller FROM phone_calls WHERE year = 2023 AND month = 7 AND day = 28 AND duration < 60;
--- gives me callers and receivers numbers
+-- selecting the people who were calling on the day, less than 1 minute
+SELECT name FROM people WHERE phone_number IN (SELECT caller FROM phone_calls WHERE year = 2023 AND month = 7 AND day = 28 AND duration < 60);
 
 
