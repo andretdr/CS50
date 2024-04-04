@@ -17,7 +17,10 @@ SELECT * FROM bakery_security_logs WHERE year = '2023' AND month = 7 AND day = 2
 -- checking ATM
 SELECT account_number FROM atm_transactions WHERE year = 2023 AND month = 7 and day = 28 AND atm_location = 'Leggett Street' AND transaction_type = 'withdraw';
 -- account numbers
--- 28500762 28296815 76054385 49610011 16153065 25506511 81061156 26013199
+-- checking against bank details
+SELECT people.name FROM people, bank_accounts WHERE people.id = bank_accounts.person_id AND bank_accounts.account_number IN
+    (SELECT account_number FROM atm_transactions WHERE year = 2023 AND month = 7 and day = 28 AND atm_location = 'Leggett Street' AND transaction_type = 'withdraw');
+-- returns the people who were at the ATM
 
 -- checking call logs
 SELECT * FROM phone_calls WHERE year = 2023 AND month = 7 AND day = 28 AND duration < 60;
