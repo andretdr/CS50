@@ -8,7 +8,7 @@ SELECT * FROM crime_scene_reports WHERE year = '2023' AND month = 7 AND street =
 SELECT * FROM interviews WHERE year = 2023 AND month = 7 AND day = 28;
 -- within 10 minutes of the theft, so 1015 - 1025, he got into a car n left
 -- earlier that morning the theif was at ATM on leggett street. Eugene recognises him
--- before he left, 1015 - 1025 he called someone, less then a minute to buy a flight ticket. flight on 29th, earliest flight
+-- before he left, 1015 - 1025 he called someone, less then a minute to buy a flight ticket. flight on 29th, earliest flight out of fiftyville
 
 -- checking bakery logs on the 28th, manually checking aruond 1015
 SELECT license_plate FROM bakery_security_logs WHERE year = '2023' AND month = 7 AND day = 28 AND hour = 10 AND minute > 15 AND minute < 25;
