@@ -15,7 +15,7 @@ SELECT * FROM bakery_security_logs WHERE year = '2023' AND month = 7 AND day = 2
 -- afew cars 5P2BI95 94KL13X 6P58WS2 4328GD8 G412CB7 L93JTIZ 322W7JE 0NTHK55
 
 -- checking ATM
-SELECT * FROM atm_transactions WHERE year = 2023 AND month = 7 and day = 28 AND atm_location = 'Leggett Street' AND transaction_type = 'withdraw';
+SELECT account_number FROM atm_transactions WHERE year = 2023 AND month = 7 and day = 28 AND atm_location = 'Leggett Street' AND transaction_type = 'withdraw';
 -- account numbers
 -- 28500762 28296815 76054385 49610011 16153065 25506511 81061156 26013199
 
