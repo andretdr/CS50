@@ -39,4 +39,4 @@ SELECT * FROM airports WHERE id = 4;
 
 SELECT passport_number FROM passengers WHERE flight_id = 36;
 -- match with people
-
+SELECT name FROM people WHERE passport_number IN (SELECT passport_number FROM passengers WHERE flight_id = 36);
