@@ -33,7 +33,7 @@ SELECT name FROM people WHERE phone_number IN (SELECT caller FROM phone_calls WH
 -- airport flight log
 SELECT * FROM flights, airports WHERE flights.origin_airport_id = airports.id AND year = 2023 AND month = 7 AND day = 29 AND airports.city = 'Fiftyville' ORDER BY flights.hour
 ASC, flights.minute ASC;
--- dest airport id is 4
+-- dest airport id is 4, flight id is 36
 SELECT * FROM airports WHERE id = 4;
 -- New York City
 
