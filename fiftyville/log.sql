@@ -17,7 +17,8 @@ SELECT name FROM people WHERE license_plate IN
     (SELECT license_plate FROM bakery_security_logs WHERE year = '2023' AND month = 7 AND day = 28 AND hour = 10 AND minute > 15 AND minute < 25);
 
 -- checking ATM
-SELECT account_number FROM atm_transactions WHERE year = 2023 AND month = 7 and day = 28 AND atm_location = 'Leggett Street' AND transaction_type = 'withdraw';
+SELECT account_number FROM atm_transactions
+    WHERE year = 2023 AND month = 7 and day = 28 AND atm_location = 'Leggett Street' AND transaction_type = 'withdraw';
 -- account numbers
 -- checking against bank details
 SELECT people.name FROM people, bank_accounts WHERE people.id = bank_accounts.person_id AND bank_accounts.account_number IN
@@ -29,8 +30,8 @@ SELECT caller FROM phone_calls WHERE year = 2023 AND month = 7 AND day = 28 AND 
 SELECT name FROM people WHERE phone_number IN (SELECT caller FROM phone_calls WHERE year = 2023 AND month = 7 AND day = 28 AND duration < 60);
 
 -- airport flight log
-SELECT * FROM flights, airports WHERE flights.origin_airport_id = airports.id AND year = 2023 AND month = 7 AND day = 29 AND airports.city = 'Fiftyville' ORDER BY flights.hour
-ASC, flights.minute ASC;
+SELECT * FROM flights, airports WHERE flights.origin_airport_id = airports.id
+    AND year = 2023 AND month = 7 AND day = 29 AND airports.city = 'Fiftyville' ORDER BY flights.hour ASC, flights.minute ASC;
 -- dest airport id is 4, flight id is 36
 SELECT * FROM airports WHERE id = 4;
 -- New York City
@@ -60,8 +61,8 @@ SELECT name FROM people WHERE phone_number IN (SELECT receiver FROM phone_calls 
 
 -- intersecting
 SELECT name FROM people WHERE phone_number IN (SELECT receiver FROM phone_calls WHERE year = 2023 AND month = 7 AND day = 28 AND duration < 60)
-INTERSECT
-SELECT name FROM people WHERE passport_number IN (SELECT passport_number FROM passengers WHERE flight_id = 36);
+    INTERSECT
+    SELECT name FROM people WHERE passport_number IN (SELECT passport_number FROM passengers WHERE flight_id = 36);
 
 -- DORIS
 
