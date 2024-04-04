@@ -21,3 +21,6 @@ SELECT * FROM atm_transactions WHERE year = 2023 AND month = 7 and day = 28 AND 
 
 -- checking call logs
 SELECT * FROM phone_calls WHERE year = 2023 AND month = 7 AND day = 28 AND duration < 60;
+-- gives me callers and receivers numbers
+
+
