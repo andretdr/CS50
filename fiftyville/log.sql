@@ -19,4 +19,5 @@ SELECT * FROM atm_transactions WHERE year = 2023 AND month = 7 and day = 28 AND 
 -- account numbers
 -- 28500762 28296815 76054385 49610011 16153065 25506511 81061156 26013199
 
-
+-- checking call logs
+SELECT * FROM phone_calls WHERE year = 2023 AND month = 7 AND day = 28 AND duration < 60;
