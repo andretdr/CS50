@@ -30,3 +30,8 @@ SELECT caller FROM phone_calls WHERE year = 2023 AND month = 7 AND day = 28 AND 
 SELECT name FROM people WHERE phone_number IN (SELECT caller FROM phone_calls WHERE year = 2023 AND month = 7 AND day = 28 AND duration < 60);
 
 
+-- airport flight log
+SELECT * FROM flights, airports WHERE flights.origin_airport_id = airports.id AND year = 2023 AND month = 7 AND day = 29 AND airports.city = 'Fiftyville' ORDER BY flights.hour
+ASC, flights.minute ASC;
+-- dest airport id is 4
+
