@@ -37,4 +37,6 @@ ASC, flights.minute ASC;
 SELECT * FROM airports WHERE id = 4;
 -- New York City
 
+SELECT passport_number FROM passengers WHERE flight_id = 36;
+-- match with people
 
