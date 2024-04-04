@@ -11,8 +11,9 @@ SELECT * FROM interviews WHERE year = 2023 AND month = 7 AND day = 28;
 -- before he left, 1015 - 1025 he called someone, less then a minute to buy a flight ticket. flight on 29th, earliest flight
 
 -- checking bakery logs on the 28th, manually checking aruond 1015
-SELECT * FROM bakery_security_logs WHERE year = '2023' AND month = 7 AND day = 28;
--- afew cars 5P2BI95 94KL13X 6P58WS2 4328GD8 G412CB7 L93JTIZ 322W7JE 0NTHK55
+SELECT license_plate FROM bakery_security_logs WHERE year = '2023' AND month = 7 AND day = 28 AND hour = 10 AND minute > 15 AND minute < 25;
+-- checking against people log
+
 
 
 
