@@ -6,5 +6,5 @@ SELECT * FROM crime_scene_reports WHERE year = '2023' AND month = 7 AND street =
 
 -- checking bakery logs on the 28th, manually checking aruond 1015
 SELECT * FROM bakery_security_logs WHERE year = '2023' AND month = 7 AND day = 28;
--- afew cars SELECT * FROM bakery_security_logs WHERE year = '2023' AND month = 7 AND day = 28;
+-- afew cars R3G7486 13FNH73 5P2BI95
 
