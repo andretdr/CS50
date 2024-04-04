@@ -36,6 +36,8 @@ SELECT language, COUNT(*) AS n FROM favorites GROUP BY language ORDER BY n DESC;
 
 SELECT language, COUNT(*) AS n FROM favorites GROUP BY language ORDER BY n DESC LIMIT 1;
 
+ORDER BY rating DESC, title ASC; # order by ratings in descening order, if duplicates, then order ascending by title
+
 # syntax INSERT INTO table (column, ...) VALUES(value, ...);
 INSERT INTO favorites (language, problem) VALUES('SQL', 'Fiftyville');
 
