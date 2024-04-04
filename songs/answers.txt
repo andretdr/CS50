@@ -1,5 +1,4 @@
 It would be uptempo, energetic and a touch moody
 
 If there are just afew songs with very drastic differences in their danceability, energy and valence, their values might skew and average the wrong way.
-Instead, it might be better to take a median value, or calculate an average of the 
-
+Instead, it might be better to take a median value, or calculate an average of the most common range of values
