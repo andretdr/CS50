@@ -55,14 +55,10 @@ SELECT name FROM people WHERE license_plate IN
     -- BRUCE
 
 -- checking call logs for reciever
-SELECT receiver FROM phone_calls WHERE year = 2023 AND month = 7 AND day = 28 AND duration < 60;
+SELECT receiver FROM phone_calls WHERE year = 2023 AND month = 7 AND day = 28 AND duration < 60 AND caller IN (SELECT phone_number FROM people WHERE name = 'Bruce');
 -- selecting the people who were receiving on the day, less than 1 minute
-SELECT name FROM people WHERE phone_number IN (SELECT receiver FROM phone_calls WHERE year = 2023 AND month = 7 AND day = 28 AND duration < 60);
+SELECT name FROM people WHERE phone_number IN (SELECT receiver FROM phone_calls WHERE year = 2023 AND month = 7 AND day = 28 AND duration < 60 AND caller IN (SELECT phone_number FROM people WHERE name = 'Bruce'));
 
--- intersecting
-SELECT name FROM people WHERE phone_number IN (SELECT receiver FROM phone_calls WHERE year = 2023 AND month = 7 AND day = 28 AND duration < 60)
-    INTERSECT
-    SELECT name FROM people WHERE passport_number IN (SELECT passport_number FROM passengers WHERE flight_id = 36);
+    -- ROBIN
 
--- DORIS
 
