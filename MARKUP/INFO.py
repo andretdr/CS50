@@ -22,7 +22,7 @@ GET / HTTP/2
 Host: www.harvard.edu    # http header
 
 # server response
-HTTP/2 200    # acknowledgment of version being used, status, 200
+HTTP/2 200    # acknowledgment of version being used, status, 200 means OK, 301 means moved permanently
 Content-Type: text/html    # what kind of content?
 
 # terminal
