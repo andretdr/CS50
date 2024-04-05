@@ -21,11 +21,11 @@ POST
 GET / HTTP/2
 Host: www.harvard.edu    # http header
 
-# server reply
+# server response
 HTTP/2 200    # acknowledgment of version being used, status, 200
 Content-Type: text/html    # what kind of content?
 
 # terminal
-curl -I https://www.harvard.edu/ # connect to URL
+curl -I https://www.harvard.edu/ # connect to URL, return the server response
 
 
