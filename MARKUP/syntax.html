@@ -181,25 +181,25 @@ css
 </html>
 
 <!--improvement seperating style w data-->
-<head>
-    <style> <!-- style tag -->
+<head> <!-- style tag -->
+    <style>
 
         .centered <!-- creating your own class style. call it any name, prefix with . -->
         {
             text-align: centre;
         }
 
-        .header
+        .large
         {
             font-size: large;
         }
 
-        .main
+        .medium
         {
             font-size: medium;
         }
 
-        .footer
+        .small
         {
             font-size: small;
         }
@@ -207,14 +207,14 @@ css
     </style>
     <title>home</title>
 </head>
-<body>
-    <header> <!--sementic tags just for readability -->
+<body class="centred">
+    <header class="large"> <!--sementic tags just for readability -->
         Harvard
     </header>
-    <main>
+    <main class="medium">
         Welcome home
     </main>
-    <footer>
+    <footer class="small">
         Copyright &#169;
     </footer>
 </body>
