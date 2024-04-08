@@ -246,7 +246,17 @@ css
     <head>
         <style>
 
-            a <!-- anchor tag-->
+            #harvard <!-- # is unique id, created below . is class -->
+            {
+                color: red;
+            }
+
+            #yale <!-- unique id created below-->
+            {
+                color: blue;
+            }
+
+            a <!-- represents the literal name of the tag -->
             {
                 color: red;
                 text-decoration: none; <!-- default is underline-->
@@ -262,7 +272,8 @@ css
         <title>link</title>
     </head>
     <body>
-            Visit <a href="https://www.harvard.edu/">Harvard</a>.
+            Visit <a href="https://www.harvard.edu/" id="harvard">Harvard</a> <!-- create unique id. can be any thing-->
+            or <a href="https://www.yale.edu/" id="yale">Yale</a>.
     </body>
 
 </html>
