@@ -120,17 +120,25 @@ www.google.com/search?q=cats
 
 
 
-<!-- REGEX -->
+<!-- REGEX
+. any single character
+* zero or more times
++ one or more times
+? 0 or 1 time
+{n} n occurrences
+{n,m} n to m occurrences
+
+-->
 <html  lang="en">
     <head>
         <title>search</title>
     </head>
     <body>
         <form>
-            <input autocomplete="off" autofocus name="email" placeholder="Email" type="email">
+            <!-- use regex to filter patterns-->
+            <input autocomplete="off" autofocus name="email" pattern=".+@.+/.edu" placeholder="Email" type="email">
             <button>Register</button>
         </form>
-
     </body>
 </html>
 
