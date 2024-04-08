@@ -223,29 +223,7 @@ css
 <!-- improving more, creating your .css -->
 
 <head> <!-- style tag -->
-    <style>
-
-        .centered <!-- creating your own class style. call it any name, prefix with . -->
-        {
-            text-align: centre;
-        }
-
-        .large
-        {
-            font-size: large;
-        }
-
-        .medium
-        {
-            font-size: medium;
-        }
-
-        .small
-        {
-            font-size: small;
-        }
-
-    </style>
+    <link href="syntax.css" rel="stylesheet"> <!-- using the link to the .css style file -->
     <title>home</title>
 </head>
 <body class="centred"> <!-- using the classes from above -->
@@ -259,5 +237,33 @@ css
         Copyright &#169;
     </footer>
 </body>
+</html>
+
+<!-- another example html -->
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <style>
+
+            a <!-- anchor tag-->
+            {
+                color: red;
+                text-decoration: none; <!-- default is underline-->
+            }
+
+            a:hover
+            {
+                text-decoration: underline; <!-- underline when mouse hover -->
+            }
+
+        </style>
+
+        <title>link</title>
+    </head>
+    <body>
+            Visit <a href="https://www.harvard.edu/">Harvard</a>.
+    </body>
+
 </html>
 
