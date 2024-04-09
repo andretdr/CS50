@@ -82,50 +82,50 @@
 
             <div class="section">
                 <h2>Part 2: Free Response</h2>
-                	<h3>
-				What is the name of Garfield's dog buddy?
-			</h3>
-			<h3>
-				<answertxt>Correct!</answertxt>
-			</h3>
-			<form>
-				<input autocomplete="off" placeholder="Answer" id="answer" type="text">
-				<input type="submit">
+                <h3>
+				    What is the name of Garfield's dog buddy?
+			    </h3>
+			    <h3>
+				    <answertxt>Correct!</answertxt>
+			    </h3>
+			    <form>
+				    <input autocomplete="off" placeholder="Answer" id="answer" type="text">
+				    <input type="submit">
 
-			</form>
-			<script>
-				function correct(){
-					let ans = document.querySelector('answertxt');
-					ans.style.visibility = 'visible';
-					ans.innerHTML = 'Correct!';
-					ans.style.color = 'green';
-				}
+			    </form>
+			    <script>
+				    function correct(){
+					    let ans = document.querySelector('answertxt');
+    					ans.style.visibility = 'visible';
+	    				ans.innerHTML = 'Correct!';
+		    			ans.style.color = 'green';
+			    	}
 
-				function incorrect(){
-					let ans = document.querySelector('answertxt');
-					ans.style.visibility = 'visible';
-					ans.innerHTML = 'Incorrect';
-					ans.style.color = 'red';
+    				function incorrect(){
+	    				let ans = document.querySelector('answertxt');
+		    			ans.style.visibility = 'visible';
+			    		ans.innerHTML = 'Incorrect';
+				    	ans.style.color = 'red';
 
-				}
+				    }
 
-				document.querySelector('answertxt').style.visibility = 'hidden';
+    				document.querySelector('answertxt').style.visibility = 'hidden';
 
-				document.addEventListener('DOMContentLoaded', function() {
-					document.querySelector('form').addEventListener('submit', function(event) {
-						let ans = document.querySelector('answertxt');
-						const pattern = /\boddie\b/i;
-						let text = document.querySelector('#answer').value;
+	    			document.addEventListener('DOMContentLoaded', function() {
+		    			document.querySelector('form').addEventListener('submit', function(event) {
+			    			let ans = document.querySelector('answertxt');
+				    		const pattern = /\boddie\b/i;
+					    	let text = document.querySelector('#answer').value;
 
-						if (pattern.test(text))
-							correct();
-						else
-							incorrect();
+						    if (pattern.test(text))
+							    correct();
+    						else
+	    						incorrect();
 
-						event.preventDefault(); // prevents it from submitting the form to server, keeps user here
-					});
-				});
-			</script>
+		    				event.preventDefault(); // prevents it from submitting the form to server, keeps user here
+			    		});
+				    });
+			    </script>
             </div>
         </div>
     </body>
