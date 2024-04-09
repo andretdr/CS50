@@ -443,7 +443,7 @@ css
 
             let input = document.querySelector('input'); // use query selector function to get the input textbox
             input.addEventListener('keyup', function(event) {  // add a listener to the input for event keyup
-                let html = ''; //when it hears the event it will do the following
+                let html = ''; // when it hears the event it will do the following. initiate html variable.
                 if (input.value) { // if the input has a value
                     for (word of WORDS) { //similar to for loop, words IN WORDS}
                         if (word.startsWith(input.value)){ // if the word starts with
