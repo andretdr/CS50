@@ -114,9 +114,7 @@
 				document.addEventListener('DOMContentLoaded', function() {
 					document.querySelector('form').addEventListener('submit', function(event) {
 						let ans = document.querySelector('answertxt');
-						let text = document.querySelector('#answer').value;
-						let result = text.match(/oddie/i);
-						if length(result) > 0
+						if (document.querySelector('#answer').value == 'oddie')
 							correct();
 						else
 							incorrect();
