@@ -330,7 +330,7 @@ css
             <input autocomplete="off" autofocus id="name" placeholder="Name"> <!-- given the input the unique #name ID -->
             <input type="submit">
         </form>
-        <script>
+        <script> <!-- select from this document, the form, use method add listener to listen for submit, you will call the function(event) alert(...)-->
             document.querySelector('form').addEventListener('submit', function(event) {
                 alert('hello, ' + document.querySelector('#name').value);
                 event.preventDefault();
