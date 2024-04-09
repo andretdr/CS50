@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap" rel="stylesheet">
+        <link href="style.css" rel="stylesheet">
+        <title>Trivia!</title>
+        <script>
+            // TODO: Add code to check answers to questions
+        </script>
+    </head>
+    <body>
+        <div class="header">
+            <h1>Trivia!</h1>
+        </div>
+
+        <div class="container">
+            <div class="section">
+                <h2>Part 1: Multiple Choice </h2>
+                	<h3>
+			            How much wood does a wood chuck chuck?
+			        </h3>
+			<table class="center">
+				<tr>
+					<td><button id="a1">3</button></td>
+					<td><button id="a2">5</button></td>
+					<td><button id="a3">9</button></td>
+				</tr>
+				<tr>
+					<td><a1txt>INCORRECT</a1txt></td>
+					<td><a2txt>INCORRECT</a2txt></td>
+					<td><a3txt>CORRECT</a3txt></td>
+				</tr>
+			</table>
+			</p>
+			<script>
+				function reset(){
+					document.querySelector('#a1').style.color = 'black';
+					document.querySelector('#a1').style.borderColor = 'grey';
+
+					document.querySelector('#a2').style.color = 'black';
+					document.querySelector('#a2').style.borderColor = 'grey';
+
+					document.querySelector('#a3').style.color = 'black';
+					document.querySelector('#a3').style.borderColor = 'grey';
+
+					document.querySelector('a1txt').style.visibility = 'hidden';
+					document.querySelector('a2txt').style.visibility = 'hidden';
+					document.querySelector('a3txt').style.visibility = 'hidden';
+
+				}
+
+				reset();
+				let a1button = document.querySelector('#a1');
+				let a2button = document.querySelector('#a2');
+				let a3button = document.querySelector('#a3');
+
+				a1button.addEventListener('click', function(event){
+					reset();
+					a1button.style.color = 'red';
+					a1button.style.borderColor = 'red';
+					document.querySelector('a1txt').style.visibility = 'visible';
+					document.querySelector('a1txt').style.color = 'red';
+					});
+				document.querySelector('#a2').addEventListener('click', function(event){
+					reset();
+					a2button.style.color = 'red';
+					a2button.style.borderColor = 'red';
+					document.querySelector('a2txt').style.visibility = 'visible';
+					document.querySelector('a2txt').style.color = 'red';
+					});
+				document.querySelector('#a3').addEventListener('click', function(event){
+					reset();
+					a3button.style.color = 'green';
+					a3button.style.borderColor = 'green';
+					document.querySelector('a3txt').style.visibility = 'visible';
+					document.querySelector('a3txt').style.color = 'green';
+					});
+
+			</script>
+            </div>
+
+            <div class="section">
+                <h2>Part 2: Free Response</h2>
+                <h3>
+				    What is the name of Garfield's dog buddy?
+			    </h3>
+			    <h3>
+				    <answertxt>Correct!</answertxt>
+			    </h3>
+			    <form>
+				    <input autocomplete="off" placeholder="Answer" id="answer" type="text">
+				    <input type="submit">
+
+			    </form>
+			    <script>
+				    function correct(){
+					    let ans = document.querySelector('answertxt');
+    					ans.style.visibility = 'visible';
+	    				ans.innerHTML = 'Correct!';
+		    			ans.style.color = 'green';
+			    	}
+
+    				function incorrect(){
+	    				let ans = document.querySelector('answertxt');
+		    			ans.style.visibility = 'visible';
+			    		ans.innerHTML = 'Incorrect';
+				    	ans.style.color = 'red';
+
+				    }
+
+    				document.querySelector('answertxt').style.visibility = 'hidden';
+
+	    			document.addEventListener('DOMContentLoaded', function() {
+		    			document.querySelector('form').addEventListener('submit', function(event) {
+			    			let ans = document.querySelector('answertxt');
+				    		const pattern = /\boddie\b/i;
+					    	let text = document.querySelector('#answer').value;
+
+						    if (pattern.test(text))
+							    correct();
+    						else
+	    						incorrect();
+
+		    				event.preventDefault(); // prevents it from submitting the form to server, keeps user here
+			    		});
+				    });
+			    </script>
+            </div>
+        </div>
+    </body>
+</html>
