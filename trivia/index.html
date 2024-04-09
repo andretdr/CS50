@@ -85,9 +85,9 @@
                 	<h3>
 				What is the name of Garfield's dog buddy?
 			</h3>
-			<p>
-				<answertxt>'Correct!'</answertxt>
-			</p>
+			<h3>
+				<answertxt>Correct!</answertxt>
+			</h3>
 			<form>
 				<input autocomplete="off" placeholder="Answer" id="answer" type="text">
 				<input type="submit">
@@ -96,22 +96,30 @@
 			<script>
 				function correct(){
 					let ans = document.querySelector('answertxt');
+					ans.style.visibility = 'visible';
+					ans.innerHTML = 'Correct!';
 					ans.style.color = 'green';
 				}
 
 				function incorrect(){
 					let ans = document.querySelector('answertxt');
+					ans.style.visibility = 'visible';
+					ans.innerHTML = 'Incorrect';
 					ans.style.color = 'red';
 
 				}
 
-				incorrect();
+				document.querySelector('answertxt').style.visibility = 'hidden';
 
+				document.addEventListener('DOMContentLoaded', function() {
+					document.querySelector('form').addEventListener('submit', function(event) {
+						let ans = document.querySelector('answertxt');
+						if (document.querySelector('#answer').value == 'oddie')
+							correct();
+						else
+							incorrect();
 
-//				document.addEventListener('DOMContentLoaded', function() {
-//					document.querySelector('form').addEventListener('submit', function(event) {
-//						let ans = document.querySelector('answertxt');
-//						ans.style.color = 'green';
+						event.preventDefault(); // prevents it from submitting the form to server, keeps user here
 					});
 				});
 			</script>
