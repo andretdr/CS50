@@ -340,7 +340,31 @@ css
 
 </html>
 
-<!-- javascript example 3 -->
+<!-- javascript example 3 DOMContentLoaded-->
+
+<html lang="en">
+    <head>
+    </head>
+    <body> <!-- different way to do same thing, but seperate the script from the html more. More common -->
+        <form>
+            <input autocomplete="off" autofocus id="name" placeholder="Name"> <!-- given the input the unique #name ID -->
+            <input type="submit">
+        </form>
+        <script> <!-- DOM document object model -->
+            document.addEventListener('DOMContentLoaded', function() { <!-- wait for all content to be pulled in and loaded first, then call the function() {...}-->
+                document.querySelector('form').addEventListener('submit', function(event) { <!-- select from this document, the form, use method add listener to listen for submit, you will call the function(event) alert(...)-->
+                    alert('hello, ' + document.querySelector('#name').value);
+                    event.preventDefault(); <!-- dont submit to server, keep user here -->
+                });
+            });
+        </script>
+
+
+    </body>
+
+</html>
+
+<!-- javascript example 4-->
 
 <html lang="en">
     <head>
