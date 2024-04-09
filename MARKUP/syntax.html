@@ -301,24 +301,44 @@ css
 <!-- javascript -->
 
 <html lang="en">
-    <head> <!-- can insert a style tag AND a script tag-->
+    <head> <!-- can insert a style tag AND a script tag, javascript-->
         <script>
 
             function greet()
             {
                 alert('hello,' + document.querySelector('#name').value); <!-- select any tag in this html document, so here select the unique #name ID's value-->
             }
-
-
-
-
-
-            </form>
         </script>
     </head>
     <body>
         <form onsubmit="greet(); return false;"> <!-- return false means dont submit to server. some javasript here -->
             <input autocomplete="off" autofocus id="name" placeholder="Name"> <!-- given the input the unique #name ID -->
+        </form>
     </body>
 
 </html>
+
+<!-- javascript example 2 -->
+
+<!-- javascript -->
+
+<html lang="en">
+    <head>
+    </head>
+    <body> <!-- different way to do same thing, but seperate the script from the html more. More common -->
+        <form>
+            <input autocomplete="off" autofocus id="name" placeholder="Name"> <!-- given the input the unique #name ID -->
+            <input type="submit">
+        </form>
+        <script>
+            document.querySelector('form').addEventListener('submit', function(event) {
+                alert('hello, ' + document.querySelector('#name').value);
+                event.preventDefault();
+            });
+        </script>
+
+
+    </body>
+
+</html>
+
