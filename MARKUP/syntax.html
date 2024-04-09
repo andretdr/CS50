@@ -446,7 +446,9 @@ css
                 let html = ''; //when it hears the event it will do the following
                 if (input.value) { // if the input has a value
                     for (word of WORDS) { //similar to for loop, words IN WORDS}
-
+                        if (word.startsWith(input.value)){ // if the word starts with
+                            html += `<li>${word}</li>`; // add or concatonate to html variable
+                        }
                 }
 
 
