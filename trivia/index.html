@@ -19,35 +19,64 @@
 		</h3>
 		<table class="center">
 			<tr>
-				<td class="incorrect"><button>3</button></td>
-				<td class="incorrect"><button>5</button></td>
-				<td class="incorrect"><button>7</button></td>
-				<td class="correct"><button>9</button></td>
-				<td class="incorrect"><button>12</button></td>
-				<h4 class="feedback"></h4>
+				<td><button class="incorrect">3</button></td>
+				<td><button class="incorrect">5</button></td>
+				<td><button class="incorrect">7</button></td>
+				<td><button class="correct">9</button></td>
+				<td><button class="incorrect">12</button></td>
+			</tr>
+			<tr>
+				<td class="feedback">Incorrect</td>
+				<td class="feedback">Incorrect</td>
+				<td class="feedback">Incorrect</td>
+				<td class="feedbackcorrect">Correct!</td>
+				<td class="feedback">Incorrect</td>
+
 			</tr>
 		</table>
 		<script>
+			function reset(){
+				let incorrect = document.querySelectorAll('.incorrect'); // a list of all incorrect class
+				let feedback = document.querySelectorAll('.feedback');
+				for (let i = 0; i < incorrect.length; i++) {
+					incorrect[i].style.color = 'black';
+					incorrect[i].style.borderColor = '';
+					feedback[i].style.visibility = 'hidden';
+				}
+				let correct = document.querySelector('.correct');
+				let feedbackcorrect = document.querySelector('.feedbackcorrect');
+
+				correct.style.color = 'black';
+				correct.style.borderColor = '';
+				feedbackcorrect.style.visibility = 'hidden';
+			}
+
+			reset();
+
 			document.addEventListener('DOMContentLoaded', function() {
 
-				let correct = body.querySelectorAll('.correct'); // a list of all correct class
-				for (let i = 0; i < correct.length; i++) {
-					correct[i].addEventListener('click', function(event){
-						correct[i].style.color = 'green';
-						correct[i].style.borderColor = 'green';
-						correct[i].parentElement.querySelector('.feedback').innerHTML = 'Correct!';
-						correct[i].parentElement.querySelector('.feedback').style.color = 'green';
+				let correct = document.querySelector('.correct'); // a list of all correct class
+				let feedbackcorrect = document.querySelector('.feedbackcorrect');
+				correct.addEventListener('click', function(event){
+					reset();
+					correct.style.color = 'green';
+					correct.style.borderColor = 'green';
+					feedbackcorrect.style.visibility = 'visible';
+					feedbackcorrect.style.color = 'green';
+
 					});
-				}
 
 
-				let incorrect = body.querySelectorAll('.incorrect'); // a list of all incorrect class
+				let incorrect = document.querySelectorAll('.incorrect'); // a list of all incorrect class
+				let feedback = document.querySelectorAll('.feedback');
 				for (let i = 0; i < incorrect.length; i++) {
 					incorrect[i].addEventListener('click', function(event){
+						reset();
 						incorrect[i].style.color = 'red';
 						incorrect[i].style.borderColor = 'red';
-						incorrect[i].parentElement.querySelector('.feedback').innerHTML = 'Incorrect';
-						incorrect[i].parentElement.querySelector('.feedback').style.color = 'red';
+						feedback[i].style.visibility = 'visible';
+						feedback[i].style.color = 'red';
+
 					});
 				}
 			});
@@ -61,6 +90,49 @@
             <div class="section">
                 <h2>Part 2: Free Response</h2>
                 <hr>
+               	<h3>
+			What is the name of Garfield's dog buddy?
+		</h3>
+		<h3>
+			<answertxt>Correct!</answertxt>
+		</h3>
+			<form>
+				<input autocomplete="off" placeholder="Answer" id="answer" type="text">
+				<input type="submit">
+			</form>
+		<script>
+			function correct(){
+				let ans = document.querySelector('answertxt');
+    				ans.style.visibility = 'visible';
+	    			ans.innerHTML = 'Correct!';
+		    		ans.style.color = 'green';
+			    	}
+
+    			function incorrect(){
+	    			let ans = document.querySelector('answertxt');
+		    		ans.style.visibility = 'visible';
+				ans.innerHTML = 'Incorrect';
+			    	ans.style.color = 'red';
+
+				}
+
+    			document.querySelector('answertxt').style.visibility = 'hidden';
+
+	    		document.addEventListener('DOMContentLoaded', function() {
+		    		document.querySelector('form').addEventListener('submit', function(event) {
+					let ans = document.querySelector('answertxt');
+			    		const pattern = /\boddie\b/i;
+				    	let text = document.querySelector('#answer').value;
+
+					if (pattern.test(text))
+						correct();
+    					else
+	    					incorrect();
+
+		    			event.preventDefault(); // prevents it from submitting the form to server, keeps user here
+			    		});
+				});
+		</script>
             </div>
         </div>
     </body>
