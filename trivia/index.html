@@ -114,7 +114,10 @@
 				document.addEventListener('DOMContentLoaded', function() {
 					document.querySelector('form').addEventListener('submit', function(event) {
 						let ans = document.querySelector('answertxt');
-						if (document.querySelector('#answer').value == 'oddie')
+						const pattern = /\boddie\b/i;
+						let text = document.querySelector('#answer').value;
+
+						if (pattern.test(text))
 							correct();
 						else
 							incorrect();
@@ -123,7 +126,6 @@
 					});
 				});
 			</script>
-
             </div>
         </div>
     </body>
