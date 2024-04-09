@@ -296,3 +296,29 @@ css
 
 </html>
 
+
+
+<!-- javascript -->
+
+<html lang="en">
+    <head> <!-- can insert a style tag AND a script tag-->
+        <script>
+
+            function greet()
+            {
+                alert('hello,' + document.querySelector('#name').value); <!-- select any tag in this html document, so here select the unique #name ID's value-->
+            }
+
+
+
+
+
+            </form>
+        </script>
+    </head>
+    <body>
+        <form onsubmit="greet(); return false;"> <!-- return false means dont submit to server. some javasript here -->
+            <input autocomplete="off" autofocus id="name" placeholder="Name"> <!-- given the input the unique #name ID -->
+    </body>
+
+</html>
