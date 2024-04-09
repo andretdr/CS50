@@ -428,8 +428,9 @@ css
 
 </html>
 
-<!-- javascript example 5 blink -->
+<!-- javascript example Adding html code dynamically -->
 
+<html>
 ...
 
     <body>
@@ -447,21 +448,15 @@ css
                 if (input.value) { // if the input has a value
                     for (word of WORDS) { //similar to for loop, words IN WORDS}
                         if (word.startsWith(input.value)){ // if the word starts with
-                            html += `<li>${word}</li>`; // add or concatonate to html variable
+                            html += `<li>${word}</li>`; // add or concatonate to html variable, the tag <li>, the word, and close tag </li>
                         }
+                    }
                 }
-
-
+                document.querySelector('ul').innerHTML = html; // adding the new html into the ul tag of this html, adding to the inner html
             }
-
-
-
-
-
         </script>
-
-
-
+    </body>
+</html>
 
 
 <!-- large.js
