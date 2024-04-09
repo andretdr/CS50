@@ -453,15 +453,29 @@ css
                     }
                 }
                 document.querySelector('ul').innerHTML = html; // adding the new html into the ul tag of this html, adding to the inner html
-            }
+            });
         </script>
     </body>
 </html>
 
-
 <!-- large.js
     javascript arrays = [] like python lists
-
-
-
 -->
+
+
+<!-- javascript example Geolocation -->
+
+<html lang="en">
+    <head>
+        <title>geolocation</title>
+    </head>
+    <body>
+        <script>
+
+            navigator.geolocation.getCurrentPosition(function(position) {
+                document.write(posiition.coords.latitude + ", " + position.coords.longitude);
+            });
+
+        </script>
+    </body>
+</html>
