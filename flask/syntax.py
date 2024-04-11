@@ -67,7 +67,7 @@ USES request.form
 # in app.py
 # if not request.form.get("name"):
 #    return render_template("failure.thml")
-# for sport in request.form.getall("sport"):
+# for sport in request.form.getlist("sport"):
 #   if sport not in SPORTS:     # have to check all the sports we get back
 #       return render_template("failure.html")
 # return render_template("success.html")
