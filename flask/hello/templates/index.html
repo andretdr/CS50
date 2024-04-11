@@ -31,7 +31,7 @@
 {% block body %}
 
                                         <!-- GET puts the vars in the URL in key value pairs -->
-    <form action="/greet"  method="get"> <!-- action to server on submit, create a ROUTE /greet. not a file not a folder. -->
+    <form action="/greet"  method="post"> <!-- action to server on submit, create a ROUTE /greet. not a file not a folder. -->
         <input autocomplete="off" autofocus name="name" placeholder="Name" type="text">
         <button type="submit">Greet</button>
     </form>

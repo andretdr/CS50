@@ -22,15 +22,19 @@ def index(): # run the function index, which just returns 'hello world'
 #    return render_template("index.html", namevar=name) # the parameter namevar (left) has value name (right). but will be common to see name=name
 
 #   example ROUTE creation, text bar
-    return render_template("index.html")
+#    return render_template("index.html")
+
+#@app.route("/greet") # POST if you just want to handle post, not get. make sure your HTML is posting, not getting
+#def greet():    # create a function called greet
+#    name = request.args.get("name", "world")
+
+#    return render_template("greet.html", namevar=name)
 
 
-#@app.route("/greet", method["GET"]) default, method returns a list of string
-#@app.route("/greet", method["GET", "POST"]) if you want to handle both
+#@app.route("/greet", methods=["GET"]) default, method returns a list of string
+#@app.route("/greet", methods=["GET", "POST"]) if you want to handle both
 
-@app.route("/greet", method["POST"]) # POST if you just want to handle post, not get. make sure your HTML is posting, not getting
+@app.route("/greet", methods=["POST"]) # POST if you just want to handle post, not get. make sure your HTML is posting, not getting
 def greet():    # create a function called greet
     name = request.args.get("name", "world")
-
     return render_template("greet.html", namevar=name)
-
