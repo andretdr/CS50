@@ -2,8 +2,11 @@ from flask import Flask, render_template, request #flask import
 
 app = Flask(__name__) # to initiate this for web app
 
-@app.route("/") # this app's function, when user visits / will
-def index(): # run the function index, which just returns 'hello world'
+#@app.route("/") # this app's function, when user visits / will
+#def index(): # run the function index, which just returns 'hello world'
+
+
+
 #    return "hello, world"  # returns just this line
 #    return render_template("index.html")  # returns the static html in my temple folder, index.html
 
@@ -22,7 +25,7 @@ def index(): # run the function index, which just returns 'hello world'
 #    return render_template("index.html", namevar=name) # the parameter namevar (left) has value name (right). but will be common to see name=name
 
 #   example ROUTE creation, text bar
-    return render_template("index.html")
+#    return render_template("index.html")
 
 #@app.route("/greet") # POST if you just want to handle post, not get. make sure your HTML is posting, not getting
 #def greet():    # create a function called greet
@@ -34,7 +37,17 @@ def index(): # run the function index, which just returns 'hello world'
 #@app.route("/greet", methods=["GET"]) default, method returns a list of string
 #@app.route("/greet", methods=["GET", "POST"]) if you want to handle both
 
-@app.route("/greet", methods=["POST"]) # POST if you just want to handle post, not get. make sure your HTML is posting, not getting
-def greet():    # create a function called greet
-    name = request.form.get("name", "world") #POST uses request.form instead of request.arg
-    return render_template("greet.html", namevar=name)
+#@app.route("/greet", methods=["POST"]) # POST if you just want to handle post, not get. make sure your HTML is posting, not getting
+#def greet():    # create a function called greet
+#    name = request.form.get("name", "world") #POST uses request.form instead of request.arg
+#    return render_template("greet.html", namevar=name)
+
+
+
+@app.route("/", methods=["GET", "POST"]) # using just 1 route, not 2
+def index(): # run the function index, which just returns 'hello world'
+    if request.method == "POST": # check if its a POST
+        name = request.form.get("name", "world") # if so use the request.form
+    else:
+        return render_template("greet.html", name=name)
+
