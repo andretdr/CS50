@@ -8,7 +8,17 @@
     <body>
         <!-- hello, world       would be a static html you return-->
 
-        Hello, {{ namevar }} <!-- adding a variable name which we will imprint from the app.py, Jinja -->
+<!-- example URL adding ?name=David
+        Hello, {{ namevar }} adding a variable name which we will imprint from the app.py, Jinja   -->
+
+        <form action="/greet"  method="get"> <!-- action to server on submit -->
+            <input autocomplete="off" autofocus name="name" placeholder="Name" type="text">
+            <button type="submit">Greet</button>
+
+        </form>
+
+
+
     </body>
 
 </html>
