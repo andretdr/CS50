@@ -29,7 +29,7 @@ app = Flask(__name__) # to initiate this for web app
 
 #@app.route("/greet") # POST if you just want to handle post, not get. make sure your HTML is posting, not getting
 #def greet():    # create a function called greet
-#    name = request.args.get("name", "world")
+#    name = request.args.get("name")
 
 #    return render_template("greet.html", namevar=name)
 
