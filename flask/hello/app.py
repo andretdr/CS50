@@ -25,7 +25,10 @@ def index(): # run the function index, which just returns 'hello world'
     return render_template("index.html")
 
 
-@app.route("/greet")
+#@app.route("/greet", method["GET"]) default, method returns a list of string
+
+
+@app.route("/greet", method["GET"])
 def greet():    # create a function called greet
     name = request.args.get("name", "world")
 
