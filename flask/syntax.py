@@ -41,3 +41,12 @@ USES request.form
 #        <button type="submit">Register</button>
 #    </form>
 
+# RADIO buttons
+#
+#  <form action="/register" method="post">
+#        <input autocomplete="off" autofocus name="name" placeholder="Name" type="text"> <!-- required entry, add 'required' -->
+        {% for sport in sports %}
+            <input name="sport" type="radio" value="{{ sport }}"> {{ sport }}
+        {% endfor %}
+        <button type="submit">Register</button>
+#    </form>
