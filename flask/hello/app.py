@@ -18,5 +18,15 @@ def index(): # run the function index, which just returns 'hello world'
 #    return render_template("index.html", placeholder=name)  # giving the parameter placeholder the value of the name var i just defined
 
 #   example URL strealined
-    name = request.args.get("name", "world") # default dict method get to get the value of 'name', if doesnt exist, then return 'world'
-    return render_template("index.html", namevar=name) # the parameter namevar (left) has value name (right). but will be common to see name=name
+#    name = request.args.get("name", "world") # default dict method get to get the value of 'name', if doesnt exist, then return 'world'
+#    return render_template("index.html", namevar=name) # the parameter namevar (left) has value name (right). but will be common to see name=name
+
+#   example ROUTE creation, text bar
+    return render_template("index.html", namevar="INDEX")
+
+
+@app.route("/greet")
+def greet():    # create a function called greet
+    name = request.args.get("name", "world")
+    return render_template("greet.html", namevar=name)
+
