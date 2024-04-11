@@ -29,7 +29,7 @@ app = Flask(__name__) # to initiate this for web app
 
 #@app.route("/greet") # POST if you just want to handle post, not get. make sure your HTML is posting, not getting
 #def greet():    # create a function called greet
-#    name = request.args.get("name")
+#    name = request.args.get("name", "world")
 
 #    return render_template("greet.html", namevar=name)
 
@@ -46,7 +46,7 @@ app = Flask(__name__) # to initiate this for web app
 @app.route("/", methods=["GET", "POST"]) # using just 1 route, not 2
 def index(): # run the function index, which just returns 'hello world'
     if request.method == "POST": # check if its a POST
-        name = request.form.get("name", "world") # if so use the request.form
+        name = request.form.get("name") # if so use the request.form # dont need to catch the if name = null here, do it in greet.html
         return render_template("greet.html", namevar=name) # after return you break out of function
     return render_template("index.html") # else return index, the text input page
 
