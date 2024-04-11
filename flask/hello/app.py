@@ -36,5 +36,5 @@ def index(): # run the function index, which just returns 'hello world'
 
 @app.route("/greet", methods=["POST"]) # POST if you just want to handle post, not get. make sure your HTML is posting, not getting
 def greet():    # create a function called greet
-    name = request.args.get("name", "world")
+    name = request.form.get("name", "world") #POST uses request.form instead of request.arg
     return render_template("greet.html", namevar=name)

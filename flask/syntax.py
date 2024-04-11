@@ -2,9 +2,9 @@
 
 # https://www.example.com/route?key=value&key=value ?key=value turns your static webpage into dynamic app
 
-                            # GET puts the key value pairs in the URL, in yr HTML code
-GET /search?q=cats HTTP/2   #search is the name of google's web application, q is key, cats is value
-Host: www.google.com
+                            # GET puts the key value pairs in the URL, in yr HTML code. USES request.args
+GET /search?q=cats   #search is the name of google's web application, q is key, cats is value
+USES request.args
 
 # Framwework => flask, django micro framework
 
@@ -20,5 +20,7 @@ templates/ #actual html, css, js files
 # request.args
 # look up jinja
 
-                            # POST doesnt put the key value pair above
+                            # POST doesnt put the key value pair above. USES request.form
 POST
+doesn't use request.args, but uses request.form
+USES request.form
