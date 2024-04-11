@@ -20,5 +20,5 @@ templates/ #actual html, css, js files
 # request.args
 # look up jinja
 
-
+                            # POST doesnt put the key value pair above
 POST
