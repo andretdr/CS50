@@ -6,7 +6,7 @@ app = Flask(__name__)
 def index():
     return render_template("index.html")
 
-@app.route("/register", methods=POST[]) # create new route
+@app.route("/register", methods=["POST"]) # create new route
 def register(): # define new function register
     if not request.form.get("name"):
         return "failure"
