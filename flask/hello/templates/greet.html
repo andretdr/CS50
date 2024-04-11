@@ -22,6 +22,6 @@
 
 {% block body %}
 
-    hello, {% if name %}{{ namevar }}{% else %}world{% endif %}
+    hello, {% if namevar %}{{ namevar }}{% else %}world{% endif %} <!-- if namevar not null, then use namevar. else use 'world'-->
 
 {% endblock %}
