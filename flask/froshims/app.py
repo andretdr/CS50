@@ -6,7 +6,7 @@ SPORTS = ["Basketball", "Soccer", "Ultimate Frisbee"] # use this list to generat
 
 @app.route("/")
 def index():
-    return render_template("index.html")
+    return render_template("index.html", sports=SPORTS) # pass named parameter placeholder sports with the list of SPORTS
 
 @app.route("/register", methods=["POST"]) # create new route
 def register(): # define new function register
