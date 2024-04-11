@@ -15,3 +15,6 @@ app.py
 requirements.txt #what 3rd party librarys you are using, line by line
 static/ # images, .js files, etc
 templates/ #actual html, css, js files
+
+# request.args
+# look up jinja
