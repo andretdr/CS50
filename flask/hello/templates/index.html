@@ -28,7 +28,7 @@
 
 {% extends "layout.html" %}
 
-{% body block %}
+{% block body %}
 
     <form action="/greet"  method="get"> <!-- action to server on submit, create a ROUTE /greet. not a file not a folder. -->
         <input autocomplete="off" autofocus name="name" placeholder="Name" type="text">
