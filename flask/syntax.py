@@ -29,4 +29,15 @@ USES request.form
 # dont rely on client side checks. very easy to break the html using web dev tools
 # instead, do server side checks
 
+# DROP down menu on input forms
+#   <form action="/register" method="post">
+#        <input autocomplete="off" autofocus name="name" placeholder="Name" type="text"> <!-- required entry, add 'required' -->
+#        <select name="sport">
+#            <option disabled selected value="">Sport</option> <!-- add a placeholder non selectable avlue as 1st entry -->
+#            <option>Basketball</option>
+#            <option>Soccer</option>
+#            <option>Ultimate Frisbee</option>
+#        </select>
+#        <button type="submit">Register</button>
+#    </form>
 
