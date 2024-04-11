@@ -22,7 +22,7 @@ def index(): # run the function index, which just returns 'hello world'
 #    return render_template("index.html", namevar=name) # the parameter namevar (left) has value name (right). but will be common to see name=name
 
 #   example ROUTE creation, text bar
-    return render_template("index.html", namevar="INDEX")
+    return render_template("index.html")
 
 
 @app.route("/greet")
