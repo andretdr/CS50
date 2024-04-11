@@ -26,9 +26,9 @@ def index(): # run the function index, which just returns 'hello world'
 
 
 #@app.route("/greet", method["GET"]) default, method returns a list of string
+#@app.route("/greet", method["GET", "POST"]) if you want to handle both
 
-
-@app.route("/greet", method["GET"])
+@app.route("/greet", method["POST"]) # POST if you just want to handle post, not get. make sure your HTML is posting, not getting
 def greet():    # create a function called greet
     name = request.args.get("name", "world")
 
