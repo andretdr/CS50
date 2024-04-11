@@ -29,10 +29,5 @@ def index(): # run the function index, which just returns 'hello world'
 def greet():    # create a function called greet
     name = request.args.get("name", "world")
 
-    if "name" in request.args:  # if there is a 'name' value pair request
-                                    # request.args returns a dictionary of keyvalue pairs ?key=value&key=value from the URL
-        name = request.args["name"] # create a variable called name, give it the value whos key is name
-    else:                       # else just call 'world'
-        name = "world"
     return render_template("greet.html", namevar=name)
 
