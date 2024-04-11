@@ -29,6 +29,8 @@ USES request.form
 # dont rely on client side checks. very easy to break the html using web dev tools
 # instead, do server side checks
 
+# this is froshim
+
 # DROP down menu on input forms
 #   <form action="/register" method="post">
 #        <input autocomplete="off" autofocus name="name" placeholder="Name" type="text"> <!-- required entry, add 'required' -->
@@ -44,9 +46,31 @@ USES request.form
 # RADIO buttons
 #
 #  <form action="/register" method="post">
-#        <input autocomplete="off" autofocus name="name" placeholder="Name" type="text"> <!-- required entry, add 'required' -->
-        {% for sport in sports %}
-            <input name="sport" type="radio" value="{{ sport }}"> {{ sport }}
-        {% endfor %}
-        <button type="submit">Register</button>
+#       <input autocomplete="off" autofocus name="name" placeholder="Name" type="text"> <!-- required entry, add 'required' -->
+#       {% for sport in sports %}
+#           <input name="sport" type="radio" value="{{ sport }}"> {{ sport }}
+#       {% endfor %}
+#       <button type="submit">Register</button>
 #    </form>
+
+
+# check boxes
+#
+#  <form action="/register" method="post">
+#       <input autocomplete="off" autofocus name="name" placeholder="Name" type="text"> <!-- required entry, add 'required' -->
+#       {% for sport in sports %}
+#           <input name="sport" type="check" value="{{ sport }}"> {{ sport }}
+#       {% endfor %}
+#       <button type="submit">Register</button>
+#    </form>
+
+# in app.py
+# if not request.form.get("name"):
+#    return render_template("failure.thml")
+# for sport in request.form.getall("sport"):
+#   if sport not in SPORTS:     # have to check all the sports we get back
+#       return render_template("failure.html")
+# return render_template("success.html")
+#
+#
+
