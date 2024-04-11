@@ -2,6 +2,8 @@ from flask import Flask, render_template, request
 
 app = Flask(__name__)
 
+SPORTS = ["Basketball", "Soccer", "Ultimate Frisbee"] # use this list to generate the client side form
+
 @app.route("/")
 def index():
     return render_template("index.html")

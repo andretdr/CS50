@@ -24,3 +24,9 @@ templates/ #actual html, css, js files
 POST
 doesn't use request.args, but uses request.form
 USES request.form
+
+
+# dont rely on client side checks. very easy to break the html using web dev tools
+# instead, do server side checks
+
+
