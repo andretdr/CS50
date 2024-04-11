@@ -48,5 +48,5 @@ def index(): # run the function index, which just returns 'hello world'
     if request.method == "POST": # check if its a POST
         name = request.form.get("name", "world") # if so use the request.form
         return render_template("greet.html", namevar=name) # after return you break out of function
-    return render_template("index.html")
+    return render_template("index.html") # else return index, the text input page
 
