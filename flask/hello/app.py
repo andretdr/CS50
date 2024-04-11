@@ -19,4 +19,4 @@ def index(): # run the function index, which just returns 'hello world'
 
 
     name = request.args.get("name", "world") # default dict method get to get the value of 'name', if doesnt exist, then return 'world'
-    return render_template("index.html", namevar=name)
+    return render_template("index.html", namevar=name) # the parameter name (left) has value name (right)
