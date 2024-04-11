@@ -1,24 +1,38 @@
+<!--
+
+
 <!DOCTYPE html>
 
 <html lang="en">
     <head>
-        <meta name="viewport" content="initial-scale=1, width=device-width"> <!-- size viewport to device screen-->
+        <meta name="viewport" content="initial-scale=1, width=device-width">    size viewport to device screen
         <title>hello</title>
     </head>
     <body>
-        <!-- hello, world       would be a static html you return-->
+         hello, world       would be a static html you return
 
-<!-- example URL adding ?name=David
-        Hello, {{ namevar }} adding a variable name which we will imprint from the app.py, Jinja   -->
+ example URL adding ?name=David
+        Hello, {{ namevar }} adding a variable name which we will imprint from the app.py, Jinja
 
-        <form action="/greet"  method="get"> <!-- action to server on submit, create a ROUTE /greet. not a file not a folder. -->
+        <form action="/greet"  method="get">  action to server on submit, create a ROUTE /greet. not a file not a folder
             <input autocomplete="off" autofocus name="name" placeholder="Name" type="text">
             <button type="submit">Greet</button>
 
         </form>
-
-
-
     </body>
 
 </html>
+-->
+<!-- block body example, now layyout.hmtl has the main code, and this html file only extends what is in there -->
+
+
+{% extends "layout.html" %}
+
+{% body block %}
+
+    <form action="/greet"  method="get"> <!-- action to server on submit, create a ROUTE /greet. not a file not a folder. -->
+        <input autocomplete="off" autofocus name="name" placeholder="Name" type="text">
+        <button type="submit">Greet</button>
+    </form>
+
+{% endblock %}

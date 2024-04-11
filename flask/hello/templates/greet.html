@@ -1,8 +1,10 @@
+<!-- URL example
+
 <!DOCTYPE html>
 
 <html lang="en">
     <head>
-        <meta name="viewport" content="initial-scale=1, width=device-width"> <!-- size viewport to device screen-->
+        <meta name="viewport" content="initial-scale=1, width=device-width">  size viewport to device screen
         <title>hello</title>
     </head>
     <body>
@@ -10,3 +12,16 @@
     </body>
 
 </html>
+
+-->
+
+
+<!-- block body example, now layyout.hmtl has the main code, and this html file only extends what is in there -->
+
+{% extends "layout.html" %}
+
+{% block body %}
+
+    hello, {{ name }}
+
+{% endblock %}
