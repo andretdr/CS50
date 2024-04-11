@@ -43,7 +43,6 @@ app = Flask(__name__) # to initiate this for web app
 #    return render_template("greet.html", namevar=name)
 
 
-
 @app.route("/", methods=["GET", "POST"]) # using just 1 route, not 2
 def index(): # run the function index, which just returns 'hello world'
     if request.method == "POST": # check if its a POST
