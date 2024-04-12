@@ -3,7 +3,7 @@ from flask import Flask, render_template, request, redirect
 
 app = Flask(__name__)
 
-db = SQL("sqlite:///froshims.db")
+db = SQL("sqlite:///froshims.db") # opening a file DB that is initially empty
 
 #REGISTRANTS = {} # empty dictionary
 
