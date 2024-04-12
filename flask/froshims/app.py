@@ -54,4 +54,4 @@ def register(): # define new function register
 def registrants():
     # grabbing all the data from registrants table, dumping into a var called registrant
     registrants = db.execute("SELECT * FROM registrants")
-    return render_template("registrants.html", registrants=REGISTRANTS) # returning JINJA a list of registrants. JINA not doing the listing
+    return render_template("registrants.html", registrants=registrants) # returning JINJA a list of registrants. JINA not doing the listing
