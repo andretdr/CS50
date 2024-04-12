@@ -2,7 +2,7 @@ from flask import Flask, render_template, request
 
 app = Flask(__name__)
 
-REGISTRANTS = {}
+REGISTRANTS = {} # empty dictionary
 
 SPORTS = ["Basketball", "Soccer", "Ultimate Frisbee"] # use this list to generate the client side form
 
@@ -31,8 +31,11 @@ def register(): # define new function register
         return render_template("error.html", message="Invalid Sport")
 
     # Remember registrant
-    REGISTRANTS[name] = sport
+    REGISTRANTS[name] = sport # assigning key: value. key(name) -> sport
 
     # Confirm registration
     return redirect("/registrants")
 
+@app.route("/registrants")
+def registrants():
+    return render_template("registrants.html", registrants=REGISTRANTS)
