@@ -43,6 +43,7 @@ def register(): # define new function register
 
     # Remember registrant
  #   REGISTRANTS[name] = sport # assigning key: value. key(name) -> sport
+    db.execute("INSERT INTO registrants (name, sport) VALUES(?, ?)", name, sport)
 
     # Confirm registration
     return redirect("/registrants")
