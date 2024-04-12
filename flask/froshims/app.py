@@ -43,6 +43,8 @@ def register(): # define new function register
 
     # Remember registrant
  #   REGISTRANTS[name] = sport # assigning key: value. key(name) -> sport
+
+    # inserting into the registrant table in the DB
     db.execute("INSERT INTO registrants (name, sport) VALUES(?, ?)", name, sport) # using ? placeholder to escape SQL injection attack
 
     # Confirm registration
@@ -50,5 +52,6 @@ def register(): # define new function register
 
 @app.route("/registrants")
 def registrants():
-    registrants = db.execute("SELECT * FROM registrants") # grabbing all the data from registrants
+    # grabbing all the data from registrants table, dumping into a var called registrant
+    registrants = db.execute("SELECT * FROM registrants")
     return render_template("registrants.html", registrants=REGISTRANTS) # returning JINJA a list of registrants. JINA not doing the listing
