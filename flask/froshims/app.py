@@ -50,4 +50,5 @@ def register(): # define new function register
 
 @app.route("/registrants")
 def registrants():
-    return render_template("registrants.html", registrants=REGISTRANTS)
+    registrants = db.execute("SELECT * FROM registrants")
+    return render_template("registrants.html", registrants=REGISTRANTS) # returning JINJA a list of registrants. JINA not doing the listing
