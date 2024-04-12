@@ -13,6 +13,14 @@ SPORTS = ["Basketball", "Soccer", "Ultimate Frisbee"] # use this list to generat
 def index():
     return render_template("index.html", sports=SPORTS) # pass named parameter placeholder sports with the list of SPORTS
 
+@app.route("/deregister", methods=["POST"])
+def deregister():
+
+    # forget registrant
+    id = request.form.get("id")
+    if id:
+        db.execute("DELETE FROM registrants WHERE id = ?", id)
+
 @app.route("/register", methods=["POST"]) # create new route
 def register(): # define new function register
 
