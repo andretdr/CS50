@@ -20,6 +20,7 @@ def deregister():
     id = request.form.get("id")
     if id:
         db.execute("DELETE FROM registrants WHERE id = ?", id)
+    return redirect("/registrants")
 
 @app.route("/register", methods=["POST"]) # create new route
 def register(): # define new function register
@@ -27,7 +28,6 @@ def register(): # define new function register
 #    if not request.form.get("name") or request.form.get("sport") not in SPORTS:
 #        return render_template("failure.html")
 #    return render_template("success.html")
-
 
     # Validatw name
     name = request.form.get("name")
