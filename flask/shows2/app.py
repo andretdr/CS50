@@ -12,5 +12,8 @@ def index():
 @app.route("/search")
 def search():
     q = request.args.get("q")
-    shows = db.execute("SELECT * FROM movies WHERE title LIKE ?", "%" + q + "%") # wildcard ALWAYS use placeholder
+    if q:
+        shows = db.execute("SELECT * FROM shows WHERE title LIKE ? LIMIT 50", "%" + q +"%")
+    else:
+        shows = []
     return render_template("search.html", shows=shows)
