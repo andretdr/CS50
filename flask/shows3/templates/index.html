@@ -14,8 +14,8 @@
             let shows = await response.text(); // grabbing text from server
             let showObj = JSON.parse(shows);
             let html = '';
-            for (let i=0; i<showObj.length; i++)
-                html += `<li>${showObj[i].title}</li>`
+            for (show of showObj)
+                html += `<li>${show.title}</li>`
             document.querySelector('ul').innerHTML = html;
 
         });
