@@ -27,7 +27,8 @@ def cart():
         book_id = request.form.get("id")
         if book_id: # if there is something there, correct number
             session["cart"].append(book_id)
-        return redirect("/cart")
+        return redirect("/cart") # redirect to yourself, its a GET request, not POST
 
     # GET
+    books = db.execute("SELECT * FROM books WHERE id IN (?)")
 
