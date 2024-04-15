@@ -20,14 +20,14 @@ def cart():
 
     # ensure cart exists
     if "cart" not in session: # if the name "cart" is not in the session
-        session["cart"] = []
+        session["cart"] = [] #just create an empty list
 
     # POST
     if request.method == "POST":
         book_id = request.form.get("id")
-        if book_id: # if there is something there
+        if book_id: # if there is something there, correct number
             session["cart"].append(book_id)
         return redirect("/cart")
 
     # GET
-    
+
