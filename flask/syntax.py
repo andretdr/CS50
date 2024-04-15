@@ -80,3 +80,8 @@ USES request.form
 # log in
 # GET / HTTP/2
 
+# reply should be
+# Content-Type: text/html
+# Set-Cookie: session=value   # returns a cookie header, w a key=value pair
+
+
