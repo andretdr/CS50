@@ -18,4 +18,4 @@ def search():
         shows = db.execute("SELECT * FROM shows WHERE title LIKE ? LIMIT 50", "%" + q + "%")
     else:
         shows = []
-    return jsonify(shows)
+    return jsonify(shows) # not return HTML template, but return in the JSON format
