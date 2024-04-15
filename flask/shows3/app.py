@@ -1,4 +1,6 @@
-from flask import Flask, redirect, render_template, request
+# Ajax JSON
+
+from flask import Flask, render_template, request, jsonify # turn something into JSON
 from cs50 import SQL
 
 app = Flask(__name__)
@@ -12,5 +14,8 @@ def index():
 @app.route("/search")
 def search():
     q = request.args.get("q")
-    shows = db.execute("SELECT * FROM movies WHERE title LIKE ?", "%" + q + "%") # wildcard ALWAYS use placeholder
-    return render_template("search.html", shows=shows)
+    if q:
+        shows = db.execute("SELECT * FROM shows WHERE title LIKE ? LIMIT 50", "%" + q + "%")
+    else:
+        shows = []
+    return jsonify(shows)
