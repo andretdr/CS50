@@ -11,5 +11,6 @@ def index():
 
 @app.route("/search")
 def search():
-    shows = db.execute("SELECT * FROM movies WHERE title = (?)", request.args.get("q"))
+    q = request.args.get("q")
+    shows = db.execute("SELECT * FROM movies WHERE title LIKE ?", "%" + q + "%") # wildcard ALWAYS use placeholder
     return render_template("search.html", shows=shows)
