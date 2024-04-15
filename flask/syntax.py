@@ -84,4 +84,8 @@ USES request.form
 # Content-Type: text/html
 # Set-Cookie: session=value   # returns a cookie header, w a key=value pair. if server is remembering something about you, its a session/ shopping cart
 
+# later on you will send back to the server Cookie: session=value to remind them of your session
+
+
+
 
