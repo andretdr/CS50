@@ -2,9 +2,15 @@
 
 {% block body %}
 
-    <form action="/search" method="get">
-        <input autocomplete="off" autofocus name="q" placeholder="Query" type="search">
-        <button type="submit">Search</button>
-    </form>
+    <input autocomplete="off" autofocus placeholder="Query" type="search">
+
+    <ul></ul>
+
+    <script>
+
+        let input = document.querySelector('input');
+        input.addEventListener('input', async_function() {
+            
+        })
 
 {% endblock %}
