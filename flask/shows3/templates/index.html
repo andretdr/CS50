@@ -12,7 +12,7 @@
         input.addEventListener('input', async function() { // adding listener event to input, the 'input' action
             let response = await fetch('/search?q=' + input.value); // variable response, fetch route search?q= the input value
             let shows = await response.text(); // grabbing text from server
-            showlist = []
+            //showlist = []
             for (let show in shows){
                 showlist.concat(show["title"]);
             }
