@@ -15,7 +15,7 @@ def index():
 def search():
     q = request.args.get("q")
     if q:
-        shows = db.execute("SELECT * FROM shows WHERE title LIKE ? LIMIT 50", "%" + q + "%")
+        shows = db.execute("SELECT * FROM movies WHERE title LIKE ? LIMIT 50", "%" + q + "%")
     else:
         shows = []
     return jsonify(shows) # not return HTML template, but return in the JSON format
