@@ -14,9 +14,8 @@
             let shows = await response.text(); // grabbing text from server
             //showlist = []
             for (let show in shows){
-                showlist.concat(show["title"]);
+                document.querySelector('ul').innerHTML = show["title"];
             }
-            document.querySelector('ul').innerHTML = showlist;
         });
     </script>
 
