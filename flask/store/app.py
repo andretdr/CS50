@@ -10,8 +10,12 @@ app.config["SESSION_PERMANENT"] = False
 app.config["SESSION_TYPE"] = "filesystem"
 Session(app)
 
-@app.route("\")
+@app.route("/")
 def index():
-    
+    books = db.execute("SELECT * FROM books") # returns a list of dictionaries, [{"id": 1, "title": "Jurassic park"}, {id....}]
+    return render_template("books.html", books=books)
 
-@app.route("\login")
+@app.route("/cart", methods=["GET", "POST"])
+def cart():
+
+
