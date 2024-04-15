@@ -33,8 +33,12 @@
                         <ul></ul>
 
                         <script>
-                            let html = 'HELLO WORLD'
-                            //html += JSON.parse(birthdays);
+                            let html = ''
+                            birthdayObj = JSON.parse(birthdays);
+                            for (birthday of birthdayObj)
+                            {
+                                html += '<li>${birthday.name}</li>'
+                            }
                             document.querySelector('ul').innerHTML = html;
 
 
