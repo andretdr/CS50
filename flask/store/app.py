@@ -18,4 +18,16 @@ def index():
 @app.route("/cart", methods=["GET", "POST"])
 def cart():
 
+    # ensure cart exists
+    if "cart" not in session: # if the name "cart" is not in the session
+        session["cart"] = []
 
+    # POST
+    if request.method == "POST":
+        book_id = request.form.get("id")
+        if book_id: # if there is something there
+            session["cart"].append(book_id)
+        return redirect("/cart")
+
+    # GET
+    
