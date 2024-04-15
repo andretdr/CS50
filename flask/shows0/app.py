@@ -1,12 +1,15 @@
 from flask import Flask, redirect, session, render_html
 from flask_session import Session
-import cs50
+from cs50 import SQL
 
-app = (__name__)
+app = Flask(__name__)
 
-Sessions
+app.config("SESSION_PERMANENT") = False
+app.config("SESSION_TYPE") = "filesystem"
+Session(app)
 
-db = ('///shows.db')
+db = SQL("sqlite:///shows.db")
 
 @app.route = ("/")
-def 
+def index():
+    
