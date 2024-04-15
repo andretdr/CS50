@@ -1,4 +1,4 @@
-from flask import Flask, redirect, render_template, request, session
+from flask import Flask, redirect, render_template, request, session # session variable imported here
 
 app = Flask(__name__)
 
@@ -12,6 +12,8 @@ def index():
 
 @app.route("/login")
 def login():
+    if request.method == "POST":
+        session     # imported the session variable from above, a dictionary
     return render_template("login.html")
 
 
