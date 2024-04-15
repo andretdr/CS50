@@ -29,7 +29,16 @@
                     </thead>
                     <tbody>
                         <!-- TODO: Loop through the database entries to display them in this table -->
-                        {{ birthdays }}
+
+                        <ul></ul>
+
+                        <script>
+                            let html = ''
+                            html += JSON.parse(birthdays);
+                            document.querySelector('ul').innerHTML = html;
+
+
+                        </script>
 
 
                     </tbody>
