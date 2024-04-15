@@ -30,5 +30,6 @@ def cart():
         return redirect("/cart") # redirect to yourself, its a GET request, not POST
 
     # GET
-    books = db.execute("SELECT * FROM books WHERE id IN (?)")
+    books = db.execute("SELECT * FROM books WHERE id IN (?)", session["cart"]) # (?) is placeholder for session["cart"]
+    return render_template("cart.html", books=books)
 
