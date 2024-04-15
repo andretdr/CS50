@@ -1,4 +1,5 @@
 from flask import Flask, redirect, render_template, request, session # session variable imported here a dictionary that is unique to your current session
+from flask_session import Session
 
 app = Flask(__name__)
 
