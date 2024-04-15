@@ -37,7 +37,7 @@
                             let birthdayObj = JSON.parse(birthdays);
                             for (birthday of birthdayObj)
                             {
-                                html += '<li>${birthday.name}</li>'
+                                html += `<li>${birthday.name}</li>`
                             }
                             document.querySelector('ul').innerHTML = html;
 
