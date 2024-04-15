@@ -89,5 +89,5 @@ USES request.form
 
 # SEARCH, adding SQL functionality
 
-# AJAX
+# AJAX asynchronous Java script
 
