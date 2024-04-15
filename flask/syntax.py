@@ -87,5 +87,7 @@ USES request.form
 # later on you will send back to the server Cookie: session=value to remind them of your session
 
 
+# SEARCH, adding SQL functionality
 
+# AJAX
 
