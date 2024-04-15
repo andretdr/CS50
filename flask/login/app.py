@@ -1,15 +1,18 @@
-from flask import Flask, redirect, render_template, request
+from flask import Flask, redirect, render_template, request, session
 
 app = Flask(__name__)
 
-@app.route("/", methods=["GET", "POST"])
+app.config["SESSION_PERMANENT"] = False # make it a session cookie, deleted when quit browser
+app.config["SESSION_TYPE"] = "filesystem" # contents of shopping cart stored in server side, not cookie
+Session(app) # activate session
+
+@app.route("/")
 def index():
-    if request.method == "POST":
-        name = request.form.get("name", "world") # request form is for POST. request.arg is for get
-        return render_template("greet.html", name=name)
     return render_template("index.html")
 
-
+@app.route("/login")
+def login():
+    return render_template("login.html")
 
 
 
