@@ -11,7 +11,7 @@ Session(app) # activate session
 def index():
     return render_template("index.html", name = session.get("name")) # cannot just have ( "index.thml", session.get("name")), yyou need the placeholder , NAME = session.get("name)
 
-@app.route("/login")
+@app.route("/login", methods=["POST"])
 def login():
     if request.method == "POST":
         session["name"] = request.form.get("name")    # imported the session variable from above, a dictionary that is unique to your current session
