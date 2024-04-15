@@ -90,10 +90,11 @@ USES request.form
 # SEARCH, adding SQL functionality
 
 # AJAX asynchronous Java script
+# shows2/index.html EXAMPLE
 
 # JSON Javascript Object Notation
 # similar to a list of dictonary from python, but double quotes ""
 # [{"id":234, "title": "The Office", "year": 1995, "episodes": 6}{"id"...}{"id"..}]
-
+# shows3 EXAMPLE
 
 

@@ -1,0 +1,19 @@
+{% extends "layout.html" %}
+
+{% block body %}
+
+    <input autocomplete="off" autofocus placeholder="Query" type="search">
+
+    <ul></ul>
+
+    <script>
+
+        let input = document.querySelector('input');
+        input.addEventListener('input', async function() { // adding listener event to input, the 'input' action
+            let response = await fetch('/search?q=' + input.value); // variable response, fetch route search?q= the input value
+            let shows = await response.text(); // grabbing text from server
+            document.querySelector('ul').innerHTML = shows;
+        });
+    </script>
+
+{% endblock %}
