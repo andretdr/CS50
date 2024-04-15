@@ -92,4 +92,8 @@ USES request.form
 # AJAX asynchronous Java script
 
 # JSON Javascript Object Notation
+# similar to a list of dictonary from python, but double quotes ""
+# [{"id":234, "title": "The Office", "year": 1995, "episodes": 6}{"id"...}{"id"..}]
+
+
 
