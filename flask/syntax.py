@@ -82,6 +82,6 @@ USES request.form
 
 # reply should be
 # Content-Type: text/html
-# Set-Cookie: session=value   # returns a cookie header, w a key=value pair
+# Set-Cookie: session=value   # returns a cookie header, w a key=value pair. if server is remembering something about you, its a session/ shopping cart
 
 
