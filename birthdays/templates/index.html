@@ -34,7 +34,8 @@
 
                         <script>
                             let html = '';
-                            let birthdayObj = '{{ birthdays }}';
+                            let birthdayF = '{{ birthdays }}';
+                            let birthdayObj = JSON.parse(birthdayF);
 //                            for (birthday of birthdayObj)
 //                            {
 //                               html += `<li>${birthday.name}</li>`
