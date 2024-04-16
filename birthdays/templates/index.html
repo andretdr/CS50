@@ -36,26 +36,31 @@
                             async function fetchlist() {
                                 let response = await fetch('/return'); // variable response, fetch route search?q= the input value
                                 let birthdays = await response.text(); // grabbing text from server
-                                document.querySelector('#text').innerHTML = birthdays;
-                                let birthdayObjf = JSON.parse(birthdays);
+                                let birthdayObj = JSON.parse(birthdays);
 
-                                return birthdayObjf;
+                                let html = '';
+                                for (birthday of birthdayObj)
+                                {
+                                   html += `<li>${birthday.name}</li>`
+                                }
+                                document.querySelector('#text').innerHTML = html;
+
                             }
 
-                            birthdayObj = fetchlist();
+                            fetchlist();
+
 
 //                            let response = await fetch('/return'); // variable response, fetch route search?q= the input value
 //                            let birthdays = await response.text(); // grabbing text from server
 //                            let birthdayObj = JSON.parse(birthdays);
 
-                            let html = '';
 //                            let birthdayF = '{{ birthdays }}'; //'[{"name":"John", "age":30, "city":"New York"},{"name":"Kon", "age":32, "city":"Yoaa"}]';  //
 //                            const birthdayObj = JSON.parse(birthdayF);
-//                            for (birthday of birthdayObj)
-//                            {
-//                               html += `<li>${birthday.name}</li>`
-//                            }
-                            document.querySelector('#text').innerHTML = birthdayObj;
+                            for (birthday of birthdayObj)
+                            {
+                               html += `<li>${birthday.name}</li>`
+                            }
+//                            document.querySelector('#text').innerHTML = birthdayObj;
 //                        }
 
                         </script>
