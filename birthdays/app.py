@@ -26,7 +26,8 @@ def after_request(response):
 def index():
     if request.method == "POST":
 
-        
+        q=arg.form
+        print(q)
 
         return redirect("/")
 
