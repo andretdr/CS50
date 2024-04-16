@@ -35,11 +35,11 @@
                         <script>
                             let html = '';
                             let birthdayObj = '{{ birthdays }}';
-                            for (birthday of birthdayObj)
-                            {
-                               html += `<li>${birthday.name}</li>`
-                            }
-                            document.querySelector('ul').innerHTML = html;
+//                            for (birthday of birthdayObj)
+//                            {
+//                               html += `<li>${birthday.name}</li>`
+//                            }
+                            document.querySelector('ul').innerHTML = birthdayObj;
 
                         </script>
 
