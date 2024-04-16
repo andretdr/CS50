@@ -36,6 +36,7 @@
                             async function fetchlist() {
                                 let response = await fetch('/return'); // variable response, fetch route search?q= the input value
                                 let birthdays = await response.text(); // grabbing text from server
+                                document.querySelector('#text').innerHTML = birthdays;
                                 let birthdayObjf = JSON.parse(birthdays);
 
                                 return birthdayObjf;
