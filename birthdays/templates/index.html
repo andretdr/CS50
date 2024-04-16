@@ -30,16 +30,16 @@
                     <tbody>
                         <!-- TODO: Loop through the database entries to display them in this table -->
 
-                        <ul></ul>
+                        <ul>{{ birthdays }}</ul>
 
                         <script>
-                            let html = '';
-                            let birthdayObj = JSON.parse(birthdays);
-                            for (birthday of birthdayObj)
-                            {
-                                html += `<li>${birthday.name}</li>`
-                            }
-                            document.querySelector('ul').innerHTML = html;
+                //            let html = '';
+                //            let birthdayObj = JSON.parse(birthdays);
+                //            for (birthday of birthdayObj)
+                //            {
+                //                html += `<li>${birthday.name}</li>`
+                //            }
+                //            document.querySelector('ul').innerHTML = birthdays;
 
 
                         </script>
