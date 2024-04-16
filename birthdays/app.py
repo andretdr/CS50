@@ -15,7 +15,11 @@ db = SQL("sqlite:///birthdays.db")
 
 def validatedate(strdate):
     format = "%Y-%m-%d"
-    return bool(datetime.strptime(strdate, format))
+    try:
+        result = bool(datetime.strptime(strdate, format))
+    except ValueError:
+        result = false
+    return result
 
 @app.after_request
 def after_request(response):
