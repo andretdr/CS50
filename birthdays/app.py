@@ -26,7 +26,7 @@ def after_request(response):
 def index():
 
     if request.method == "POST":
-        record[]
+        record = {}
 
         record[name]=request.form.get("name")
         record[date]=request.form.get("date")
