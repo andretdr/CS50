@@ -1,7 +1,7 @@
 import os
 
 from cs50 import SQL
-from flask import Flask, flash, jsonify, redirect, render_template, request, session
+from flask import Flask, flash, json, redirect, render_template, request, session
 
 # Configure application
 app = Flask(__name__)
@@ -35,8 +35,6 @@ def index():
         # TODO: Display the entries in the database on index.html
 
         birthdays = db.execute("SELECT * FROM birthdays")
-
-        print(jsonify(birthdays))
 
         return render_template("index.html", birthdays=json.dumps(birthdays))
 
