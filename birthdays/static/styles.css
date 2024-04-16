@@ -37,9 +37,19 @@ body {
     transition: color 2s ease-in-out, background-color 0.15s ease-in-out;
 }
 
+@keyframes fade-out {
+    from {
+        opacity: 1;
+    }
+    to {
+        opacity: 0;
+    }
+}
+
 .response {
     text-align: center;
     font-size: 20px;
+
 }
 
 h1 {
