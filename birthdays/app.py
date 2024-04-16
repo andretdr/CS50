@@ -40,6 +40,7 @@ def index():
         record['date'] = request.form.get('date')
         if validatedate(record['date']):
             # enter into database
+            db.execute("INSERT into )
             response = 'Successful entry'
 
         else:
