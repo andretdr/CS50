@@ -13,7 +13,10 @@ app.config["TEMPLATES_AUTO_RELOAD"] = True
 # Configure CS50 Library to use SQLite database
 db = SQL("sqlite:///birthdays.db")
 
-
+def bool validatedate(strdate)
+{
+    return true
+}
 
 
 @app.after_request
