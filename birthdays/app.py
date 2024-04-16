@@ -26,8 +26,10 @@ def after_request(response):
 def index():
     if request.method == "POST":
 
-        q=arg.form
-        print(q)
+        record[name]=arg.form("name")
+        record[date]=arg.form("date")
+        print(record[name])
+        print(record[date])
 
         return redirect("/")
 
