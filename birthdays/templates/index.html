@@ -27,10 +27,8 @@
                             <th>Birthday</th>
                         </tr>
                     </thead>
-                    <tbody>
+                    <tbody id="text">
                         <!-- TODO: Loop through the database entries to display them in this table -->
-
-                        <ul id="text"></ul>
 
                         <script>
                             async function fetchlist() {
@@ -42,7 +40,7 @@
                                 let html = '';
                                 for (birthday of birthdayObj)
                                 {
-                                   html += `<li>${birthday.name}-${birthday.day} ${months[birthday.month - 1]}</li>`
+                                   html += `<tr><th>${birthday.name}</th><th>${birthday.day} ${months[birthday.month - 1]}</th></tr>`
                                 }
                                 document.querySelector('#text').innerHTML = html;
                             }
