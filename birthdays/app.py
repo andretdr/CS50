@@ -37,7 +37,7 @@ def index():
         return render_template("index.html")
 
 @app.route("/return")
-def index():
+def return():
     birthdays = db.execute("SELECT * FROM birthdays")
     return jsonify(birthdays)
 
