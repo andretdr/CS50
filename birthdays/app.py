@@ -18,7 +18,7 @@ def validatedate(strdate):
     try:
         result = bool(datetime.strptime(strdate, format))
     except ValueError:
-        result = false
+        result = False
     return result
 
 @app.after_request
@@ -40,6 +40,8 @@ def index():
         if validatedate(record['date']):
             print(record['name'])
             print(record['date'])
+        else:
+            print("false")
 
         return redirect("/")
 
