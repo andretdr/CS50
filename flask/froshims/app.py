@@ -42,7 +42,7 @@ def register(): # define new function register
         return render_template("error.html", message="Invalid Sport")
 
     # Remember registrant
- #   REGISTRANTS[name] = sport # assigning key: value. key(name) -> sport
+ #   REGISTRANTS["name"] = sport # assigning key: value. key(name) -> sport
 
     # inserting into the registrant table in the DB
     db.execute("INSERT INTO registrants (name, sport) VALUES(?, ?)", name, sport) # using ? placeholder to escape SQL injection attack
