@@ -14,7 +14,7 @@ app.config["TEMPLATES_AUTO_RELOAD"] = True
 db = SQL("sqlite:///birthdays.db")
 
 def validatedate(strdate):
-    format = %Y-%m-%d
+    format = "%Y-%m-%d"
     return bool(datetime.strptime(strdate, format))
 
 @app.after_request
