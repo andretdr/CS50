@@ -33,8 +33,16 @@
                         <ul id="text"></ul>
 
                         <script>
+                            async function fetchlist() {
+                                let response = await fetch('/return'); // variable response, fetch route search?q= the input value
+                                let birthdays = await response.text(); // grabbing text from server
+                                let birthdayObjf = JSON.parse(birthdays);
 
-//                        async function() { // adding listener event to input, the 'input' action
+                                return birthdayObjf;
+                            }
+
+                            fetchlist().then(birthdayObject => {birthdayObjf;});
+
 //                            let response = await fetch('/return'); // variable response, fetch route search?q= the input value
 //                            let birthdays = await response.text(); // grabbing text from server
 //                            let birthdayObj = JSON.parse(birthdays);
