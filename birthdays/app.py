@@ -26,19 +26,11 @@ def after_request(response):
 def index():
 
     if request.method == "POST":
-#        record = {}
-
-        name = request.form.get('name')
-        print(name)
-        print('HI')
-
-#        if not name:
-#        return render_template("error.html", message="Missing name")
-
-#          record['name'] = request.form.get('name')
-#          record['date'] = request.form.get('date')
-#          print(record['name'])
-#          print(record['date'])
+        record = {}
+        record['name'] = request.form.get('name')
+        record['date'] = request.form.get('date')
+        print(record['name'])
+        print(record['date'])
 
         return redirect("/")
 
