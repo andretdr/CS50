@@ -38,6 +38,6 @@ def index():
 
         print(jsonify(birthdays))
 
-        return render_template("index.html", birthdays=jsonify(birthdays))
+        return render_template("index.html", birthdays=json.dumps(birthdays))
 
 
