@@ -55,7 +55,7 @@ USES request.form
 
 
 # check boxes
-#
+# creating the form from what is coming from server side
 #  <form action="/register" method="post">
 #       <input autocomplete="off" autofocus name="name" placeholder="Name" type="text"> <!-- required entry, add 'required' -->
 #       {% for sport in sports %}
