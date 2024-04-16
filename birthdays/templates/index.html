@@ -33,14 +33,12 @@
                         <ul></ul>
 
                         <script>
-//                            let html = '{{ birthdays }}'
                             let html = '';
                             let birthdayObj = JSON.parse('{{ birthdays }}');
                             for (birthday of birthdayObj)
                             {
                                html += `<li>${birthday.name}</li>`
                             }
-// html = '{{ birthdays }}';
                             document.querySelector('ul').innerHTML = html;
 
                         </script>
