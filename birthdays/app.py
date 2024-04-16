@@ -39,8 +39,8 @@ def index():
         record['name'] = request.form.get('name')
         record['date'] = request.form.get('date')
         if validatedate(record['date']):
-            # enter into database
-            db.execute("INSERT into birthdays (name, month, day))
+            # enter into database how to auto increment the id?
+            db.execute("INSERT into birthdays (name, month, day)")
             response = 'Successful entry'
 
         else:
