@@ -28,10 +28,15 @@ def index():
     if request.method == "POST":
         record = {}
 
-        record["name"]=request.form.get("name")
-        record["date"]=request.form.get("date")
-        print(record["name"])
-        print(record["date"])
+        name = request.form.get('name')
+        print(name)
+        print('HI')
+
+
+#          record['name'] = request.form.get('name')
+#          record['date'] = request.form.get('date')
+#          print(record['name'])
+#          print(record['date'])
 
         return redirect("/")
 
