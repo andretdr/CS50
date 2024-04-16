@@ -32,22 +32,24 @@ def after_request(response):
 
 @app.route("/", methods=["GET", "POST"])
 def index():
+    response = ''
 
     if request.method == "POST":
         record = {}
         record['name'] = request.form.get('name')
         record['date'] = request.form.get('date')
         if validatedate(record['date']):
-            print(record['name'])
-            print(record['date'])
+            # enter into database
+            response = 'Successful entry'
+
         else:
-            print("false")
+            response = 'Invalid date'
 
         return redirect("/")
 
     else:
 
-        return render_template("index.html")
+        return render_template("index.html", response=response)
 
 @app.route("/return")
 def returnlist():
