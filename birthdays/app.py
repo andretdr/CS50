@@ -45,11 +45,11 @@ def index():
         else:
             response = 'Invalid date'
 
-        return redirect("/")
+        return render_template("index.html", response=response)
 
     else:
 
-        return render_template("index.html", response=response)
+        return render_template("index.html")
 
 @app.route("/return")
 def returnlist():
