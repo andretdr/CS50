@@ -32,6 +32,8 @@ def index():
         print(name)
         print('HI')
 
+#        if not name:
+#        return render_template("error.html", message="Missing name")
 
 #          record['name'] = request.form.get('name')
 #          record['date'] = request.form.get('date')
