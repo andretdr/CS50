@@ -91,6 +91,7 @@ def add():
 
 @app.route("/delete")
 def delete():
+    
     record = {};
     record['id'] = request.args.get('id')
     if validateid(record['id']):
