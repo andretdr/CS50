@@ -42,6 +42,7 @@
                                 let responset = await response.text();
 
                                 document.querySelector('#response').innerHTML = responset;
+                                fetchlist();
                             }
 
                             async function fetchlist() {
@@ -72,7 +73,6 @@
                                     let inputname = document.querySelector('#inputname');
                                     let inputdate = document.querySelector('#inputdate');
                                     addrecord(inputname.value, inputdate.value);
-                                    fetchlist();
                                 });
                             });
 
