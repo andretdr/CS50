@@ -23,7 +23,7 @@ def validatedate(strdate):
 
 def validatename(strname):
     try:
-        result = bool(datetime.strptime(strdate, format))
+        result = bool(strname)
     except ValueError:
         result = False
     return result
