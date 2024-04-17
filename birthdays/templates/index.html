@@ -62,7 +62,7 @@
                                 for (let birthday of birthdayObj) {
                                     strbutton = "'#id"+birthday.id+"'";
 
-                                    let eventbutton = document.querySelector(strbutton);
+                                    eventbutton = document.querySelector(strbutton);
                                         eventbutton.addEventListener('click', function() {
                                             document.querySelector('#response').innerHTML = strbutton;
                                         });
