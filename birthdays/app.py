@@ -76,8 +76,8 @@ def index():
 def add():
 
     record = {}
-    record['name'] = request.arg.get('name')
-    record['date'] = request.arg.get('date')
+    record['name'] = request.args.get('name')
+    record['date'] = request.args.get('date')
 
     if validatedate(record['date']) and validatename(record['name']):
         db.execute("INSERT INTO birthdays (name, month, day) VALUES(?, ?, ?);", record['name'], returnmonth(record['date']), returnday(record['date']))
