@@ -30,11 +30,10 @@ def validatename(strname):
 
 def validateid(id):
     try:
-        result = bool(strname)
+        result = bool(db.execute("SELECT FROM birthdays WHERE id = ?", id))
     except ValueError:
         result = False
     return result
-
 
 def returnmonth(strdate):
     format = "%Y-%m-%d"
@@ -76,7 +75,6 @@ def index():
 @app.route("/add", methods=["POST"])
 def add():
 
-
     record = {}
     record['name'] = request.form.get('name')
     record['date'] = request.form.get('date')
@@ -94,11 +92,11 @@ def add():
 def delete():
     record = {};
     record['id'] = request.form.get('id')
+    print(validateid(record['id']))
     db.execute("DELETE FROM birthdays WHERE id = ?;", record['id'])
     status = ''
 
     return redirect("/")
-
 
 @app.route("/return")
 def returnlist():
