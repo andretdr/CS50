@@ -51,7 +51,7 @@ def index():
         record['date'] = request.form.get('date')
 
         if validatedate(record['date']):
-            print(returnmonth(record['date']))
+            print(f"MONTH: {returnmonth(record['date'])}")
             # enter into database how to auto increment the id?
 #            db.execute("INSERT into birthdays (name, month, day)")
             response = 'Successful entry'
