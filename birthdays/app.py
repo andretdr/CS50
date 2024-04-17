@@ -81,6 +81,11 @@ def index():
 
         return render_template("index.html")
 
+@app.route("/delete")
+def delete():
+    
+
+
 @app.route("/return")
 def returnlist():
 
