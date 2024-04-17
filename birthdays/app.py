@@ -21,6 +21,17 @@ def validatedate(strdate):
         result = False
     return result
 
+def returnmonth(strdate):
+    format = "%Y-%m-%d"
+    try:
+        date = datetime.strptime(strdate, format)
+        month = date.strdate("%m")
+        result = month
+    except ValueError:
+        result = 0
+    return result
+
+
 @app.after_request
 def after_request(response):
     """Ensure responses aren't cached"""
@@ -38,9 +49,9 @@ def index():
         record = {}
         record['name'] = request.form.get('name')
         record['date'] = request.form.get('date')
-        
 
-#        if validatedate(record['date']):
+        if validatedate(record['date']):
+            print(returnmonth(record['date']))
             # enter into database how to auto increment the id?
 #            db.execute("INSERT into birthdays (name, month, day)")
             response = 'Successful entry'
