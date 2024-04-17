@@ -99,7 +99,7 @@ def delete():
     else:
         status = 'Record not found'
 
-    return redirect("/")
+    return status
 
 
 @app.route("/returnlist")
