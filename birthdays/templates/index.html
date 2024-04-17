@@ -57,14 +57,16 @@
                                 document.querySelector('#text').innerHTML = html;
 
                                 // add listeners to all
-
+                                let i = 0;
                                 for (birthday of birthdayObj) {
-                                    let strbutton = "'#id"+birthday.id+"'";
+                                    //let strbutton = "'#id"+birthday.id+"'";
+                                    let strbutton = ['#id3','#id56'];
 
-                                    let eventbutton = document.querySelector('#id3');
+                                    let eventbutton = document.querySelector(strbutton[i]);
                                         eventbutton.addEventListener('click', function() {
-                                            document.querySelector('#response').innerHTML = strbutton;
+                                            document.querySelector('#response').innerHTML = strbutton[i];
                                         });
+                                    i++;
 
                                 }
                             }
