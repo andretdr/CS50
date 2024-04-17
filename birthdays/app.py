@@ -21,6 +21,13 @@ def validatedate(strdate):
         result = False
     return result
 
+def validatename(strname):
+    try:
+        result = bool(datetime.strptime(strdate, format))
+    except ValueError:
+        result = False
+    return result
+
 def returnmonth(strdate):
     format = "%Y-%m-%d"
     try:
