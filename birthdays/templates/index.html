@@ -64,7 +64,12 @@
                                 let inputdate = document.querySelector('#inputdate');
 //                                document.querySelector('#response').innerHTML = inputdate.value;
 
-                                
+                                $.post("/add",
+                                {
+                                    name: "donald",
+                                    date: "2024-04-03"
+                                }
+                                );
 
                                 fetchlist();
                             });
