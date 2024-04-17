@@ -49,10 +49,8 @@
                                    html += `<tr>
                                                 <th>${birthday.name}</th><th>${birthday.day} ${months[birthday.month - 1]}</th>
                                                 <th>
-                                                    <form action="/delete" method="get">
-                                                        <input type="hidden" name="id" value="${birthday.id}">
-                                                        <button id="${birthday.id}">Delete</button>
-                                                    </form>
+                                                    <input type="hidden" name="id" value="${birthday.id}">
+                                                    <button id="${birthday.id}">Delete</button>
                                                 </th>
                                             </tr>`
                                 }
