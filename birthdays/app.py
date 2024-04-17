@@ -84,7 +84,7 @@ def index():
 @app.route("/return")
 def returnlist():
 
-    birthdays = db.execute("SELECT * FROM birthdays SORT BY month day DESC")
+    birthdays = db.execute("SELECT * FROM birthdays ORDER BY month, day DESC")
 
     return jsonify(birthdays)
 
