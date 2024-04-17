@@ -60,7 +60,17 @@
                                 document.querySelector('#text').innerHTML = html;
 
                                 // add listeners to all
-                                for ()
+
+                                for (let j = 0; j < i; j++) {
+                                    let strbutton = '#'+j;
+                                    let eventbutton = document.querySelector(strbutton);
+                                        eventbutton.addEventListener('click', function() {
+                                    let inputname = document.querySelector('#inputname');
+                                    let inputdate = document.querySelector('#inputdate');
+                                    addrecord(inputname.value, inputdate.value);
+                                        });
+
+                                }
                             }
 
                             async function addrecord(name, date) {
