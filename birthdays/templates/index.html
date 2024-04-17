@@ -53,9 +53,10 @@
                                                 <th>${birthday.name}</th><th>${birthday.day} ${months[birthday.month - 1]}</th>
                                                 <th>
                                                     <form action="/" method="post">
-                                                        <input type="hidden" name="id" value="${birthday.id}"
-                                                        <button>Delete</button></th>
+                                                        <input type="hidden" name="id" value="${birthday.id}">
+                                                        <button>Delete</button>
                                                     </form>
+                                                </th>
                                             </tr>`
                                 }
                                 document.querySelector('#text').innerHTML = html;
