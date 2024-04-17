@@ -28,6 +28,14 @@ def validatename(strname):
         result = False
     return result
 
+def validateid(id):
+    try:
+        result = bool(strname)
+    except ValueError:
+        result = False
+    return result
+
+
 def returnmonth(strdate):
     format = "%Y-%m-%d"
     try:
@@ -58,15 +66,16 @@ def after_request(response):
     response.headers["Pragma"] = "no-cache"
     return response
 
+status = ''
 
 @app.route("/", methods=["GET", "POST"])
 def index():
 
-    return render_template("index.html")
+    return render_template("index.html", response=status)
 
 @app.route("/add", methods=["POST"])
 def add():
-    response = ''
+
 
     record = {}
     record['name'] = request.form.get('name')
@@ -74,11 +83,11 @@ def add():
 
     if validatedate(record['date']) and validatename(record['name']):
         db.execute("INSERT INTO birthdays (name, month, day) VALUES(?, ?, ?);", record['name'], returnmonth(record['date']), returnday(record['date']))
-        response = 'Successful entry'
+        status = ''
     else:
-        response = 'Invalid entry'
+        status = 'Invalid entry'
 
-    return render_template("index.html", response=response)
+    return redirect("/")
 
 
 @app.route("/delete", methods=["POST"])
@@ -86,6 +95,7 @@ def delete():
     record = {};
     record['id'] = request.form.get('id')
     db.execute("DELETE FROM birthdays WHERE id = ?;", record['id'])
+    status = ''
 
     return redirect("/")
 
