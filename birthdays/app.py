@@ -36,7 +36,7 @@ def returnday(strdate):
     format = "%Y-%m-%d"
     try:
         date = datetime.strptime(strdate, format)
-        day = date.strftime("%m")
+        day = date.strftime("%d")
         result = day
     except ValueError:
         result = 0
