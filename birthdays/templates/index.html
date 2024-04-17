@@ -62,12 +62,11 @@
                                 // add listeners to all
 
                                 for (let j = 0; j < i; j++) {
-                                    let strbutton = '#'+j;
+                                    let strbutton = "'#"+j+"'";
                                     let eventbutton = document.querySelector(strbutton);
                                         eventbutton.addEventListener('click', function() {
-                                    let inputname = document.querySelector('#inputname');
-                                    let inputdate = document.querySelector('#inputdate');
-                                    addrecord(inputname.value, inputdate.value);
+                                            let buttonid = document.querySelector('#inputdate');
+                                            addrecord(inputname.value, inputdate.value);
                                         });
 
                                 }
