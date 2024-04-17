@@ -81,9 +81,13 @@ def index():
 
         return render_template("index.html")
 
-@app.route("/delete")
+@app.route("/delete", methods=["POST"])
 def delete():
-    
+    record = {};
+    record['id'] = request.form.get('id')
+    print(record['id'])
+
+    return redirect("/")
 
 
 @app.route("/return")
