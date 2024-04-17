@@ -68,13 +68,12 @@ def index():
         record['name'] = request.form.get('name')
         record['date'] = request.form.get('date')
 
-        if validatedate(record['date']):
+        if validatedate(record['date']) and validatename(record['name']):
             # enter into database how to auto increment the id?
             db.execute("INSERT INTO birthdays (name, month, day) VALUES(?, ?, ?);", record['name'], returnmonth(record['date']), returnday(record['date']))
             response = 'Successful entry'
-
         else:
-            response = 'Invalid date'
+            response = 'Invalid entry'
 
         return render_template("index.html", response=response)
 
