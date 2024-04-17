@@ -36,17 +36,8 @@
                         <!-- TODO: Loop through the database entries to display them in this table -->
 
                         <script>
-                            async function addrecord(name, date) {
-                                let strparam = '/add?name=' + name + '&date=' + date;
-                                let response = await fetch(strparam); // variable response
-                                let responset = await response.text();
-
-                                document.querySelector('#response').innerHTML = responset;
-                                fetchlist();
-                            }
-
                             async function fetchlist() {
-                                let response = await fetch('/return'); // variable response, fetch route search?q= the input value
+                                let response = await fetch('/returnlist'); // variable response, fetch route search?q= the input value
                                 let birthdays = await response.text(); // grabbing text from server
                                 let birthdayObj = JSON.parse(birthdays);
                                 let months = ["JAN","FEB","MAR","APRIL","MAY","JUNE","JULY","AUG","SEP","OCT","NOV","DEC"];
@@ -65,6 +56,15 @@
                                             </tr>`
                                 }
                                 document.querySelector('#text').innerHTML = html;
+                            }
+
+                            async function addrecord(name, date) {
+                                let strparam = '/add?name=' + name + '&date=' + date;
+                                let response = await fetch(strparam); // variable response
+                                let responset = await response.text();
+
+                                document.querySelector('#response').innerHTML = responset;
+                                fetchlist();
                             }
 
                             let inputbutton = document.querySelector('#inputbutton');

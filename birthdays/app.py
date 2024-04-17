@@ -72,6 +72,7 @@ def index():
 
     return render_template("index.html")
 
+
 @app.route("/add")
 def add():
 
@@ -100,7 +101,8 @@ def delete():
 
     return redirect("/")
 
-@app.route("/return")
+
+@app.route("/returnlist")
 def returnlist():
 
     birthdays = db.execute("SELECT * FROM birthdays ORDER BY month, day ASC")
