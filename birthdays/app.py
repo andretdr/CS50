@@ -85,7 +85,7 @@ def add():
     else:
         status = 'Invalid entry'
 
-    return redirect("/")
+    return status
 
 
 @app.route("/delete", methods=["POST"])
