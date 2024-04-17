@@ -67,11 +67,13 @@
                             }
 
                             let inputbutton = document.querySelector('#inputbutton');
-                            inputbutton.addEventListener('click', function() {
-                                let inputname = document.querySelector('#inputname');
-                                let inputdate = document.querySelector('#inputdate');
-                                addrecord(inputname.value, inputdate.value);
-                                fetchlist();
+                            document.addEventListener('DOMContentLoaded', function() {
+                                inputbutton.addEventListener('click', function() {
+                                    let inputname = document.querySelector('#inputname');
+                                    let inputdate = document.querySelector('#inputdate');
+                                    addrecord(inputname.value, inputdate.value);
+                                    fetchlist();
+                                });
                             });
 
                             fetchlist();
