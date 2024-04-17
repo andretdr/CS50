@@ -38,7 +38,9 @@
                         <script>
                             async function addrecord(name, date) {
                                 let strparam = '/add?name=' + name + '&date=' + date;
-                                document.querySelector('#response').innerHTML = strparam;
+                                let response = await fetch(strparam); // variable response
+
+                                document.querySelector('#response').innerHTML = response;
                             }
 
                             async function fetchlist() {
