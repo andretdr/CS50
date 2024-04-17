@@ -89,10 +89,10 @@ def add():
     return status
 
 
-@app.route("/delete", methods=["POST"])
+@app.route("/delete")
 def delete():
     record = {};
-    record['id'] = request.form.get('id')
+    record['id'] = request.args.get('id')
     if validateid(record['id']):
         db.execute("DELETE FROM birthdays WHERE id = ?;", record['id'])
         status = ''
