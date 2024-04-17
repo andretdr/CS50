@@ -46,7 +46,7 @@ body {
     }
 }
 
-.response {
+#response {
     text-align: center;
     font-size: 20px;
 

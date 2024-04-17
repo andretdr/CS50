@@ -19,7 +19,7 @@
                 <input id="inputdate" type="date" name="date" required>
                 <button id="inputbutton" type="submit">Submit</button>
 
-                <div class="response">{{ response }}</div>
+                <div id="response"></div>
 
             </div>
 
@@ -62,12 +62,9 @@
 
                             let inputbutton = document.querySelector('#inputbutton')
                             inputbutton.addEventListener('click', function() {
-                                
+                                document.querySelector('#response').innerHTML = 'HEARD'
 
-                            }
-
-
-                            )
+                            });
 
                             fetchlist();
 
