@@ -43,7 +43,7 @@
                                 let months = ["JAN","FEB","MAR","APRIL","MAY","JUNE","JULY","AUG","SEP","OCT","NOV","DEC"];
 
                                 let html = '';
-                                let i = 0;
+
                                 for (birthday of birthdayObj)
                                 {
                                    html += `<tr>
@@ -51,11 +51,11 @@
                                                 <th>
                                                     <form action="/delete" method="get">
                                                         <input type="hidden" name="id" value="${birthday.id}">
-                                                        <button id="${i}">Delete</button>
+                                                        <button id="${birthday.id}">Delete</button>
                                                     </form>
                                                 </th>
                                             </tr>`
-                                    i += 1;
+                                
                                 }
                                 document.querySelector('#text').innerHTML = html;
 
