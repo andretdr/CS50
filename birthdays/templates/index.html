@@ -63,11 +63,13 @@
                                 for (birthday of birthdayObj) {
                                     let strbutton = "'#"+birthday.id+"'";
 
-                                    document.querySelector('#response').innerHTML = strbutton;
+                                    let eventbutton = document.querySelector(strbutton);
+                                        eventbutton.addEventListener('click', function() {
+                                            delrecord(birthday.id);
+                                        });
+
                                 }
-
                             }
-
 
                             async function addrecord(name, date) {
                                 let strparam = '/add?name=' + name + '&date=' + date;
