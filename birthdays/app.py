@@ -25,7 +25,7 @@ def returnmonth(strdate):
     format = "%Y-%m-%d"
     try:
         date = datetime.strptime(strdate, format)
-        month = date.strpdate("%m")
+        month = date.strptime("%m")
         result = month
     except ValueError:
         result = 0
