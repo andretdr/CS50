@@ -25,8 +25,19 @@ def returnmonth(strdate):
     format = "%Y-%m-%d"
     try:
         date = datetime.strptime(strdate, format)
-        month = date.strptime("%m")
+        month = date.strftime("%m")
         result = month
+    except ValueError:
+        result = 0
+    return result
+
+
+def returnday(strdate):
+    format = "%Y-%m-%d"
+    try:
+        date = datetime.strptime(strdate, format)
+        day = date.strftime("%m")
+        result = day
     except ValueError:
         result = 0
     return result
@@ -51,9 +62,9 @@ def index():
         record['date'] = request.form.get('date')
 
         if validatedate(record['date']):
-            print(f"MONTH: {returnmonth(record['date'])}")
             # enter into database how to auto increment the id?
-#            db.execute("INSERT into birthdays (name, month, day)")
+            db.execute("INSERT into birthdays (name, month, day),
+                       (record['name'], returnmonth(record['date']), returnday(record['date']))")
             response = 'Successful entry'
 
         else:
