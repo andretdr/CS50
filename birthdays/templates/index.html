@@ -36,29 +36,10 @@
                         <!-- TODO: Loop through the database entries to display them in this table -->
 
                         <script>
-                            async function add(name, date) {
-                                let strparam = '/add?name=' + name + 'date=' + date;
-                                let response = await fetch('/add=?'); // variable response, fetch route search?q= the input value
-                                let birthdays = await response.text(); // grabbing text from server
-                                let birthdayObj = JSON.parse(birthdays);
-                                let months = ["JAN","FEB","MAR","APRIL","MAY","JUNE","JULY","AUG","SEP","OCT","NOV","DEC"];
-
-                                let html = '';
-                                for (birthday of birthdayObj)
-                                {
-                                   html += `<tr>
-                                                <th>${birthday.name}</th><th>${birthday.day} ${months[birthday.month - 1]}</th>
-                                                <th>
-                                                    <form action="/delete" method="post">
-                                                        <input type="hidden" name="id" value="${birthday.id}">
-                                                        <button>Delete</button>
-                                                    </form>
-                                                </th>
-                                            </tr>`
-                                }
-                                document.querySelector('#text').innerHTML = html;
+                            async function addrecord(name, date) {
+                                let strparam = '/add?name=' + name + '&date=' + date;
+                                document.querySelector('#response').innerHTML = strparam;
                             }
-
 
                             async function fetchlist() {
                                 let response = await fetch('/return'); // variable response, fetch route search?q= the input value
@@ -86,17 +67,7 @@
                             inputbutton.addEventListener('click', function() {
                                 let inputname = document.querySelector('#inputname');
                                 let inputdate = document.querySelector('#inputdate');
-//                                document.querySelector('#response').innerHTML = inputdate.value;
-                                $(document).ready(function() {
-                                    $('#form').on('submit', function(e){
-                                        $.ajax({
-                                        type : 'POST',
-                                        url : "/add",
-                                        data : {name: inputname.value, date: inputdate.value}
-                                        })
-                                    e.preventDefault();
-                                    });
-                                });
+                                addrecord(inputname.value, inputdate.value)
 
                                 fetchlist();
                             });

@@ -72,12 +72,12 @@ def index():
 
     return render_template("index.html")
 
-@app.route("/add", methods=["POST"])
+@app.route("/add")
 def add():
 
     record = {}
-    record['name'] = request.form.get('name')
-    record['date'] = request.form.get('date')
+    record['name'] = request.arg.get('name')
+    record['date'] = request.arg.get('date')
 
     if validatedate(record['date']) and validatename(record['name']):
         db.execute("INSERT INTO birthdays (name, month, day) VALUES(?, ?, ?);", record['name'], returnmonth(record['date']), returnday(record['date']))
