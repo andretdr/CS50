@@ -30,7 +30,7 @@ def validatename(strname):
 
 def validateid(id):
     try:
-        result = bool(db.execute("SELECT FROM birthdays WHERE id = ?", id))
+        result = bool(db.execute("SELECT * FROM birthdays WHERE id = ?", id))
     except ValueError:
         result = False
     return result
@@ -92,9 +92,11 @@ def add():
 def delete():
     record = {};
     record['id'] = request.form.get('id')
-    print(validateid(record['id']))
-    db.execute("DELETE FROM birthdays WHERE id = ?;", record['id'])
-    status = ''
+    if validateid(record['id']):
+        db.execute("DELETE FROM birthdays WHERE id = ?;", record['id'])
+        status = ''
+    else:
+        status = 'Record not found'
 
     return redirect("/")
 
