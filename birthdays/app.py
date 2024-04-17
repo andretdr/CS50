@@ -63,7 +63,7 @@ def index():
 
         if validatedate(record['date']):
             # enter into database how to auto increment the id?
-            db.execute("INSERT INTO birthdays (name, month, day) VALUES(?, ?, ?));", record['name'], returnmonth(record['date']), returnday(record['date']))
+            db.execute("INSERT INTO birthdays (name, month, day) VALUES(?, ?, ?);", record['name'], returnmonth(record['date']), returnday(record['date']))
             response = 'Successful entry'
 
         else:
