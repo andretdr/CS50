@@ -57,20 +57,23 @@
                                 document.querySelector('#text').innerHTML = html;
 
                                 // add listeners to all
-                                let i=0;
+//                                let i=0;
                                 strbutton = ['#id3', '#id56', '#id55', '#id52', '#id49'];
 //                                for (let birthday of birthdayObj) {
 //                                    strbutton = "'#id"+birthday.id+"'";
 
-
-                                    eventbutton = document.querySelector(strbutton[i]);
+                                    eventbutton = document.querySelector(strbutton[0]);
                                     eventbutton.addEventListener('click', function() {
-                                        document.querySelector('#response').innerHTML = strbutton[i];
+                                        document.querySelector('#response').innerHTML = strbutton[0];
 
+                                    eventbutton = document.querySelector(strbutton[1]);
+                                    eventbutton.addEventListener('click', function() {
+                                        document.querySelector('#response').innerHTML = strbutton[1];
 
-//                                        });
-//                                    i++;
-                                }
+                                    });
+                                        });
+  //                                  i++;
+  //                              }
                             }
 
                             async function addrecord(name, date) {
