@@ -61,13 +61,13 @@
                                 // add listeners to all
 
                                 for (birthday of birthdayObj) {
-                                    let strbutton = "#"+birthday.id;
+                                    let strbutton = "'#"+birthday.id+"'";
 
-                                    document.querySelector('#response').innerHTML = strbutton
-                                        });
-
+                                    document.querySelector('#response').innerHTML = strbutton;
                                 }
+
                             }
+
 
                             async function addrecord(name, date) {
                                 let strparam = '/add?name=' + name + '&date=' + date;
