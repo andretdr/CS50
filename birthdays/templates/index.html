@@ -43,7 +43,7 @@
                                 let months = ["JAN","FEB","MAR","APRIL","MAY","JUNE","JULY","AUG","SEP","OCT","NOV","DEC"];
 
                                 let html = '';
-
+                                let i = 0;
                                 for (birthday of birthdayObj)
                                 {
                                    html += `<tr>
@@ -55,17 +55,17 @@
                                                     </form>
                                                 </th>
                                             </tr>`
-                                
+                                    i += 1;
                                 }
                                 document.querySelector('#text').innerHTML = html;
 
                                 // add listeners to all
 
                                 for (let j = 0; j < i; j++) {
-                                    let strbutton = "'#"+j+"'";
+                                    let strbutton = "'#"+birthday.id+"'";
                                     let eventbutton = document.querySelector(strbutton);
                                         eventbutton.addEventListener('click', function() {
-                                            let buttonid = document.querySelector('#inputdate');
+                                            let  = document.querySelector('#inputdate');
                                             addrecord(inputname.value, inputdate.value);
                                         });
 
