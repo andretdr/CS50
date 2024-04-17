@@ -80,15 +80,13 @@
                             }
 
                             async function delrecord(id) {
-                                let strparam = '/del?id=' + id;
+                                let strparam = '/delete?id=' + id;
                                 let response = await fetch(strparam); // variable response
                                 let responset = await response.text();
 
                                 document.querySelector('#response').innerHTML = responset;
                                 fetchlist();
                             }
-
-
 
                             let inputbutton = document.querySelector('#inputbutton');
                             document.addEventListener('DOMContentLoaded', function() {
