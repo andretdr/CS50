@@ -61,25 +61,25 @@ def after_request(response):
 
 @app.route("/", methods=["GET", "POST"])
 def index():
+
+    return render_template("index.html")
+
+@app.route("/add", methods=["POST"])
+def add():
     response = ''
 
-    if request.method == "POST":
-        record = {}
-        record['name'] = request.form.get('name')
-        record['date'] = request.form.get('date')
+    record = {}
+    record['name'] = request.form.get('name')
+    record['date'] = request.form.get('date')
 
-        if validatedate(record['date']) and validatename(record['name']):
-            # enter into database how to auto increment the id?
-            db.execute("INSERT INTO birthdays (name, month, day) VALUES(?, ?, ?);", record['name'], returnmonth(record['date']), returnday(record['date']))
-            response = 'Successful entry'
-        else:
-            response = 'Invalid entry'
-
-        return render_template("index.html", response=response)
-
+    if validatedate(record['date']) and validatename(record['name']):
+        db.execute("INSERT INTO birthdays (name, month, day) VALUES(?, ?, ?);", record['name'], returnmonth(record['date']), returnday(record['date']))
+        response = 'Successful entry'
     else:
+        response = 'Invalid entry'
 
-        return render_template("index.html")
+    return render_template("index.html", response=response)
+
 
 @app.route("/delete", methods=["POST"])
 def delete():
