@@ -63,12 +63,15 @@
                                 let inputname = document.querySelector('#inputname');
                                 let inputdate = document.querySelector('#inputdate');
 //                                document.querySelector('#response').innerHTML = inputdate.value;
-
-                                $.ajax({
-                                    type : 'POST',
-                                    url : "/add",
-                                    data : {name: "donald", date: "2024-04-03"}
-                                });
+                                $(document).ready(function() {
+                                    $('#form').on('submit', function(e){
+                                        $.ajax({
+                                        type : 'POST',
+                                        url : "/add",
+                                        data : {name: inputname.value , date: inputdate.value}
+                                        })
+                                e.preventDefault();
+                            });
 
                                 fetchlist();
                             });
