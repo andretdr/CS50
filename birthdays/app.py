@@ -85,7 +85,7 @@ def index():
 def delete():
     record = {};
     record['id'] = request.form.get('id')
-    print(record['id'])
+    
 
     return redirect("/")
 
