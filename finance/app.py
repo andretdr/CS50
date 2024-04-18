@@ -124,23 +124,23 @@ def register():
         if statuscheck != 3:
             status = ['please fill in yr username', 'username is used', 'username needs to be alphanumeric']
             print(f"name status = {status[statuscheck]}")
-            return ("/") #(status[statuscheck]) how to pas back the message dynamically? fetch as post?
+            return redirect("/") #(status[statuscheck]) how to pas back the message dynamically? fetch as post?
 
         statuscheck = validatepassword(record['password'], record['confirmation'])
 
         if statuscheck != 2:
             status = ['please fill in your password', 'passwords do not match']
             print(f"password status = {status[statuscheck]}")
-            return ("/") #'password and comfirmation do not match'
+            return redirect("/") #'password and comfirmation do not match'
 
         pwhash = generate_password_hash(record['password'], method='scrypt', salt_length=16)
 
         addrecord(record['name'], pwhash, db)
         id = db.execute('SELECT id FROM users WHERE username = ?;', record['name'])
-
+        print(f"id is {id[0]['id']}")
         session['user id'] = id[0]['id']
 
-        return ("/")
+        return redirect("/")
     return render_template("register.html")
 
 
