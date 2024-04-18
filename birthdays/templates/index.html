@@ -77,23 +77,24 @@
                                 for (let birthday of birthdayObj) {
                                     if ((id === undefined) || (id !== birthday.id))
                                     {
+                                        // add listener to del button
                                         let strbutton_del = '#del'+birthday.id;
                                         let eventbutton_del = document.querySelector(strbutton_del);
                                         eventbutton_del.addEventListener('click', function() {
                                             delrecord(birthday.id);
                                         });
-
+                                        // add listener to edit button
                                         let strbutton_edit = '#edit'+birthday.id;
                                         let eventbutton_edit = document.querySelector(strbutton_edit);
                                         eventbutton_edit.addEventListener('click', function() {
                                             fetchlist(birthday.id);
                                         });
                                     }
-                                    else // set listener to the re-submit button
-                                    {
-                                        let strbutton_edit = '#edit'+birthday.id;
-                                        let eventbutton_edit = document.querySelector(strbutton_edit);
-                                        eventbutton_edit.addEventListener('click', function() {
+                                    else
+                                    {   // add listener to the re-submit button
+                                        let strbutton_resubmit = '#edit'+birthday.id;
+                                        let eventbutton_resubmit = document.querySelector(strbutton_resubmit);
+                                        eventbutton_resubmit.addEventListener('click', function() {
                                             fetchlist(birthday.id);
 
                                     }
