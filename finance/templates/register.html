@@ -16,9 +16,15 @@
             <input id="regcom" class="form-control mx-auto w-auto" name="confirmation" placeholder="Re-enter password" type="password">
         </div>
         <button id="regbutton" class="btn btn-primary" type="submit">Register</button>
-    <p></p>
+    <p id="status"></p>
     <script>
-        
+        let reg = {}
+        reg['name'] = document.querySelector('#regname').value;
+        let regbutton = document.querySelector('#regbutton');
+        regbutton.addListener("click", function() {
+
+            document.querySelector("#status").innerHTML = reg['name'];
+        });
 
     </script>
 {% endblock %}
