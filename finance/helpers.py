@@ -90,7 +90,7 @@ def usd(value):
 
 
 def validatename(name): # returns 3 if ok, 0 if invalid, 1 if username is already being used, 2 if using special letters
-    if name = '':
+    if name == '':
         return 0
 #    if name != '': regex check
 #       return 2
