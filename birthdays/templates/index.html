@@ -54,18 +54,18 @@
                                                     <th>
                                                         <input type="hidden" name="id" value="${birthday.id}">
                                                         <button id="del${birthday.id}">Delete</button>
-                                                       <button id="edit${birthday.id}">Edit</button>
+                                                        <button id="edit${birthday.id}">Edit</button>
                                                     </th>
                                                 </tr>`
                                     }
                                     else
                                     {
                                         html += `<tr>
-                                                    <th>${birthday.name}</th><th>${birthday.day} ${months[birthday.month - 1]}</th>
+                                                    <th><input type="text" name="name" autofocus autocomplete=off placeholder=${birthday.name}></th>
+                                                    <th>${birthday.day} ${months[birthday.month - 1]}</th>
                                                     <th>
                                                         <input type="hidden" name="id" value="${birthday.id}">
-                                                        <button id="del${birthday.id}">Delete</button>
-                                                       <button id="edit${birthday.id}">Edit</button>
+                                                        <button id="edit${birthday.id}">Submit</button>
                                                     </th>
                                                 </tr>`
 
