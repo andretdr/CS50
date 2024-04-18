@@ -6,7 +6,7 @@
 
 {% block main %}
 
-        <div class="mb-3">e
+        <div class="mb-3">
             <input id="regname" autocomplete="off" autofocus class="form-control mx-auto w-auto" name="username" placeholder="Username" type="text">
         </div>
         <div class="mb-3">
@@ -18,11 +18,11 @@
         <button id="regbutton" class="btn btn-primary" type="submit">Register</button>
     <p id="status"></p>
     <script>
-        let regname = document.querySelector('#regname').value;
+        let regname = document.querySelector('#regname');
 
         let regbutton = document.querySelector('#regbutton');
         regbutton.addEventListener('click', function() {
-            document.querySelector('#status').innerHTML = regname;
+            document.querySelector('#status').innerHTML = regname.value;
         });
 
     </script>
