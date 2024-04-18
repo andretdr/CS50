@@ -100,7 +100,7 @@
                                             let newdate = document.querySelector('#editdate');
                                             let newid = document.querySelector('#editid');
 
-                                            document.querySelector('#response').innerHTML = newname;
+                                            updaterecord(newid.value, newname.value, newdate.value);
                                         });
 
                                         // add listener to cancel button
@@ -131,9 +131,13 @@
                                 fetchlist();
                             }
 
-                            async function editrecord(id) {
-                                // print out all rows as normal except for editing row
+                            async function updaterecord(id, name, date) {
+                                let strparam = '/update?id=' + id + '&name=' + name + '&date=' + date;
+                                let response = await fetch(strparam);
+                                let responset = await response.text();
 
+                                document.querySelector('#response').innerHTML = responset;
+                                fetchlist();
                             }
 
                             // addlistener to main submit button
@@ -142,6 +146,7 @@
                                 inputbutton.addEventListener('click', function() {
                                     let inputname = document.querySelector('#inputname');
                                     let inputdate = document.querySelector('#inputdate');
+
                                     addrecord(inputname.value, inputdate.value);
                                 });
                             });

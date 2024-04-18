@@ -91,7 +91,7 @@ def add():
 
 @app.route("/delete")
 def delete():
-    
+
     record = {};
     record['id'] = request.args.get('id')
     if validateid(record['id']):
@@ -101,6 +101,17 @@ def delete():
         status = 'Record not found'
 
     return status
+
+
+@app.route("/update")
+def update():
+
+    idedit = query.args.get('id')
+    nameedit = query.args.get('name')
+    dateedit = query.args.get('date')
+
+    if (validateid(idedit) and validatename(nameedit) and validatedate(dateedit)):
+        db.execute("UPDATE birthdays SET name )
 
 
 @app.route("/returnlist")
