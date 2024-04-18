@@ -138,7 +138,7 @@ def register():
         addrecord(record['name'], pwhash, db)
         id = db.execute('SELECT id FROM users WHERE username = ?;', record['name'])
         print(f"id is {id[0]['id']}")
-        session['user id'] = id[0]['id']
+        session['user_id'] = id[0]['id']
 
         return redirect("/")
     return render_template("register.html")
