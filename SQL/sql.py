@@ -50,6 +50,8 @@ DELETE FROM favorites WHERE Timestamp IS NULL; # delete rows where timestamp is 
 # UPDATE table SET column = value WHERE condition;
 UPDATE favorites SET language = 'SQL', problem = 'Fiftyville'; # updates ALL rows and columns to SQL n fiftyville
 
+# UPDATE table company, SETTING the address WHERE id = 6
+UPDATE company SET address WHERE id = 6
 
 
 
