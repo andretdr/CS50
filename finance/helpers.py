@@ -99,3 +99,9 @@ def validatename(name, db): # returns 3 if ok, 0 if invalid, 1 if username is al
         return 3
     return 1
 
+def validatepassword(pw, pwconfirm):
+    if pw == '' or pwconfirm == '':
+        return 0
+    if pw != pwconfirm:
+        return 1
+    return 2

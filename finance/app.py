@@ -5,7 +5,7 @@ from flask import Flask, flash, redirect, render_template, request, session
 from flask_session import Session
 from werkzeug.security import check_password_hash, generate_password_hash
 
-from helpers import apology, login_required, lookup, usd, validatename
+from helpers import apology, login_required, lookup, usd, validatename, validatepassword
 
 # Configure application
 app = Flask(__name__)
@@ -122,12 +122,15 @@ def register():
         statuscheck = validatename(record['name'], db)
 
         if statuscheck != 3:
-            status = ['username is invalid', 'username is used', 'username needs to be alphanumeric']
+            status = ['please fill in yr username', 'username is used', 'username needs to be alphanumeric']
             print(f"name status = {status[statuscheck]}")
             return ("/") #(status[statuscheck])
 
-        if record['password'] != record['confirmation']:
-            print ("ps dont match")
+        statuscheck = validatepassword(record['password'], record['confirmation'])
+
+        if statuscheck != 2:
+            status = ['please fill in your password', 'passwords do not match']
+            print(f"password status = {status[statuscheck]}")
             return ("/") #'password and comfirmation do not match'
 
         pwhash = generate_password_hash(record['password'], method='scrypt', salt_length=16)
