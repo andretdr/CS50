@@ -119,6 +119,9 @@ def register():
         record['password'] = request.form.get('password')
         record['confirmation'] = request.form.get('confirmation')
 
+        if not validatename(record['name']):
+            return "username is used"
+
         if record['password'] == record['confirmation']:
             addrecord(record['name'], hash(record['password']))
             id = db.execute('SELECT)
