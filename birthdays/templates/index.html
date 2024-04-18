@@ -59,14 +59,16 @@
 
                                 // add listeners to all
                                 for (let birthday of birthdayObj) {
-                                    let strbutton = '#del'+birthday.id;
-                                    let eventbutton = document.querySelector(strbutton);
-                                    eventbutton.addEventListener('click', function() {
+                                    let strbutton_del = '#del'+birthday.id;
+                                    let eventbutton_del = document.querySelector(strbutton_del);
+                                    eventbutton_del.addEventListener('click', function() {
                                         delrecord(birthday.id);
+                                    });
 
-
-
-
+                                    let strbutton_edit = '#edit'+birthday.id;
+                                    let eventbutton_edit = document.querySelector(strbutton_edit);
+                                    eventbutton_edit.addEventListener('click', function() {
+                                        document.querySelector('#response') = strbutton_edit;
                                     });
                                 };
                             }
