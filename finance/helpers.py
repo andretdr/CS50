@@ -4,6 +4,7 @@ import pytz
 import requests
 import urllib
 import uuid
+import re
 
 from flask import redirect, render_template, request, session
 from functools import wraps
@@ -91,8 +92,10 @@ def usd(value):
 def validatename(name): # returns 3 if ok, 0 if invalid, 1 if username is already being used, 2 if using special letters
     if name = '':
         return 0
-    if name != '': regex
+#    if name != '': regex check
+#       return 2
     row = db.execute("SELECT name FROM users WHERE name = ?;", name)
     if len(row) == 0:
         return 3
+    return 1
 
