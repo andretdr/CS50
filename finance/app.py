@@ -124,7 +124,7 @@ def register():
         if statuscheck != 3:
             status = ['please fill in yr username', 'username is used', 'username needs to be alphanumeric']
             print(f"name status = {status[statuscheck]}")
-            return ("/") #(status[statuscheck])
+            return ("/") #(status[statuscheck]) how to pas back the message dynamically?
 
         statuscheck = validatepassword(record['password'], record['confirmation'])
 
