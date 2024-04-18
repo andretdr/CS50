@@ -50,7 +50,8 @@
                                                 <th>${birthday.name}</th><th>${birthday.day} ${months[birthday.month - 1]}</th>
                                                 <th>
                                                     <input type="hidden" name="id" value="${birthday.id}">
-                                                    <button id="id${birthday.id}">Delete</button>
+                                                    <button id="del${birthday.id}">Delete</button>
+                                                    <button id="edit${birthday.id}">Edit</button>
                                                 </th>
                                             </tr>`
                                 }
@@ -58,10 +59,13 @@
 
                                 // add listeners to all
                                 for (let birthday of birthdayObj) {
-                                    let strbutton = '#id'+birthday.id;
+                                    let strbutton = '#del'+birthday.id;
                                     let eventbutton = document.querySelector(strbutton);
                                     eventbutton.addEventListener('click', function() {
                                         delrecord(birthday.id);
+                                    
+
+
                                     });
                                 };
                             }
