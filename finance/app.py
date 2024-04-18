@@ -123,10 +123,12 @@ def register():
 
         if statuscheck != 3:
             status['username is invalid', 'username is used', 'username needs to be alphanumeric']
-            return status[statuscheck]
+            print(f"name status = {status[statuscheck]}")
+            return ("/") #(status[statuscheck])
 
         if record['password'] != record['confirmation']:
-            return 'password and comfirmation do not match'
+            print ("ps dont match")
+            return ("/") #'password and comfirmation do not match'
 
         pwhash = generate_password_hash(record['password'], method='scrypt', salt_length=16)
 
