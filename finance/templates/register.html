@@ -13,16 +13,26 @@
             <input id="regpw" class="form-control mx-auto w-auto" name="password" placeholder="Password" type="password">
         </div>
         <div class="mb-3">
-            <input id="regcom" class="form-control mx-auto w-auto" name="confirmation" placeholder="Re-enter password" type="password">
+            <input id="regcon" class="form-control mx-auto w-auto" name="confirmation" placeholder="Re-enter password" type="password">
         </div>
         <button id="regbutton" class="btn btn-primary" type="submit">Register</button>
     <p id="status"></p>
     <script>
-        let regname = document.querySelector('#regname');
+        let reg = {};
+        reg['name'] = document.querySelector('#regname');
+        reg['password'] = document.querySelector('#regpw');
+        reg['confirm'] = document.querySelector('#regcon');
 
         let regbutton = document.querySelector('#regbutton');
         regbutton.addEventListener('click', function() {
-            document.querySelector('#status').innerHTML = regname.value;
+
+            // fetch
+            let response = await fetch();
+            let resonset = await response.text();
+            document.querySelector('#status').innerHTML = resonet;
+            )
+
+
         });
 
     </script>
