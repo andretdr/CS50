@@ -92,8 +92,8 @@ def usd(value):
 def validatename(name, db): # returns 3 if ok, 0 if invalid, 1 if username is already being used, 2 if using special letters
     if name == '':
         return 0
-    if (re.match(name)): #regex check
-#       return 2
+    if not (re.match('^[a-zA-Z0-9]+$', name)): #regex check
+        return 2
     row = db.execute("SELECT username FROM users WHERE username = ?;", name)
     if len(row) == 0:
         return 3
