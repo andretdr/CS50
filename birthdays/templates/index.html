@@ -47,7 +47,7 @@
 
                                 for (let birthday of birthdayObj)
                                 {
-                                    if (id === undefined)
+                                    if (id === undefined) OR (id !== birthday.id)
                                     {
                                         html += `<tr>
                                                     <th>${birthday.name}</th><th>${birthday.day} ${months[birthday.month - 1]}</th>
