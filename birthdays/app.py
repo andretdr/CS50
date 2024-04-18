@@ -106,9 +106,10 @@ def delete():
 @app.route("/update")
 def update():
 
-    idedit = request.args.get('id')
-    nameedit = request.args.get('name')
-    dateedit = request.args.get('date')
+    record = {};
+    record['id'] = request.args.get('id')
+    record['name'] = request.args.get('name')
+    record['date'] = request.args.get('date')
 
     if (validateid(idedit) and validatename(nameedit) and validatedate(dateedit)):
         db.execute("UPDATE birthdays SET name = ? date = ? WHERE id = ?", nameedit, dateedit, idedit)
