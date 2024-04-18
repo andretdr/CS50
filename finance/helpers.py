@@ -28,7 +28,7 @@ def apology(message, code=400):
             ("/", "~s"),
             ('"', "''"),
         ]:
-            s = s.replace(old, new)
+            s = s.replace(old, new) # creates and replaces special escape characters
         return s
 
     return render_template("apology.html", top=code, bottom=escape(message)), code
