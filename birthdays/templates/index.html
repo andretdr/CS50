@@ -51,7 +51,6 @@
                                     {
                                         html += `<tr>
                                                     <td>${birthday.name}</th><th>${birthday.day} ${months[birthday.month - 1]}</td>
-                                                    <td></td>
                                                     <td>
                                                         <input type="hidden" name="id" value="${birthday.id}">
                                                         <button id="del${birthday.id}">Delete</button>
@@ -66,7 +65,6 @@
                                                     <td><input class="dateget" id="editdate" type="date" name="date" autofocus autocomplete="off"</td>
                                                     <td>
                                                         <input id="editid" type="hidden" name="id" value="${birthday.id}">
-                                                        <td id="response${birthday.id}"></td>
                                                         <button id="editsubmit">Submit</button>
                                                         <button id="cancelsubmit">Cancel</button>
                                                     </td>
