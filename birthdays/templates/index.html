@@ -25,6 +25,11 @@
 
                 <h2>All Birthdays</h2>
                 <table>
+                    <col style="width: 30%;" />
+                    <col style="width: 30%;" />
+                    <col style="width: 25%;" />
+                    <col style="width: 15%;" />
+
                     <thead>
                         <tr>
                             <th>Name</th>
@@ -49,7 +54,8 @@
                                 {
                                     if ((id === undefined) || (id !== birthday.id))
                                     {
-                                        html += `<tr>
+                                        html += `
+                                                <tr>
                                                     <td>${birthday.name}</td><td>${birthday.day} ${months[birthday.month - 1]}</td>
                                                     <td>
                                                         <input type="hidden" name="id" value="${birthday.id}">
