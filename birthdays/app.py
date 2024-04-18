@@ -112,7 +112,7 @@ def update():
     record['date'] = request.args.get('date')
 
     if (validateid(record['id']) and validatename(record['name']) and validatedate(record['date'])):
-        db.execute("UPDATE birthdays SET (name, month, day) VALUES(?, ?, ?) WHERE id = ?;", record['name'], returnmonth(record['date']), returnday(record['date']), record['id'])
+        db.execute("UPDATE birthdays SET name = ?, month = ?, day = ? WHERE id = ?;", record['name'], returnmonth(record['date']), returnday(record['date']), record['id'])
 #        print(f"name= {record['name']}")
 #        print(f"month= {returnmonth(record['date'])}")
 #        print(f"day= {returnday(record['date'])}")
