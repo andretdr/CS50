@@ -92,20 +92,17 @@
                                     }
                                     else
                                     {   // add listener to the re-submit button
-
-
                                         let eventbutton_resubmit = document.querySelector('#editsubmit');
 
                                         eventbutton_resubmit.addEventListener('click', function() {
                                             let newname = document.querySelector('#editname');
                                             let newdate = document.querySelector('#editdate');
-                                            let newid =
+                                            let newid = document.querySelector('#editid');
 
-
-                                            document.querySelector('#response').innerHTML =
-
+                                            document.querySelector('#response').innerHTML = newname;
+                                        });
                                     }
-                                };
+                                }
                             }
 
                             async function addrecord(name, date) {
@@ -131,6 +128,7 @@
 
                             }
 
+                            // addlistener to main submit button
                             let inputbutton = document.querySelector('#inputbutton');
                             document.addEventListener('DOMContentLoaded', function() {
                                 inputbutton.addEventListener('click', function() {
