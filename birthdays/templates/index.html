@@ -139,8 +139,10 @@
 
                                 if (responset !== ''){
                                     strresponse = '#response' + id
-                                    document.querySelector('#response').innerHTML = strresponse;
+                                    fetchlist(id);
+                                    document.querySelector(strresponse).innerHTML = responset;
                                 }
+                                else
                                     fetchlist();
                             }
 
