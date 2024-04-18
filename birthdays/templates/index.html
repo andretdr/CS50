@@ -47,7 +47,7 @@
 
                                 for (let birthday of birthdayObj)
                                 {
-                                    if (id === undefined) || (id !== birthday.id)
+                                    if ((id === undefined) || (id !== birthday.id))
                                     {
                                         html += `<tr>
                                                     <th>${birthday.name}</th><th>${birthday.day} ${months[birthday.month - 1]}</th>
@@ -57,6 +57,18 @@
                                                        <button id="edit${birthday.id}">Edit</button>
                                                     </th>
                                                 </tr>`
+                                    }
+                                    else
+                                    {
+                                        html += `<tr>
+                                                    <th>${birthday.name}</th><th>${birthday.day} ${months[birthday.month - 1]}</th>
+                                                    <th>
+                                                        <input type="hidden" name="id" value="${birthday.id}">
+                                                        <button id="del${birthday.id}">Delete</button>
+                                                       <button id="edit${birthday.id}">Edit</button>
+                                                    </th>
+                                                </tr>`
+
                                     }
 
                                 }
