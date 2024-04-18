@@ -37,6 +37,10 @@
 
                         <script>
                             async function fetchlist(id) {
+                                if (id === undefined)
+                                    document.querySelector('#response').innerHTML = "UNDEFINED";
+                                else
+                                    document.querySelector('#response').innerHTML = id;
                                 let response = await fetch('/returnlist'); // variable response, fetch route search?q= the input value
                                 let birthdays = await response.text(); // grabbing text from server
                                 let birthdayObj = JSON.parse(birthdays);
@@ -68,7 +72,8 @@
                                     let strbutton_edit = '#edit'+birthday.id;
                                     let eventbutton_edit = document.querySelector(strbutton_edit);
                                     eventbutton_edit.addEventListener('click', function() {
-                                        document.querySelector('#response').innerHTML = strbutton_edit;
+                                        fetchlist(birthday.id);
+
                                     });
                                 };
                             }
