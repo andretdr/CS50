@@ -111,9 +111,20 @@ def quote():
 
 @app.route("/register", methods=["GET", "POST"])
 def register():
-
     session.clear()
-    
+
+    if methods == "POST":
+        record = {}
+        record['name'] = request.form.get('name')
+        record['password'] = request.form.get('password')
+        record['confirmation'] = request.form.get('confirmation')
+
+        if record['password'] == record['confirmation']:
+            addrecord(record['name'], hash(record['password']))
+            id = db.execute('SELECT)
+
+
+
     return render_template("register.html")
 
 
