@@ -18,11 +18,10 @@
         <button id="regbutton" class="btn btn-primary" type="submit">Register</button>
     <p id="status"></p>
     <script>
-        let reg = {}
-        reg['name'] = document.querySelector('#regname').value;
+
         let regbutton = document.querySelector('#regbutton');
         regbutton.addEventListener('click', function() {
-            document.querySelector("#status").innerHTML = reg['name'];
+            document.querySelector('#status').innerHTML = hi;
         });
 
     </script>
