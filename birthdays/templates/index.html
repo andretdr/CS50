@@ -66,6 +66,7 @@
                                                     <th>
                                                         <input id="editid" type="hidden" name="id" value="${birthday.id}">
                                                         <button id="editsubmit">Submit</button>
+                                                        <button id="cancelsubmit">Cancel</button>
                                                     </th>
                                                 </tr>`
                                     }
@@ -101,6 +102,13 @@
 
                                             document.querySelector('#response').innerHTML = newname;
                                         });
+
+                                        // add listener to cancel button
+                                        let eventbutton_cancel = document.querySelector('#cancelsubmit');
+                                        eventbutton_cancel.addEventListener('click', function() {
+                                            fetchlist();
+                                        });
+
                                     }
                                 }
                             }
