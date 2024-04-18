@@ -50,24 +50,25 @@
                                     if ((id === undefined) || (id !== birthday.id))
                                     {
                                         html += `<tr>
-                                                    <th>${birthday.name}</th><th>${birthday.day} ${months[birthday.month - 1]}</th>
-                                                    <th>
+                                                    <td>${birthday.name}</th><th>${birthday.day} ${months[birthday.month - 1]}</td>
+                                                    <td>
                                                         <input type="hidden" name="id" value="${birthday.id}">
                                                         <button id="del${birthday.id}">Delete</button>
                                                         <button id="edit${birthday.id}">Edit</button>
-                                                    </th>
+                                                    </td>
                                                 </tr>`
                                     }
                                     else
                                     {
                                         html += `<tr>
-                                                    <th><input class="nameget" id="editname" type="text" name="name" autofocus autocomplete="off" placeholder="${birthday.name}"></th>
-                                                    <th><input class="dateget" id="editdate" type="date" name="date" autofocus autocomplete="off"</th>
-                                                    <th>
+                                                    <td><input class="nameget" id="editname" type="text" name="name" autofocus autocomplete="off" placeholder="${birthday.name}"></td>
+                                                    <td><input class="dateget" id="editdate" type="date" name="date" autofocus autocomplete="off"</td>
+                                                    <td>
                                                         <input id="editid" type="hidden" name="id" value="${birthday.id}">
+                                                        <td id="response${birthday.id}"></td>
                                                         <button id="editsubmit">Submit</button>
                                                         <button id="cancelsubmit">Cancel</button>
-                                                    </th>
+                                                    </td>
                                                 </tr>`
                                     }
 
@@ -136,9 +137,14 @@
                                 let response = await fetch(strparam);
                                 let responset = await response.text();
 
-                                
-                                document.querySelector('#response').innerHTML = responset;
-                                fetchlist();
+                                if (responset !== '')
+                                {   // if there is an error
+                                    strresponse = '#response' + id
+                                    document.querySelector(strresponse).innerHTML = responset;
+                                    fetchlist(id);
+                                }
+                                else // no error
+                                    fetchlist();
                             }
 
                             // addlistener to main submit button
