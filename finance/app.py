@@ -129,14 +129,14 @@ def register():
             return 'password and comfirmation do not match'
 
         pwhash = generate_password_hash(record['password'], method='scrypt', salt_length=16)
-        addrecord(record['name'], pwhash)
-        id = db.execute('SELECT id FROM users WHERE user = ?;', record['name'])
-        session['user id'] = id[0]['id']
 
+        print(f"name={record['name']}")
+        print(f"PW={record['password']}")
+#        addrecord(record['name'], pwhash)
+#        id = db.execute('SELECT id FROM users WHERE user = ?;', record['name'])
+#        session['user id'] = id[0]['id']
 
-
-
-
+        return ("/")
     return render_template("register.html")
 
 
