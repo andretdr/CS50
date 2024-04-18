@@ -92,10 +92,17 @@
                                     }
                                     else
                                     {   // add listener to the re-submit button
-                                        let strbutton_resubmit = '#edit'+birthday.id;
-                                        let eventbutton_resubmit = document.querySelector(strbutton_resubmit);
+
+
+                                        let eventbutton_resubmit = document.querySelector('#editsubmit');
+
                                         eventbutton_resubmit.addEventListener('click', function() {
-                                            fetchlist(birthday.id);
+                                            let newname = document.querySelector('#editname');
+                                            let newdate = document.querySelector('#editdate');
+                                            let newid =
+
+
+                                            document.querySelector('#response').innerHTML =
 
                                     }
                                 };
