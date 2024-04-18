@@ -115,7 +115,7 @@ def register():
 
     if request.method == "POST":
         record = {}
-        record['name'] = request.form.get('name')
+        record['name'] = request.form.get('username')
         record['password'] = request.form.get('password')
         record['confirmation'] = request.form.get('confirmation')
 
