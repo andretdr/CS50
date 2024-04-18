@@ -106,12 +106,17 @@ def delete():
 @app.route("/update")
 def update():
 
-    idedit = query.args.get('id')
-    nameedit = query.args.get('name')
-    dateedit = query.args.get('date')
+    idedit = request.args.get('id')
+    nameedit = request.args.get('name')
+    dateedit = request.args.get('date')
 
     if (validateid(idedit) and validatename(nameedit) and validatedate(dateedit)):
-        db.execute("UPDATE birthdays SET name )
+        db.execute("UPDATE birthdays SET name = ? date = ? WHERE id = ?", nameedit, dateedit, idedit)
+        status = ''
+    else:
+        status = 'Invalid Entry'
+
+    return status
 
 
 @app.route("/returnlist")
