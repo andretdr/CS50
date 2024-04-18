@@ -105,3 +105,6 @@ def validatepassword(pw, pwconfirm):
     if pw != pwconfirm:
         return 1
     return 2
+
+def addrecord(name, pwhash, db):
+    db.execute("ADD username (username, hash) VALUES(name, pwhash);")

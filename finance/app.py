@@ -137,7 +137,7 @@ def register():
 
         print(f"name={record['name']}")
         print(f"PW={record['password']}")
-        addrecord(record['name'], pwhash)
+        addrecord(record['name'], pwhash, db)
         id = db.execute('SELECT id FROM users WHERE user = ?;', record['name'])
         print(f"ID={id}")
 #        session['user id'] = id[0]['id']
