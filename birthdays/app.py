@@ -92,10 +92,9 @@ def add():
 @app.route("/delete")
 def delete():
 
-    record = {};
-    record['id'] = request.args.get('id')
-    if validateid(record['id']):
-        db.execute("DELETE FROM birthdays WHERE id = ?;", record['id'])
+    recordid = request.args.get('id')
+    if validateid(recordid):
+        db.execute("DELETE FROM birthdays WHERE id = ?;", recordid)
         status = ''
     else:
         status = 'Record not found'
