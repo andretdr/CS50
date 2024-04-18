@@ -51,12 +51,12 @@ body {
     font-size: 20px;
 }
 
-#editname {
+.nameget {
     text-align: center;
     font-size: 15px;
 }
 
-#editdate {
+.dateget {
     text-align: center;
     font-size: 18px;
 }
