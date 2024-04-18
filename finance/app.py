@@ -122,7 +122,7 @@ def register():
         statuscheck = validatename(record['name'], db)
 
         if statuscheck != 3:
-            status['username is invalid', 'username is used', 'username needs to be alphanumeric']
+            status = ['username is invalid', 'username is used', 'username needs to be alphanumeric']
             print(f"name status = {status[statuscheck]}")
             return ("/") #(status[statuscheck])
 
