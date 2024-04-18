@@ -68,7 +68,7 @@
                                     let strbutton_edit = '#edit'+birthday.id;
                                     let eventbutton_edit = document.querySelector(strbutton_edit);
                                     eventbutton_edit.addEventListener('click', function() {
-                                        document.querySelector('#response') = strbutton_edit;
+                                        document.querySelector('#response').innerHTML = strbutton_edit;
                                     });
                                 };
                             }
@@ -89,6 +89,11 @@
 
                                 document.querySelector('#response').innerHTML = responset;
                                 fetchlist();
+                            }
+
+                            async function editrecord(id) {
+                                // print out all rows as normal except for editing row
+
                             }
 
                             let inputbutton = document.querySelector('#inputbutton');
