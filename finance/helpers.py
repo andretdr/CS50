@@ -88,10 +88,11 @@ def usd(value):
     return f"${value:,.2f}"
 
 
-def validatename(name): # returns 2 if ok, 0 if invalid, 1 if username is already being used
+def validatename(name): # returns 3 if ok, 0 if invalid, 1 if username is already being used, 2 if using special letters
     if name = '':
         return 0
+    if name != '': regex
     row = db.execute("SELECT name FROM users WHERE name = ?;", name)
     if len(row) == 0:
-        return 2
+        return 3
 
