@@ -135,12 +135,10 @@ def register():
 
         pwhash = generate_password_hash(record['password'], method='scrypt', salt_length=16)
 
-        print(f"name={record['name']}")
-        print(f"PW={record['password']}")
         addrecord(record['name'], pwhash, db)
         id = db.execute('SELECT id FROM users WHERE username = ?;', record['name'])
-        print(f"ID={id}")
-#        session['user id'] = id[0]['id']
+
+        session['user id'] = id[0]['id']
 
         return ("/")
     return render_template("register.html")
