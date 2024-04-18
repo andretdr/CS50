@@ -52,12 +52,12 @@ body {
 }
 
 .nameget {
-    text-align: center;
+    text-align: left;
     font-size: 15px;
 }
 
 .dateget {
-    text-align: center;
+    text-align: left;
     font-size: 18px;
 }
 
