@@ -89,6 +89,9 @@ def usd(value):
 
 
 def validatename(name): # returns 2 if ok, 0 if invalid, 1 if username is already being used
+    if name = '':
+        return 0
     row = db.execute("SELECT name FROM users WHERE name = ?;", name)
-    if 
+    if len(row) == 0:
+        return 2
 
