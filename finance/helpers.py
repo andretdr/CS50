@@ -86,3 +86,8 @@ def lookup(symbol):
 def usd(value):
     """Format value as USD."""
     return f"${value:,.2f}"
+
+
+def validatename(name): # returns 2 if ok, 0 if invalid, 1 if username is already being used
+    dbname = db.execute("SELECT)
+
