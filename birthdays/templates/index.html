@@ -137,13 +137,10 @@
                                 let response = await fetch(strparam);
                                 let responset = await response.text();
 
-                                if (responset !== '')
-                                {   // if there is an error
+                                if (responset !== ''){
                                     strresponse = '#response' + id
-                                    document.querySelector(strresponse).innerHTML = responset;
-                                    fetchlist(id);
+                                    document.querySelector('#response').innerHTML = responset;
                                 }
-                                else // no error
                                     fetchlist();
                             }
 
