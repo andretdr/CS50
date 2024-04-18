@@ -83,12 +83,20 @@
                                             delrecord(birthday.id);
                                         });
 
-                                    let strbutton_edit = '#edit'+birthday.id;
-                                    let eventbutton_edit = document.querySelector(strbutton_edit);
-                                    eventbutton_edit.addEventListener('click', function() {
-                                        fetchlist(birthday.id);
+                                        let strbutton_edit = '#edit'+birthday.id;
+                                        let eventbutton_edit = document.querySelector(strbutton_edit);
+                                        eventbutton_edit.addEventListener('click', function() {
+                                            fetchlist(birthday.id);
+                                        });
+                                    }
+                                    else // set listener to the re-submit button
+                                    {
+                                        let strbutton_edit = '#edit'+birthday.id;
+                                        let eventbutton_edit = document.querySelector(strbutton_edit);
+                                        eventbutton_edit.addEventListener('click', function() {
+                                            fetchlist(birthday.id);
 
-                                    });
+                                    }
                                 };
                             }
 
