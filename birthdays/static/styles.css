@@ -99,6 +99,7 @@ table th,
 table td {
     padding: 0.75rem;
     vertical-align: middle;
+    min-width: 100px;
 }
 
 tbody tr:nth-of-type(odd) {
