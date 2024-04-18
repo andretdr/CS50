@@ -113,18 +113,26 @@ def quote():
 def register():
     session.clear()
 
-    if methods == "POST":
+    if request.method == "POST":
         record = {}
         record['name'] = request.form.get('name')
         record['password'] = request.form.get('password')
         record['confirmation'] = request.form.get('confirmation')
 
-        if not validatename(record['name']):
-            return "username is used"
+        statuscheck = validatename(record['name'])
 
-        if record['password'] == record['confirmation']:
-            addrecord(record['name'], hash(record['password']))
-            id = db.execute('SELECT)
+        if validatename(record['name']) != 2:
+            status['username is invalid', 'username is used']
+            return status[statuscheck]
+
+        if record['password'] != record['confirmation']:
+            return 'password and comfirmation do not match'
+
+        addrecord(record['name'], hash(record['password']))
+        id = db.execute('SELECT id FROM users WHERE user = ?;', record['name'])
+        session[0]['id'] = id
+
+
 
 
 
