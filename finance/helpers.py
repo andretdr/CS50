@@ -89,7 +89,7 @@ def usd(value):
     return f"${value:,.2f}"
 
 
-def validatename(name): # returns 3 if ok, 0 if invalid, 1 if username is already being used, 2 if using special letters
+def validatename(name, db): # returns 3 if ok, 0 if invalid, 1 if username is already being used, 2 if using special letters
     if name == '':
         return 0
 #    if name != '': regex check

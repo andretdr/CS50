@@ -119,7 +119,7 @@ def register():
         record['password'] = request.form.get('password')
         record['confirmation'] = request.form.get('confirmation')
 
-        statuscheck = validatename(record['name'])
+        statuscheck = validatename(record['name'], db)
 
         if statuscheck != 3:
             status['username is invalid', 'username is used', 'username needs to be alphanumeric']
