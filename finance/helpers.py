@@ -107,4 +107,4 @@ def validatepassword(pw, pwconfirm):
     return 2
 
 def addrecord(name, pwhash, db):
-    db.execute("INSERT INTO username (username, hash) VALUES(?, ?);", name, pwhash)
+    db.execute("INSERT INTO users (username, hash) VALUES(?, ?);", name, pwhash)
