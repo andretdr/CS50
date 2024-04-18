@@ -1,7 +1,7 @@
 import os
 
 from cs50 import SQL
-from flask import Flask, flash, jsonify, redirect, render_template, request, session
+from flask import Flask, jsonify, render_template, request
 from datetime import datetime
 
 # Configure application
@@ -112,11 +112,6 @@ def update():
 
     if (validateid(record['id']) and validatename(record['name']) and validatedate(record['date'])):
         db.execute("UPDATE birthdays SET name = ?, month = ?, day = ? WHERE id = ?;", record['name'], returnmonth(record['date']), returnday(record['date']), record['id'])
-#        print(f"name= {record['name']}")
-#        print(f"month= {returnmonth(record['date'])}")
-#        print(f"day= {returnday(record['date'])}")
-#        print(f"id= {record['id']}")
-
         status = ''
     else:
         status = 'Invalid Entry'
