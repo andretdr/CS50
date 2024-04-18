@@ -124,7 +124,7 @@ def register():
         if statuscheck != 3:
             status = ['please fill in yr username', 'username is used', 'username needs to be alphanumeric']
             print(f"name status = {status[statuscheck]}")
-            return ("/") #(status[statuscheck]) how to pas back the message dynamically?
+            return ("/") #(status[statuscheck]) how to pas back the message dynamically? fetch as post?
 
         statuscheck = validatepassword(record['password'], record['confirmation'])
 
@@ -137,8 +137,9 @@ def register():
 
         print(f"name={record['name']}")
         print(f"PW={record['password']}")
-#        addrecord(record['name'], pwhash)
-#        id = db.execute('SELECT id FROM users WHERE user = ?;', record['name'])
+        addrecord(record['name'], pwhash)
+        id = db.execute('SELECT id FROM users WHERE user = ?;', record['name'])
+        print(f"ID={id}")
 #        session['user id'] = id[0]['id']
 
         return ("/")
