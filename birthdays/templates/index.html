@@ -37,10 +37,7 @@
 
                         <script>
                             async function fetchlist(id) {
-                                if (id === undefined)
-                                    document.querySelector('#response').innerHTML = "UNDEFINED";
-                                else
-                                    document.querySelector('#response').innerHTML = id;
+
                                 let response = await fetch('/returnlist'); // variable response, fetch route search?q= the input value
                                 let birthdays = await response.text(); // grabbing text from server
                                 let birthdayObj = JSON.parse(birthdays);
@@ -50,7 +47,8 @@
 
                                 for (let birthday of birthdayObj)
                                 {
-                                   html += `<tr>
+                                    if (id === undefined)
+                                    html += `<tr>
                                                 <th>${birthday.name}</th><th>${birthday.day} ${months[birthday.month - 1]}</th>
                                                 <th>
                                                     <input type="hidden" name="id" value="${birthday.id}">
