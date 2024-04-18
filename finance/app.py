@@ -128,7 +128,8 @@ def register():
         if record['password'] != record['confirmation']:
             return 'password and comfirmation do not match'
 
-        addrecord(record['name'], hash(record['password']))
+        pwhash = generate_password_hash(record['password'], method='scrypt', salt_length=16)
+        addrecord(record['name'], pwhash)
         id = db.execute('SELECT id FROM users WHERE user = ?;', record['name'])
         session[0]['id'] = id
 
