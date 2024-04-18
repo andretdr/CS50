@@ -36,7 +36,7 @@
                         <!-- TODO: Loop through the database entries to display them in this table -->
 
                         <script>
-                            async function fetchlist() {
+                            async function fetchlist(id) {
                                 let response = await fetch('/returnlist'); // variable response, fetch route search?q= the input value
                                 let birthdays = await response.text(); // grabbing text from server
                                 let birthdayObj = JSON.parse(birthdays);
