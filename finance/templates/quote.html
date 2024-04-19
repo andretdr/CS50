@@ -41,16 +41,18 @@
             if (responseObj == null)
                 document.querySelector("#status").innerHTML = 'Symbol not found';
             else
+            {
                 if ('status' in responseObj)
                     document.querySelector("#status").innerHTML = responseObj['status'];
-                else
-                    if ('price' in responseObj)
-                    {
-                        html = `SYMBOL : ${responseObj["symbol"]}, PRICE : ${responseObj["price"]}<br>` + html;
 
-                        document.querySelector("#status").innerHTML = '';
-                        document.querySelector("#result").innerHTML = html;
-                    }
+                if ('price' in responseObj)
+                {
+                    html = `SYMBOL : ${responseObj["symbol"]}, PRICE : ${responseObj["price"]}<br>` + html;
+
+                    document.querySelector("#status").innerHTML = '';
+                    document.querySelector("#result").innerHTML = html;
+                }
+            }
 
 //            for (let obj of responseObj){
 //                html += '
