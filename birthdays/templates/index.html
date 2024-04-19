@@ -119,13 +119,13 @@
                                 }
                             }
 
-                            async function addrecord(name, date) {
+                            async function addrecord(namein, datein) {
                                 //let strparam = '/add?name=' + name + '&date=' + date;
                                 let response = await fetch('/add', {
                                     method:'GET',
                                     body: JSON.stringify({
-                                        'name': name,
-                                        'date': date
+                                        name: namein,
+                                        date: datein
                                         })
                                     }); // variable response
                                 let responset = await response.text();
