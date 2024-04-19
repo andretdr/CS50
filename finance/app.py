@@ -57,14 +57,7 @@ def logincheck:
 
     record = request.get_json();
 
-
-    # Ensure username was submitted
-    if not request.form.get("username"):
-        return apology("must provide username", 403)
-
-    # Ensure password was submitted
-    elif not request.form.get("password"):
-        return apology("must provide password", 403)
+    # validation
 
     # Query database for username
     rows = db.execute(
