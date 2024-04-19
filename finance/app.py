@@ -141,8 +141,7 @@ def register():
 
         return redirect("/")
 
-    status = {'status':''}
-    return jsonify(status)
+    return render_template("register.html")
 
 
 @app.route("/sell", methods=["GET", "POST"])
