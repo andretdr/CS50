@@ -123,10 +123,10 @@
                                 //let strparam = '/add?name=' + name + '&date=' + date;
                                 let response = await fetch('/add', {
                                     method:'GET',
-                                    body: {
+                                    body: JSON.stringify({
                                         'name': name,
                                         'date': date
-                                        }
+                                        })
                                     }); // variable response
                                 let responset = await response.text();
 
