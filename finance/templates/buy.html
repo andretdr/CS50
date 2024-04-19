@@ -22,11 +22,13 @@
 
     <script>
         let formEl = document.querySelector('#buyform');
+        html = '';
+
         formEl.addEventListener('submit', async function(event) {
             event.preventDefault();
 
             const formdata = new FormData(formEl);
-            const data = Object.FromEntries(formdata);
+            const data = Object.fromEntries(formdata);
 
             let response = await fetch('/buy', {
                 method: 'POST',
