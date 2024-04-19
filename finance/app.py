@@ -103,7 +103,7 @@ def quote():
 
         if validatesymbol(record['symbol']) == 1:
             return jsonify({"status":"Symbol must be alphanumeric"})
-        
+
         result = lookup(record['symbol'])
         print(result)
         return jsonify(result)
