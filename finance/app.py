@@ -136,7 +136,7 @@ def add():
     session['user_id'] = id[0]['id']
 
     status = {'status':'registered!'}
-    return jsonify(status) #(status[statuscheck]) how to pas back the message dynamically? fetch as post?
+    return jsonify(status)
 
 
 @app.route("/register")
