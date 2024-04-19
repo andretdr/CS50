@@ -109,6 +109,11 @@ def quote():
     return apology("TODO")
 
 
+@app.route("/add", methods=["POST"])
+def add():
+
+
+
 @app.route("/register", methods=["GET", "POST"])
 def register():
     session.clear()
