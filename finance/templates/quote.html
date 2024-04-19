@@ -36,15 +36,17 @@
 
             console.log(responseObj);
 
-            if ('status' in responseObj)
+            if ('status' in responseObj) && (responseObj != null)
                 document.querySelector("#status").innerHTML = responseObj['status']
             else
                 if ('price' in responseObj)
                 {
                     html = `SYMBOL : ${responseObj["symbol"]}, PRICE : ${responseObj["price"]}`;
 
-                    document.querySelector("#result").innerHTML = html;
+                    document.querySelector("#status").innerHTML = html;
                 }
+                else
+                    document.querySelector("#status").innerHTML = 'Symbol not found';
 
 //            for (let obj of responseObj){
 //                html += '
