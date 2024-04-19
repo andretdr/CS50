@@ -1,0 +1,43 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Buy
+{% endblock %}
+
+{% block body %}
+
+    <form id="buyform">
+        <div class="mb-3">
+            <input autocomplete="off" autofocus class="form-control mx-auto w-auto" name="symbol" placeholder="Symbol" type="text">
+        </div>
+        <button class="btn btn-primary" type="submit">Select Stock</button>
+    <form>
+
+    <script>
+        let formEl = document.querySelector('#buyform');
+        formEl.addEventListener('submit', async function(event) {
+            event.preventDefault();
+
+            const formdata = new FormData(formEl);
+            const data = Object.FromEntries(formdata);
+
+            let response = await fetch('/buy', {
+                method: 'POST',
+                headers: {'Content-Type': 'application/json'},
+                body: JSON.stringify(data)
+            });
+
+            let responset = await response.text();
+            let responseObj = JSON.parse(responset);
+
+            
+
+        })
+
+
+
+
+    </script>
+
+
+{% endblock %}
