@@ -23,7 +23,7 @@
 
         let formEl = document.querySelector('#form');
         formEl.addEventListener('submit', event => {
-            event.default = disable;
+            event.preventDefault();
 
             const dataform = Dataform.();
             const data = firstEntry(datafrom);
@@ -40,5 +40,5 @@
         });
 
     </script>
-    
+
 {% endblock %}
