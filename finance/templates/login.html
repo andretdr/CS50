@@ -5,7 +5,7 @@
 {% endblock %}
 
 {% block main %}
-    <form id="signupform">
+    <form id="loginform">
         <div class="mb-3">
             <input autocomplete="off" autofocus class="form-control mx-auto w-auto" name="username" placeholder="Username" type="text">
         </div>
@@ -18,16 +18,18 @@
     <p id="status"></p>
 
     <script>
-        let formEl = documentSelector("#signupform");
-        formEl.addEventListener("submit", async function(event){
-            const dataform = new DataForm(formE1);
-            const data = Object.FromEntries(dataform);
+        let formEl = documentSelector("#loginform");
+        formEl.addEventListener('submit', async function(event){
 
-            let response = await fetch("/signupcheck", {
+            const formdata = new FormData(formE1);
+            const data = Object.FromEntries(formdata);
+
+            let response = await fetch('/logincheck', {
                 method: "POST",
                 headers: {"Content-Type":"application/json"},
                 body: JSON.stringify(data)
-            })
+            });
+
             let responset = await response.text();
             let responseObj = JSON.parse(responset);
 

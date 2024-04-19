@@ -31,8 +31,6 @@
             const formdata = new FormData(formEl);
             const data = Object.fromEntries(formdata);
 
-            console.log(data);
-
             // fetch post
             let response = await fetch('/add', {
                 method: "POST",
