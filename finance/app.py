@@ -99,15 +99,14 @@ def quote():
     if request.method == "POST" :
 
         record = request.get_json()
+        print(record['symbol'])
+
         if validatesymbol(record['symbol']) == 1:
             return jsonify({"status":"Symbol must be alphanumeric"})
         result = lookup(record['symbol'])
-            return jsonify
+        print(result)
+        return jsonify(result)
 
-
-
-        status = {'status':'HI'}
-        return jsonify(status)
     else:
         return render_template("quote.html")
 
