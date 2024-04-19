@@ -120,8 +120,14 @@
                             }
 
                             async function addrecord(name, date) {
-                                let strparam = '/add?name=' + name + '&date=' + date;
-                                let response = await fetch(strparam); // variable response
+                                //let strparam = '/add?name=' + name + '&date=' + date;
+                                let response = await fetch('/add', {
+                                    method:'GET',
+                                    headers: {
+                                        'name': name,
+                                        'date': date
+                                        },
+                                    }); // variable response
                                 let responset = await response.text();
 
                                 document.querySelector('#response').innerHTML = responset;
