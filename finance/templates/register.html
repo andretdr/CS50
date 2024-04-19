@@ -28,13 +28,15 @@
             const formdata = new Formdata(formEl);
             const data = Object.FromEntries(fromdata);
 
+            console.log(data);
+
             // fetch post
             let response = await fetch('/register', {
                 method = "POST",
                 headers = {"Content-Type" : "application/json"},
                 body = JSON.stringify(data)
             });
-            
+
             let responset = await response.text();
             let responseObj = JSON.parse(responset);
             document.querySelector('#status').innerHTML = responseObj.['status'];
