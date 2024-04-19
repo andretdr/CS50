@@ -25,7 +25,7 @@
             const formdata = new FormData(formEl);
             const data = Object.fromEntries(formdata);
 
-            let response = await fetch('/logincheck', {
+            let response = await fetch('/login', {
                 method: "POST",
                 headers: {"Content-Type":"application/json"},
                 body: JSON.stringify(data)
