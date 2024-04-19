@@ -38,8 +38,8 @@
             });
 
             let responset = await response.text();
-            let responseObj = JSON.parse(responset);
-            document.querySelector('#status').innerHTML = responseObj['status'];
+            //let responseObj = JSON.parse(responset);
+            document.querySelector('#status').innerHTML = responset;
         });
 
     </script>
