@@ -53,29 +53,26 @@ def history():
 
 
 @app.route("/logincheck", methods=["POST"])
-def logincheck:
+def logincheck():
 
     record = request.get_json();
 
     # validation
 
-    # Query database for username
     rows = db.execute(
         "SELECT * FROM users WHERE username = ?", record['username']
     )
 
-    # Ensure username exists and password is correct
     if len(rows) != 1 or not check_password_hash(
         rows[0]["hash"], record['password']
     ):
-        return apology("invalid username and/or password", 403)
+        status = {'status':'invalid username and/or password'}
+        return jsonify(status)
 
-    # Remember which user has logged in
     session["user_id"] = rows[0]["id"]
 
-        # Redirect user to home page
-        return redirect("/")
-
+    status = {'status':'redirect'}
+    return jsonify(status)
 
 
 @app.route("/login", methods=["GET", "POST"])
