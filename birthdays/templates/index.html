@@ -170,9 +170,9 @@
                                     event.preventDefault(); // prevent the default form submission
 
                                     const formData = new FormData(formEl); // auto extract data from form
-                                    formData.get('name')
-
-                                }
+                                    addrecord(formData.get('name'), formData.get('date'));
+                                });
+                            });
 
 
                                 function() {
