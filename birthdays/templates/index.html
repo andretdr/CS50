@@ -130,8 +130,10 @@
                                     body: JSON.stringify(data)
                                     }); // variable response
                                 let responset = await response.text();
+                                let responseObj = JSON.parse(responset);
+                                console.log(responseObj);
 
-                                document.querySelector('#response').innerHTML = responset;
+                                document.querySelector('#response').innerHTML = responseObj['status'];
                                 fetchlist();
                             }
 
