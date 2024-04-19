@@ -41,7 +41,7 @@
             else
                 if ('price' in responseObj)
                 {
-                    html = 'SYMBOL : ${responseObj["symbol"]}, PRICE : ${responseObj["price"]}';
+                    html = `SYMBOL : ${responseObj["symbol"]}, PRICE : ${responseObj["price"]}`;
 
                     document.querySelector("#result").innerHTML = html;
                 }
