@@ -121,7 +121,7 @@
                                 }
                             }
 
-                            async function addrecord(name, date) {
+                            async function addrecord(data) {
                                 let strparam = '/add?name=' + name + '&date=' + date;
 
                                 let response = await fetch(strparam);
@@ -170,10 +170,10 @@
                                     event.preventDefault(); // prevent the default form submission
 
                                     const formData = new FormData(formEl); // auto extract data from form, FormData
-                                    const data = Object.fromEntries(formData);
+                                    const data = Object.fromEntries(formData); // make it to a javascript object
                                     console.log(data);
 
-//                                    addrecord(data);
+                                    addrecord(data);
 
                                 });
                             });
