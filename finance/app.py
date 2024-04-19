@@ -135,11 +135,8 @@ def add():
 
     session['user_id'] = id[0]['id']
 
-        status = {'status':statuslist[statuscheck]}
-        return jsonify(status) #(status[statuscheck]) how to pas back the message dynamically? fetch as post?
-
-    return redirect("/")
-
+    status = {'status':''}
+    return jsonify(status) #(status[statuscheck]) how to pas back the message dynamically? fetch as post?
 
 
 @app.route("/register", methods=["GET", "POST"])
