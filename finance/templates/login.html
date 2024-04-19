@@ -14,11 +14,28 @@
         </div>
         <button class="btn btn-primary" type="submit">Log In</button>
     </form>
+    <p></p>
+    <p id="status"></p>
 
     <script>
-        const formEl = documentSelector("#signupform");
-        const dataform = DataForm(formE1)
+        let formEl = documentSelector("#signupform");
+        formEl.addEventListener("submit", async function(event){
+            const dataform = new DataForm(formE1);
+            const data = Object.FromEntries(dataform);
 
+            let response = await fetch("/signupcheck", {
+                method: "POST",
+                headers: {"Content-Type":"application/json"},
+                body: JSON.stringify(data)
+            })
+            let responset = await response.text();
+            let responseObj = JSON.parse(responset);
+
+            if responseObj['status'] == 'redirect'
+                window.location.href = "/";
+            else
+                document.querySelector('#status').innerHTML = responseObj['status'];
+        });
     </script>
 
 {% endblock %}
