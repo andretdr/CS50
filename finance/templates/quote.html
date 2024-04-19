@@ -14,13 +14,32 @@
     </form>
 
     <p></p>
-    <p id="status"></p>
+    <p></p>
 
-<script>
+    <
+
+    <script>
+        let formEl = document.querySelector('#quote');
+        formEl.addEventListener('submit', async function(event) {
+            event.preventDefault();
+
+            const formdata = new FormData(formEl);
+            const data = Object.fromEntries(formdata);
+
+            let response = await fetch('/quoted', {
+                method: "POST",
+                headers: {"Content-Type": "application/json"},
+                body: JSON.stringify(data)
+            });
+            let responset = await response.text();
+            let responseObj = JSON.parse(responset);
 
 
 
+        });
 
-</script>
+
+
+    </script>
 
 {% endblock%}
