@@ -102,7 +102,7 @@ def quote():
 
 @app.route("/quoted", methods=["POST"])
 @login_required
-def quote():
+def quoted():
 
     status = {'status':'HI'}
     return jsonify(status)
