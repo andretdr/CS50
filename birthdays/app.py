@@ -75,7 +75,7 @@ def index():
 
 @app.route("/add")
 def add():
-    print('hi')
+    
     record = {}
     record['name'] = request.args.get('name')
     record['date'] = request.args.get('date')
