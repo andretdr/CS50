@@ -20,6 +20,8 @@
 
     <script>
         let formEl = document.querySelector('#quote');
+        html = '';
+
         formEl.addEventListener('submit', async function(event) {
             event.preventDefault();
 
@@ -44,7 +46,7 @@
                 else
                     if ('price' in responseObj)
                     {
-                        html = `SYMBOL : ${responseObj["symbol"]}, PRICE : ${responseObj["price"]}`;
+                        html += `SYMBOL : ${responseObj["symbol"]}, PRICE : ${responseObj["price"]}<br>`;
 
                         document.querySelector("#status").innerHTML = html;
                     }
