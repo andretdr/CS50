@@ -118,7 +118,7 @@ def register():
         record = request.get_json()
         print(record)
 
-        statuscheck = validatename(record['name'], db)
+        statuscheck = validatename(record['username'], db)
 
         if statuscheck != 3:
             statuslist = ['please fill in yr username', 'username is used', 'username needs to be alphanumeric']
