@@ -95,18 +95,20 @@ def logout():
     return redirect("/")
 
 
-@app.route("/quote", methods=["POST"])
+@app.route("/quote", methods=["GET", "POST"])
 @login_required
 def quote():
-    return render_template("quote.html")
+    if request.method="POST" :
+        status = {'status':'HI'}
+        return jsonify(status)
+    else:
+        return render_template("quote.html")
 
 
 
 @app.route("/quoted", methods=["POST"])
 @login_required
 def quoted():
-    status = {'status':'HI'}
-    return jsonify(status)
 
 
 
