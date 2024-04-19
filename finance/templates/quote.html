@@ -36,17 +36,18 @@
 
             console.log(responseObj);
 
-            if ('status' in responseObj) && (responseObj != null)
-                document.querySelector("#status").innerHTML = responseObj['status']
+            if (responseObj == null)
+                document.querySelector("#status").innerHTML = 'Symbol not found';
             else
-                if ('price' in responseObj)
-                {
-                    html = `SYMBOL : ${responseObj["symbol"]}, PRICE : ${responseObj["price"]}`;
-
-                    document.querySelector("#status").innerHTML = html;
-                }
+                if ('status' in responseObj)
+                    document.querySelector("#status").innerHTML = responseObj['status'];
                 else
-                    document.querySelector("#status").innerHTML = 'Symbol not found';
+                    if ('price' in responseObj)
+                    {
+                        html = `SYMBOL : ${responseObj["symbol"]}, PRICE : ${responseObj["price"]}`;
+
+                        document.querySelector("#status").innerHTML = html;
+                    }
 
 //            for (let obj of responseObj){
 //                html += '
