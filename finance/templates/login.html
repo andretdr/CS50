@@ -20,6 +20,7 @@
     <script>
         let formEl = documentSelector("#loginform");
         formEl.addEventListener('submit', async function(event){
+            event.preventDefault();
 
             const formdata = new FormData(formE1);
             const data = Object.FromEntries(formdata);

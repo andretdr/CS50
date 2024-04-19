@@ -57,6 +57,7 @@ def logincheck():
 
     record = request.get_json();
 
+    print(f"the record {record}")
     # validation
 
     rows = db.execute(
