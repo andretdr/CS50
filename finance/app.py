@@ -78,10 +78,32 @@ def logincheck():
 
 @app.route("/login", methods=["GET", "POST"])
 def login():
-    # Forget any user_id
+
     session.clear()
 
-    return render_template("login.html")
+    if request.method == "POST":
+        record = request.get_json();
+
+        print(f"the record {record}")
+        # validation
+
+        rows = db.execute(
+            "SELECT * FROM users WHERE username = ?", record['username']
+            )
+
+        if len(rows) != 1 or not check_password_hash(
+            rows[0]["hash"], record['password']
+            ):
+            status = {'status':'invalid username and/or password'}
+            return jsonify(status)
+
+        session["user_id"] = rows[0]["id"]
+
+        status = {'status':'redirect'}
+        return jsonify(status)
+
+    else:
+        return render_template("login.html")
 
 
 @app.route("/logout")
@@ -98,7 +120,7 @@ def logout():
 @app.route("/quote", methods=["GET", "POST"])
 @login_required
 def quote():
-    if request.method="POST" :
+    if request.method == "POST" :
         status = {'status':'HI'}
         return jsonify(status)
     else:
@@ -106,46 +128,41 @@ def quote():
 
 
 
-@app.route("/quoted", methods=["POST"])
-@login_required
-def quoted():
-
-
-
-@app.route("/add", methods=["POST"])
-def add():
-    record = request.get_json()
-    print(f"Our Json get {record}")
-
-    statuscheck = validatename(record['username'], db)
-
-    if statuscheck != 3:
-        statuslist = ['Please fill in yr username', 'Username is used', 'Username needs to be alphanumeric']
-        status = {'status':statuslist[statuscheck]}
-        return jsonify(status) #(status[statuscheck]) how to pas back the message dynamically? fetch as post?
-
-    statuscheck = validatepassword(record['password'], record['confirmation'])
-
-    if statuscheck != 2:
-        statuslist = ['Please fill in your password', 'Passwords do not match']
-        status = {'status':statuslist[statuscheck]}
-        return jsonify(status) #'password and comfirmation do not match'
-
-    pwhash = generate_password_hash(record['password'], method='scrypt', salt_length=16)
-
-    addrecord(record['username'], pwhash, db)
-    id = db.execute('SELECT id FROM users WHERE username = ?;', record['username'])
-
-    session['user_id'] = id[0]['id']
-
-    status = {'status':'redirect'}
-    return jsonify(status)
-
-
-@app.route("/register")
+@app.route("/register", methods=["GET", "POST"])
 def register():
+
     session.clear()
-    return render_template("register.html")
+
+    if request.method == "POST":
+        record = request.get_json()
+        print(f"Our Json get {record}")
+
+        statuscheck = validatename(record['username'], db)
+
+        if statuscheck != 3:
+            statuslist = ['Please fill in yr username', 'Username is used', 'Username needs to be alphanumeric']
+            status = {'status':statuslist[statuscheck]}
+            return jsonify(status) #(status[statuscheck]) how to pas back the message dynamically? fetch as post?
+
+        statuscheck = validatepassword(record['password'], record['confirmation'])
+
+        if statuscheck != 2:
+            statuslist = ['Please fill in your password', 'Passwords do not match']
+            status = {'status':statuslist[statuscheck]}
+            return jsonify(status) #'password and comfirmation do not match'
+
+        pwhash = generate_password_hash(record['password'], method='scrypt', salt_length=16)
+
+        addrecord(record['username'], pwhash, db)
+        id = db.execute('SELECT id FROM users WHERE username = ?;', record['username'])
+
+        session['user_id'] = id[0]['id']
+
+        status = {'status':'redirect'}
+        return jsonify(status)
+
+    else:
+        return render_template("register.html")
 
 
 @app.route("/sell", methods=["GET", "POST"])

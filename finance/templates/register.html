@@ -32,7 +32,7 @@
             const data = Object.fromEntries(formdata);
 
             // fetch post
-            let response = await fetch('/add', {
+            let response = await fetch('/register', {
                 method: "POST",
                 headers: {"Content-Type" : "application/json"},
                 body: JSON.stringify(data)
