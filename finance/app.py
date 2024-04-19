@@ -135,7 +135,7 @@ def add():
 
     session['user_id'] = id[0]['id']
 
-    status = {'status':'registered!'}
+    status = {'status':'redirect'}
     return jsonify(status)
 
 
