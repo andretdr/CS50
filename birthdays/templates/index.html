@@ -123,7 +123,7 @@
                                 //let strparam = '/add?name=' + name + '&date=' + date;
                                 let response = await fetch('/add', {
                                     method:'GET',
-                                    headers: {
+                                    body: {
                                         'name': name,
                                         'date': date
                                         }
