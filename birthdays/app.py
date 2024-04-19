@@ -75,7 +75,7 @@ def index():
 
 @app.route("/add", methods=["POST"])
 def add():
-    print("hi")
+
     print(f"what i recieved {request.get_json()}")
 
     record = {}
