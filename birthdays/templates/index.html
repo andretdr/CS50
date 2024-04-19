@@ -123,6 +123,9 @@
                                 //let strparam = '/add?name=' + name + '&date=' + date;
                                 let response = await fetch('/add', {
                                     method:'GET',
+                                    headers: {
+                                        'Content-Type': 'application/json'
+                                    },
                                     body: JSON.stringify({
                                         name: namein,
                                         date: datein
