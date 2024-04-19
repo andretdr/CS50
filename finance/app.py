@@ -97,6 +97,11 @@ def logout():
 @login_required
 def quote():
     if request.method == "POST" :
+
+        
+
+
+
         status = {'status':'HI'}
         return jsonify(status)
     else:

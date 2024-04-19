@@ -106,5 +106,10 @@ def validatepassword(pw, pwconfirm):
         return 1
     return 2
 
+def validatesymbol(symbol): # 0 is good, 1 is not
+    if not (re.match('^[a-zA-Z0-9]+$', symbol)): #regex check
+        return 1
+    return 0
+
 def addrecord(name, pwhash, db):
     db.execute("INSERT INTO users (username, hash) VALUES(?, ?);", name, pwhash)
