@@ -25,8 +25,8 @@
         formEl.addEventListener('submit', event => {
             event.preventDefault();
 
-            const dataform = Dataform.();
-            const data = firstEntry(datafrom);
+            const formdata = new Formdata(formEl);
+            const data = Object.FromEntries(fromdata);
 
             // fetch post
             let response = await fetch('/register', {
