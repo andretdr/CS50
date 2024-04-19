@@ -114,26 +114,22 @@ def register():
     session.clear()
 
     if request.method == "POST":
-        
 
-        record = {}
-        record['name'] = request.form.get('username')
-        record['password'] = request.form.get('password')
-        record['confirmation'] = request.form.get('confirmation')
+        record = request.get_json()
 
         statuscheck = validatename(record['name'], db)
 
         if statuscheck != 3:
-            status = ['please fill in yr username', 'username is used', 'username needs to be alphanumeric']
-            print(f"name status = {status[statuscheck]}")
-            return redirect("/") #(status[statuscheck]) how to pas back the message dynamically? fetch as post?
+            statuslist = ['please fill in yr username', 'username is used', 'username needs to be alphanumeric']
+            status = {'status':statuslist[statuscheck]}
+            return jsonify(status) #(status[statuscheck]) how to pas back the message dynamically? fetch as post?
 
         statuscheck = validatepassword(record['password'], record['confirmation'])
 
         if statuscheck != 2:
-            status = ['please fill in your password', 'passwords do not match']
-            print(f"password status = {status[statuscheck]}")
-            return redirect("/") #'password and comfirmation do not match'
+            statuslist = ['please fill in your password', 'passwords do not match']
+            status = {'status':statuslist['statuscheck']}
+            return jsonify(status) #'password and comfirmation do not match'
 
         pwhash = generate_password_hash(record['password'], method='scrypt', salt_length=16)
 
