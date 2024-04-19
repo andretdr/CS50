@@ -6,7 +6,7 @@
 
 {% block main %}
 
-    <form id="form">
+    <form id="regform">
         <div class="mb-3">
             <input autocomplete="off" autofocus class="form-control mx-auto w-auto" name="username" placeholder="Username" type="text">
         </div>
@@ -24,7 +24,7 @@
     </div>
     <script>
 
-        let formEl = document.querySelector('#form');
+        let formEl = document.querySelector('#regform');
         formEl.addEventListener('submit', async function(event) {
             event.preventDefault();
 
