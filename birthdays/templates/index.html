@@ -166,20 +166,12 @@
                             // addlistener to main submit button
                             let formEl = document.querySelector('.form');
                             document.addEventListener('DOMContentLoaded', function() {
-                                formEl.addEventListener('submit', event => {
-                                    event.preventDefault(); // prevent the default form submission
+                                formEl.addEventListener('submit', event => { // prevent the default form submission
+                                    event.preventDefault();
 
-                                    const formData = new FormData(formEl); // auto extract data from form
+                                    const formData = new FormData(formEl); // auto extract data from form, FormData
                                     addrecord(formData.get('name'), formData.get('date'));
-                                });
-                            });
 
-
-                                function() {
-                                    let inputname = document.querySelector('#inputname');
-                                    let inputdate = document.querySelector('#inputdate');
-
-                                    addrecord(inputname.value, inputdate.value);
                                 });
                             });
 
