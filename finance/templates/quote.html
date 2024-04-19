@@ -34,8 +34,11 @@
             let responset = await response.text();
             let responseObj = JSON.parse(responset);
 
-            html = '';
-            document.querySelector("#status").innerHTML = responseObj['status']
+
+            if ('status' in responseObj)
+                document.querySelector("#status").innerHTML = responseObj['status']
+            else
+                if ()
 
 //            for (let obj of responseObj){
 //                html += '
