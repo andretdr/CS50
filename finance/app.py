@@ -116,7 +116,7 @@ def register():
     if request.method == "POST":
 
         record = request.get_json()
-        print(record)
+        print(f"Our Json get {record}")
 
         statuscheck = validatename(record['username'], db)
 
