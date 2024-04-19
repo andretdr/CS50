@@ -6,30 +6,37 @@
 
 {% block main %}
 
+    <form id="form">
         <div class="mb-3">
-            <input id="regname" autocomplete="off" autofocus class="form-control mx-auto w-auto" name="username" placeholder="Username" type="text">
+            <input autocomplete="off" autofocus class="form-control mx-auto w-auto" name="username" placeholder="Username" type="text">
         </div>
         <div class="mb-3">
-            <input id="regpw" class="form-control mx-auto w-auto" name="password" placeholder="Password" type="password">
+            <input class="form-control mx-auto w-auto" name="password" placeholder="Password" type="password">
         </div>
         <div class="mb-3">
-            <input id="regcon" class="form-control mx-auto w-auto" name="confirmation" placeholder="Re-enter password" type="password">
+            <input class="form-control mx-auto w-auto" name="confirmation" placeholder="Re-enter password" type="password">
         </div>
-        <button id="regbutton" class="btn btn-primary" type="submit">Register</button>
+        <button class="btn btn-primary" type="submit">Register</button>
+    </form>
     <p id="status"></p>
     <script>
-        let reg = {};
-        reg['name'] = document.querySelector('#regname');
-        reg['password'] = document.querySelector('#regpw');
-        reg['confirm'] = document.querySelector('#regcon');
 
-        let regbutton = document.querySelector('#regbutton');
-        regbutton.addEventListener('click', function() {
+        let formEl = document.querySelector('#form');
+        formEl.addEventListener('submit', event => {
+            event.default = disable;
 
-            // fetch
-            let response = await fetch();
-            let resonset = await response.text();
-            document.querySelector('#status').innerHTML = resonet;
+            const dataform = Dataform.();
+            const data = firstEntry(datafrom);
+
+            // fetch post
+            let response = await fetch('/register', {
+                method = ["POST"],
+                headers = {"complete header" : "application/json"},
+                body = JSON.stringify(data)
+            });
+            let responset = await response.text();
+            let responseObj = JSON.parse(responset);
+            document.querySelector('#status').innerHTML = responseObj.['status'];
             )
 
 
