@@ -129,7 +129,7 @@ def register():
 
         if statuscheck != 2:
             statuslist = ['please fill in your password', 'passwords do not match']
-            status = {'status':statuslist['statuscheck']}
+            status = {'status':statuslist[statuscheck]}
             return jsonify(status) #'password and comfirmation do not match'
 
         pwhash = generate_password_hash(record['password'], method='scrypt', salt_length=16)
