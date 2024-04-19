@@ -82,11 +82,11 @@ def add():
 
     if validatedate(record['date']) and validatename(record['name']):
         db.execute("INSERT INTO birthdays (name, month, day) VALUES(?, ?, ?);", record['name'], returnmonth(record['date']), returnday(record['date']))
-        status = ''
+        status = {'status':''}
     else:
-        status = 'Invalid entry'
+        status = {'status':'Invalid Entry'}
 
-    return status
+    return jsonify(status)
 
 
 @app.route("/delete")
