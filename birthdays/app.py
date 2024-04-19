@@ -76,11 +76,9 @@ def index():
 @app.route("/add", methods=["POST"])
 def add():
 
-    print(f"what i recieved {request.get_json()}")
-
-    record = {}
-    record['name'] = request.args.get('name')
-    record['date'] = request.args.get('date')
+    record = request.get_json()
+    print(record['name'])
+    print(record['date'])
 
     if validatedate(record['date']) and validatename(record['name']):
         db.execute("INSERT INTO birthdays (name, month, day) VALUES(?, ?, ?);", record['name'], returnmonth(record['date']), returnday(record['date']))
