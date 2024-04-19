@@ -1,7 +1,7 @@
 import os
 
 from cs50 import SQL
-from flask import Flask, flash, redirect, render_template, request, session
+from flask import Flask, flash, redirect, render_template, request, session, jsonify
 from flask_session import Session
 from werkzeug.security import check_password_hash, generate_password_hash
 
@@ -141,7 +141,8 @@ def register():
 
         return redirect("/")
 
-    return render_template("register.html")
+    status = {'status':''}
+    return jsonify(status)
 
 
 @app.route("/sell", methods=["GET", "POST"])
