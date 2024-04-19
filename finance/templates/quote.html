@@ -14,7 +14,7 @@
     </form>
 
     <p></p>
-    <p></p>
+    <p id="status"></p>
 
     <p id="result"></p>
 
@@ -35,7 +35,7 @@
             let responseObj = JSON.parse(responset);
 
             html = '';
-            console.log(responseObj['status'])
+            document.querySelector("#status").innerHTML = responseObj['status']
 
 //            for (let obj of responseObj){
 //                html += '
