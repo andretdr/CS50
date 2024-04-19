@@ -58,7 +58,7 @@ def login():
     session.clear()
 
     if request.method == "POST":
-        record = request.get_json();
+        record = request.get_json()
 
         print(f"the record {record}")
         # validation
@@ -98,7 +98,9 @@ def logout():
 def quote():
     if request.method == "POST" :
 
-        
+        symbol = request.get_json()
+        if validatesymbol(symbol) == 1:
+            return jsonify("{status:}")
 
 
 
