@@ -34,11 +34,17 @@
             let responset = await response.text();
             let responseObj = JSON.parse(responset);
 
+            console.log(responseObj);
 
             if ('status' in responseObj)
                 document.querySelector("#status").innerHTML = responseObj['status']
             else
-                if ()
+                if ('price' in responseObj)
+                {
+                    html = 'SYMBOL : ${responseObj["symbol"]}, PRICE : ${responseObj["price"]}';
+
+                    document.querySelector("#result").innerHTML = html;
+                }
 
 //            for (let obj of responseObj){
 //                html += '
