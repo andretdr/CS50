@@ -25,8 +25,8 @@
         formEl.addEventListener('submit', async function(event) {
             event.preventDefault();
 
-            const formdata = new Formdata(formEl);
-            const data = Object.FromEntries(fromdata);
+            const formdata = new FormData(formEl);
+            const data = Object.FromEntries(formdata);
 
             console.log(data);
 
