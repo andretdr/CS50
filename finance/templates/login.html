@@ -34,7 +34,7 @@
             let responset = await response.text();
             let responseObj = JSON.parse(responset);
 
-            if responseObj['status'] == 'redirect'
+            if (responseObj['status'] == 'redirect')
                 window.location.href = "/";
             else
                 document.querySelector('#status').innerHTML = responseObj['status'];
