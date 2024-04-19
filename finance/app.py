@@ -111,6 +111,34 @@ def quote():
 
 @app.route("/add", methods=["POST"])
 def add():
+    record = request.get_json()
+    print(f"Our Json get {record}")
+
+    statuscheck = validatename(record['username'], db)
+
+    if statuscheck != 3:
+        statuslist = ['please fill in yr username', 'username is used', 'username needs to be alphanumeric']
+        status = {'status':statuslist[statuscheck]}
+        return jsonify(status) #(status[statuscheck]) how to pas back the message dynamically? fetch as post?
+
+    statuscheck = validatepassword(record['password'], record['confirmation'])
+
+    if statuscheck != 2:
+        statuslist = ['please fill in your password', 'passwords do not match']
+        status = {'status':statuslist[statuscheck]}
+        return jsonify(status) #'password and comfirmation do not match'
+
+    pwhash = generate_password_hash(record['password'], method='scrypt', salt_length=16)
+
+    addrecord(record['username'], pwhash, db)
+    id = db.execute('SELECT id FROM users WHERE username = ?;', record['username'])
+
+    session['user_id'] = id[0]['id']
+
+        status = {'status':statuslist[statuscheck]}
+        return jsonify(status) #(status[statuscheck]) how to pas back the message dynamically? fetch as post?
+
+    return redirect("/")
 
 
 
@@ -120,31 +148,6 @@ def register():
 
     if request.method == "POST":
 
-        record = request.get_json()
-        print(f"Our Json get {record}")
-
-        statuscheck = validatename(record['username'], db)
-
-        if statuscheck != 3:
-            statuslist = ['please fill in yr username', 'username is used', 'username needs to be alphanumeric']
-            status = {'status':statuslist[statuscheck]}
-            return jsonify(status) #(status[statuscheck]) how to pas back the message dynamically? fetch as post?
-
-        statuscheck = validatepassword(record['password'], record['confirmation'])
-
-        if statuscheck != 2:
-            statuslist = ['please fill in your password', 'passwords do not match']
-            status = {'status':statuslist[statuscheck]}
-            return jsonify(status) #'password and comfirmation do not match'
-
-        pwhash = generate_password_hash(record['password'], method='scrypt', salt_length=16)
-
-        addrecord(record['username'], pwhash, db)
-        id = db.execute('SELECT id FROM users WHERE username = ?;', record['username'])
-        print(f"id is {id[0]['id']}")
-        session['user_id'] = id[0]['id']
-
-        return redirect("/")
 
     return render_template("register.html")
 
