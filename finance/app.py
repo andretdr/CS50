@@ -139,13 +139,9 @@ def add():
     return jsonify(status) #(status[statuscheck]) how to pas back the message dynamically? fetch as post?
 
 
-@app.route("/register", methods=["GET", "POST"])
+@app.route("/register")
 def register():
     session.clear()
-
-    if request.method == "POST":
-
-
     return render_template("register.html")
 
 
