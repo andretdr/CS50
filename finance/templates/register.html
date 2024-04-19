@@ -22,7 +22,7 @@
     <script>
 
         let formEl = document.querySelector('#form');
-        formEl.addEventListener('submit', event => {
+        formEl.addEventListener('submit', async function(event) {
             event.preventDefault();
 
             const formdata = new Formdata(formEl);
