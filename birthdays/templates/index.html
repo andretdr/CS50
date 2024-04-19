@@ -130,11 +130,11 @@
                                     headers: {
                                         'Content-Type': 'application/json'
                                     },
-                                    body: data
+                                    body: JSON.stringify(data)
                                     }); // variable response
-                                let responset = await response.text();
+//                                let responset = await response.text();
 
-                                document.querySelector('#response').innerHTML = responset;
+//                                document.querySelector('#response').innerHTML = responset;
                                 fetchlist();
                             }
 
