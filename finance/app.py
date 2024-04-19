@@ -135,7 +135,7 @@ def register():
         pwhash = generate_password_hash(record['password'], method='scrypt', salt_length=16)
 
         addrecord(record['username'], pwhash, db)
-        id = db.execute('SELECT id FROM users WHERE username = ?;', record['name'])
+        id = db.execute('SELECT id FROM users WHERE username = ?;', record['username'])
         print(f"id is {id[0]['id']}")
         session['user_id'] = id[0]['id']
 
