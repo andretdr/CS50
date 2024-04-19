@@ -99,12 +99,13 @@ def logout():
 @login_required
 def quote():
 
-    if (request.method() == "POST"):
+    if (request.method == "POST"):
 
         status = {'status':'HI'}
         return jsonify(status)
 
-    return render_template("quote.html")
+    else:
+        return render_template("quote.html")
 
 
 @app.route("/add", methods=["POST"])
