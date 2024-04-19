@@ -170,7 +170,10 @@
                                     event.preventDefault(); // prevent the default form submission
 
                                     const formData = new FormData(formEl); // auto extract data from form, FormData
-                                    addrecord(formData.get('name'), formData.get('date'));
+                                    const data = Object.fromEntries(formData);
+                                    console.log(data);
+
+//                                    addrecord(data);
 
                                 });
                             });
