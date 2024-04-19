@@ -32,14 +32,14 @@
 
             // fetch post
             let response = await fetch('/register', {
-                method = "POST",
-                headers = {"Content-Type" : "application/json"},
-                body = JSON.stringify(data)
+                method: "POST",
+                headers: {"Content-Type" : "application/json"},
+                body: JSON.stringify(data)
             });
 
             let responset = await response.text();
             let responseObj = JSON.parse(responset);
-            document.querySelector('#status').innerHTML = responseObj.['status'];
+            document.querySelector('#status').innerHTML = responseObj['status'];
         });
 
     </script>
