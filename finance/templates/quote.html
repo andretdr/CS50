@@ -16,7 +16,7 @@
     <p></p>
     <p></p>
 
-    <
+    <p id="result"></p>
 
     <script>
         let formEl = document.querySelector('#quote');
@@ -34,8 +34,13 @@
             let responset = await response.text();
             let responseObj = JSON.parse(responset);
 
+            html = '';
+            console.log(responseObj['status'])
 
+//            for (let obj of responseObj){
+//                html += '
 
+//            }
         });
 
 
