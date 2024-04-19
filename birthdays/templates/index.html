@@ -164,9 +164,18 @@
                             }
 
                             // addlistener to main submit button
-                            let inputbutton = document.querySelector('#inputbutton');
+                            let formEl = document.querySelector('.form');
                             document.addEventListener('DOMContentLoaded', function() {
-                                inputbutton.addEventListener('click', function() {
+                                formEl.addEventListener('submit', event => {
+                                    event.preventDefault(); // prevent the default form submission
+
+                                    const formData = new FormData(formEl); // auto extract data from form
+                                    formData.get('name')
+
+                                }
+
+
+                                function() {
                                     let inputname = document.querySelector('#inputname');
                                     let inputdate = document.querySelector('#inputdate');
 
