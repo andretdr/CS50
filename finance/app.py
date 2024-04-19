@@ -114,6 +114,8 @@ def register():
     session.clear()
 
     if request.method == "POST":
+        
+
         record = {}
         record['name'] = request.form.get('username')
         record['password'] = request.form.get('password')
