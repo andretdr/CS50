@@ -76,6 +76,8 @@ def index():
 @app.route("/add", methods=["POST"])
 def add():
 
+    print(f"what i recieved {request.get_json()}")
+
     record = {}
     record['name'] = request.args.get('name')
     record['date'] = request.args.get('date')
