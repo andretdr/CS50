@@ -117,14 +117,14 @@ def add():
     statuscheck = validatename(record['username'], db)
 
     if statuscheck != 3:
-        statuslist = ['please fill in yr username', 'username is used', 'username needs to be alphanumeric']
+        statuslist = ['Please fill in yr username', 'Username is used', 'Username needs to be alphanumeric']
         status = {'status':statuslist[statuscheck]}
         return jsonify(status) #(status[statuscheck]) how to pas back the message dynamically? fetch as post?
 
     statuscheck = validatepassword(record['password'], record['confirmation'])
 
     if statuscheck != 2:
-        statuslist = ['please fill in your password', 'passwords do not match']
+        statuslist = ['Please fill in your password', 'Passwords do not match']
         status = {'status':statuslist[statuscheck]}
         return jsonify(status) #'password and comfirmation do not match'
 
