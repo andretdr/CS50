@@ -73,9 +73,9 @@ def index():
     return render_template("index.html")
 
 
-@app.route("/add")
+@app.route("/add", methods=["POST"])
 def add():
-    
+
     record = {}
     record['name'] = request.args.get('name')
     record['date'] = request.args.get('date')

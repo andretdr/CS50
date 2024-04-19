@@ -130,10 +130,7 @@
                                     headers: {
                                         'Content-Type': 'application/json'
                                     },
-                                    body: JSON.stringify({
-                                        name: namein,
-                                        date: datein
-                                        })
+                                    body: data
                                     }); // variable response
                                 let responset = await response.text();
 
