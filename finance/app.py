@@ -98,9 +98,11 @@ def logout():
 def quote():
     if request.method == "POST" :
 
-        symbol = request.get_json()
-        if validatesymbol(symbol) == 1:
-            return jsonify("{status:}")
+        record = request.get_json()
+        if validatesymbol(record['symbol']) == 1:
+            return jsonify({"status":"Symbol must be alphanumeric"})
+        result = lookup(record['symbol'])
+            return jsonify
 
 
 
