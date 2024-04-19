@@ -73,7 +73,7 @@ def index():
     return render_template("index.html")
 
 
-@app.route("/add", methods=["POST"])
+@app.route("/add", methods=["POST"]) # using JSON
 def add():
 
     record = request.get_json()

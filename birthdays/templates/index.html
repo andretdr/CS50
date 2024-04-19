@@ -122,9 +122,6 @@
                             }
 
                             async function addrecord(data) {
-//                                let strparam = '/add?name=' + name + '&date=' + date;
-
-//                                let response = await fetch(strparam);
                                 let response = await fetch('/add', {
                                     method:'POST',
                                     headers: {
@@ -132,9 +129,9 @@
                                     },
                                     body: JSON.stringify(data)
                                     }); // variable response
-//                                let responset = await response.text();
+                                let responset = await response.text();
 
-//                                document.querySelector('#response').innerHTML = responset;
+                                document.querySelector('#response').innerHTML = responset;
                                 fetchlist();
                             }
 
@@ -168,7 +165,6 @@
 
                                     const formData = new FormData(formEl); // auto extract data from form, FormData
                                     const data = Object.fromEntries(formData); // make it to a javascript object
-                                    console.log(data);
 
                                     addrecord(data);
 
