@@ -120,3 +120,7 @@ def getbalance(id, db): # return the balance in this account, assume its valid
 
 def strictlydigits(n):
     return re.match("^\\d+$", n)
+
+def transaction(buycode, symbol, shares, id, db): # if buycode = 1, buy, if 0 sell
+    if (buycode == 1):
+        db.execute("UPDATE transactions WHERE )

@@ -6,7 +6,7 @@ from flask import Flask, flash, redirect, render_template, request, session, jso
 from flask_session import Session
 from werkzeug.security import check_password_hash, generate_password_hash
 
-from helpers import apology, login_required, lookup, usd, validatename, validatepassword, validatesymbol, addrecord, getbalance, strictlydigits
+from helpers import apology, login_required, lookup, usd, validatename, validatepassword, validatesymbol, addrecord, getbalance, strictlydigits, transaction
 
 # Configure application
 app = Flask(__name__)
@@ -55,7 +55,7 @@ def buy():
             print(f"unitprice {unitprice['price']}")
             print(f"shares {shares}")
 
-            if float(unitprice['price'])*float(shares <= balance:
+            if float(unitprice['price'])*shares <= balance:
 #                transaction(1, record['symbol'], shares, id, db)
 
                 return jsonify({"status":"0"})
