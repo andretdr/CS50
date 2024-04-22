@@ -76,11 +76,13 @@
 
                         // regex check
                         const pattern =  /^\d+$/;
-                        if (autoEl.value == '')
-                            autoEl.value = 0;
-                        if (pattern.test(autoEl.value)) {
 
-                            let n = autoEl.value;
+                        if ((pattern.test(autoEl.value)) || (autoEl.value == '')) {
+
+                            if (autoEl.value == '')
+                                n = 0;
+                            else
+                                n = autoEl.value;
                             let price = responseObj["price"];
 
                             buyTotalDisplay (price, n, totalbalance);
