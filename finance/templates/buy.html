@@ -100,7 +100,7 @@
                         let result = buyValueCheck(data["price"], data["shares"], totalbalance);
                         console.log(data["price"]);
                         console.log(data["shares"]);
-                        console.log(data["totalbalance"]);
+                        console.log(totalbalance);
                         if (result == '0') {
 
                             let response = await fetch('/buy', {
