@@ -69,13 +69,13 @@
                             </table>`;
 
                     let autoEl = document.querySelector("#buyauto");
-                    document.addEventListener('DOMContentLoaded', function() {
-                        autoEl.addEventListener('input', function() {
-                            let totalprice = responseObj["price"]*autoEl.value;
-                            console.log(totalprice);
-                            document.querySelector("#buytotal").innerHTML = totalprice;
-                        });
+
+                    autoEl.addEventListener('input', function() {
+                        let totalprice = responseObj["price"]*autoEl.value;
+                        console.log(totalprice);
+                        document.querySelector("#buytotal").innerHTML = totalprice;
                     });
+
 
                     document.querySelector("#symbolstatus").innerHTML = '';
                     document.querySelector("#result").innerHTML = html;
