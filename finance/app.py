@@ -47,7 +47,7 @@ def buy():
         record = request.get_json()
         if re.match("^\d+$", record[shares]):
             print(f"nummber to buy: {record[shares]}")
-            return jsonify()
+            return jsonify({})
 
 
 
