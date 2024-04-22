@@ -58,14 +58,21 @@
                                     <td> Total Price : </td>
                                     <td>
                                         <form id="buytransaction">
-                                            <input autocomplete="off" autofocus placeholder="0" name="shares" type="text">
+                                            <input id="buyauto" autocomplete="off" autofocus placeholder="0" name="shares" type="text">
                                             <button class="btn btn-primary" type="submit">Buy</button>
                                         </form>
                                     </td>
                                 </tr>
                             </table>`;
 
-                    
+                    let autoEl = document.querySelector("#buyauto");
+                    document.
+                    autoEl.addEventListener('input', () => {
+                        let totalprice = ${responseObj["price"]}*autoEl.value;
+
+
+
+                    })
 
 
                     document.querySelector("#status").innerHTML = '';
