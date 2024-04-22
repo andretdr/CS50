@@ -73,6 +73,7 @@
                     let autoEl = document.querySelector("#buyauto");
                     autoEl.addEventListener('input', async function() {
                         let totalbalance = await returnBalance();
+                        
                         let n = autoEl.value;
                         let price = responseObj["price"];
 
