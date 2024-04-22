@@ -14,3 +14,9 @@ async function returnBalance() { // assume loggedin
 
     return responseObj['balance'];
 }
+
+async function buyTotal() {
+
+
+    
+}
