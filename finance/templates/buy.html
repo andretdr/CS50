@@ -107,7 +107,7 @@
                         let responset = await response.text();
                         let responseObj = JSON.parse(responset);
 
-                        if (responseObj['status'] == '') //means ok
+                        if (responseObj['status'] == '0') //means ok
                         {
                             document.querySelector("#buystatus").innerHTML = "Transaction made";
                             updateMainBalance();
