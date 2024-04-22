@@ -89,17 +89,17 @@
                             buyStatus("Input must be strictly numeric");
                     });
 
-                    let formEl = document.querySelector("#buytransaction");
-                    formEl.addEventListener('submit', async function(event) {
+                    let formbEl = document.querySelector("#buytransaction");
+                    formbEl.addEventListener('submit', async function(event) {
                         event.preventDefault();
 
-                        const formdata = new FormData(formEl);
-                        const data = Object.fromEntries(formdata);
+                        const formbdata = new FormData(formbEl);
+                        const datab = Object.fromEntries(formbdata);
 
                         let totalbalance = await returnBalance();
-                        let result = buyValueCheck(data["price"], data["shares"], totalbalance);
+                        let result = buyValueCheck(data["price"], datab["shares"], totalbalance);
                         console.log(data["price"]);
-                        console.log(data["shares"]);
+                        console.log(datab["shares"]);
                         console.log(totalbalance);
                         if (result == '0') {
 
