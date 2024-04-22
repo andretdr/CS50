@@ -97,7 +97,7 @@
                         const data = Object.fromEntries(formdata);
 
                         let totalbalance = await returnBalance();
-                        let result = buyValueCheck(data["price"], data["value"], totalbalance);
+                        let result = buyValueCheck(data["price"], data["shares"], totalbalance);
                         if (result == '0') {
 
                             let response = await fetch('/buy', {
@@ -120,7 +120,7 @@
                             buyStatus("Insufficient Funds");
                         }
                         if (result == '2') {
-                            buyStatus("Input must be strictly numericw");
+                            buyStatus("Input must be strictly numeric");
                         }
 
                     });
