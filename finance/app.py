@@ -6,7 +6,7 @@ from flask import Flask, flash, redirect, render_template, request, session, jso
 from flask_session import Session
 from werkzeug.security import check_password_hash, generate_password_hash
 
-from helpers import apology, login_required, lookup, usd, validatename, validatepassword, validatesymbol, addrecord, getbalance
+from helpers import apology, login_required, lookup, usd, validatename, validatepassword, validatesymbol, addrecord, getbalance, strictlydigits
 
 # Configure application
 app = Flask(__name__)
@@ -46,17 +46,18 @@ def buy():
     if request.method == "POST" :
         record = request.get_json()
 
-        if re.match("^\\d+$", record['shares']):
-            print(f"number to buy: {record['shares']}")
+        shares = record['shares']
+        if strictlydigits(shares):
+            print(f"number to buy: {shares}")
             balance = getbalance(session['user_id'], db)
             unitprice = lookup(record['symbol'])
-            if unitprice*record['shares'] <= balance:
+            if unitprice*shares <= balance:
+                transaction(1, record['symbol'], shares, id, db)
 
-
-
-            return jsonify({"status":"0"})
-        else:
-            return jsonify({"status":"Invalid Input"})
+                return jsonify({"status":"0"})
+            else:
+                return jsonify({"status":"Insufficient Funds"})
+        return jsonify({"status":"Invalid Input"})
 
     else:
         return render_template("buy.html")

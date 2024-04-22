@@ -118,3 +118,5 @@ def getbalance(id, db): # return the balance in this account, assume its valid
     row = db.execute("SELECT cash FROM users WHERE id = ?;", id)
     return row[0]['cash']
 
+def strictlydigits(n):
+    return re.match("^\\d+$", n)
