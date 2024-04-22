@@ -75,7 +75,7 @@
                         let totalbalance = await returnBalance();
 
                         // regex check
-                        let pattern = /[0-9]/;
+                        let pattern = /^\d+$/;
 
                         let n = autoEl.value;
                         let price = responseObj["price"];
