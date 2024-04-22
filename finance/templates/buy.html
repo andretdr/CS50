@@ -98,6 +98,9 @@
 
                         let totalbalance = await returnBalance();
                         let result = buyValueCheck(data["price"], data["shares"], totalbalance);
+                        console.log(data["price"]);
+                        console.log(data["shares"]);
+                        console.log(data["totalbalance"]);
                         if (result == '0') {
 
                             let response = await fetch('/buy', {
