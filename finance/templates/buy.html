@@ -48,9 +48,11 @@
                 if ('price' in responseObj)
                 {
                     html = `SYMBOL : ${responseObj["symbol"]}, PRICE per unit : ${responseObj["price"]}
+                            <table>
                             <form id="buytransaction">
+
                                 <input autocomplete="off" autofocus placeholder="0" name="shares" type="text">
-                                <button></button>
+                                <input type="submit">Buy</submit>
 
 
                             </form>
