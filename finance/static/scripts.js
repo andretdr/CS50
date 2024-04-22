@@ -15,7 +15,7 @@ async function returnBalance() { // assume loggedin
     return responseObj['balance'];
 }
 
-function buyTotalDisplay(price, n, totalBalance) {
+function buyTotalDisplay(price, n, totalBalance) { // assume inputs are correct
     let total = price * n;
     if (total > totalBalance) {
         document.querySelector("#buytotal").style.color = "red";
