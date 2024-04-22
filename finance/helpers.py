@@ -113,3 +113,7 @@ def validatesymbol(symbol): # 0 is good, 1 is not
 
 def addrecord(name, pwhash, db):
     db.execute("INSERT INTO users (username, hash) VALUES(?, ?);", name, pwhash)
+
+def getbalance(id, db): # return the balance in this account, assume its valid
+    db.execute("SELECT)
+
