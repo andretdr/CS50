@@ -40,5 +40,5 @@ function buyValueCheck(unitprice, input ,totalBalance) {
         document.querySelector("#buystatus").innerHTML = ""
     }
     else
-        document.querySelector("#buystatus").innerHTML = "Input must be strictly numeric"
+        return = "Input must be strictly numeric"
 }
