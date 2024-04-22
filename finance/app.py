@@ -43,16 +43,11 @@ def index():
 
 def buy():
     if request.method == "POST" :
-
         record = request.get_json()
-        print(record['symbol'])
+        
 
-        if validatesymbol(record['symbol']) == 1:
-            return jsonify({"status":"Symbol must be alphanumeric"})
 
-        result = lookup(record['symbol'])
-        print(result)
-        return jsonify(result)
+
 
     else:
         return render_template("buy.html")
