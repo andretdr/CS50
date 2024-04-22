@@ -48,12 +48,14 @@
                 if ('price' in responseObj)
                 {
                     html = `<table>
-                                <col style="width:20%" />
-                                <col style="width:20%" />
-                                <col style="width:40%" />
+                                <col style="width:15%" />
+                                <col style="width:15%" />
+                                <col style="width:35%" />
+                                <col style="width:35%" />
                                 <tr>
                                     <td> ${responseObj["symbol"]}</td>
-                                    <td> PRICE per unit :  $ ${responseObj["price"]}</td>
+                                    <td> Price per unit :  $ ${responseObj["price"]}</td>
+                                    <td> Total Price : </td>
                                     <td>
                                         <form id="buytransaction">
                                             <input autocomplete="off" autofocus placeholder="0" name="shares" type="text">
