@@ -96,6 +96,8 @@
                         const formdata = new FormData(formEl);
                         const data = Object.fromEntries(formdata);
 
+                        let result = buyValueCheck(data["price"], autoEl.value, totalbalance);
+
                         let response = await fetch('/buy', {
                             method: 'POST',
                             headers: {'Content-Type':'application/json'},
