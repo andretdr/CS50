@@ -4,7 +4,7 @@ async function updateMainBalance() { // assume loggedin
     let responset = await response.text();
     let responseObj = JSON.parse(responset);
 
-    document.querySelector("#accountbalance").innerHTML = responseObj['balance']
+    document.querySelector("#accountbalance").innerHTML = responseObj['balance'];
 }
 
 async function returnBalance() { // assume loggedin
@@ -12,5 +12,5 @@ async function returnBalance() { // assume loggedin
     let responset = await response.text();
     let responseObj = JSON.parse(responset);
 
-    document.querySelector("#accountbalance").innerHTML = responseObj['balance']
+    return responseObj['balance'];
 }
