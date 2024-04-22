@@ -70,7 +70,6 @@ def login():
     if request.method == "POST":
         record = request.get_json()
 
-        print(f"the record {record}")
         # validation
 
         rows = db.execute(
@@ -107,7 +106,7 @@ def logout():
 def checktotal():
     sessionid = session['user_id']
     result = {"balance":getbalance(sessionid, db)}
-    print(result)
+
     return jsonify(result)
 
 
