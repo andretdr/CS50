@@ -62,7 +62,8 @@
             <script>
                 let response = await fetch('/checkbalance');
                 let responset = await response.text();
-                let responseObj 
+                let responseObj = JSON.parse(responset);
+                document.querySelector("accountbalance")
 
             </script>
             {% block main %}{% endblock %}
