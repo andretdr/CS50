@@ -15,6 +15,13 @@ async function returnBalance() { // assume loggedin
     return responseObj['balance'];
 }
 
-async function buyTotalDisplay(price, n, totalBalance) {
-    return price * n;
+function buyTotalDisplay(price, n, totalBalance) {
+    let total = price * n;
+    if total > totalBalance {
+        document.querySelector("balance").style.color = "red";
+        }
+    else {
+        document.querySelector("balance").style.color = "green";
+    }
+    document.querySelector("balance").innerHTML = total;
 }

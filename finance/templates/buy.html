@@ -75,10 +75,8 @@
                         let totalbalance = await returnBalance();
                         let n = autoEl.value;
                         let price = responseObj["price"];
-                        console.log(price);
-                        console.log(n);
-                        console.log(totalbalance);
 
+                        buyTotalDisplay (price, n, totalbalance);
 //                        document.querySelector("#buytotal").innerHTML = "Total Price : $" + totalprice.toFixed(2);
 
 
