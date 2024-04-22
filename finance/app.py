@@ -107,6 +107,7 @@ def logout():
 
 @app.route("/checktotal")
 def checktotal():
+    sessionid = session['user_id']
     return 
 
 
