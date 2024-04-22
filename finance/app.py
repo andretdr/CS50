@@ -109,6 +109,7 @@ def logout():
 @login_required
 def checktotal():
     sessionid = session['user_id']
+    
     return jsonify({"balance":getbalance(sessionid, db)})
 
 

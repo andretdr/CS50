@@ -62,10 +62,7 @@
 
         <main class="container py-5 text-center">
             <script>
-                let response = await fetch('/checkbalance');
-                let responset = await response.text();
-                let responseObj = JSON.parse(responset);
-                document.querySelector("accountbalance")
+                updateMainBalance();
 
             </script>
             {% block main %}{% endblock %}
