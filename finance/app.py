@@ -50,7 +50,8 @@ def buy():
         if strictlydigits(shares):
 #            print(f"number to buy: {shares}")
             balance = getbalance(session['user_id'], db)
-            unitprice = lookup(record['symbol'])
+            unitprice = lookup(record['symbol'])['price']
+
             if unitprice*shares <= balance:
 #                transaction(1, record['symbol'], shares, id, db)
 
