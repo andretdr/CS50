@@ -49,10 +49,10 @@
                 {
                     html = `<table>
                                 <col style="width:10%" />
-                                <col style="width:10%" />
+                                <col style="width:20%" />
+                                <col style="width:20%" />
                                 <col style="width:35%" />
-                                <col style="width:35%" />
-                                <col style="width:10%" />
+                                <col style="width:15%" />
                                 <tr>
                                     <td> ${responseObj["symbol"]}</td>
                                     <td> Price per unit :  $ ${responseObj["price"]}</td>
@@ -73,7 +73,7 @@
                     let autoEl = document.querySelector("#buyauto");
                     autoEl.addEventListener('input', function() {
                         let totalprice = responseObj["price"]*autoEl.value;
-                        document.querySelector("#buytotal").innerHTML = "Total Price : " + totalprice;
+                        document.querySelector("#buytotal").innerHTML = "Total Price : $" + totalprice.toFixed(2);
 
                     });
 
