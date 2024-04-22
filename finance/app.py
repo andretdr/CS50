@@ -47,7 +47,7 @@ def buy():
         record = request.get_json()
         if re.match("^\\d+$", record['shares']):
             print(f"number to buy: {record['shares']}")
-            
+            balance = getbalance(, db)
 
 
 
