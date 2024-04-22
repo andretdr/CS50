@@ -47,7 +47,15 @@
 
                 if ('price' in responseObj)
                 {
-                    html = `SYMBOL : ${responseObj["symbol"]}, PRICE : ${responseObj["price"]}<br>` + html;
+                    html = `SYMBOL : ${responseObj["symbol"]}, PRICE per unit : ${responseObj["price"]}
+                            <form id="buytransaction">
+                                <input autocomplete="off" autofocus placeholder="0" name="shares" type="text">
+                                <button></button>
+
+
+                            </form>
+                            <br> `
+                        ;
 
                     document.querySelector("#status").innerHTML = '';
                     document.querySelector("#result").innerHTML = html;
