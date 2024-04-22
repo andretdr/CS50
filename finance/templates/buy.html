@@ -72,7 +72,15 @@
 
                     let autoEl = document.querySelector("#buyauto");
                     autoEl.addEventListener('input', function() {
-                        
+                        let totalbalance = returnBalance();
+                        let n = autoEL.value;
+                        let price = responseObj["price"];
+                        console.log(price);
+                        console.log(n);
+                        console.log(totalbalance);
+
+//                        document.querySelector("#buytotal").innerHTML = "Total Price : $" + totalprice.toFixed(2);
+
 
                     });
 
