@@ -75,13 +75,17 @@
                         let totalbalance = await returnBalance();
 
                         // regex check
-                        pattern = (^\d+$);
-                        
+                        const pattern =  /^\d+$/;
+                        if (pattern.test(autoEl.value)) {
 
-                        let n = autoEl.value;
-                        let price = responseObj["price"];
+                            let n = autoEl.value;
+                            let price = responseObj["price"];
 
-                        buyTotalDisplay (price, n, totalbalance);
+                            buyTotalDisplay (price, n, totalbalance);
+                            document.querySelector("#buystatus").innerHTML = ""
+                        }
+                        else
+                            document.querySelector("#buystatus").innerHTML = "Input must be strictly numeric"
                     });
 
                 }
