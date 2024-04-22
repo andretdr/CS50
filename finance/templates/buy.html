@@ -76,9 +76,7 @@
 
                         // regex check
                         const pattern =  /^\d+$/;
-                        if (autoEl.value = '')
-
-                        if (pattern.test(autoEl.value)) {
+                        if ((pattern.test(autoEl.value)) || autoEl.value == '') {
 
                             let n = autoEl.value;
                             let price = responseObj["price"];
