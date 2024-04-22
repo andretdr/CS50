@@ -78,7 +78,11 @@
                         let result = buyValueCheck(responseObj["price"], autoEl.value, totalbalance);
                         if (result != '2')
                             {
-
+                                let n = 0;
+                                if (autoEl.value != '')
+                                    n = autoEl.value;
+                                // if its good, display 
+                                buyTotalDisplay (unitprice, n, totalbalance);
                             }
                         else
                             document.querySelector("#buystatus").innerHTML = "Input must be strictly numeric"

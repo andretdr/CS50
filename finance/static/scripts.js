@@ -36,7 +36,6 @@ function buyValueCheck(unitprice, input ,totalbalance) { // returns 0 for ok, 1 
         if (input != '')
             n = input;
 
-        buyTotalDisplay (unitprice, n, totalbalance);
         if (unitprice * n <= totalbalance)
             return "0";
         else
