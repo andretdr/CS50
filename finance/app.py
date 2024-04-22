@@ -109,8 +109,9 @@ def logout():
 @login_required
 def checktotal():
     sessionid = session['user_id']
-    
-    return jsonify({"balance":getbalance(sessionid, db)})
+    result = {"balance":getbalance(sessionid, db)}
+    print(result)
+    return jsonify(result)
 
 
 @app.route("/quote", methods=["GET", "POST"])
