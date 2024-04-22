@@ -1,4 +1,5 @@
 import os
+import re
 
 from cs50 import SQL
 from flask import Flask, flash, redirect, render_template, request, session, jsonify
@@ -44,7 +45,7 @@ def index():
 def buy():
     if request.method == "POST" :
         record = request.get_json()
-        
+        if re.match(" record[shares]
 
 
 
