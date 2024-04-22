@@ -26,7 +26,7 @@ function buyTotalDisplay(price, n, totalBalance) {
     document.querySelector("#buytotal").innerHTML = "Total Price :$ " + total.toFixed(2);
 }
 
-function buyValueCheck(unitprice, input ,totalBalance) {
+function buyValueCheck(unitprice, input ,totalBalance) { // returns 0 for ok, 1 for not enough funds, 2 for invalid input
 
     const pattern =  /^\d+$/;
     let n = 0;
@@ -37,9 +37,11 @@ function buyValueCheck(unitprice, input ,totalBalance) {
             n = input;
 
         buyTotalDisplay (unitprice, n, totalbalance);
-        
-        document.querySelector("#buystatus").innerHTML = ""
+        if (unitprice * n <= totalbalance)
+            return "0";
+        else
+            return "1";
     }
     else
-        return = "Input must be strictly numeric"
+        return = "2"
 }
