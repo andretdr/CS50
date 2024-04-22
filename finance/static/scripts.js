@@ -25,3 +25,22 @@ function buyTotalDisplay(price, n, totalBalance) {
     }
     document.querySelector("#buytotal").innerHTML = "Total Price :$ " + total.toFixed(2);
 }
+
+function buyValueCheck(price, n ,totalBalance) {
+
+    const pattern =  /^\d+$/;
+
+    if ((pattern.test(autoEl.value)) || (autoEl.value == '')) {
+
+        if (autoEl.value == '')
+            n = 0;
+        else
+            n = autoEl.value;
+        let price = responseObj["price"];
+
+        buyTotalDisplay (price, n, totalbalance);
+        document.querySelector("#buystatus").innerHTML = ""
+    }
+    else
+        document.querySelector("#buystatus").innerHTML = "Input must be strictly numeric"
+}
