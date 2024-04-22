@@ -62,9 +62,9 @@
 
         <main class="container py-5 text-center">
             <script>
-                document.addEventListener('DOMContentLoaded', () => {
+                document.addEventListener('DOMContentLoaded', function() {
                      response = updateMainBalance();
-                     document.querySelector("#accountbalance").innerHTML = response['balance'];
+                     document.querySelector("#accountbalance").innerHTML = response;
                 });
 
             </script>
