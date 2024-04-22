@@ -56,7 +56,7 @@
                                 <tr>
                                     <td> ${responseObj["symbol"]}</td>
                                     <td> Price per unit :  $ ${responseObj["price"]}</td>
-                                    <td> Total Price : </td>
+                                    <td id="buytotal"></td>
                                     <td>
                                         <form id="buytransaction">
                                             <input id="buyauto" autocomplete="off" autofocus placeholder="0" name="shares" type="text">
@@ -72,10 +72,9 @@
                     document.addEventListener('DOMContentLoaded', () => {
                         autoEl.addEventListener('input', () => {
                             let totalprice = ${responseObj["price"]}*autoEl.value;
-                            document.querySelector("#buystatus").innerHTML = totalprice
+                            document.querySelector("#buytotal").innerHTML = totalprice
                         });
                     });
-
 
                     document.querySelector("#status").innerHTML = '';
                     document.querySelector("#result").innerHTML = html;
