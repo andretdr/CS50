@@ -68,17 +68,15 @@
                                 </tr>
                             </table>`;
 
-                    let autoEl = document.querySelector("#buyauto");
+                    document.querySelector("#result").innerHTML = html;
 
+                    let autoEl = document.querySelector("#buyauto");
                     autoEl.addEventListener('input', function() {
                         let totalprice = responseObj["price"]*autoEl.value;
-                        console.log(totalprice);
+                        document.querySelector("#buytotal").innerHTML = "Total Price : " + totalprice;
 
                     });
 
-
-                    document.querySelector("#symbolstatus").innerHTML = '';
-                    document.querySelector("#result").innerHTML = html;
                 }
             }
         });
