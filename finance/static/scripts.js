@@ -26,19 +26,17 @@ function buyTotalDisplay(price, n, totalBalance) {
     document.querySelector("#buytotal").innerHTML = "Total Price :$ " + total.toFixed(2);
 }
 
-function buyValueCheck(price, n ,totalBalance) {
+function buyValueCheck(unitprice, input ,totalBalance) {
 
     const pattern =  /^\d+$/;
+    let n = 0;
 
-    if ((pattern.test(autoEl.value)) || (autoEl.value == '')) {
+    if ((pattern.test(input)) || (input == '')) {
 
-        if (autoEl.value == '')
-            n = 0;
-        else
-            n = autoEl.value;
-        let price = responseObj["price"];
+        if (input != '')
+            n = input;
 
-        buyTotalDisplay (price, n, totalbalance);
+        buyTotalDisplay (unitprice, n, totalbalance);
         document.querySelector("#buystatus").innerHTML = ""
     }
     else
