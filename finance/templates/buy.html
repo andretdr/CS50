@@ -14,7 +14,7 @@
     </form>
 
     <p></p>
-    <p id="status"></p>
+    <p id="symbolstatus"></p>
 
     <p id="result"></p>
 
@@ -39,19 +39,20 @@
             let responseObj = JSON.parse(responset);
 
             if (responseObj == null)
-                document.querySelector("#status").innerHTML = 'Symbol not found';
+                document.querySelector("#symbolstatus").innerHTML = 'Symbol not found';
             else
             {
                 if ('status' in responseObj)
-                    document.querySelector("#status").innerHTML = responseObj['status'];
+                    document.querySelector("#symbolstatus").innerHTML = responseObj['status'];
 
                 if ('price' in responseObj)
                 {
                     html = `<table>
-                                <col style="width:15%" />
-                                <col style="width:15%" />
+                                <col style="width:10%" />
+                                <col style="width:10%" />
                                 <col style="width:35%" />
                                 <col style="width:35%" />
+                                <col style="width:10%" />
                                 <tr>
                                     <td> ${responseObj["symbol"]}</td>
                                     <td> Price per unit :  $ ${responseObj["price"]}</td>
@@ -59,9 +60,11 @@
                                     <td>
                                         <form id="buytransaction">
                                             <input id="buyauto" autocomplete="off" autofocus placeholder="0" name="shares" type="text">
+                                            <input type="hidden" name="symbol" value="${responseObj["symbol"]}>
                                             <button class="btn btn-primary" type="submit">Buy</button>
                                         </form>
                                     </td>
+                                    <td id="buystatus"></td>
                                 </tr>
                             </table>`;
 
