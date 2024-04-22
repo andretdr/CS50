@@ -97,13 +97,21 @@
                         const formdata = new FormData(formEl);
                         const data = Object.fromEntries(formdata);
 
-                        let response = await fetch('\buy', {
+                        let response = await fetch('/buy', {
                             method="POST",
                             headers={"Content-Type":"application/json"},
                             body=JSON.stringify(data)
                         });
+                        let responset = await response.text();
+                        let responseObj = JSON.parse(responset);
 
-
+                        if (responseObj['status'] == '') //means ok
+                        {
+                            document.querySelector("#buystatus").innerHTML = "Transaction made";
+                            updateMainBalance();
+                        }
+                        else
+                            document.querySelector("#buystatus").innerHTML = responseObj['status'];
                     }
 
                 }
