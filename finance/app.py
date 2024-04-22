@@ -52,7 +52,7 @@ def buy():
             balance = getbalance(session['user_id'], db)
             unitprice = lookup(record['symbol'])
             if unitprice*shares <= balance:
-                transaction(1, record['symbol'], shares, id, db)
+#                transaction(1, record['symbol'], shares, id, db)
 
                 return jsonify({"status":"0"})
             else:
