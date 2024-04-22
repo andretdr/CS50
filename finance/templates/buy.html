@@ -47,6 +47,9 @@
 
                 if ('price' in responseObj)
                 {
+                    const currprice = responseObj["price"];
+                    const currsymbol = responseObj["symbol"];
+
                     html = `<table>
                                 <col style="width:5%" />
                                 <col style="width:20%" />
@@ -54,13 +57,13 @@
                                 <col style="width:30%" />
                                 <col style="width:10%" />
                                 <tr>
-                                    <td> ${responseObj["symbol"]}</td>
-                                    <td> Price per unit :  $ ${responseObj["price"]}</td>
+                                    <td> ${currsymbol}</td>
+                                    <td> Price per unit :  $ ${currprice}</td>
                                     <td id="buytotal"></td>
                                     <td>
                                         <form id="buytransaction">
                                             <input id="buyauto" autocomplete="off" autofocus placeholder="0" name="shares" type="text">
-                                            <input type="hidden" name="symbol" value="${responseObj['symbol']}">
+                                            <input type="hidden" name="symbol" value="${currsymbol}">
                                             <button class="btn btn-primary" type="submit">Buy</button>
                                         </form>
                                     </td>
@@ -75,14 +78,14 @@
                         let totalbalance = await returnBalance();
 
                         // check if input is good
-                        let result = buyValueCheck(responseObj["price"], autoEl.value, totalbalance);
+                        let result = buyValueCheck(currprice, autoEl.value, totalbalance);
                         if (result != '2')
                             {
                                 let n = 0;
                                 if (autoEl.value != '')
                                     n = autoEl.value;
                                 // if its good, display
-                                buyTotalDisplay (responseObj["price"], n, totalbalance);
+                                buyTotalDisplay (currprice, n, totalbalance);
                                 buyStatus("");
                             }
                         else
@@ -93,13 +96,13 @@
                     formbEl.addEventListener('submit', async function(event) {
                         event.preventDefault();
 
-                        const formbdata = new FormData(formbEl);
-                        const datab = Object.fromEntries(formbdata);
+                        const formdata = new FormData(formbEl);
+                        const data = Object.fromEntries(formdata);
 
                         let totalbalance = await returnBalance();
-                        let result = buyValueCheck(data["price"], datab["shares"], totalbalance);
-                        console.log(data["price"]);
-                        console.log(datab["shares"]);
+                        let result = buyValueCheck(currprice, data["shares"], totalbalance);
+                        console.log(currprice);
+                        console.log(data["shares"]);
                         console.log(totalbalance);
                         if (result == '0') {
 
