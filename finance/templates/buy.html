@@ -74,20 +74,12 @@
                     autoEl.addEventListener('input', async function() {
                         let totalbalance = await returnBalance();
 
-                        // regex check
-                        const pattern =  /^\d+$/;
+                        // check if input is good
+                        let result = buyValueCheck(responseObj["price"], autoEl.value, totalbalance);
+                        if (result != '2')
+                            {
 
-                        if ((pattern.test(autoEl.value)) || (autoEl.value == '')) {
-
-                            if (autoEl.value == '')
-                                n = 0;
-                            else
-                                n = autoEl.value;
-                            let price = responseObj["price"];
-
-                            buyTotalDisplay (price, n, totalbalance);
-                            document.querySelector("#buystatus").innerHTML = ""
-                        }
+                            }
                         else
                             document.querySelector("#buystatus").innerHTML = "Input must be strictly numeric"
                     });
