@@ -73,6 +73,7 @@
 
                     document.querySelector("#result").innerHTML = html;
 
+
                     let autoEl = document.querySelector("#buyauto");
                     autoEl.addEventListener('input', async function() {
                         let totalbalance = await returnBalance();
@@ -92,6 +93,7 @@
                             buyStatus("Input must be strictly numeric");
                     });
 
+
                     let formbEl = document.querySelector("#buytransaction");
                     formbEl.addEventListener('submit', async function(event) {
                         event.preventDefault();
@@ -101,9 +103,7 @@
 
                         let totalbalance = await returnBalance();
                         let result = buyValueCheck(currprice, data["shares"], totalbalance);
-                        console.log(currprice);
-                        console.log(data["shares"]);
-                        console.log(totalbalance);
+
                         if (result == '0') {
 
                             let response = await fetch('/buy', {
@@ -128,7 +128,6 @@
                         if (result == '2') {
                             buyStatus("Input must be strictly numeric");
                         }
-
                     });
                 }
             }
