@@ -15,8 +15,10 @@ async function returnBalance() { // assume loggedin
     return responseObj['balance'];
 }
 
-async function buyTotal() {
+async function buyTotalDisplay() {
+    let totalprice = responseObj["price"]*autoEl.value;
+    document.querySelector("#buytotal").innerHTML = "Total Price : $" + totalprice.toFixed(2);
 
 
-    
+
 }
