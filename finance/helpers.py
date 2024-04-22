@@ -122,5 +122,5 @@ def strictlydigits(n):
     return re.match("^\\d+$", n)
 
 def transaction(buycode, symbol, shares, id, db): # if buycode = 1, buy, if 0 sell
-    if (buycode == 1):
-        db.execute("UPDATE transactions WHERE )
+    if (buycode == 'buy'):
+        db.execute("INSERT INTO transactions (id, symbol, shares, price, buycode, date) VALUES )

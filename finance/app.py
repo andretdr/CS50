@@ -56,7 +56,7 @@ def buy():
             print(f"shares {shares}")
 
             if float(unitprice['price'])*shares <= balance:
-#                transaction(1, record['symbol'], shares, id, db)
+#                transaction('buy', record['symbol'], shares, id, db)
 
                 return jsonify({"status":"0"})
             else:
