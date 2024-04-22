@@ -94,6 +94,8 @@
 
                     let formEl = document.querySelector("#buytransaction");
                     formEl.addEventListener('submit', async function(event) {
+                        event.preventDefault();
+
                         const formdata = new FormData(formEl);
                         const data = Object.fromEntries(formdata);
 
