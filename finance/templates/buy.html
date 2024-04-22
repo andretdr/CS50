@@ -96,23 +96,33 @@
                         const formdata = new FormData(formEl);
                         const data = Object.fromEntries(formdata);
 
+                        let totalbalance = await returnBalance();
                         let result = buyValueCheck(data["price"], data["value"], totalbalance);
+                        if (result == '0') {
 
-                        let response = await fetch('/buy', {
-                            method: 'POST',
-                            headers: {'Content-Type':'application/json'},
-                            body: JSON.stringify(data)
-                        });
-                        let responset = await response.text();
-                        let responseObj = JSON.parse(responset);
+                            let response = await fetch('/buy', {
+                                method: 'POST',
+                                headers: {'Content-Type':'application/json'},
+                                body: JSON.stringify(data)
+                            });
+                            let responset = await response.text();
+                            let responseObj = JSON.parse(responset);
 
-                        if (responseObj['status'] == '0') //means ok
-                        {
-                            document.querySelector("#buystatus").innerHTML = "Transaction made";
-                            updateMainBalance();
+                            if (responseObj['status'] == '0') //means ok
+                            {
+                                buyStatus("Transaction made");
+                                updateMainBalance();
+                            }
+                            else
+                                buyStatus(responseObj['status']);
                         }
-                        else
-                            document.querySelector("#buystatus").innerHTML = responseObj['status'];
+                        if (result == '1') {
+                            buyStatus("Insufficient Funds");
+                        }
+                        if (result == '2') {
+                            buyStatus("Input must be strictly numeric");
+                        }
+
                     });
                 }
             }
