@@ -100,9 +100,9 @@
                         const data = Object.fromEntries(formdata);
 
                         let response = await fetch('/buy', {
-                            method='POST',
-                            headers={'Content-Type':'application/json'},
-                            body=JSON.stringify(data)
+                            method: 'POST',
+                            headers: {'Content-Type':'application/json'},
+                            body: JSON.stringify(data)
                         });
                         let responset = await response.text();
                         let responseObj = JSON.parse(responset);
