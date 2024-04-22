@@ -1,5 +1,5 @@
 
-updateMainBalance() { // assume loggedin
+async function updateMainBalance() { // assume loggedin
     let response = await fetch('/checkbalance');
     let responset = await response.text();
     let responseObj = JSON.parse(responset);
