@@ -81,11 +81,12 @@
                                 let n = 0;
                                 if (autoEl.value != '')
                                     n = autoEl.value;
-                                // if its good, display 
-                                buyTotalDisplay (unitprice, n, totalbalance);
+                                // if its good, display
+                                buyTotalDisplay (responseObj["price"], n, totalbalance);
+                                buyStatus("");
                             }
                         else
-                            document.querySelector("#buystatus").innerHTML = "Input must be strictly numeric"
+                            buyStatus("Input must be strictly numeric");
                     });
 
                     let formEl = document.querySelector("#buytransaction");
