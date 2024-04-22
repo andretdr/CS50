@@ -37,6 +37,7 @@ function buyValueCheck(unitprice, input ,totalBalance) {
             n = input;
 
         buyTotalDisplay (unitprice, n, totalbalance);
+        
         document.querySelector("#buystatus").innerHTML = ""
     }
     else
