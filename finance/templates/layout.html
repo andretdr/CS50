@@ -62,10 +62,9 @@
 
         <main class="container py-5 text-center">
             <script>
-                document.addEventListener('DOMContentLoaded', function() {
-                     response = updateMainBalance();
-                     document.querySelector("#accountbalance").innerHTML = response;
-                });
+
+                     updateMainBalance();
+
 
             </script>
             {% block main %}{% endblock %}
