@@ -47,6 +47,10 @@ def buy():
         record = request.get_json()
         if re.match("^\\d+$", record['shares']):
             print(f"number to buy: {record['shares']}")
+            
+
+
+
             return jsonify({"status":"0"})
         else:
             return jsonify({"status":"Invalid Input"})
