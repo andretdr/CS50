@@ -1,4 +1,3 @@
-<script>
 
 updateMainBalance() { // assume loggedin
     let response = await fetch('/checkbalance');
@@ -9,6 +8,3 @@ updateMainBalance() { // assume loggedin
 
 }
 
-
-
-</script>
