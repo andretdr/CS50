@@ -26,7 +26,7 @@ function buyTotalDisplay(price, n, totalBalance) { // assume inputs are correct
     document.querySelector("#buytotal").innerHTML = "Total Price :$ " + total.toFixed(2);
 }
 
-function buyValueCheck(unitprice, input ,totalBalance) { // returns 0 for ok, 1 for not enough funds, 2 for invalid input
+function buyValueCheck(unitprice, input ,totalbalance) { // returns 0 for ok, 1 for not enough funds, 2 for invalid input
 
     const pattern =  /^\d+$/;
     let n = 0;
@@ -43,5 +43,5 @@ function buyValueCheck(unitprice, input ,totalBalance) { // returns 0 for ok, 1 
             return "1";
     }
     else
-        return = "2"
+        return "2";
 }
