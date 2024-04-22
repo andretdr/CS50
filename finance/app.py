@@ -45,7 +45,9 @@ def index():
 def buy():
     if request.method == "POST" :
         record = request.get_json()
-        if re.match(" record[shares]
+        if re.match("^\d+$", record[shares]):
+            print(f"nummber to buy: {record[shares]}")
+            return jsonify({'status':''})
 
 
 
