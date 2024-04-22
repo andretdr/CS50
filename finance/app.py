@@ -50,9 +50,12 @@ def buy():
         if strictlydigits(shares):
 #            print(f"number to buy: {shares}")
             balance = getbalance(session['user_id'], db)
-            unitprice = lookup(record['symbol'])['price']
+            unitprice = lookup(record['symbol'])
 
-            if unitprice*shares <= balance:
+            print(f"unitprice {unitprice['price']}")
+            print(f"shares {shares}")
+
+            if unitprice['price']*shares <= balance:
 #                transaction(1, record['symbol'], shares, id, db)
 
                 return jsonify({"status":"0"})
