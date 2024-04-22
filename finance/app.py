@@ -109,7 +109,7 @@ def logout():
 @login_required
 def checktotal():
     sessionid = session['user_id']
-    return getbalance(sessionid, db)
+    return jsonify({"balance":getbalance(sessionid, db)})
 
 
 @app.route("/quote", methods=["GET", "POST"])
@@ -118,13 +118,10 @@ def quote():
     if request.method == "POST" :
 
         record = request.get_json()
-        print(record['symbol'])
-
         if validatesymbol(record['symbol']) == 1:
             return jsonify({"status":"Symbol must be alphanumeric"})
 
         result = lookup(record['symbol'])
-        print(result)
         return jsonify(result)
 
     else:
