@@ -105,6 +105,10 @@ def logout():
     # Redirect user to login form
     return redirect("/")
 
+@app.route("/checktotal")
+def checktotal():
+    return 
+
 
 @app.route("/quote", methods=["GET", "POST"])
 @login_required
