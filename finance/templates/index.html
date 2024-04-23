@@ -37,12 +37,15 @@
 
             console.log(replyObj)
             let html = '';
+            let totalstockprice = 0;
+            let balance = await returnBalance();
 
             for (let obj of replyObj) {
-                shares = obj['shares']
-                price = obj['price']
-                symbol = obj['symbol']
-                total = Number(price) * Number(shares)
+                shares = obj['shares'];
+                price = obj['price'];
+                symbol = obj['symbol'];
+                total = Number(price) * Number(shares);
+                totalstockprice += total;
 
                 html += `
                         <tr>
@@ -56,14 +59,17 @@
             }
 
             html +=`
-                        <tr>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td>Total Stock Value = $</td>
+                        <tr><td></td><td></td><td></td><td></td>
+                            <td>Total Stock Value = $${totalstockprice}</td>
+                        </tr>
+                        <tr><td></td><td></td><td></td><td></td>
+                            <td>Balance = $${balance.toFixed(2)}</td>
+                        </tr>
+                        <tr><td></td><td></td><td></td><td></td>
+                            <td>Grand Total = $${balance.toFixed(2) + totalstockprice}</td>
                         </tr>
                         `
+
             document.querySelector("#portfolio").innerHTML = html;
 
         }
