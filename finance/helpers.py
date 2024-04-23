@@ -142,7 +142,7 @@ def update_transaction(buycode, id, symbol, shares, db): # buycode 1 for buy, 0 
 
     db.execute("INSERT INTO transactions (user_id, sym_id, price, shares, date, time, buycode) VALUES (?, ?, ?, ?, ?, ?, ?);", id, sym_id, price, shares, datef, timef, buycode)
 
-def update_portfolio(buycode, id, symbol, shares, db): # buycode 1 for buy, 0 for sell
+def update_portfolio(buycode, id, symbol, shares, db): # buycode 1 for buy, 0 for sell. RETURN 1 on error, insufficient shares to sell
     #check if shares exist in portfolio
 
     sym_id = returnsymbol(symbol, db)
@@ -151,5 +151,10 @@ def update_portfolio(buycode, id, symbol, shares, db): # buycode 1 for buy, 0 fo
         db.execute("INSERT INTO portfolio (user_id, sym_id, shares) VALUES (?, ?, ?);", id, sym_id, shares)
     else:
         currentshares = row[0]['shares']
-        currentshares += shares
+        if buycode == 1:
+            currentshares += shares
+        else:
+            currentshares -= shares
+        if currentshares < 0:
+            return 1
         db.execute("UPDATE portfolio SET shares = ? WHERE user_id = ? AND sym_id = ?", currentshares, id, sym_id)
