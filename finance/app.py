@@ -195,7 +195,7 @@ def register():
 
 @app.route("/sellcheck", methods=["GET", "POST"])
 @login_required
-def sell():
+def sellcheck():
 
     if request.method == "POST" :
 
@@ -203,7 +203,7 @@ def sell():
         if validatesymbol(record['symbol']) == 1:
             return jsonify({"status":"Symbol must be alphanumeric"})
 
-        # result = check our database if we have the shares
+        result = return
         return jsonify(result)
 
     else:
