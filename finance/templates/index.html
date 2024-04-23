@@ -23,14 +23,17 @@
             let replyObj = JSON.parse(replyt);
 
             console.log(replyObj)
-            html = '';
+            let html = '';
 
-            for (let obj of replyObj)
-                html += `<td>qweh</td>
-                        <td>qwe</td>
-                        <td>qwe</td>`
+            for (let obj of replyObj) {
+                let 
 
+                html += `<td>${obj['symbol']}</td>
+                        <td>${obj['shares']}</td>
+                        <td></td>`
+            }
             document.querySelector("tableinsert").innerHTML = html;
+
         }
 
         fetchpage();
