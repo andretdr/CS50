@@ -203,7 +203,7 @@ def sellcheck():
         if validatesymbol(record['symbol']) == 1:
             return jsonify({"status":"Symbol must be alphanumeric"})
 
-        result = return
+        result = checkusershares(session['user_id'], record['symbol'], db)
         return jsonify(result)
 
     else:
