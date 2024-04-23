@@ -26,6 +26,8 @@
         formEl.addEventListener('submit', async function(event) {
             event.preventDefault();
 
+            shares = 0;
+
             const formdata = new FormData(formEl);
             const data = Object.fromEntries(formdata);
 
@@ -50,7 +52,7 @@
                     sellCheckStatus('');
                     const currprice = responseObj["price"];
                     const currsymbol = responseObj["symbol"];
-                    const shares = responseObj["shares"];
+                    shares = responseObj["shares"];
 
                     html = `<table>
                                 <col style="width:5%" />
@@ -104,7 +106,7 @@
                         const formdata = new FormData(formbEl);
                         const data = Object.fromEntries(formdata);
 
-                        let result = sellSharesCheck(currprice, data["shares"], totalbalance);
+                        let result = sellSharesCheck(data["shares"], shares);
 
                         if (result == '0') {
 
