@@ -16,12 +16,15 @@
     </table>
 
     <script>
+        asyc fetchpage() {
+            let response = await fetch('/');
+            let responset = await response.text();
+            let responseObj = JSON.parse(responset);
 
-        let response = await fetch('/');
-        let responset = await response.text();
-        let responseObj = JSON.parse(responset);
+            document.querySelector("tableinsert").innerHTML = "HAHAH";
+        }
 
-        document.querySelector("tableinsert").innerHTML = "HAHAH";
+        fetchpage();
 
 
     </script>
