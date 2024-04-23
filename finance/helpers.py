@@ -121,8 +121,8 @@ def getbalance(id, db): # return the balance in this account, assume its valid
 def strictlydigits(n):
     return re.match("^\\d+$", n)
 
-def transaction(buycode, symbol, shares, id, db):
+def transaction(buycode, sym_id, shares, id, db):
     if (buycode == 'buy'):
-    
+
 
         db.execute("INSERT INTO transactions (userid, symbol, price, shares, date, time, buycode) VALUES (?, ?, ?, ?, ?, ?, ?);", id, symbol, , shares, , , buycode)

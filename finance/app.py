@@ -57,8 +57,9 @@ def buy():
 
             if float(unitprice['price'])*shares <= balance:
                 # make the transaction
-                addsymbol(record['symbol'])
-#                transaction('buy', record['symbol'], shares, id, db)
+
+                sym_id = returnsymbol(record['symbol']) # check and add symbol into database if not present. return symbol id
+                transaction('buy', sym_id, shares, id, db)
 
                 return jsonify({"status":"0"})
             else:
