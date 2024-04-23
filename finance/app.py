@@ -40,7 +40,8 @@ def index():
 
     if request.method == "POST":
         data = fetch_portfolio(session['user_id'])
-        return jsonify({"status":"hi"})
+        print(data)
+        return jsonify(data)
 
     else:
         return render_template("index.html")
