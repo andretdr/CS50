@@ -83,3 +83,7 @@ function buyStatus(str) {
 function sellCheckStatus(str) {
     document.querySelector("#sellcheckstatus").innerHTML = str;
 }
+
+function sellStatus(str) {
+    document.querySelector("#buystatus").innerHTML = str;
+}

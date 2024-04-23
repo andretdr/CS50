@@ -90,14 +90,14 @@
                                     n = autoEl.value;
                                 // if its good, display
                                 sellTotalDisplay (currprice, n, shares);
-                                buyStatus("");
+                                sellStatus("");
                             }
                         else
-                            buyStatus("Input must be strictly numeric");
+                            sellStatus("Input must be strictly numeric");
                     });
 
 
-                    let formbEl = document.querySelector("#buytransaction");
+                    let formbEl = document.querySelector("#selltransaction");
                     formbEl.addEventListener('submit', async function(event) {
                         event.preventDefault();
 
