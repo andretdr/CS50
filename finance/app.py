@@ -204,9 +204,7 @@ def sellcheck():
     result = return_usershares(session['user_id'], record['symbol'], db)
     lookupdata = lookup(record['symbol'])
     currprice = lookupdata['price']
-    result['price'] = currprice
-
-    print(result)
+    result[0]['price'] = currprice
 
     return jsonify(result)
 

@@ -38,7 +38,7 @@
             let responset = await response.text();
             let responseObj = JSON.parse(responset);
             console.log(responseObj);
-            if (responseObj == [])
+            if (responseObj === [])
                 sellCheckStatus('Symbol not found');
             else
             {
