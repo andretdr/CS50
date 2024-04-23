@@ -7,7 +7,7 @@ from flask_session import Session
 from werkzeug.security import check_password_hash, generate_password_hash
 
 from helpers import apology, login_required, lookup, usd, validatename, validatepassword, validatesymbol, addrecord, getbalance
-from helpers import strictlydigits, returnsymbol, update_transaction, update_portfolio
+from helpers import strictlydigits, returnsymbol, update_transaction, update_portfolio, update_balance
 
 
 # Configure application
@@ -64,7 +64,7 @@ def buy():
 
                 update_transaction(1, session['user_id'], record['symbol'], shares, db) # update DB transactions, buy
                 update_portfolio(1, session['user_id'], record['symbol'], shares, db) # update portfolio, buy
-                update_balance(1, amt)
+                update_balance(1, session['user_id'], amt, db) # update balance
 
                 return jsonify({"status":"0"})
             else:
@@ -144,7 +144,6 @@ def quote():
 
     else:
         return render_template("quote.html")
-
 
 
 @app.route("/register", methods=["GET", "POST"])

@@ -157,7 +157,18 @@ def update_portfolio(buycode, id, symbol, shares, db): # buycode 1 for buy, 0 fo
             currentshares = int(currentshares) - int(shares)
         if currentshares < 0:
             return 1
-        db.execute("UPDATE portfolio SET shares = ? WHERE user_id = ? AND sym_id = ?", currentshares, id, sym_id)
+        db.execute("UPDATE portfolio SET shares = ? WHERE user_id = ? AND sym_id = ?;", currentshares, id, sym_id)
 
-def update_balance(amt)
-    
+def update_balance(buycode, id, amt, db): # if buycode == 1, deduct, else add to balance. RETURNS 1 if insufficient funds
+
+    row = db.execute("SELECT cash FROM users WHERE user_id = ?;", id)
+    cash = row[0]['cash']
+
+    if buycode == 0:
+        cash = float(cash) + amt
+    else:
+        cash = float(cash) - amt
+    if cash < 0:
+        return 1
+
+    db.execute("UPDATE users SET cash = ? WHERE user_id = ?;", cash, id)
