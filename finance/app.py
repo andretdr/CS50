@@ -64,6 +64,7 @@ def buy():
 
                 update_transaction(1, session['user_id'], record['symbol'], shares, db) # update DB transactions, buy
                 update_portfolio(1, session['user_id'], record['symbol'], shares, db) # update portfolio, buy
+                update_balance(1, amt)
 
                 return jsonify({"status":"0"})
             else:

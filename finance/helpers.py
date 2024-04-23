@@ -158,3 +158,6 @@ def update_portfolio(buycode, id, symbol, shares, db): # buycode 1 for buy, 0 fo
         if currentshares < 0:
             return 1
         db.execute("UPDATE portfolio SET shares = ? WHERE user_id = ? AND sym_id = ?", currentshares, id, sym_id)
+
+def update_balance(amt)
+    
