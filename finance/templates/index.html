@@ -22,14 +22,15 @@
             let replyt = await reply.text();
             let replyObj = JSON.parse(replyt);
 
-            html = '';
+            console.log(replyObj)
+            html = '1st';
 
             for (let obj of replyObj)
-                html += `<td>${obj[]}</td>
-                        <td></td>
-                        <td></td>`
+                html += `<td>qweh</td>
+                        <td>qwe</td>
+                        <td>qwe</td>`
 
-            document.querySelector("tableinsert").innerHTML = replyObj['status'];
+            document.querySelector("tableinsert").innerHTML = html;
         }
 
         fetchpage();
