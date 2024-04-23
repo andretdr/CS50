@@ -5,7 +5,7 @@ async function updateMainBalance() { // assume loggedin
     let responseObj = JSON.parse(responset);
     let balance = responseObj['balance'];
 
-    document.querySelector("#accountbalance").innerHTML = ;
+    document.querySelector("#accountbalance").innerHTML = balance.toFixed(2);
 }
 
 async function returnBalance() { // assume loggedin
