@@ -172,3 +172,7 @@ def update_balance(buycode, id, amt, db): # if buycode == 1, deduct, else add to
         return 1
 
     db.execute("UPDATE users SET cash = ? WHERE id = ?;", cash, id)
+
+def fetch_portfolio(user_id, db):
+    return db.execute("SELECT * FROM portfolio WHERE user_id = ?;", user_id)
+

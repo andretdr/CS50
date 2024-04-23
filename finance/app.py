@@ -39,9 +39,9 @@ def after_request(response):
 def index():
 
     if request.method == "POST":
-        data = fetch_portfolio(session['user_id'])
+        data = fetch_portfolio(session['user_id'], db)
         print(data)
-        return jsonify(data)
+        return jsonify()
 
     else:
         return render_template("index.html")
