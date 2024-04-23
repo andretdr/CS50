@@ -78,7 +78,7 @@ function sellTotalDisplay(price, n, totalshares) { // assume inputs are correct
         document.querySelector("#selltotal").style.color = "green";
     }
     document.querySelector("#selltotal").innerHTML = "Total Price :$ " + total.toFixed(2);
-
+}
 
 
 function sellCheckStatus(str) {
