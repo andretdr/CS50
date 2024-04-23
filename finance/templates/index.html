@@ -17,18 +17,16 @@
 
     <script>
 
-        document.addEventListener('DOMContent_Loaded', async function fetchpage() {
+        document.addEventListener('DOMContentLoaded', async function() {
             let response = await fetch('/');
             let responset = await response.text();
             let responseObj = JSON.parse(responset);
             html = `utoseurosur`;
 
-            document.querySelector("#ho").innerHTML = html;
+            document.querySelector("#ho").innerHTML = `sdsd`;
         });
 
-
-        fetchpage();
-        document.querySelector("#ho").innerHTML = `sfdf`;
+//        document.querySelector("#ho").innerHTML = `sdsd`;
 
 
     </script>
