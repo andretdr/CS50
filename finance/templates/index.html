@@ -11,7 +11,7 @@
         <col style="width:20%" />
         <col style="width:20%" />
         <col style="width:20%" />
-        <tableinsert></tableinsert>
+        <tableinsert id="ho"></tableinsert>
 
     </table>
 
@@ -21,7 +21,7 @@
             let responset = await response.text();
             let responseObj = JSON.parse(responset);
 
-            document.querySelector("tableinsert").innerHTML = "HAHAH";
+            document.querySelector("#ho").innerHTML = "HAHAH";
         }
 
         fetchpage();
