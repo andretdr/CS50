@@ -132,7 +132,7 @@ def returnsymbol(symbol, db): #returns symbol ID, if new entry will add into db
 def update_transaction(buycode, id, symbol, shares, db): # buycode 1 for buy, 0 for sell
     datevar = date.today()
     datef = datevar.strftime("%Y-%m-%d")
-    time = datetime.now()
+    time = datetime.datetime.now()
     timef = time.strftime("%H:%M:%S")
 
     lookupdata = lookup(symbol)
