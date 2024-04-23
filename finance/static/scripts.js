@@ -3,8 +3,9 @@ async function updateMainBalance() { // assume loggedin
     let response = await fetch('/checktotal');
     let responset = await response.text();
     let responseObj = JSON.parse(responset);
+    let balance = responseObj['balance'];
 
-    document.querySelector("#accountbalance").innerHTML = responseObj['balance'];
+    document.querySelector("#accountbalance").innerHTML = ;
 }
 
 async function returnBalance() { // assume loggedin
