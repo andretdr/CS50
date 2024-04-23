@@ -78,19 +78,18 @@
                     document.querySelector("#result").innerHTML = html;
 
 
-                    let autoEl = document.querySelector("#buyauto");
+                    let autoEl = document.querySelector("#sellauto");
                     autoEl.addEventListener('input', async function() {
-                        let totalbalance = await returnBalance();
 
                         // check if input is good
-                        let result = buyValueCheck(currprice, autoEl.value, totalbalance);
+                        let result = sellSharesCheck(autoEl.value, shares);
                         if (result != '2')
                             {
                                 let n = 0;
                                 if (autoEl.value != '')
                                     n = autoEl.value;
                                 // if its good, display
-                                buyTotalDisplay (currprice, n, totalbalance);
+                                sellTotalDisplay (currprice, n, shares);
                                 buyStatus("");
                             }
                         else

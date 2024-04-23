@@ -46,6 +46,36 @@ function buyValueCheck(unitprice, input ,totalbalance) { // returns 0 for ok, 1 
         return "2";
 }
 
+function sellSharesCheck(input, totalshares) { // returns 0 for ok, 1 for not enough funds, 2 for invalid input
+
+    const pattern =  /^\d+$/;
+    let n = 0;
+
+    if ((pattern.test(input)) || (input == '')) {
+
+        if (input != '')
+            n = input;
+
+        if (n <= totalshares)
+            return "0";
+        else
+            return "1";
+    }
+    else
+        return "2";
+}
+
+function sellTotalDisplay(price, n, totalshares) { // assume inputs are correct
+    let total = price * n;
+    if (n > totalshares) {
+        document.querySelector("#selltotal").style.color = "red";
+        }
+    else {
+        document.querySelector("#selltotal").style.color = "green";
+    }
+    document.querySelector("#selltotal").innerHTML = "Total Price :$ " + total.toFixed(2);
+
+
 function buyStatus(str) {
     document.querySelector("#buystatus").innerHTML = str;
 }
