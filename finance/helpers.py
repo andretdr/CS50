@@ -141,3 +141,12 @@ def update_transaction(buycode, id, symbol, shares, db): # buycode 1 for buy, 0 
     sym_id = returnsymbol(symbol, db)
 
     db.execute("INSERT INTO transactions (user_id, sym_id, price, shares, date, time, buycode) VALUES (?, ?, ?, ?, ?, ?, ?);", id, sym_id, price, shares, datef, timef, buycode)
+
+def update_portfolio(buycode, id, symbol, shares, db): # buycode 1 for buy, 0 for sell
+    #check if shares exist in portfolio
+
+    sym_id = returnsymbol(symbol, db)
+    row = db.execute("SELECT * FROM portfolio WHERE user_id = ? AND sym_id = ?;", id, sym_id)
+    if len(row) == 0:
+        db.execute("INSERT INTO portfolio (user_id, sym_id, shares)
+
