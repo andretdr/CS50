@@ -38,7 +38,7 @@
             let responset = await response.text();
             let responseObj = JSON.parse(responset);
             console.log(responseObj);
-            if (responseObj == null)
+            if (responseObj == [])
                 document.querySelector("#symbolstatus").innerHTML = 'Symbol not found';
             else
             {
