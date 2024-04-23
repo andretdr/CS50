@@ -129,7 +129,7 @@ def returnsymbol(symbol, db): #returns symbol ID, if new entry will add into db
         return db.execute("INSERT INTO symbol (symbol) VALUES(?);", symbol)
     return row[0]['id']
 
-def update_transaction(buycode, id, sym_id, shares, db):
+def update_transaction(buycode, id, symbol, shares, db):
     date = date.today()
     datef = date.strftime("%Y-%m-%d")
     time = datetime.now()
