@@ -104,7 +104,6 @@
                         const formdata = new FormData(formbEl);
                         const data = Object.fromEntries(formdata);
 
-                        let totalbalance = await returnBalance();
                         let result = sellSharesCheck(currprice, data["shares"], totalbalance);
 
                         if (result == '0') {
