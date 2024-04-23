@@ -18,7 +18,10 @@
     <script>
         async fetchpage() {
             let response = await fetch('/index');
-            let responset = await 
+            let responset = await response.text();
+            let responseObj = JSON.parse(responset);
+
+            
 
 
         }
