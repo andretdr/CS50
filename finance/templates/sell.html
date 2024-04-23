@@ -1,0 +1,140 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Sell
+{% endblock %}
+
+{% block main %}
+
+    <form id="sellform">
+        <div class="mb-3">
+            <input autocomplete="off" autofocus class="form-control mx-auto w-auto" name="symbol" placeholder="Symbol" type="text">
+        </div>
+        <button class="btn btn-primary" type="submit">Select Stock</button>
+    </form>
+
+    <p></p>
+    <p id="symbolstatus"></p>
+
+    <p id="result"></p>
+
+
+    <script>
+        let formEl = document.querySelector('#sellform');
+        html = '';
+
+        formEl.addEventListener('submit', async function(event) {
+            event.preventDefault();
+
+            const formdata = new FormData(formEl);
+            const data = Object.fromEntries(formdata);
+
+            let response = await fetch('/sell', {
+                method: 'POST',
+                headers: {'Content-Type': 'application/json'},
+                body: JSON.stringify(data)
+            });
+
+            let responset = await response.text();
+            let responseObj = JSON.parse(responset);
+
+            if (responseObj == null)
+                document.querySelector("#symbolstatus").innerHTML = 'Symbol not found';
+            else
+            {
+                if ('status' in responseObj)
+                    document.querySelector("#symbolstatus").innerHTML = responseObj['status'];
+
+                if ('price' in responseObj)
+                {
+                    const currprice = responseObj["price"];
+                    const currsymbol = responseObj["symbol"];
+
+                    html = `<table>
+                                <col style="width:5%" />
+                                <col style="width:20%" />
+                                <col style="width:30%" />
+                                <col style="width:30%" />
+                                <col style="width:10%" />
+                                <tr>
+                                    <td> ${currsymbol}</td>
+                                    <td> Price per unit :  $ ${currprice}</td>
+                                    <td id="buytotal"></td>
+                                    <td>
+                                        <form id="buytransaction">
+                                            <input id="buyauto" autocomplete="off" autofocus placeholder="0" name="shares" type="text">
+                                            <input type="hidden" name="symbol" value="${currsymbol}">
+                                            <button class="btn btn-primary" type="submit">Buy</button>
+                                        </form>
+                                    </td>
+                                    <td id="buystatus"></td>
+                                </tr>
+                            </table>`;
+
+                    document.querySelector("#result").innerHTML = html;
+
+
+                    let autoEl = document.querySelector("#buyauto");
+                    autoEl.addEventListener('input', async function() {
+                        let totalbalance = await returnBalance();
+
+                        // check if input is good
+                        let result = buyValueCheck(currprice, autoEl.value, totalbalance);
+                        if (result != '2')
+                            {
+                                let n = 0;
+                                if (autoEl.value != '')
+                                    n = autoEl.value;
+                                // if its good, display
+                                buyTotalDisplay (currprice, n, totalbalance);
+                                buyStatus("");
+                            }
+                        else
+                            buyStatus("Input must be strictly numeric");
+                    });
+
+
+                    let formbEl = document.querySelector("#buytransaction");
+                    formbEl.addEventListener('submit', async function(event) {
+                        event.preventDefault();
+
+                        const formdata = new FormData(formbEl);
+                        const data = Object.fromEntries(formdata);
+
+                        let totalbalance = await returnBalance();
+                        let result = buyValueCheck(currprice, data["shares"], totalbalance);
+
+                        if (result == '0') {
+
+                            let response = await fetch('/buy', {
+                                method: 'POST',
+                                headers: {'Content-Type':'application/json'},
+                                body: JSON.stringify(data)
+                            });
+                            let responset = await response.text();
+                            let responseObj = JSON.parse(responset);
+
+                            if (responseObj['status'] == '0') //means ok
+                            {
+                                buyStatus("Transaction made");
+                                updateMainBalance();
+                            }
+                            else
+                                buyStatus(responseObj['status']);
+                        }
+                        if (result == '1') {
+                            buyStatus("Insufficient Funds");
+                        }
+                        if (result == '2') {
+                            buyStatus("Input must be strictly numeric");
+                        }
+                    });
+                }
+            }
+        });
+
+
+    </script>
+
+
+{% endblock %}
