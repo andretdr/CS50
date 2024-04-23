@@ -58,7 +58,7 @@ def buy():
             if float(unitprice['price'])*float(shares) <= balance:
                 # make the transaction
 
-                sym_id = returnsymbol(record['symbol'], db) # check and add symbol into database if not present. return symbol id
+                returnsymbol(record['symbol'], db) # check and add symbol into database if not present
 
                 update_transaction(1, session['user_id'], sym_id, shares, db) # update DB transactions
 #                update_portfolio()
