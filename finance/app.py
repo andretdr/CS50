@@ -64,6 +64,8 @@ def buy():
 
                 update_transaction(1, session['user_id'], record['symbol'], shares, db) # update DB transactions, buy
                 update_portfolio(1, session['user_id'], record['symbol'], shares, db) # update portfolio, buy
+
+                amt = float(unitprice['price']) * float(shares)
                 update_balance(1, session['user_id'], amt, db) # update balance
 
                 return jsonify({"status":"0"})
