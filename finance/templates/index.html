@@ -29,12 +29,14 @@
                 shares = obj['shares']
                 price = obj['price']
                 symbol = obj['symbol']
-                total = 
+                total = Number(price) * Number(shares)
 
-                html += `<td>${symbol}</td>
+                html += `<tr>
+                        <td>${symbol}</td>
                         <td>Number of shares : ${shares}</td>
                         <td>Unit Price : $${price}</td>
-                        <td>Total Price : $ </td>`
+                        <td>Total Price : $${total} </td>
+                        </tr>`
             }
             document.querySelector("tableinsert").innerHTML = html;
 
