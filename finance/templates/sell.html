@@ -50,15 +50,18 @@
                     sellCheckStatus('');
                     const currprice = responseObj["price"];
                     const currsymbol = responseObj["symbol"];
+                    const shares = responseObj["shares"];
 
                     html = `<table>
                                 <col style="width:5%" />
+                                <col style="width:15%" />
                                 <col style="width:20%" />
-                                <col style="width:30%" />
+                                <col style="width:20%" />
                                 <col style="width:30%" />
                                 <col style="width:10%" />
                                 <tr>
                                     <td> ${currsymbol}</td>
+                                    <td> Shares owned : ${shares}</td>
                                     <td> Price per unit :  $ ${currprice}</td>
                                     <td id="selltotal"></td>
                                     <td>
