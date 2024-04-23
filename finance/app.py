@@ -34,11 +34,17 @@ def after_request(response):
     return response
 
 
-@app.route("/")
+@app.route("/", methods=["GET", "POST"])
 @login_required
 def index():
-    """Show portfolio of stocks"""
-    return apology("TODO")
+
+    if request.method == "POST":
+        return jsonify({"status":"hi"})
+
+    else:
+        return render_template("index.html")
+
+
 
 
 @app.route("/buy", methods=["GET", "POST"])
