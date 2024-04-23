@@ -61,7 +61,7 @@ def buy():
                 returnsymbol(record['symbol'], db) # check and add symbol into database if not present
 
                 update_transaction(1, session['user_id'], record['symbol'], shares, db) # update DB transactions, buy
-#                update_portfolio()
+                update_portfolio()
 
                 return jsonify({"status":"0"})
             else:
