@@ -123,7 +123,7 @@ def strictlydigits(n):
 
 def returnsymbol(symbol):
     row = db.execute("SELECT id from SYMBOL WHERE symbol = ?;", symbol)
-    if row
+    if len(row) != 1
 
 def transaction(buycode, sym_id, shares, id, db):
     if (buycode == 'buy'):
