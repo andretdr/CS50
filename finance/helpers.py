@@ -8,7 +8,7 @@ import re
 
 from flask import redirect, render_template, request, session
 from functools import wraps
-from datetime import date, datetime
+from datetime import date
 
 
 def apology(message, code=400):
@@ -130,8 +130,8 @@ def returnsymbol(symbol, db): #returns symbol ID, if new entry will add into db
     return row[0]['id']
 
 def update_transaction(buycode, id, symbol, shares, db): # buycode 1 for buy, 0 for sell
-    date = date.today()
-    datef = date.strftime("%Y-%m-%d")
+    datevar = date.today()
+    datef = datevar.strftime("%Y-%m-%d")
     time = datetime.now()
     timef = time.strftime("%H:%M:%S")
 
