@@ -193,10 +193,26 @@ def register():
         return render_template("register.html")
 
 
+@app.route("/sellcheck", methods=["GET", "POST"])
+@login_required
+def sell():
+
+    if request.method == "POST" :
+
+        record = request.get_json()
+        if validatesymbol(record['symbol']) == 1:
+            return jsonify({"status":"Symbol must be alphanumeric"})
+
+        result = lookup(record['symbol'])
+        return jsonify(result)
+
+    else:
+        return render_template("quote.html")
+
 @app.route("/sell", methods=["GET", "POST"])
 @login_required
 def sell():
 
-    
+
     """Sell shares of stock"""
     return apology("TODO")
