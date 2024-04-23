@@ -148,5 +148,8 @@ def update_portfolio(buycode, id, symbol, shares, db): # buycode 1 for buy, 0 fo
     sym_id = returnsymbol(symbol, db)
     row = db.execute("SELECT * FROM portfolio WHERE user_id = ? AND sym_id = ?;", id, sym_id)
     if len(row) == 0:
-        db.execute("INSERT INTO portfolio (user_id, sym_id, shares) VALUES(?,?,?);", id, sym_id, shares)
-
+        db.execute("INSERT INTO portfolio (user_id, sym_id, shares) VALUES (?, ?, ?);", id, sym_id, shares)
+    else:
+        currentshares = row[0]['shares']
+        currentshares += shares
+        db.execute("UPDATE portfolio SET shares = ? WHERE user_id = ? AND sym_id = ?", currentshares, id, sym_id)
