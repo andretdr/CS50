@@ -55,7 +55,7 @@ def buy():
             print(f"unitprice {unitprice['price']}")
             print(f"shares {shares}")
 
-            if float(unitprice['price'])*shares <= balance:
+            if float(unitprice['price'])*float(shares) <= balance:
                 # make the transaction
 
                 sym_id = returnsymbol(record['symbol'], db) # check and add symbol into database if not present. return symbol id
