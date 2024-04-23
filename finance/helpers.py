@@ -152,9 +152,9 @@ def update_portfolio(buycode, id, symbol, shares, db): # buycode 1 for buy, 0 fo
     else:
         currentshares = row[0]['shares']
         if buycode == 1:
-            int(currentshares) += shares
+            currentshares = int(currentshares) + int(shares)
         else:
-            int(currentshares) -= shares
+            currentshares = int(currentshares) - int(shares)
         if currentshares < 0:
             return 1
         db.execute("UPDATE portfolio SET shares = ? WHERE user_id = ? AND sym_id = ?", currentshares, id, sym_id)
