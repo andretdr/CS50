@@ -6,7 +6,7 @@ from flask import Flask, flash, redirect, render_template, request, session, jso
 from flask_session import Session
 from werkzeug.security import check_password_hash, generate_password_hash
 
-from helpers import apology, login_required, lookup, usd, validatename, validatepassword, validatesymbol, addrecord, getbalance, strictlydigits, transaction, returnsymbol
+from helpers import apology, login_required, lookup, usd, validatename, validatepassword, validatesymbol, addrecord, getbalance, strictlydigits, returnsymbol
 
 # Configure application
 app = Flask(__name__)
@@ -59,8 +59,9 @@ def buy():
                 # make the transaction
 
                 sym_id = returnsymbol(record['symbol'], db) # check and add symbol into database if not present. return symbol id
-                update_transaction('buy', sym_id, shares, session['user_id'], db) # update DB transactions
-                update_portfolio()
+                print(f"symbol id :{sym_id}")
+#                update_transaction('buy', sym_id, shares, session['user_id'], db) # update DB transactions
+#                update_portfolio()
 
                 return jsonify({"status":"0"})
             else:

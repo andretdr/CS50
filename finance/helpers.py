@@ -128,10 +128,6 @@ def returnsymbol(symbol, db):
         return db.execute("INSERT INTO symbol (symbol) VALUES(?);", symbol)
     return row[0]['id']
 
-
-
-
-
-def transaction(buycode, sym_id, shares, id, db):
-    if (buycode == 'buy'):
-        db.execute("INSERT INTO transactions (userid, symbol, price, shares, date, time, buycode) VALUES (?, ?, ?, ?, ?, ?, ?);", id, symbol, , shares, , , buycode)
+#def transaction(buycode, sym_id, shares, id, db):
+#    if (buycode == 'buy'):
+#        db.execute("INSERT INTO transactions (userid, symbol, price, shares, date, time, buycode) VALUES (?, ?, ?, ?, ?, ?, ?);", id, symbol, , shares, , , buycode)
