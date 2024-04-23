@@ -16,7 +16,7 @@
     </table>
 
     <script>
-        asyc fetchpage() {
+        async function fetchpage() {
             let response = await fetch('/');
             let responset = await response.text();
             let responseObj = JSON.parse(responset);
@@ -25,7 +25,9 @@
             document.querySelector("#ho").innerHTML = html;
         }
 
+
         fetchpage();
+        document.querySelector("#ho").innerHTML = `sfdf`;
 
 
     </script>
