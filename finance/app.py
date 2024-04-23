@@ -203,10 +203,10 @@ def sellcheck():
 
     result = return_usershares(session['user_id'], record['symbol'], db)
 
-    if len(result) == 1:
+    if result != None:
         lookupdata = lookup(record['symbol'])
         currprice = lookupdata['price']
-        result[0]['price'] = currprice
+        result['price'] = currprice
 
     return jsonify(result)
 
