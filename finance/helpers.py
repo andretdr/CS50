@@ -122,7 +122,8 @@ def strictlydigits(n):
     return re.match("^\\d+$", n)
 
 def returnsymbol(symbol):
-    
+    row = db.execute("SELECT id from SYMBOL WHERE symbol = ?;", symbol)
+    if row
 
 def transaction(buycode, sym_id, shares, id, db):
     if (buycode == 'buy'):
