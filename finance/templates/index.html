@@ -18,12 +18,13 @@
                 <td>Shares</td>
                 <td>Unit Price</td>
                 <td>Total Value</td>
-                <
-
+                <td>Grand Total</td>
             </tr>
 
         </thead>
-        <div id="portfolio"></div>
+        <tbody id="portfolio">
+
+        </tbody>
 
     </table>
 
@@ -46,9 +47,9 @@
                 html += `
                         <tr>
                         <td>${symbol}</td>
-                        <td>Shares : ${shares}</td>
-                        <td>Unit Price : $${price}</td>
-                        <td>Total Price : $${total} </td>
+                        <td>${shares}</td>
+                        <td>$${price}</td>
+                        <td>$${total} </td>
                         <td></td>
                         </tr>
                         `
