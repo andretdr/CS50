@@ -21,7 +21,11 @@
             let reply = await fetch('/', {method:"POST"});
             let replyt = await reply.text();
             let replyObj = JSON.parse(replyt);
-            console.log(replyObj['status']);
+
+            html = '';
+
+            for (let obj of replyObj)
+                console.log(replyObj['status']);
 
             html = `utoseurosur`;
 
