@@ -180,7 +180,9 @@ def fetch_portfolio(user_id, db): # return portfolio w current price
         row['price'] = lookupdata['price']
     return rows
 
+def return_usershares(user_id, symbol, db):
 
+    db.execute("SELECT )
 
 
 
