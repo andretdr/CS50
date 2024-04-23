@@ -6,11 +6,10 @@
 
 {% block main %}
     <table>
-        <col style="width:15%" />
-        <col style="width:15%" />
-        <col style="width:15%" />
-        <col style="width:15%" />
-        <col style="width:40%" />
+        <col style="width:25%" />
+        <col style="width:25%" />
+        <col style="width:25%" />
+        <col style="width:25%" />
 
         <thead>
             <tr>
@@ -23,10 +22,16 @@
 
         </thead>
         <tbody id="portfolio">
-
         </tbody>
-
     </table>
+
+    <table>
+        <col style="width:100%" />
+
+        <tbody id="summary">
+        </tbody>
+    </table>
+
 
     <script>
 
@@ -53,24 +58,27 @@
                         <td>${shares}</td>
                         <td>$${price}</td>
                         <td>$${total} </td>
-                        <td></td>
                         </tr>
                         `
             }
 
-            html +=`
-                        <tr><td></td><td></td><td></td><td></td>
+            document.querySelector("#portfolio").innerHTML = html;
+
+            let grandtotal = balance + totalstockprice;
+
+            html =`
+                        <tr>
                             <td>Total Stock Value = $${totalstockprice}</td>
                         </tr>
-                        <tr><td></td><td></td><td></td><td></td>
+                        <tr>
                             <td>Balance = $${balance.toFixed(2)}</td>
                         </tr>
-                        <tr><td></td><td></td><td></td><td></td>
-                            <td>Grand Total = $${balance.toFixed(2) + totalstockprice}</td>
+                        <tr>
+                            <td>Grand Total = $${grandtotal.toFixed(2)}</td>
                         </tr>
                         `
 
-            document.querySelector("#portfolio").innerHTML = html;
+            document.querySelector("#summary").innerHTML = html;
 
         }
 
