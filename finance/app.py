@@ -202,6 +202,7 @@ def sellcheck():
         return jsonify({"status":"Symbol must be alphanumeric"})
 
     result = return_usershares(session['user_id'], record['symbol'], db)
+    lookupdata = lookup(record['symbol'])
 
     return jsonify(result)
 
