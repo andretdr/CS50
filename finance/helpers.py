@@ -174,9 +174,5 @@ def update_balance(buycode, id, amt, db): # if buycode == 1, deduct, else add to
     db.execute("UPDATE users SET cash = ? WHERE id = ?;", cash, id)
 
 def fetch_portfolio(user_id, db):
-    rows = db.execute("SELECT * FROM portfolio WHERE user_id = ?;", user_id)
-    if len(rows) > 0:
-        print('ser')
-    else:
-        print('w')
+    return db.execute("SELECT * FROM portfolio WHERE user_id = ?;", user_id)
 
