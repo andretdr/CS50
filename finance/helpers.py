@@ -122,7 +122,7 @@ def strictlydigits(n):
     return re.match("^\\d+$", n)
 
 def returnsymbol(symbol, db):
-    symbol = symbol.upper
+    symbol = symbol.upper()
     row = db.execute("SELECT id from SYMBOL WHERE symbol = ?;", symbol)
     if len(row) == 0: #if new entry
         return db.execute("INSERT INTO symbol (symbol) VALUES(?);", symbol)
