@@ -7,7 +7,7 @@ from flask_session import Session
 from werkzeug.security import check_password_hash, generate_password_hash
 
 from helpers import apology, login_required, lookup, usd, validatename, validatepassword, validatesymbol, addrecord, getbalance
-from helpers import strictlydigits, returnsymbol, update_transaction, update_portfolio, update_balance
+from helpers import strictlydigits, returnsymbol, update_transaction, update_portfolio, update_balance, fetch_portfolio
 
 
 # Configure application
@@ -41,7 +41,7 @@ def index():
     if request.method == "POST":
         data = fetch_portfolio(session['user_id'], db)
         print(data)
-        return jsonify()
+        return jsonify({"status":"joi"})
 
     else:
         return render_template("index.html")
