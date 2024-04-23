@@ -60,7 +60,7 @@ def buy():
 
                 returnsymbol(record['symbol'], db) # check and add symbol into database if not present
 
-                update_transaction(1, session['user_id'], sym_id, shares, db) # update DB transactions
+                update_transaction(1, session['user_id'], sym_id, shares, db) # update DB transactions, buy
 #                update_portfolio()
 
                 return jsonify({"status":"0"})
