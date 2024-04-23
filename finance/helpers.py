@@ -175,8 +175,10 @@ def update_balance(buycode, id, amt, db): # if buycode == 1, deduct, else add to
 
 def fetch_portfolio(user_id, db): # return portfolio w current price
     rows = db.execute("SELECT * FROM portfolio, symbol WHERE portfolio.sym_id = symbol.id AND user_id = ?;", user_id)
-    for (row in rows):
+    for row in rows:
+        lookupdata = lookup(row['symbol'])
         
+
 
 
 
