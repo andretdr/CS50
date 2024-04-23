@@ -59,7 +59,7 @@ def buy():
                 # make the transaction
 
                 sym_id = returnsymbol(record['symbol']) # check and add symbol into database if not present. return symbol id
-                transaction('buy', sym_id, shares, id, db)
+                transaction('buy', sym_id, shares, session['user_id'], db)
 
                 return jsonify({"status":"0"})
             else:
