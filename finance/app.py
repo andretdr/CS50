@@ -39,7 +39,7 @@ def after_request(response):
 def index():
 
     if request.method == "POST":
-        print('ho')
+        data = fetch_portfolio(session['user_id'])
         return jsonify({"status":"hi"})
 
     else:
