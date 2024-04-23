@@ -7,7 +7,7 @@ from flask_session import Session
 from werkzeug.security import check_password_hash, generate_password_hash
 
 from helpers import apology, login_required, lookup, usd, validatename, validatepassword, validatesymbol, addrecord, getbalance
-from helpers import strictlydigits, returnsymbol, update_transaction, update_portfolio, update_balance, fetch_portfolio
+from helpers import strictlydigits, returnsymbol, update_transaction, update_portfolio, update_balance, fetch_portfolio, return_usershares
 
 
 # Configure application
