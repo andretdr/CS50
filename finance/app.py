@@ -59,8 +59,8 @@ def buy():
                 # make the transaction
 
                 sym_id = returnsymbol(record['symbol'], db) # check and add symbol into database if not present. return symbol id
-                print(f"symbol id :{sym_id}")
-#                update_transaction('buy', sym_id, shares, session['user_id'], db) # update DB transactions
+
+                update_transaction('buy', sym_id, shares, session['user_id'], db) # update DB transactions
 #                update_portfolio()
 
                 return jsonify({"status":"0"})
