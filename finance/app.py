@@ -48,7 +48,7 @@ def buy():
 
         shares = record['shares']
         if strictlydigits(shares):
-#            print(f"number to buy: {shares}")
+
             balance = getbalance(session['user_id'], db)
             unitprice = lookup(record['symbol'])
 
@@ -56,6 +56,8 @@ def buy():
             print(f"shares {shares}")
 
             if float(unitprice['price'])*shares <= balance:
+                # make the transaction
+                addsymbol(record['symbol'])
 #                transaction('buy', record['symbol'], shares, id, db)
 
                 return jsonify({"status":"0"})
