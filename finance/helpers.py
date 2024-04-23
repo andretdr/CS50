@@ -135,6 +135,6 @@ def update_transaction(buycode, id, sym_id, shares, db):
     time = datetime.now()
     timef = time.strftime("%H:%M:%S")
 
-    price = 
+    pricef = lookup()
     if (buycode == 'buy'):
         db.execute("INSERT INTO transactions (userid, symbol, price, shares, date, time, buycode) VALUES (?, ?, ?, ?, ?, ?, ?);", id, symbol, , shares, datef, timef, buycode)
