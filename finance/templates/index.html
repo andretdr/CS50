@@ -17,7 +17,7 @@
 
     <script>
 
-        document.addEventListener('DOMContentLoaded', async function() {
+        async function fetchpage() {
             let reply = await fetch('/', {method:"POST"});
             let replyt = await reply.text();
             let replyObj = JSON.parse(replyt);
@@ -25,10 +25,10 @@
 
             html = `utoseurosur`;
 
-            document.querySelector("#ho").innerHTML = `sdsd`;
-        });
+            document.querySelector("#ho").innerHTML = replyObj['status'];
+        }
 
-//        document.querySelector("#ho").innerHTML = `sdsd`;
+        fetchpage();
 
 
     </script>
