@@ -16,6 +16,10 @@ async function returnBalance() { // assume loggedin
     return responseObj['balance'];
 }
 
+function buyStatus(str) {
+    document.querySelector("#buystatus").innerHTML = str;
+}
+
 function buyTotalDisplay(price, n, totalBalance) { // assume inputs are correct
     let total = price * n;
     if (total > totalBalance) {
@@ -76,14 +80,11 @@ function sellTotalDisplay(price, n, totalshares) { // assume inputs are correct
     document.querySelector("#selltotal").innerHTML = "Total Price :$ " + total.toFixed(2);
 
 
-function buyStatus(str) {
-    document.querySelector("#buystatus").innerHTML = str;
-}
 
 function sellCheckStatus(str) {
     document.querySelector("#sellcheckstatus").innerHTML = str;
 }
 
 function sellStatus(str) {
-    document.querySelector("#buystatus").innerHTML = str;
+    document.querySelector("#sellstatus").innerHTML = str;
 }
