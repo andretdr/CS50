@@ -130,7 +130,8 @@ def returnsymbol(symbol, db): #returns symbol ID, if new entry will add into db
     return row[0]['id']
 
 def update_transaction(buycode, id, sym_id, shares, db):
-    date = getdate()
+    date = date.today()
+    datef = date.strftime("%d/%m/%Y")
     time = gettime()
     if (buycode == 'buy'):
         db.execute("INSERT INTO transactions (userid, symbol, price, shares, date, time, buycode) VALUES (?, ?, ?, ?, ?, ?, ?);", id, symbol, , shares, , , buycode)
