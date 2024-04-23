@@ -18,10 +18,10 @@
     <script>
 
         document.addEventListener('DOMContentLoaded', async function() {
-            let response = await fetch('/');
-            let responset = await response.text();
-            let responseObj = JSON.parse(responset);
-            console.log(responseObj['status']);
+            let reply = await fetch('/');
+            let replyt = await reply.text();
+            let replyObj = JSON.parse(replyt);
+            console.log(replyObj['status']);
 
             html = `utoseurosur`;
 
