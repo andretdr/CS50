@@ -21,6 +21,8 @@
             let response = await fetch('/');
             let responset = await response.text();
             let responseObj = JSON.parse(responset);
+            console.log(responseObj['status']);
+
             html = `utoseurosur`;
 
             document.querySelector("#ho").innerHTML = `sdsd`;

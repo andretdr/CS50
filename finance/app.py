@@ -39,6 +39,7 @@ def after_request(response):
 def index():
 
     if request.method == "POST":
+        print('ho')
         return jsonify({"status":"hi"})
 
     else:
