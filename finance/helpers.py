@@ -121,13 +121,16 @@ def getbalance(id, db): # return the balance in this account, assume its valid
 def strictlydigits(n):
     return re.match("^\\d+$", n)
 
-def returnsymbol(symbol, db):
+def returnsymbol(symbol, db): #returns symbol ID, if new entry will add into db
+
     symbol = symbol.upper()
     row = db.execute("SELECT id from SYMBOL WHERE symbol = ?;", symbol)
     if len(row) == 0: #if new entry
         return db.execute("INSERT INTO symbol (symbol) VALUES(?);", symbol)
     return row[0]['id']
 
-def transaction(buycode, sym_id, shares, id, db):
+def transaction(buycode, id, sym_id, shares, db):
+    date = getdate()
+    time = gettime()
     if (buycode == 'buy'):
         db.execute("INSERT INTO transactions (userid, symbol, price, shares, date, time, buycode) VALUES (?, ?, ?, ?, ?, ?, ?);", id, symbol, , shares, , , buycode)
