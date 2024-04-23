@@ -8,7 +8,7 @@ import re
 
 from flask import redirect, render_template, request, session
 from functools import wraps
-from datetime import date
+from datetime import date, datetime
 
 
 def apology(message, code=400):
@@ -132,6 +132,9 @@ def returnsymbol(symbol, db): #returns symbol ID, if new entry will add into db
 def update_transaction(buycode, id, sym_id, shares, db):
     date = date.today()
     datef = date.strftime("%Y-%m-%d")
-    time = gettime()
+    time = datetime.now()
+    timef = time.strftime("%H:%M:%S")
+
+    price = 
     if (buycode == 'buy'):
-        db.execute("INSERT INTO transactions (userid, symbol, price, shares, date, time, buycode) VALUES (?, ?, ?, ?, ?, ?, ?);", id, symbol, , shares, , , buycode)
+        db.execute("INSERT INTO transactions (userid, symbol, price, shares, date, time, buycode) VALUES (?, ?, ?, ?, ?, ?, ?);", id, symbol, , shares, datef, timef, buycode)
