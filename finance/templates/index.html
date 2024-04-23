@@ -26,9 +26,15 @@
             let html = '';
 
             for (let obj of replyObj) {
-                html += `<td>${obj['symbol']}</td>
-                        <td>${obj['shares']}</td>
-                        <td></td>`
+                shares = obj['shares']
+                price = obj['price']
+                symbol = obj['symbol']
+                total = 
+
+                html += `<td>${symbol}</td>
+                        <td>Number of shares : ${shares}</td>
+                        <td>Unit Price : $${price}</td>
+                        <td>Total Price : $ </td>`
             }
             document.querySelector("tableinsert").innerHTML = html;
 
