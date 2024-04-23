@@ -182,7 +182,8 @@ def fetch_portfolio(user_id, db): # return portfolio w current price
 
 def return_usershares(user_id, symbol, db):
     symbol = symbol.upper()
-    return db.execute("SELECT * FROM portfolio, symbol WHERE portfolio.sym_id = symbol.id AND user_id = ? AND symbol = ?;", user_id, symbol)
+    rows = db.execute("SELECT * FROM portfolio, symbol WHERE portfolio.sym_id = symbol.id AND user_id = ? AND symbol = ?;", user_id, symbol)
+    return
 
 
 
