@@ -129,7 +129,7 @@ def returnsymbol(symbol, db): #returns symbol ID, if new entry will add into db
         return db.execute("INSERT INTO symbol (symbol) VALUES(?);", symbol)
     return row[0]['id']
 
-def update_transaction(buycode, id, symbol, shares, db):
+def update_transaction(buycode, id, symbol, shares, db): # buycode 1 for buy, 0 for sell
     date = date.today()
     datef = date.strftime("%Y-%m-%d")
     time = datetime.now()
@@ -140,5 +140,4 @@ def update_transaction(buycode, id, symbol, shares, db):
     symbol = lookupdata['symbol']
     sym_id = returnsymbol(symbol, db)
 
-    if (buycode == 'buy'):
-        db.execute("INSERT INTO transactions (user_id, sym_id, price, shares, date, time, buycode) VALUES (?, ?, ?, ?, ?, ?, ?);", id, sym_id, price, shares, datef, timef, buycode)
+    db.execute("INSERT INTO transactions (user_id, sym_id, price, shares, date, time, buycode) VALUES (?, ?, ?, ?, ?, ?, ?);", id, sym_id, price, shares, datef, timef, buycode)
