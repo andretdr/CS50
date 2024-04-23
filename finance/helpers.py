@@ -123,5 +123,6 @@ def strictlydigits(n):
 
 def transaction(buycode, symbol, shares, id, db):
     if (buycode == 'buy'):
+    
 
         db.execute("INSERT INTO transactions (userid, symbol, price, shares, date, time, buycode) VALUES (?, ?, ?, ?, ?, ?, ?);", id, symbol, , shares, , , buycode)
