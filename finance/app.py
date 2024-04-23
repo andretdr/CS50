@@ -202,7 +202,7 @@ def sellcheck():
         return jsonify({"status":"Symbol must be alphanumeric"})
 
     result = return_usershares(session['user_id'], record['symbol'], db)
-    print(result)
+    
     return jsonify(result)
 
 @app.route("/sell", methods=["GET", "POST"])
