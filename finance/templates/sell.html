@@ -14,7 +14,7 @@
     </form>
 
     <p></p>
-    <p id="symbolstatus"></p>
+    <p id="sellcheckstatus"></p>
 
     <p id="result"></p>
 
@@ -39,11 +39,11 @@
             let responseObj = JSON.parse(responset);
             console.log(responseObj);
             if (responseObj == [])
-                document.querySelector("#symbolstatus").innerHTML = 'Symbol not found';
+                sellCheckStatus('Symbol not found');
             else
             {
                 if ('status' in responseObj)
-                    document.querySelector("#symbolstatus").innerHTML = responseObj['status'];
+                    sellCheckStatus(responseObj['status']);
 
                 if ('price' in responseObj)
                 {

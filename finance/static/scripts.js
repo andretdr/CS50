@@ -49,3 +49,7 @@ function buyValueCheck(unitprice, input ,totalbalance) { // returns 0 for ok, 1 
 function buyStatus(str) {
     document.querySelector("#buystatus").innerHTML = str;
 }
+
+function sellCheckStatus(str) {
+    document.querySelector("#sellcheckstatus").innerHTML = str;
+}
