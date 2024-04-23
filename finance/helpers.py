@@ -122,6 +122,7 @@ def strictlydigits(n):
     return re.match("^\\d+$", n)
 
 def returnsymbol(symbol):
+    symbol = symbol.upper
     row = db.execute("SELECT id from SYMBOL WHERE symbol = ?;", symbol)
     if len(row) != 1
 
