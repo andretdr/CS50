@@ -8,6 +8,7 @@ import re
 
 from flask import redirect, render_template, request, session
 from functools import wraps
+from datetime import date
 
 
 def apology(message, code=400):
@@ -122,14 +123,13 @@ def strictlydigits(n):
     return re.match("^\\d+$", n)
 
 def returnsymbol(symbol, db): #returns symbol ID, if new entry will add into db
-
     symbol = symbol.upper()
     row = db.execute("SELECT id from SYMBOL WHERE symbol = ?;", symbol)
     if len(row) == 0: #if new entry
         return db.execute("INSERT INTO symbol (symbol) VALUES(?);", symbol)
     return row[0]['id']
 
-def transaction(buycode, id, sym_id, shares, db):
+def update_transaction(buycode, id, sym_id, shares, db):
     date = getdate()
     time = gettime()
     if (buycode == 'buy'):
