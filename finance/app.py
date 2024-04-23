@@ -203,7 +203,7 @@ def sell():
         if validatesymbol(record['symbol']) == 1:
             return jsonify({"status":"Symbol must be alphanumeric"})
 
-        result = lookup(record['symbol'])
+        # result = check our database if we have the shares
         return jsonify(result)
 
     else:
