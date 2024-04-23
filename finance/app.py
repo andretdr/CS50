@@ -193,7 +193,7 @@ def register():
         return render_template("register.html")
 
 
-@app.route("/sellcheck")
+@app.route("/sellcheck", methods=["POST"])
 @login_required
 def sellcheck():
 
@@ -209,6 +209,6 @@ def sellcheck():
 @login_required
 def sell():
     if request.method == 'POST':
-        print("asssa")
+        print('sddds')
     else:
         return render_template("sell.html")
