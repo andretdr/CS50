@@ -101,3 +101,33 @@ async function sell_updateSharesDisplay(argsym) {
 
     document.querySelector("#sellshares").innerHTML = `Shares Owned : ${currshares}`;
 }
+
+function update_historypage(argsym, argtrans, argprice, argshares, argdate, argtime) {
+
+    let color = '';
+    if (argtrans == 1)
+    {
+        buycode = 'BUY';
+        color = 'green';
+    }
+    else
+    {
+        buycode = 'SELL'
+        color = 'red';
+    }
+
+    html = `
+            <tr>
+                <td>${argsym}</td>
+                <td style.color=${color}>${buycode}</td>
+                <td>${argprice}</td>
+                <td>${argshares}</td>
+                <td>${argdate}</td>
+                <td>${argtime}</td>
+
+
+
+            `
+
+
+}
