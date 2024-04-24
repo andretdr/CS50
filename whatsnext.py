@@ -25,3 +25,24 @@ https://education.github.com/pack
 
 https://www.heroku.com/
 https://vercel.com/
+
+
+# Ask questions
+
+https://www.reddit.com/r/learnprogramming/
+https://www.reddit.com/r/programming/
+https://stackoverflow.com/
+https://serverfault.com
+
+
+# take classes
+
+https://cs50.edx.org/python
+https://cs50.edx.org/sql
+https://cs50.edx.org/web
+https://cs50.edx.org/ai
+https://cs50.edx.org/games
+https://cs50.edx.org/cybersecurity
+
+https://cs50.edx.org/technology
+
