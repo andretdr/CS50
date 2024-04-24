@@ -33,7 +33,7 @@
 
     <script>
         async function fetchpage(){
-            let reply = await fetch('/history?q="fetch"');
+            let reply = await fetch('/history?q=fetch');
             let replytext = await reply.text();
             let replyObj = await JSON.parse(replytext);
 
