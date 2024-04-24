@@ -95,4 +95,6 @@ async function sell_updateSharesDisplay() {
     let replyobj = JSON.parse(replytxt);
     currshares = replyobj['shares']
 
+    document.querySelector("#sellshares").innerHTML = `Shares : ${currshares}`;
+
 }
