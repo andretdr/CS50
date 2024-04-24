@@ -89,8 +89,8 @@ function sellStatus(str) {
     document.querySelector("#sellstatus").innerHTML = str;
 }
 
-async function sell_updateSharesDisplay() {
-    let reply = await fetch('/sellcheck', {method:'GET'});
+async function sell_updateSharesDisplay(argsym) {
+    let reply = await fetch('/sellcheck?q=' + argsym, {method:'GET'});
     let replytxt = await reply.text();
     let replyobj = JSON.parse(replytxt);
     currshares = replyobj['shares']
