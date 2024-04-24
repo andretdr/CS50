@@ -247,9 +247,11 @@ def history():
     if request.method == "POST":
         print('we')
 
-
     if request.method == "GET":
         clientarg = request.args.get('q')
-        if clientarg
+        if not clientarg:
+            return render_template("history.html")
 
-        return render_template("history.html")
+        if clientarg == 
+
+
