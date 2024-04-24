@@ -90,6 +90,6 @@ function sellStatus(str) {
 }
 
 async function sell_updateSharesDisplay() {
-    let reply = await fetch
+    let reply = await fetch('/sellcheck')
 
 }
