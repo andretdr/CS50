@@ -137,7 +137,5 @@ function update_historypage(argObj) {
                 </tr>
             `
     }
-
     document.querySelector('#historyinsert').innerHTML = html;
-
 }
