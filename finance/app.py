@@ -223,6 +223,11 @@ def sell():
             update_transaction(0, currentid, clientsymbol, clientshares, db)
             update_portfolio(0, currentid, clientsymbol, clientshares, db)
 
+            let lookupdata = lookup(clientsymbol)
+            currentprice = lookupdata['price']
+            let amt = float()
+
+            update_balance(0, currentid, amt, db)
 
 
     else:
