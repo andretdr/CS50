@@ -197,7 +197,10 @@ def sellcheck():
 
     if request.method = "GET":
         clientsym = request.arg.get(q)
-        
+        curruserid = session['user_id']
+
+        sharesdata = return_usershares(curruserid, clientsym, db)
+        return jsonify(sharesdata)
 
     if request.method = "POST":
         record = request.get_json()
