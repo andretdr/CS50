@@ -88,3 +88,8 @@ function sellCheckStatus(str) {
 function sellStatus(str) {
     document.querySelector("#sellstatus").innerHTML = str;
 }
+
+async function sell_updateSharesDisplay() {
+    let reply = await fetch
+
+}
