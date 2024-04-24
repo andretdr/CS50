@@ -203,3 +203,7 @@ def check_suffshares(argshares, argsymbol, argid, argdb):
         return False
 
     return True
+
+def return_transactions(arguserid, argdb):
+    rows = argdb.execute("SELECT * FROM symbol, transactions WHERE symbol.id = transactions.sym_id AND user_id = ?;", arguserid)
+    return rows

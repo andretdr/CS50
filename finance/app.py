@@ -252,9 +252,8 @@ def history():
         if not clientarg:
             return render_template("history.html")
 
-        if clientarg == 'fetch':
-            userid = session['user_id']
-            rows = return_transactions(userid)
-            return rows
+        userid = session['user_id']
+        rows = return_transactions(userid)
+        return rows
 
 
