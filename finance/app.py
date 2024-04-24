@@ -231,6 +231,7 @@ def sell():
 
         update_balance(0, currentid, amt, db)
 
+        return jsonify({"status":"0"})
 
     else:
         return render_template("sell.html")
