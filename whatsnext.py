@@ -46,3 +46,6 @@ https://cs50.edx.org/cybersecurity
 
 https://cs50.edx.org/technology
 
+
+# better design? how to document?
+
