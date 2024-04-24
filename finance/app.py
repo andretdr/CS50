@@ -196,7 +196,8 @@ def register():
 def sellcheck():
 
     if request.method = "GET":
-        clientdata = request.
+        clientsym = request.arg.get(q)
+        
 
     if request.method = "POST":
         record = request.get_json()
