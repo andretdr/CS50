@@ -192,6 +192,7 @@ def register():
 
 @app.route("/sellcheck", methods=["POST"])
 @login_required
+
 def sellcheck():
 
     record = request.get_json()
@@ -209,11 +210,12 @@ def sellcheck():
 
 @app.route("/sell", methods=["GET", "POST"])
 @login_required
+
 def sell():
     if request.method == 'POST':
-        clientdata = resquest.get_json()
+        clientdata = request.get_json()
         clientshares = clientdata['shares']
-        clientsymbol = clientdate['symbol']
+        clientsymbol = clientdata['symbol']
         currentid = session['user_id']
 
         if (not strictlydigits(clientshares)) or (not validatesymbol(clientsymbol)) :
@@ -225,9 +227,9 @@ def sell():
         update_transaction(0, currentid, clientsymbol, clientshares, db)
         update_portfolio(0, currentid, clientsymbol, clientshares, db)
 
-        let lookupdata = lookup(clientsymbol)
+        lookupdata = lookup(clientsymbol)
         currentprice = lookupdata['price']
-        let amt = float(currentprice) * float(clientshares)
+        amt = float(currentprice) * float(clientshares)
 
         update_balance(0, currentid, amt, db)
 
