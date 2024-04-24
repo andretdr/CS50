@@ -187,8 +187,8 @@ def return_usershares(user_id, symbol, db):
         return None
     return rows[0]
 
-def check_suffshares(shares, symbol, id, db):
-    
+def check_suffshares(argshares, argsymbol, argid, argdb):
+    argdb.execute("SELECT * FROM portfolio WHERE )
 
 
 
