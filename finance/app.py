@@ -218,7 +218,7 @@ def sell():
         clientsymbol = clientdata['symbol']
         currentid = session['user_id']
 
-        if (not strictlydigits(clientshares)) or (not validatesymbol(clientsymbol)) :
+        if (not strictlydigits(clientshares)) and (not validatesymbol(clientsymbol)) :
             return jsonify({"status":"Invalid input"})
 
         if (not check_suffshares(clientshares, clientsymbol, currentid, db)): #if not ok
