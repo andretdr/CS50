@@ -4,9 +4,10 @@
 
 # brute force attack
 
-crack.py
+# crack.py
 
-from string import digits
+from string import ascii_letters #digits
 from itertools import product
 
-for passcode in product(digits, repeat=4)
+for passcode in product(ascii_letters, repeat=4):
+    print(passcode)
