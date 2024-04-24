@@ -214,6 +214,14 @@ def sellcheck():
 @login_required
 def sell():
     if request.method == 'POST':
-        print('sddds')
+        clientdata = resquest.get_json()
+        sellshares = clientdata['shares']
+
+        result = checkSuffShares(sellshares, session['user_id'], db)
+        if result == 0: #if ok
+            
+
+
+
     else:
         return render_template("sell.html")
