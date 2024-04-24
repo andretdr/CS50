@@ -93,7 +93,11 @@ async function sell_updateSharesDisplay(argsym) {
     let reply = await fetch('/sellcheck?q=' + argsym);
     let replytxt = await reply.text();
     let replyobj = JSON.parse(replytxt);
-    currshares = replyobj['shares']
+
+    if (replyobj == null)
+        currshares = 0;
+    else
+        currshares = replyobj['shares'];
 
     document.querySelector("#sellshares").innerHTML = `Shares Owned : ${currshares}`;
 
