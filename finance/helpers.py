@@ -189,11 +189,10 @@ def return_usershares(user_id, symbol, db):
 
 def check_suffshares(argshares, argsymbol, argid, argdb):
     rows = argdb.execute("SELECT * FROM portfolio, symbol WHERE symbol.id = portfolio.sym_id AND symbol = ?;", argsymbol)
-    if (rows.length == 0) {
-        return false;
-    }
-    else
-        return true;
+    if len(rows) == 1:
+        return True
+    else:
+        return False
 
 
 
