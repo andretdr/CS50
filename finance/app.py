@@ -82,21 +82,6 @@ def buy():
         return render_template("buy.html")
 
 
-@app.route("/history")
-@login_required
-def history():
-
-    if request.method == "POST":
-        print('we')
-
-
-    else:
-        return render_template("history.html")
-
-
-
-
-
 @app.route("/login", methods=["GET", "POST"])
 def login():
 
@@ -253,3 +238,18 @@ def sell():
 
     else:
         return render_template("sell.html")
+
+
+@app.route("/history")
+@login_required
+def history():
+
+    if request.method == "POST":
+        print('we')
+
+
+    if request.method == "GET":
+        clientarg = request.args.get('q')
+        if clientarg
+
+        return render_template("history.html")
