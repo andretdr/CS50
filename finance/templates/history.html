@@ -6,12 +6,12 @@
 
 {% block main %}
     <table>
+        <col style="width:15%" />
+        <col style="width:15%" />
+        <col style="width:15%" />
+        <col style="width:15%" />
         <col style="width:20%" />
         <col style="width:20%" />
-        <col style="width:20%" />
-        <col style="width:20%" />
-        <col style="width:10%" />
-        <col style="width:10%" />
 
         <thead>
             <tr>
@@ -33,11 +33,11 @@
 
     <script>
         async function fetchpage(){
-            let reply = await fetch('/history?q="fetch"');
+            let reply = await fetch('/history?q=fetch');
             let replytext = await reply.text();
             let replyObj = await JSON.parse(replytext);
 
-            update_historypage(replyObj, db)
+            update_historypage(replyObj)
         }
 
         fetchpage();

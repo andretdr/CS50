@@ -253,7 +253,7 @@ def history():
             return render_template("history.html")
 
         userid = session['user_id']
-        rows = return_transactions(userid)
+        rows = return_transactions(userid, db)
         return rows
 
 
