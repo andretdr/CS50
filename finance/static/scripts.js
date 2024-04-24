@@ -90,7 +90,7 @@ function sellStatus(str) {
 }
 
 async function sell_updateSharesDisplay(argsym) {
-    let reply = await fetch('/sellcheck?q=' + argsym, {method:'GET'});
+    let reply = await fetch('/sellcheck?q=' + argsym);
     let replytxt = await reply.text();
     let replyobj = JSON.parse(replytxt);
     currshares = replyobj['shares']
