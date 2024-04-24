@@ -190,23 +190,27 @@ def register():
         return render_template("register.html")
 
 
-@app.route("/sellcheck", methods=["POST"])
+@app.route("/sellcheck", methods=["GET", "POST"])
 @login_required
 
 def sellcheck():
 
-    record = request.get_json()
-    if validatesymbol(record['symbol']) == 1:
-        return jsonify({"status":"Symbol must be alphanumeric"})
+    if request.method = "GET":
+        
 
-    result = return_usershares(session['user_id'], record['symbol'], db)
+    if request.method = "POST":
+        record = request.get_json()
+        if validatesymbol(record['symbol']) == 1:
+            return jsonify({"status":"Symbol must be alphanumeric"})
 
-    if result != None:
-        lookupdata = lookup(record['symbol'])
-        currprice = lookupdata['price']
-        result['price'] = currprice
+        result = return_usershares(session['user_id'], record['symbol'], db)
 
-    return jsonify(result)
+        if result != None:
+            lookupdata = lookup(record['symbol'])
+            currprice = lookupdata['price']
+            result['price'] = currprice
+
+        return jsonify(result)
 
 @app.route("/sell", methods=["GET", "POST"])
 @login_required
