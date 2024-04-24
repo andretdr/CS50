@@ -252,6 +252,7 @@ def history():
         if not clientarg:
             return render_template("history.html")
 
-        if clientarg == 
+        if clientarg == 'fetch':
+            dbdata = return_transactions()
 
 
