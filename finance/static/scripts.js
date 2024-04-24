@@ -138,7 +138,6 @@ function update_historypage(argObj) {
             `
     }
 
-    document.querySelector('').innerHTML = html;
-
+    document.querySelector('#historyinsert').innerHTML = html;
 
 }
