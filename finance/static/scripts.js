@@ -119,7 +119,7 @@ function update_historypage(argsym, argtrans, argprice, argshares, argdate, argt
     html = `
             <tr>
                 <td>${argsym}</td>
-                <td style.color=${color}>${buycode}</td>
+                <td style="color:${color}">${buycode}</td>
                 <td>${argprice}</td>
                 <td>${argshares}</td>
                 <td>${argdate}</td>
