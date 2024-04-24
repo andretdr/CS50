@@ -17,4 +17,5 @@ for passcode in product(ascii_letters + digits + punctuation, repeat=8):
 # 1 way
 
 # cryptography
-# 2 ways
+# 2 way
+
