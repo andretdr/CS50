@@ -62,9 +62,6 @@ def buy():
             balance = getbalance(session['user_id'], db)
             unitprice = lookup(record['symbol'])
 
-            print(f"unitprice {unitprice['price']}")
-            print(f"shares {shares}")
-
             if float(unitprice['price'])*float(shares) <= balance:
                 # make the transaction
 
@@ -217,9 +214,10 @@ def sell():
         clientdata = resquest.get_json()
         sellshares = clientdata['shares']
 
+
         result = checkSuffShares(sellshares, session['user_id'], db)
         if result == 0: #if ok
-            
+
 
 
 
