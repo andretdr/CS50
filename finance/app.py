@@ -212,13 +212,16 @@ def sellcheck():
 def sell():
     if request.method == 'POST':
         clientdata = resquest.get_json()
-        sellshares = clientdata['shares']
+        clientshares = clientdata['shares']
+        clientsymbol = clientdate['symbol']
+        currentid = session['user_id']
 
-        if (not strictlydigits(sellshares)) or (not validatesymbol(sellsymbol)) :
+        if (not strictlydigits(clientshares)) or (not validatesymbol(clientsymbol)) :
             return jsonify({"status":"Invalid input"})
 
-        if checkSuffShares(sellshares, sellsymbol, session['user_id'], db): #if ok
-
+        if checkSuffShares(clientshares, clientsymbol, currentid, db): #if ok
+            update_transaction(0, currentid, clientsymbol, clientshares, db)
+            update_portfolio()
 
 
 
