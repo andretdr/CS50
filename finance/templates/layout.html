@@ -61,10 +61,11 @@
         {% endif %}
 
         <main class="container py-5 text-center">
-                { % if session["user_id"] % }
+                {% if session["user_id"] %}
             <script>
                      updateMainBalance();
             </script>
+                {% endif %}
             {% block main %}{% endblock %}
         </main>
 
