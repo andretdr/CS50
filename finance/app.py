@@ -196,7 +196,7 @@ def register():
 def sellcheck():
 
     if request.method == "GET":
-        clientsym = request.arg.get(q)
+        clientsym = request.arg.get('q')
         curruserid = session['user_id']
 
         sharesdata = return_usershares(curruserid, clientsym, db)

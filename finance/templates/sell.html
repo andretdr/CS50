@@ -79,6 +79,8 @@
 
                     document.querySelector("#result").innerHTML = html;
 
+                    await sell_updateSharesDisplay(currsymbol);
+
 
                     let autoEl = document.querySelector("#sellauto");
                     autoEl.addEventListener('input', async function() {
