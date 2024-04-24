@@ -193,7 +193,7 @@ def check_suffshares(argshares, argsymbol, argid, argdb):
         return False
 
     ownedshares = rows[0]['shares']
-    if argshares > ownedshares:
+    if int(argshares) > int(ownedshares):
         return False
 
     return True
