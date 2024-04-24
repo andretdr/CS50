@@ -221,7 +221,7 @@ def sell():
 
         if checkSuffShares(clientshares, clientsymbol, currentid, db): #if ok
             update_transaction(0, currentid, clientsymbol, clientshares, db)
-            update_portfolio()
+            update_portfolio(0, currentid, clientsymbol, clientshares, db)
 
 
 
