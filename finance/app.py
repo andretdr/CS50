@@ -219,15 +219,17 @@ def sell():
         if (not strictlydigits(clientshares)) or (not validatesymbol(clientsymbol)) :
             return jsonify({"status":"Invalid input"})
 
-        if checkSuffShares(clientshares, clientsymbol, currentid, db): #if ok
-            update_transaction(0, currentid, clientsymbol, clientshares, db)
-            update_portfolio(0, currentid, clientsymbol, clientshares, db)
+        if (not checkSuffShares(clientshares, clientsymbol, currentid, db)): #if not ok
+            return jsonify({"status":"Insufficient shares"})
 
-            let lookupdata = lookup(clientsymbol)
-            currentprice = lookupdata['price']
-            let amt = float()
+        update_transaction(0, currentid, clientsymbol, clientshares, db)
+        update_portfolio(0, currentid, clientsymbol, clientshares, db)
 
-            update_balance(0, currentid, amt, db)
+        let lookupdata = lookup(clientsymbol)
+        currentprice = lookupdata['price']
+        let amt = float(currentprice) * float(clientshares)
+
+        update_balance(0, currentid, amt, db)
 
 
     else:
