@@ -214,9 +214,9 @@ def sell():
         clientdata = resquest.get_json()
         sellshares = clientdata['shares']
 
+        
 
-        result = checkSuffShares(sellshares, session['user_id'], db)
-        if result == 0: #if ok
+        if checkSuffShares(sellshares, session['user_id'], db): #if ok
 
 
 
