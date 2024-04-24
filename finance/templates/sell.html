@@ -107,6 +107,7 @@
 
                         const formdata = new FormData(formbEl);
                         const data = Object.fromEntries(formdata);
+                        const currsymb = data['symbol']
 
                         let result = sellSharesCheck(data["shares"], shares);
 
@@ -124,6 +125,7 @@
                             {
                                 sellStatus("Transaction made");
                                 updateMainBalance();
+                                await sell_updateSharesDisplay(datasymb);
                             }
                             else
                                 sellStatus(responseObj['status']);
