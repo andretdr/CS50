@@ -214,7 +214,9 @@ def sell():
         clientdata = resquest.get_json()
         sellshares = clientdata['shares']
 
-        if strictlydigits(sellshares)
+        if not strictlydigits(sellshares):
+            return jsonify({"status":"Invalid input"})
+        
 
         if checkSuffShares(sellshares, session['user_id'], db): #if ok
 
