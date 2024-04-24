@@ -7,7 +7,7 @@ from flask_session import Session
 from werkzeug.security import check_password_hash, generate_password_hash
 
 from helpers import apology, login_required, lookup, usd, validatename, validatepassword, validatesymbol, addrecord, getbalance
-from helpers import strictlydigits, returnsymbol, update_transaction, update_portfolio, update_balance, fetch_portfolio, return_usershares
+from helpers import strictlydigits, returnsymbol, update_transaction, update_portfolio, update_balance, fetch_portfolio, return_usershares, check_suffshares
 
 
 # Configure application
@@ -219,7 +219,7 @@ def sell():
         if (not strictlydigits(clientshares)) or (not validatesymbol(clientsymbol)) :
             return jsonify({"status":"Invalid input"})
 
-        if (not checkSuffShares(clientshares, clientsymbol, currentid, db)): #if not ok
+        if (not check_suffshares(clientshares, clientsymbol, currentid, db)): #if not ok
             return jsonify({"status":"Insufficient shares"})
 
         update_transaction(0, currentid, clientsymbol, clientshares, db)

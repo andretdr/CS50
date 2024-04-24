@@ -187,6 +187,8 @@ def return_usershares(user_id, symbol, db):
         return None
     return rows[0]
 
+def check_suffshares(shares, symbol, id, db):
+    
 
 
 
