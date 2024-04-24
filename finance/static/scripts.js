@@ -102,32 +102,43 @@ async function sell_updateSharesDisplay(argsym) {
     document.querySelector("#sellshares").innerHTML = `Shares Owned : ${currshares}`;
 }
 
-function update_historypage(argsym, argtrans, argprice, argshares, argdate, argtime) {
+function update_historypage(argObj) {
 
-    let color = '';
-    if (argtrans == 1)
-    {
-        buycode = 'BUY';
-        color = 'green';
-    }
-    else
-    {
-        buycode = 'SELL'
-        color = 'red';
-    }
+    let html = '';
 
-    html = `
-            <tr>
-                <td>${argsym}</td>
-                <td style="color:${color};">${buycode}</td>
-                <td>${argprice}</td>
-                <td>${argshares}</td>
-                <td>${argdate}</td>
-                <td>${argtime}</td>
+    for (obj of argObj){
+        currsym = obj['symbol'];
+        currtrans = obj['buycode'];
+        currprice = obj['price'];
+        currshares = obj['shares'];
+        currdate = obj['date'];
+        currtime = obj['time'];
 
+        color = '';
+        if (currtrans == 1)
+        {
+            buycode = 'BUY';
+            color = 'green';
+        }
+        else
+        {
+            buycode = 'SELL'
+            color = 'red';
+        }
 
-
+        html += `
+                <tr>
+                    <td>${currsym}</td>
+                    <td style="color:${color};">${buycode}</td>
+                    <td>${currprice}</td>
+                    <td>${currshares}</td>
+                    <td>${currdate}</td>
+                    <td>${currtime}</td>
+                </tr>
             `
+    }
+
+    document.querySelector('').innerHTML = html;
 
 
 }

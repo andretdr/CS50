@@ -37,14 +37,7 @@
             let replytext = await reply.text();
             let replyObj = await JSON.parse(replytext);
 
-            for (obj of replyObj){
-                currsym = obj['symbol'];
-                currtrans = obj['buycode'];
-                currprice = obj['price'];
-                currshares = obj['shares'];
-                currdate = obj['date'];
-                currtime = obj['time'];
-                update_historypage(currsym, currtrans, currprice, currshares, currdate, currtime)
+            update_historypage(replyObj)
         }
 
 
