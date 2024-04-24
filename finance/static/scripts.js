@@ -100,5 +100,4 @@ async function sell_updateSharesDisplay(argsym) {
         currshares = replyobj['shares'];
 
     document.querySelector("#sellshares").innerHTML = `Shares Owned : ${currshares}`;
-
 }
