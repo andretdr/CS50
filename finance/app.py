@@ -7,7 +7,7 @@ from flask_session import Session
 from werkzeug.security import check_password_hash, generate_password_hash
 
 from helpers import apology, login_required, lookup, usd, validatename, validatepassword, validatesymbol, addrecord, getbalance
-from helpers import strictlydigits, returnsymbol, update_transaction, update_portfolio, update_balance, fetch_portfolio, return_usershares, check_suffshares
+from helpers import strictlydigits, returnsymbol, update_transaction, update_portfolio, update_balance, fetch_portfolio, return_usershares, check_suffshares, return_transactions
 
 
 # Configure application
@@ -253,6 +253,8 @@ def history():
             return render_template("history.html")
 
         if clientarg == 'fetch':
-            dbdata = return_transactions()
+            userid = session['user_id']
+            rows = return_transactions(userid)
+            return rows
 
 
