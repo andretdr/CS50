@@ -6,7 +6,7 @@
 
 # crack.py
 
-from string import ascii_letters #digits
+from string import  #ascii_letters #digits
 from itertools import product
 
 for passcode in product(ascii_letters, repeat=4):
