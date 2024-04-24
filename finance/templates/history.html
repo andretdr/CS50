@@ -37,10 +37,10 @@
             let replytext = await reply.text();
             let replyObj = await JSON.parse(replytext);
 
-            update_historypage(replyObj)
+            update_historypage(replyObj, db)
         }
 
-        await fetchpage();
+        fetchpage();
 
 
 
